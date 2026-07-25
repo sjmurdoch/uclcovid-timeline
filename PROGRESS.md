@@ -278,6 +278,20 @@ The three claims stage 1 flagged as relayed by UCL are all **hedged in the row i
 
 Ten rows make an absolute claim. The three that the ledger can adjudicate all hold: newsletter cadence drops twice and rises once, so **"the only time in the record the cadence goes up"** is true; the flu voucher of 28 September 2020 is the only vaccination row in autumn 2020; and of six vaccination rows, only the one of 6 January 2022 attaches an operational consequence to vaccination status.
 
+### Coverage re-checked, and the page reworked
+
+**Traceability.** `review.py` reports none: every figure in the commentary is traceable to a newsletter or a cached primary source. The two corrections it forced are recorded above.
+
+**Coverage.** 133 of the 168 newsletters carry at least one row. The other 35 were re-scanned for decision-signalling language and **three** were flagged, none of them a genuine miss:
+
+- `124_…` is the byte-identical duplicate of `122_…`, already cited through 122.
+- Issue 145 of 21 June 2021 matched on "from Monday" inside a list of recorded roadshow dates, which is not a decision.
+- Issue 164 of 21 February 2022 matched on the face covering change, which **is** in the ledger, sourced to issue 163 of 14 February — the newsletter that announced it — and filed under 21 February, the date it took effect. That is the convention working, not a gap.
+
+This is a keyword scan and it establishes the absence of *obvious* misses rather than the absence of all misses. A decision phrased without any of those markers would not be caught.
+
+**The page.** Three reported faults fixed: the date inputs had no width and so rendered blank; the date range only hid marks instead of moving the axis, and now rescales everything positioned in time; and the UCL lane's clutter is addressed by that zoom plus category filters drawn from the eleven categories already in the ledger, with no new priority judgement invented. A theme selector was added — the CSS had supported one since stage 6 but nothing ever set the attribute, so the page could only follow the system setting.
+
 ### The placement decision, with the figures it turns on
 
 The plan recorded the arguments before the decision so they could not be assembled to fit it. What stage 7 adds is measurement.
