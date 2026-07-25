@@ -1,4 +1,32 @@
 [
-{"date":"2020-08-19","date_kind":"published","date_precision":"day","track":"ucl","category":"research","headline":"Fieldwork framework published to govern planning, approval and management","detail":"Working alongside existing risk assessments, with pre-conditions and a checklist before approval, overseen by a dedicated group.","quote":"A framework has been developed which informs the planning, approval and management of fieldwork and works alongside the existing risk assessments.","source_type":"newsletter","source_ref":"105_19_August__Issue_105_.html","issue":"105","verified":"quote-exact","notes":"Formalises the fieldwork restart permitted on 25 June 2020. Added after a coverage check flagged issue 105 as decision-bearing but uncited."},
-{"date":"2020-08-19","date_kind":"published","date_precision":"day","track":"ucl","category":"restrictions","headline":"Campus Opening Guide sets out a four-stage building reopening process","detail":"Planning, building preparation, approval to open and confirmation, with each department nominating a liaison to the Estates team.","quote":"Each department must nominate a dedicated person to liaise with the Estates Team throughout the building reopening process.","source_type":"newsletter","source_ref":"105_19_August__Issue_105_.html","issue":"105","verified":"quote-exact","notes":"The procedure by which all campus buildings were open by 2 September 2020."}
+  {
+    "date": "2020-08-19",
+    "date_kind": "published",
+    "date_precision": "day",
+    "track": "ucl",
+    "category": "research",
+    "headline": "Fieldwork framework published to govern planning, approval and management",
+    "detail": "Working alongside existing risk assessments, with pre-conditions and a checklist before approval, overseen by a dedicated group.",
+    "quote": "A framework has been developed which informs the planning, approval and management of fieldwork and works alongside the existing risk assessments.",
+    "source_type": "newsletter",
+    "source_ref": "105_19_August__Issue_105_.html",
+    "issue": "105",
+    "verified": "quote-exact",
+    "notes": "Formalises the fieldwork restart permitted on 25 June 2020. Added after a coverage check flagged issue 105 as decision-bearing but uncited."
+  },
+  {
+    "date": "2020-08-19",
+    "date_kind": "published",
+    "date_precision": "day",
+    "track": "ucl",
+    "category": "restrictions",
+    "headline": "Campus Opening Guide sets out a four-stage building reopening process",
+    "detail": "Planning, building preparation, approval to open and confirmation, with each department nominating a liaison to the Estates team.",
+    "quote": "Each department must nominate a dedicated person to liaise with the Estates Team throughout the building reopening process.",
+    "source_type": "newsletter",
+    "source_ref": "105_19_August__Issue_105_.html",
+    "issue": "105",
+    "verified": "quote-exact",
+    "notes": "The procedure by which all campus buildings were open by 2 September 2020."
+  }
 ]

@@ -1,32 +1,32 @@
 [
- {
-  "date": "2020-11-01",
-  "date_kind": "observed",
-  "date_precision": "month",
-  "track": "data",
-  "category": "epidemiology",
-  "headline": "Camden and UCL both peak in November 2020",
-  "detail": "Camden recorded 1,243 cases; UCL recorded 43 on-campus student cases in the same month.",
-  "quote": "",
-  "source_type": "dataset",
-  "source_ref": "timeline/data/camden-cases.csv (UKHSA dashboard, cached)",
-  "issue": "",
-  "verified": "computed",
-  "notes": "The student-return surge, where borough and campus move together. This is the co-movement against which the January divergence is read. October 2020 is complete in the live API, all 31 days. UCL cases are not a subset of Camden cases: students live across many boroughs and \"on campus\" marks presence, not residence. Shape and timing may be compared; shares and proportions may not."
- },
- {
-  "date": "2022-01-01",
-  "date_kind": "observed",
-  "date_precision": "month",
-  "track": "data",
-  "category": "epidemiology",
-  "headline": "UCL rises 77-fold between the two Januaries, Camden 2.4-fold",
-  "detail": "Camden recorded 4,770 cases in January 2021 and 11,211 in January 2022, a factor of 2.4. UCL on-campus students went from 9 to 696, a factor of 77 — about 33 times the borough's growth.",
-  "quote": "",
-  "source_type": "dataset",
-  "source_ref": "timeline/data/camden-cases.csv (UKHSA dashboard, cached)",
-  "issue": "",
-  "verified": "computed",
-  "notes": "The sharpest test of the blog post's claim available, and it does not say what a first glance suggests. **Both** rose: the borough's epidemic grew 2.4-fold between the two months, so a purely epidemiological account does predict a rise at UCL. What it does not predict is the size: UCL rose about 33 times as steeply as the borough around it. That gap is the evidence, not a difference in direction. The plain reading is that the local epidemic accounts for part of the change and campus policy for the rest — closed to most students in January 2021, open in January 2022. UCL cases are not a subset of Camden cases: students live across many boroughs and \"on campus\" marks presence, not residence. Shape and timing may be compared; shares and proportions may not."
- }
+  {
+    "date": "2020-11-01",
+    "date_kind": "observed",
+    "date_precision": "month",
+    "track": "data",
+    "category": "epidemiology",
+    "headline": "Camden and UCL both peak in November 2020",
+    "detail": "Camden recorded 1,243 cases; UCL recorded 43 on-campus student cases in the same month.",
+    "quote": "",
+    "source_type": "dataset",
+    "source_ref": "timeline/data/camden-cases.csv (UKHSA dashboard, cached)",
+    "issue": "",
+    "verified": "computed",
+    "notes": "The student-return surge, where borough and campus move together. This is the co-movement against which the January divergence is read. October 2020 is complete in the live API, all 31 days. UCL cases are not a subset of Camden cases: students live across many boroughs and \"on campus\" marks presence, not residence. Shape and timing may be compared; shares and proportions may not."
+  },
+  {
+    "date": "2022-01-01",
+    "date_kind": "observed",
+    "date_precision": "month",
+    "track": "data",
+    "category": "epidemiology",
+    "headline": "UCL rises 77-fold between the two Januaries, Camden 2.4-fold",
+    "detail": "Camden recorded 4,770 cases in January 2021 and 11,211 in January 2022, a factor of 2.4. UCL on-campus students went from 9 to 696, a factor of 77 — about 33 times the borough's growth.",
+    "quote": "",
+    "source_type": "dataset",
+    "source_ref": "timeline/data/camden-cases.csv (UKHSA dashboard, cached)",
+    "issue": "",
+    "verified": "computed",
+    "notes": "The sharpest test of the blog post's claim available, and it does not say what a first glance suggests. **Both** rose: the borough's epidemic grew 2.4-fold between the two months, so a purely epidemiological account does predict a rise at UCL. What it does not predict is the size: UCL rose about 33 times as steeply as the borough around it. That gap is the evidence, not a difference in direction. The plain reading is that the local epidemic accounts for part of the change and campus policy for the rest — closed to most students in January 2021, open in January 2022. UCL cases are not a subset of Camden cases: students live across many boroughs and \"on campus\" marks presence, not residence. Shape and timing may be compared; shares and proportions may not."
+  }
 ]
