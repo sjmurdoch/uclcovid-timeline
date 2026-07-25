@@ -1,3 +1,11 @@
+> # ⚠️ AI-generated demonstration, not a verified historical record
+>
+> **Every part of this document was produced by an AI system working from the preserved newsletters and the published case data. No human has checked it.**
+>
+> Some things here are checked mechanically and some are not, and the difference matters more than a general disclaimer would suggest. Every quotation is verified as an exact substring of the document it cites, so the words inside blockquotes really do appear in the source. **Everything around them is unverified**: whether the right events were selected, whether each one has been read correctly, whether the categories and dates are right, whether the commentary is sound, and whether anything important is missing. The lag figures depend on pairings an AI system judged to be causal, and those judgements have not been reviewed.
+>
+> Treat this as a **demonstration of what the underlying dataset makes possible**, not as a chronology of UCL's pandemic response to rely on, quote or cite. Anyone wanting to use a fact from here should follow its link to the preserved newsletter and read it in context first.
+
 # UCL and the pandemic: a chronology
 
 348 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 26 are the national and sector measures those decisions respond to, taken from 8 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.

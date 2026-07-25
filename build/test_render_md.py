@@ -263,6 +263,15 @@ def check_real_output():
     check('the rendered document has no draft placeholders',
           'framing not yet written' not in text)
 
+    # The caveat is the most important text in the deliverable and the easiest
+    # to lose in a refactor, so it is a check rather than a convention.
+    head = text[:2500]
+    check('TIMELINE.md opens with the AI-generated caveat',
+          'AI-generated demonstration' in head
+          and 'No human has checked it' in head
+          and 'demonstration of what the underlying dataset makes possible' in head,
+          'and before the title, not after it')
+
     # Every newsletter citation must resolve to a file that is actually there.
     prefix = str(cfg.get('markdown.source_prefix', ''))
     targets = re.findall(r'\]\(' + re.escape(prefix) + r'([^)]+)\)', text)
@@ -352,6 +361,11 @@ def check_html_output():
           and 'class="mark"' in text.split('<script')[0])
     check('the no-script path says what it is missing',
           '<noscript>' in text and 'needs JavaScript' in text)
+    body = text[text.index('<main'):]
+    check('the page carries the caveat above its own title',
+          'AI-generated demonstration' in body
+          and body.index('AI-generated demonstration') < body.index('<h1>')
+          and 'No human has checked it' in body)
 
     # No axis may crop its own series. nice_ticks is the function that got this
     # wrong; check it directly across the range the page actually plots, plus

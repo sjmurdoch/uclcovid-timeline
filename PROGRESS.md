@@ -1,3 +1,9 @@
+# ⚠️ This work is AI-generated and has not been verified by a person
+
+Quotations are checked mechanically against their sources; the selection, reading, categorisation, commentary and lag pairings are not. See `README.md` for what that distinction covers. This is a demonstration of what the dataset makes possible, not a reliable chronology of UCL's pandemic response.
+
+---
+
 # Build progress
 
 Written by hand as each stage closes, so a cold resume knows where it stopped. Stage numbers refer to `../TIMELINE-PLAN.md` section 4.

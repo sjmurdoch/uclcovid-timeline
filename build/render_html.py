@@ -418,6 +418,9 @@ def build(rows, cfg):
         c.path('M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts), 'camden-line')
 
     # --- crosshair, hidden until script moves it
+    c.add(f'<rect id="brush" class="brush" x="0" y="{lanes_top - 6}" '
+          f'width="0" height="{(cam_top + CAM_H) - (lanes_top - 6):.1f}" '
+          f'hidden="hidden"/>')
     c.add(f'<line id="crosshair" class="crosshair" x1="0" y1="{lanes_top - 6}" '
           f'x2="0" y2="{cam_top + CAM_H:.1f}" hidden="hidden"/>')
     c.rect(PAD_L, ucl_top, inner, (cam_top + CAM_H) - ucl_top, 'plot-hit',
@@ -479,6 +482,28 @@ CSS = """
   --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
   --band:#201f1e; --band-edge:#333330; --camden:#8b8a81;
 }
+.warning {
+  background:#fdf6e3; border:2px solid #d9a441; border-left-width:8px;
+  border-radius:5px; color:#4a3a12; padding:1rem 1.15rem; margin:1.5rem 0 0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:.92rem; line-height:1.5;
+}
+.warning h2 { font-size:1.05rem; margin:0 0 .5rem; padding:0; border:0;
+  color:#7a4f00; }
+.warning p { margin:0 0 .6rem; max-width:none; }
+.warning p:last-child { margin-bottom:0; }
+.warning strong { color:#3d2f0a; }
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .warning {
+    background:#2a2412; border-color:#8a6a22; color:#e8dcc0; }
+  :root:where(:not([data-theme="light"])) .warning h2 { color:#f0c674; }
+  :root:where(:not([data-theme="light"])) .warning strong { color:#fff6df; }
+}
+:root[data-theme="dark"] .warning {
+  background:#2a2412; border-color:#8a6a22; color:#e8dcc0; }
+:root[data-theme="dark"] .warning h2 { color:#f0c674; }
+:root[data-theme="dark"] .warning strong { color:#fff6df; }
+
 *,*::before,*::after { box-sizing:border-box; }
 html { -webkit-text-size-adjust:100%; }
 body {
@@ -571,6 +596,10 @@ svg { display:block; width:100%; height:auto; min-width:56rem;
   stroke-linejoin:round; }
 .camden-wash { fill:var(--camden); opacity:.1; stroke:none; }
 .crosshair { stroke:var(--text-secondary); stroke-width:1; pointer-events:none; }
+.brush { fill:var(--link); opacity:.14; stroke:var(--link); stroke-width:1;
+  pointer-events:none; }
+.brush[hidden] { display:none; }
+svg.dragging { cursor:ew-resize; }
 .plot-hit { fill:transparent; }
 
 .legend { display:flex; flex-wrap:wrap; gap:.4rem 1.25rem; margin:.6rem 0 0;
@@ -865,6 +894,7 @@ JS = r"""
   Array.prototype.forEach.call(svg.querySelectorAll('.lane'), function (lane) {
     var track = lane.getAttribute('data-lane');
     lane.addEventListener('pointermove', function (ev) {
+      if (dragFrom !== null) return;
       var loc = toSvg(ev);
       var best = null, bestD = Infinity;
       Array.prototype.forEach.call(
@@ -900,10 +930,76 @@ JS = r"""
 
   function hide() { tip.hidden = true; cross.hidden = true; }
 
+  // --- drag to zoom, x only ------------------------------------------------
+  //
+  // The y scales deliberately do not move. Zooming both axes lets a narrow
+  // window rescale its own peak to full height, which makes any rise look
+  // equally steep whatever its size; holding the case axes still means a
+  // zoomed view says the same thing about magnitude as the full one.
+  var brush = document.getElementById('brush');
+  var dragFrom = null, dragging = false;
+  var DRAG_MIN = 8;             // px, below this it was a click not a drag
+
+  function clampX(x) { return Math.max(D.padL, Math.min(D.padL + D.inner, x)); }
+  function dayAtX(x) {
+    return dom.a + ((clampX(x) - D.padL) / D.inner) * (dom.b - dom.a);
+  }
+
+  svg.addEventListener('pointerdown', function (ev) {
+    if (ev.button !== 0) return;
+    var loc = toSvg(ev);
+    if (loc.x < D.padL || loc.x > D.padL + D.inner) return;
+    if (loc.y < D.bandTop || loc.y > D.axisY) return;
+    dragFrom = loc.x; dragging = false;
+    svg.setPointerCapture(ev.pointerId);
+  });
+
+  svg.addEventListener('pointermove', function (ev) {
+    if (dragFrom === null) return;
+    var x = clampX(toSvg(ev).x);
+    if (!dragging && Math.abs(x - dragFrom) < DRAG_MIN) return;
+    dragging = true;
+    svg.classList.add('dragging');
+    hide();
+    brush.setAttribute('x', Math.min(dragFrom, x).toFixed(1));
+    brush.setAttribute('width', Math.abs(x - dragFrom).toFixed(1));
+    brush.hidden = false;
+  });
+
+  function endDrag(ev) {
+    if (dragFrom === null) return;
+    var x = clampX(toSvg(ev).x);
+    var wasDragging = dragging;
+    var a0 = dragFrom;
+    dragFrom = null; dragging = false;
+    brush.hidden = true;
+    svg.classList.remove('dragging');
+    try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
+    if (!wasDragging) return;
+    var d1 = dayAtX(Math.min(a0, x)), d2 = dayAtX(Math.max(a0, x));
+    // A window narrower than a week has nothing in it and divides badly.
+    if (d2 - d1 < 7) return;
+    dom.a = Math.max(0, Math.round(d1));
+    dom.b = Math.min(D.span, Math.round(d2));
+    syncDateInputs();
+    layout();
+  }
+  svg.addEventListener('pointerup', endDrag);
+  svg.addEventListener('pointercancel', endDrag);
+
+  // Double-click anywhere on the plot zooms back out to the whole record.
+  svg.addEventListener('dblclick', function () {
+    dom.a = 0; dom.b = D.span;
+    syncDateInputs();
+    hide();
+    layout();
+  });
+
   // Crosshair on the case panels: snaps to the nearest reading, so the pointer
   // never has to land on a line.
   var plot = document.getElementById('plot-hit');
   plot.addEventListener('pointermove', function (ev) {
+    if (dragFrom !== null) return;
     var loc = toSvg(ev);
     var frac = (loc.x - D.padL) / D.inner;
     var day = dom.a + frac * (dom.b - dom.a);
@@ -988,6 +1084,9 @@ JS = r"""
   });
 
   var f = document.getElementById('from'), t = document.getElementById('to');
+  function syncDateInputs() {
+    f.value = isoOf(dom.a); t.value = isoOf(dom.b);
+  }
   function onRange() {
     var a = f.value ? dayOf(f.value) : 0;
     var b = t.value ? dayOf(t.value) : D.span;
@@ -1054,12 +1153,35 @@ def page(svg, height, payload, rows, cfg, first, last):
     a('<meta charset="utf-8">')
     a('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
     a('<title>UCL and the pandemic: an interactive chronology</title>')
-    a('<meta name="description" content="UCL\'s COVID-19 decisions '
-      'against national policy and its own case data, 2020 to 2022.">')
+    a('<meta name="description" content="AI-generated demonstration, not a '
+      'verified record: UCL\'s COVID-19 decisions against national policy '
+      'and its own case data, 2020 to 2022.">')
     a(f'<style>{CSS}</style>')
     a('</head>')
     a('<body>')
     a('<main class="content">')
+    # Before the title, not after it: a caveat below the fold is not a caveat.
+    a('<aside class="warning" role="note" aria-label="Important caveat">')
+    a('<h2>⚠️ AI-generated demonstration, not a verified historical record</h2>')
+    a('<p><strong>Every part of this page was produced by an AI system '
+      'working from the preserved newsletters and the published case data. '
+      'No human has checked it.</strong></p>')
+    a('<p>Some things here are checked mechanically and some are not, and the '
+      'difference matters more than a general disclaimer would suggest. Every '
+      'quotation is verified as an exact substring of the document it cites, '
+      'so the words in the tooltips really do appear in the sources. '
+      '<strong>Everything around them is unverified</strong>: whether the '
+      'right events were selected, whether each has been read correctly, '
+      'whether the dates and categories are right, whether the commentary is '
+      'sound, and whether anything important is missing. The lag figures rest '
+      'on pairings an AI system judged to be causal, and those judgements '
+      'have not been reviewed.</p>')
+    a('<p>Treat this as a <strong>demonstration of what the underlying '
+      'dataset makes possible</strong>, not as a chronology of UCL\'s '
+      'pandemic response to rely on, quote or cite. Anyone wanting to use a '
+      'fact from here should open the newsletter it cites and read it in '
+      'context first.</p>')
+    a('</aside>')
     a('<h1>UCL and the pandemic</h1>')
     a(f'<p class="lede">{len(rows)} dated events between {fmt_date(first)} '
       f'and {fmt_date(last)}: {ucl} decisions UCL took, {nat} national and '
@@ -1144,6 +1266,11 @@ def page(svg, height, payload, rows, cfg, first, last):
       'decisions often landed on a single day, and a mark for each would '
       'overplot into a smear implying a density the record does not support. '
       'The tooltip lists everything that happened on that day.</p>')
+    a('<p><strong>Drag sideways across the chart to zoom into a date '
+      'range.</strong> Only the time axis moves; the case scales stay put, so '
+      'a zoomed view cannot make a rise look steeper than it is. Double-click '
+      'to zoom back out, or use the date boxes, which follow the drag and can '
+      'be typed into directly.</p>')
     a('<p>Shaded bands are the eight pandemic phases, numbered along the top '
       'and drawn in neutral greys. They are regions, not series, and a '
       'categorical hue there would impersonate one.</p>')

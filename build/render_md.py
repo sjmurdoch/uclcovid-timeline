@@ -43,6 +43,15 @@ KIND_LABEL = {'announced': 'announced', 'effective': 'took effect',
 
 DRAFT_MARKER = '**[framing not yet written]**'
 
+WARNING_MD = """> # ⚠️ AI-generated demonstration, not a verified historical record
+>
+> **Every part of this document was produced by an AI system working from the preserved newsletters and the published case data. No human has checked it.**
+>
+> Some things here are checked mechanically and some are not, and the difference matters more than a general disclaimer would suggest. Every quotation is verified as an exact substring of the document it cites, so the words inside blockquotes really do appear in the source. **Everything around them is unverified**: whether the right events were selected, whether each one has been read correctly, whether the categories and dates are right, whether the commentary is sound, and whether anything important is missing. The lag figures depend on pairings an AI system judged to be causal, and those judgements have not been reviewed.
+>
+> Treat this as a **demonstration of what the underlying dataset makes possible**, not as a chronology of UCL's pandemic response to rely on, quote or cite. Anyone wanting to use a fact from here should follow its link to the preserved newsletter and read it in context first.
+"""
+
 
 # ---------------------------------------------------------------- formatting
 
@@ -358,6 +367,7 @@ def render_front_matter(rows, phases, links, out):
     sources = len({r['source_ref'] for r in ucl})
     resolved = sum(1 for l in links if l.resolved)
 
+    out.append(WARNING_MD)
     out.append('# UCL and the pandemic: a chronology')
     out.append('')
     docs = len({r['source_ref'] for r in other})
