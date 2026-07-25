@@ -148,8 +148,11 @@ svg { display:block; width:100%; height:auto; min-width:56rem;
   stroke-linejoin:round; }
 .camden-wash { fill:var(--camden); opacity:.1; stroke:none; }
 .crosshair { stroke:var(--text-secondary); stroke-width:1; pointer-events:none; }
+.crosshair[hidden] { display:none; }
 .brush { fill:var(--link); opacity:.14; stroke:var(--link); stroke-width:1;
   pointer-events:none; }
+.brush.too-narrow { fill:var(--text-secondary); opacity:.07;
+  stroke:var(--text-secondary); }
 .brush[hidden] { display:none; }
 svg.dragging { cursor:ew-resize; }
 .plot-hit { fill:transparent; }
@@ -1214,7 +1217,15 @@ noscript .note { display:block; background:var(--panel);
     return pt.matrixTransform(svg.getScreenCTM().inverse());
   }
 
-  function hide() { tip.hidden = true; cross.hidden = true; }
+  // SVG elements have no `hidden` IDL property, so el.hidden = false only adds
+  // a JS expando and leaves the attribute — and the display:none — in place.
+  // The attribute has to be added and removed by hand.
+  function setHidden(el, on) {
+    if (on) el.setAttribute('hidden', 'hidden');
+    else el.removeAttribute('hidden');
+  }
+
+  function hide() { tip.hidden = true; setHidden(cross, true); }
 
   // --- drag to zoom, x only ------------------------------------------------
   //
@@ -1249,7 +1260,11 @@ noscript .note { display:block; background:var(--panel);
     hide();
     brush.setAttribute('x', Math.min(dragFrom, x).toFixed(1));
     brush.setAttribute('width', Math.abs(x - dragFrom).toFixed(1));
-    brush.hidden = false;
+    // A selection endDrag will refuse is drawn faintly, so the highlight says
+    // what will actually happen rather than promising a zoom that never comes.
+    var d1 = dayAtX(Math.min(dragFrom, x)), d2 = dayAtX(Math.max(dragFrom, x));
+    brush.classList.toggle('too-narrow', d2 - d1 < 7);
+    setHidden(brush, false);
   });
 
   function endDrag(ev) {
@@ -1258,7 +1273,8 @@ noscript .note { display:block; background:var(--panel);
     var wasDragging = dragging;
     var a0 = dragFrom;
     dragFrom = null; dragging = false;
-    brush.hidden = true;
+    setHidden(brush, true);
+    brush.classList.remove('too-narrow');
     svg.classList.remove('dragging');
     try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
     if (!wasDragging) return;
@@ -1297,7 +1313,7 @@ noscript .note { display:block; background:var(--panel);
     if (!best || !inRange(best[0])) { hide(); return; }
     var cx = xOf(best[0]);
     cross.setAttribute('x1', cx); cross.setAttribute('x2', cx);
-    cross.hidden = false;
+    setHidden(cross, false);
 
     tip.replaceChildren();
     var when = new Date(best[0] + 'T00:00:00Z');
