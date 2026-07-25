@@ -31,6 +31,12 @@ IFG_DEC21 = ('https://www.instituteforgovernment.org.uk/sites/default/files/'
              '2022-12/timeline-coronavirus-lockdown-december-2021.pdf')
 DFE_XMAS = ('https://www.gov.uk/government/news/'
             'christmasguidance-set-out-for-university-students')
+# Not in the research synthesis' works-cited list. Stage 1 dated this from a
+# UCL newsletter; reference 7 turned out to give 15 June 2020 as the day
+# non-essential shops reopened, which is true and is a different fact, so the
+# date was withdrawn until it could be evidenced. The statutory instrument
+# settles it.
+SI_FACE_TRANSPORT = 'https://www.legislation.gov.uk/uksi/2020/592/made'
 
 # The scope test from the plan: a national event earns a row when UCL responded
 # to it, when it constrained UCL, or when it explains a visible feature of the
@@ -79,6 +85,22 @@ ROWS = [
                'source rather than UCL\'s wording for it. UCL kept 2 metres for '
                'Term 1 timetable planning, which is the sharpest deliberate '
                'divergence in the whole record.'),
+    dict(date='2020-06-15', kind='effective', track='national', cat='restrictions',
+         headline='Face coverings become mandatory on public transport in England',
+         src=SI_FACE_TRANSPORT, scope='Citation, commencement',
+         scope_end='Interpretation',
+         start='These Regulations come into force',
+         end='come into force on 15th June 2020',
+         detail='The Health Protection (Coronavirus, Wearing of Face '
+                'Coverings on Public Transport) (England) Regulations 2020, '
+                'SI 2020/592.',
+         notes='UCL had required face coverings on campus where distancing '
+               'was not possible from 22 May, twenty-four days before this. '
+               'The date was carried for a while on a UCL newsletter\'s '
+               'authority and then withdrawn, because reference 7 gives 15 '
+               'June as the day non-essential shops reopened and says nothing '
+               'about transport. Both are true of that day; the regulations '
+               'are what establish the second.'),
     dict(date='2020-06-29', kind='announced', track='national', cat='restrictions',
          headline='The first local lockdown is announced for Leicester',
          src=IFG_2021, scope='29 June', scope_end='4 July',

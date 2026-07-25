@@ -1,6 +1,6 @@
 # UCL and the pandemic: a chronology
 
-343 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 21 are the national and sector measures those decisions respond to, taken from 3 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.
+344 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 22 are the national and sector measures those decisions respond to, taken from 4 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.
 
 Every event on the first two tracks carries a verbatim quotation from the document that announced it, and every one of those quotations is checked mechanically against the preserved source before this document is built. Nothing here rests on a recollection of what a source said.
 
@@ -10,11 +10,11 @@ Each entry states what UCL decided, when, and in what words. The date is the dat
 
 The blockquote under each entry is the newsletter's own wording, not a summary of it. The paragraph above it is a plain-language reading of what was decided; the paragraph below it, where there is one, is context or a caveat that the newsletter itself does not supply. Where the two are in tension the quotation is the record and the paragraphs are commentary.
 
-Where a UCL action responds to a national or sector one, the two are shown side by side at the head of the phase with the **lag in days** between them. A negative lag is UCL moving before the national measure, a positive lag is UCL moving after it. 15 of these pairings are measured. A further 5 are declared but not measured, because the national measure has not yet been established from a primary source; they are listed at the end rather than given a number that would look like evidence.
+Where a UCL action responds to a national or sector one, the two are shown side by side at the head of the phase with the **lag in days** between them. A negative lag is UCL moving before the national measure, a positive lag is UCL moving after it. 16 of these pairings are measured. A further 4 are declared but not measured, because the national measure has not yet been established from a primary source; they are listed at the end rather than given a number that would look like evidence.
 
 ## Contents
 
-1. [First wave and the first lockdown](#1-first-wave-and-the-first-lockdown) · 9 March 2020 to 1 July 2020 · 139 events
+1. [First wave and the first lockdown](#1-first-wave-and-the-first-lockdown) · 9 March 2020 to 1 July 2020 · 140 events
 2. [Summer easing](#2-summer-easing) · 4 July 2020 to 26 August 2020 · 40 events
 3. [Autumn resurgence and tiering](#3-autumn-resurgence-and-tiering) · 1 September 2020 to 14 December 2020 · 55 events
 4. [Winter, Alpha and the second closure](#4-winter-alpha-and-the-second-closure) · 19 December 2020 to 8 February 2021 · 13 events
@@ -23,11 +23,11 @@ Where a UCL action responds to a national or sector one, the two are shown side 
 7. [Omicron](#7-omicron) · 30 November 2021 to 18 February 2022 · 17 events
 8. [Living with COVID](#8-living-with-covid) · 21 February 2022 to 11 May 2022 · 7 events
 
-Tracks in this build: 283 UCL, 19 national, 2 sector, 39 data.
+Tracks in this build: 283 UCL, 20 national, 2 sector, 39 data.
 
 ## 1. First wave and the first lockdown
 
-*Phase window 1 January 2020 to 3 July 2020. 139 events and 0 case-data readings, running 9 March 2020 to 1 July 2020.*
+*Phase window 1 January 2020 to 3 July 2020. 140 events and 0 case-data readings, running 9 March 2020 to 1 July 2020.*
 
 UCL's response opens on 9 March 2020 with a mitigation group meeting daily across fifteen strands of activity and a campus still open on Public Health England's advice, and arrives fourteen days later at a national lockdown with the buildings shut and the institution working from home. This is the densest concentration of events in the whole record, carried by a newsletter that appeared almost every weekday. Two of them fix the shape of the lag analysis: face-to-face teaching ceased on 13 March, ten days before the national lockdown, and staff were barred from campus on 24 March, one day after it.
 
@@ -41,6 +41,7 @@ UCL's response opens on 9 March 2020 with a mitigation group meeting daily acros
 | The Prime Minister announces a conditional plan for lifting the lockdown | 10 May 2020 | Gold team has post-lockdown plans ready ahead of the government announcement | 7 May 2020 | -3 days |
 | The Prime Minister announces a conditional plan for lifting the lockdown | 10 May 2020 | Staff asked not to return to campus despite the easing of restrictions | 11 May 2020 | +1 day |
 | Schools in England begin a phased reopening | 1 June 2020 | Campus reopening pilots aligned with the dates schools were due to return | 26 May 2020 | -6 days |
+| Face coverings become mandatory on public transport in England | 15 June 2020 | Face coverings required on campus where distancing is not possible | 22 May 2020 | -24 days |
 
 A negative lag is UCL acting before the national measure, a positive lag is UCL acting after it.
 
@@ -832,7 +833,7 @@ With its own statement on research transparency during the pandemic.
 > UCL has signed The Wellcome Statement on Open Data and issued its own statement to make clear our position on supporting research transparency in the context of the pandemic.
 
 **Face coverings required on campus where distancing is not possible**  
-*22 May 2020 · restrictions · announced* · [issue 50](../home/uclcovid/data/updates/050_22_May__Issue_50_.html)
+*22 May 2020 · restrictions · announced* · [issue 50](../home/uclcovid/data/updates/050_22_May__Issue_50_.html) · lag **-24 days**
 
 Alongside temperature checks, frequent handwashing, a one-way system and increased cleaning.
 
@@ -1031,6 +1032,15 @@ Following the recommendations of the Inquiry into the History of Eugenics at UCL
 > UCL’s President & Provost Professor Michael Arthur has today formally asked the university’s ‘Buildings Naming and Renaming Committee’ immediately to start the process of reviewing the current naming of spaces and buildings after two prominent eugenicists Francis Galton and Karl Pearson.
 
 Not part of UCL's pandemic response, and included only because the pandemic newsletters were the channel that carried it. Filter on category governance if the timeline is read as a pandemic record.
+
+**Face coverings become mandatory on public transport in England**  
+*15 June 2020 · restrictions · took effect* · [source](https://www.legislation.gov.uk/uksi/2020/592/made)
+
+The Health Protection (Coronavirus, Wearing of Face Coverings on Public Transport) (England) Regulations 2020, SI 2020/592.
+
+> These Regulations come into force on 15th June 2020
+
+UCL had required face coverings on campus where distancing was not possible from 22 May, twenty-four days before this. The date was carried for a while on a UCL newsletter's authority and then withdrawn, because reference 7 gives 15 June as the day non-essential shops reopened and says nothing about transport. Both are true of that day; the regulations are what establish the second.
 
 **Connected Learning Essentials staff development course launched**  
 *15 June 2020 · teaching · reported* · [issue 72](../home/uclcovid/data/updates/072_24_June__Issue_72_.html)
@@ -2801,11 +2811,10 @@ The newsletters name the national measures UCL was responding to, and those stat
 |---|---|---|---|
 | The government announces that schools and nurseries in England will close by 20 March | 18 March 2020 | Day Nursery to stay open only for national-interest and essential staff | 19 March 2020 |
 | The Coronavirus Job Retention Scheme sets its conditions on work by furloughed staff | *not yet established* | Furloughed staff barred from any work, including writing up UCL results | 30 April 2020 |
-| Face coverings become mandatory on public transport in England | *not yet established* | Face coverings required on campus where distancing is not possible | 22 May 2020 |
 | The Office for Students sets its expectations for 2020-21 admissions and teaching | *not yet established* | Term 1 plans forced early by the UCAS deadline and OfS expectations | 26 May 2020 |
 | Plan B measures end in England | *not yet established* | Face coverings narrowed to teaching settings only | 21 February 2022 |
 
-4 of these have no provisional date at all. The newsletters make the dependency plain without dating the measure they are responding to, and a date has not been invented for them here.
+3 of these have no provisional date at all. The newsletters make the dependency plain without dating the measure they are responding to, and a date has not been invented for them here.
 
 ## How this document was built
 

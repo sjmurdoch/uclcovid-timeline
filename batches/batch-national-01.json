@@ -75,6 +75,21 @@
     "notes": "The source records a relaxing of the 2 metre rule and does not use the phrase \"one metre plus\"; the headline follows the source rather than UCL's wording for it. UCL kept 2 metres for Term 1 timetable planning, which is the sharpest deliberate divergence in the whole record."
   },
   {
+    "date": "2020-06-15",
+    "date_kind": "effective",
+    "date_precision": "day",
+    "track": "national",
+    "category": "restrictions",
+    "headline": "Face coverings become mandatory on public transport in England",
+    "detail": "The Health Protection (Coronavirus, Wearing of Face Coverings on Public Transport) (England) Regulations 2020, SI 2020/592.",
+    "quote": "These Regulations come into force on 15th June 2020",
+    "source_type": "web",
+    "source_ref": "https://www.legislation.gov.uk/uksi/2020/592/made",
+    "issue": "",
+    "verified": "primary-retrieved",
+    "notes": "UCL had required face coverings on campus where distancing was not possible from 22 May, twenty-four days before this. The date was carried for a while on a UCL newsletter's authority and then withdrawn, because reference 7 gives 15 June as the day non-essential shops reopened and says nothing about transport. Both are true of that day; the regulations are what establish the second."
+  },
+  {
     "date": "2020-06-29",
     "date_kind": "announced",
     "date_precision": "day",

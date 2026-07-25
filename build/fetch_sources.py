@@ -123,7 +123,13 @@ def main():
     src = cfg.path('paths.resources')
     refs = parse_references(src.read_text(encoding='utf-8').splitlines())
 
-    wanted = cfg.get('sources.retrieve') or []
+    # Works-cited references, plus any [[extra_sources]] the ledger needs that
+    # the research synthesis never cited.
+    for extra in cfg.get('extra_sources', []):
+        refs[int(extra['id'])] = {'title': extra['title'], 'url': extra['url']}
+
+    wanted = list(cfg.get('sources.retrieve') or [])
+    wanted += [int(e['id']) for e in cfg.get('extra_sources', [])]
     if args.only:
         wanted = [int(x) for x in args.only.split(',') if x.strip()]
     if not wanted:

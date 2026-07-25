@@ -66,6 +66,17 @@ cache = "data/camden-cases.csv"
 retrieve = [7, 11, 9, 6, 57, 49, 38]
 cache = "sources"
 
+# Primary documents that are not in the research synthesis' works-cited list.
+# Stage 2 seeds from that list, but the list is a secondary source's choice of
+# references and it does not carry everything the ledger needs: the lag
+# pairings turned up national measures the synthesis never dates. These are
+# numbered from 101 so they cannot collide with a reference number, and they
+# are fetched and verified by exactly the same path.
+[[extra_sources]]
+id = 101
+url = "https://www.legislation.gov.uk/uksi/2020/592/made"
+title = "The Health Protection (Coronavirus, Wearing of Face Coverings on Public Transport) (England) Regulations 2020"
+
 [markdown]
 # Where TIMELINE.md points when it cites a newsletter. Relative to the rendered
 # file, so this changes if the timeline ever moves into the archive repository.
@@ -269,8 +280,9 @@ note = "Divergence rather than compliance: the national restrictions eased and U
 
 [[links]]
 ucl = "2020-05-22|Face coverings required on campus where distancing is not possible"
+counterpart = "2020-06-15"
 label = "Face coverings become mandatory on public transport in England"
-note = "Dated 15 June 2020 by a UCL newsletter. Reference 7 gives 15 June as the day non-essential shops reopened and does not carry the transport mandate at all, so the date is withdrawn until a source for it is found."
+note = "Withdrawn once, when reference 7 turned out to give 15 June as the day non-essential shops reopened. Restored on SI 2020/592, which puts the transport requirement into force on the same day."
 
 [[links]]
 ucl = "2020-05-26|Campus reopening pilots aligned with the dates schools were due to return"
