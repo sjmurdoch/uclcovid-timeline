@@ -278,6 +278,30 @@ The three claims stage 1 flagged as relayed by UCL are all **hedged in the row i
 
 Ten rows make an absolute claim. The three that the ledger can adjudicate all hold: newsletter cadence drops twice and rises once, so **"the only time in the record the cadence goes up"** is true; the flu voucher of 28 September 2020 is the only vaccination row in autumn 2020; and of six vaccination rows, only the one of 6 January 2022 attaches an operational consequence to vaccination status.
 
+### Verification pass: two relayed claims settled, one refused, coverage tested properly
+
+**Two of the three claims stage 1 flagged as relayed by UCL now check out**, and both are on the national track with the primary wording.
+
+The ONS finding UCL relayed on 2 June 2020 is supported: 4.2 for Black males and 4.3 for Black females against White males and females, after adjusting for age. UCL's "four times" is a fair reading. The ONS is explicit that adjusting for age alone does not establish cause, and the row says so.
+
+The Rt 1.7 figure is supported by the Academy of Medical Sciences report itself, with a distinction the newsletter loses and the ledger now keeps: **1.7 is an assumption the model was run under** to explore a reasonable worst case, not a forecast of what Rt would be.
+
+**The third could not be verified and stays flagged.** The 37% rise in university cyber-attacks names no source in the newsletter, and the archive's inventory of every link in that issue shows the only security link goes to UCL's own Stay Secure pages. There is no trail to follow. That is the finding, and the row says not to repeat the figure.
+
+**A third pairing settled.** The Commons Library timeline records the Prime Minister announcing the closure of schools for most pupils on 18 March 2020, which takes the Day Nursery pairing to +1 day. **18 of 20 pairings are now measured.** Two remain: the Coronavirus Job Retention Scheme conditions and the OfS expectations, both diffuse rather than dated. Reference 38 turned out to be an OfS briefing about student accommodation, not admissions, so it does not settle the second.
+
+**`fetch_sources.py` now sniffs magic bytes.** The Academy of Medical Sciences serves its report as `text/plain` from an extensionless URL; trusting either the header or the URL would have run a PDF through the HTML tag-stripper and produced convincing rubbish. The retry logic earned its place on the same file, which failed once with an `IncompleteRead`.
+
+### Coverage tested properly, and what that does and does not show
+
+The first coverage test was a keyword scan of uncited newsletters. It establishes the absence of *obvious* misses and nothing more.
+
+`review.py --coverage` is the stronger test. The newsletters are structured into numbered sections, and a section is the unit UCL itself chose as worth telling people about, so the question becomes checkable: is there a section no row covers? Two rules keep it usable. Headings carried by more than five newsletters are standing content and dropped, the same rule `digest.py` applies to paragraphs. And a section is matched against rows within a week either side rather than only its own issue, because the newsletters restate decisions constantly.
+
+It flags **138 sections across 84 newsletters**. Eight were checked by hand: six are matching artefacts where the ledger plainly covers the section, and two genuinely have no row — a housekeeping note about email signatures, and a call for volunteers to translate guidance that the newsletter describes as "currently exploring whether there is a demand". Both correctly earn no row under the inclusion test, which asks for a decision, a change of state or a dated commitment.
+
+**So: no misses found.** Eight of 138 were examined, not all 138. The remaining 130 are a shortlist a reader can work down, not a verdict, and the check is in the build so it can be re-run.
+
 ### Coverage re-checked, and the page reworked
 
 **Traceability.** `review.py` reports none: every figure in the commentary is traceable to a newsletter or a cached primary source. The two corrections it forced are recorded above.
@@ -308,7 +332,7 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 
 **Built and working:** `timeline.toml` and `config.py` (TOML with `UCLTL_*` environment and `--set` CLI overrides, precedence verified); `extract_text.py`; `digest.py`; `validate.py`; `add_rows.py`; `data_events.py`; `fetch_camden.py`; `camden_events.py`; `render_md.py` and `test_render_md.py`; `seed_national.py`; `fetch_sources.py`; `make_national_batch.py`; `render_html.py`; `review.py`.
 
-**The ledger:** `timeline.csv`, **345 rows, 0 errors, 0 warnings** — 283 `ucl` rows with every quotation verified as an exact substring of its source newsletter, 23 `national` and `sector` rows with every quotation verified against a cached primary document, and 39 `data` rows all marked `computed`.
+**The ledger:** `timeline.csv`, **348 rows, 0 errors, 0 warnings** — 283 `ucl` rows with every quotation verified as an exact substring of its source newsletter, 26 `national` and `sector` rows with every quotation verified against a cached primary document, and 39 `data` rows all marked `computed`.
 
 **The chronology:** `TIMELINE.md`, generated, 200 KB, with 15 measured lag pairings.
 
@@ -317,7 +341,7 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 **To resume, from `timeline/`:**
 
 ```bash
-python3 build/validate.py          # should report 345 rows, 0 errors
+python3 build/validate.py          # should report 348 rows, 0 errors
 python3 build/test_render_md.py    # 31 checks, all passing
 python3 build/render_md.py         # rebuilds TIMELINE.md from the ledger
 python3 build/render_html.py       # rebuilds timeline.html from the ledger

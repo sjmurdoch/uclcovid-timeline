@@ -186,6 +186,8 @@ def main():
     def opts(ap):
         ap.add_argument('--kind', default='',
                         help='show only one kind of claim')
+        ap.add_argument('--coverage', action='store_true',
+                        help='list newsletter sections no row covers')
         ap.add_argument('--full', action='store_true',
                         help='print the whole note, not the first 150 chars')
     cfg, args = config.load(extra_args=opts)
@@ -218,6 +220,15 @@ def main():
         print(f'    {prose if args.full else prose[:150]}')
         print()
 
+    if args.coverage:
+        gaps = check_sections(rows, cfg)
+        print('=== newsletter sections no row from that issue covers ===')
+        print(f'  {len(gaps)} sections across '
+              f'{len({g[0] for g in gaps})} newsletters\n')
+        for ref, head, n in gaps:
+            print(f'  {ref[:44]:46s} ({n} rows)  {head}')
+        return 0
+
     orphans = check_corpus_figures(rows, cfg)
     print('=== figures appearing in no newsletter and no cached source ===')
     if not orphans:
@@ -226,6 +237,114 @@ def main():
     for r, missing in orphans:
         print(f'  {r["date"]} {r["track"]} · {r["headline"][:58]} — {missing}')
     return 1 if orphans else 0
+
+
+
+
+# --- coverage -------------------------------------------------------------
+#
+# The first coverage test was a keyword scan of the uncited newsletters for
+# decision-signalling language. It establishes the absence of *obvious* misses
+# and nothing more: a decision phrased without those markers goes straight
+# through. This is the stronger test.
+#
+# The newsletters are structured. Each carries a numbered list of sections, and
+# a section is the unit UCL itself chose to treat as a thing worth telling
+# people about. So the question "did we miss anything?" becomes checkable: for
+# every newsletter that has rows, is there a section whose subject matter no
+# row from that newsletter touches? That does not prove a section deserved a
+# row — most do not, being standing wellbeing content — but it turns 168 files
+# into a list a person can read down.
+
+SECTION = re.compile(r'(?:^|\s)(\d{1,2})\.\s+([A-Z][^.]{6,70}?)(?=\s+[A-Z]|\s\d{1,2}\.)')
+
+STOP = set('the a an and or of for to in on at with from by is are was were be '
+           'been will would can could our your their his her its this that '
+           'these those new more all any as it we you they ucl update updates '
+           'coronavirus covid covid-19 support advice information'.split())
+
+
+def stem(w):
+    """Crude suffix stripping. "Building closures" and "buildings ... close"
+    are the same subject, and comparing them as raw tokens said otherwise."""
+    for suf in ('ations', 'ation', 'ings', 'ing', 'ies', 'ed', 'es', 's'):
+        if w.endswith(suf) and len(w) - len(suf) >= 4:
+            return w[:-len(suf)]
+    return w
+
+
+def words(text):
+    return {stem(w) for w in re.findall(r'[a-z]{4,}', (text or '').lower())
+            if w not in STOP}
+
+
+def check_sections(rows, cfg):
+    """Sections of cited newsletters that nothing in the ledger covers.
+
+    Two things keep this usable rather than a wall of 511 false positives.
+
+    **Recurring headings are standing content, not decisions.** "Support
+    available for staff and students" appears in scores of issues; the
+    inclusion test has always said recurring guidance earns no row and only
+    the first appearance of a thread does. A heading carried by more than five
+    newsletters is therefore dropped, the same rule digest.py applies to
+    paragraphs.
+
+    **A decision is often restated in the next issue.** Matching a section only
+    against rows sourced to its own newsletter flags every restatement as a
+    gap. Rows within a week either side are considered instead, which is the
+    window in which the newsletters repeat themselves.
+    """
+    from datetime import date, timedelta
+    textdir = cfg.path('paths.text')
+    index = {}
+    idx_path = textdir / 'index.csv'
+    if idx_path.exists():
+        with open(idx_path, newline='', encoding='utf-8') as fh:
+            index = {r['basename']: r['body_date'] for r in csv.DictReader(fh)}
+
+    # Rows keyed by date, so a section can be matched against the week around
+    # the newsletter that carried it.
+    by_day = {}
+    for r in rows:
+        by_day.setdefault(r['date'], []).append(
+            words(f'{r["headline"]} {r.get("detail", "")} '
+                  f'{r.get("notes", "")} {r.get("quote", "")}'))
+
+    # First pass: how many newsletters carry each heading?
+    seen_in = {}
+    per_file = {}
+    for p2 in sorted(textdir.glob('*.txt')):
+        text = normalise(p2.read_text(encoding='utf-8'))
+        heads = []
+        for _, head in SECTION.findall(text):
+            head = head.strip()
+            if head and head.lower() not in {h.lower() for h in heads}:
+                heads.append(head)
+        per_file[p2.stem + '.html'] = heads
+        for h in heads:
+            seen_in[h.lower()] = seen_in.get(h.lower(), 0) + 1
+
+    cited = {r['source_ref'] for r in rows if r.get('source_type') == 'newsletter'}
+    out = []
+    for ref in sorted(cited):
+        iso = index.get(ref)
+        if not iso:
+            continue
+        d0 = date.fromisoformat(iso)
+        near = []
+        for off in range(-7, 8):
+            near.extend(by_day.get((d0 + timedelta(days=off)).isoformat(), []))
+        for head in per_file.get(ref, []):
+            if seen_in.get(head.lower(), 0) > 5:
+                continue                      # standing content
+            hw = words(head)
+            if len(hw) < 2:
+                continue                      # too thin to judge
+            if any(len(hw & c) >= 2 for c in near):
+                continue
+            out.append((ref, head, len(near)))
+    return out
 
 
 if __name__ == '__main__':
