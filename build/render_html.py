@@ -243,6 +243,8 @@ def build(rows, cfg):
     # the boundaries are solid because a dashed region reads as a projection.
     phases = cfg.phases()
     band_top, band_bot = lanes_top - 6, cam_top + CAM_H + 6
+    phase_spans = []
+    c.add('<g id="bands">')
     for i, p in enumerate(phases):
         start = date.fromisoformat(str(p['start']))
         nxt = (date.fromisoformat(str(phases[i + 1]['start']))
@@ -263,10 +265,16 @@ def build(rows, cfg):
             c.rect(x0, band_top - 20, min(x1 - x0, 90), 18, 'phase-hit')
             c.text(x0 + 5, band_top - 8, f'{i + 1}', 'phase-num')
             c.add('</g>')
+        phase_spans.append({'n': i + 1, 'name': p['name'],
+                            'start': max(start, first).isoformat(),
+                            'end': min(nxt, last).isoformat(),
+                            'shade': i % 2 == 0})
+    c.add('</g>')
 
     # --- x axis, shared by every panel. Drawn once at the foot.
     axis_y = cam_top + CAM_H
     c.line(PAD_L, axis_y, W - PAD_R, axis_y, 'axis')
+    c.add('<g id="xticks">')
     y, drawn = first.year, 0
     while y <= last.year:
         for m in (1, 4, 7, 10):
@@ -283,6 +291,7 @@ def build(rows, cfg):
             c.text(tx, axis_y + 16, label, 'tick', 'text-anchor="middle"')
             drawn += 1
         y += 1
+    c.add('</g>')
 
     # --- event lanes
     by_track_day = {}
@@ -325,8 +334,9 @@ def build(rows, cfg):
             # the whole lane rather than per-mark hit rectangles, which at 7px
             # spacing would overlap each other anyway. Every mark stays in the
             # DOM and stays focusable, so the keyboard path is unaffected.
+            cats = ','.join(sorted({g['category'] for g in group}))
             extra = (f'data-i="{idx}" data-track="{track}" data-x="{cx:.1f}" '
-                     f'tabindex="0" role="button" '
+                     f'data-cats="{esc(cats)}" tabindex="0" role="button" '
                      f'aria-label="{esc(fmt_date(d))}, {len(group)} '
                      f'event{"s" if len(group) != 1 else ""} on the '
                      f'{esc(label)} track"')
@@ -426,6 +436,14 @@ def build(rows, cfg):
         'camden': [[d.isoformat(), v] for d, v in camden],
         'marks': marks,
         'tracks': [{'key': k, 'label': l} for k, l in TRACKS],
+        'cats': sorted({r['category'] for r in rows if r['track'] != 'data'}),
+        'phases': phase_spans,
+        'axisY': axis_y, 'bandTop': band_top, 'bandBot': band_bot,
+        'tickW': TICK_W,
+        'peak': ({'date': peak_d.isoformat(), 'value': peak_v}
+                 if peak_d else None),
+        'lanes': {t: lanes_top + i * LANE_H + LANE_H / 2
+                  for i, (t, _) in enumerate(TRACKS)},
     }
     return str(c), height, payload, first, last
 
@@ -499,7 +517,15 @@ a { color:var(--link); }
 .filters input { accent-color:var(--link); width:15px; height:15px; }
 .swatch { width:22px; height:3px; border-radius:2px; display:inline-block; }
 .range { display:flex; align-items:center; gap:.4rem; }
-.range input { font:inherit; padding:.15rem .3rem; min-height:24px;
+/* A date input with no width collapses to a sliver in a flex row and shows
+   nothing at all, which is what "the date selectors don't show a date"
+   turned out to mean: the value was set, the field was too narrow to
+   render it. */
+.range input[type="date"] { font:inherit; padding:.15rem .35rem;
+  min-height:24px; min-width:9.5rem; flex:none;
+  background:var(--bg); color:var(--ink); border:1px solid var(--rule);
+  border-radius:3px; }
+#theme { font:inherit; font-size:.85rem; min-height:24px; padding:.15rem .3rem;
   background:var(--bg); color:var(--ink); border:1px solid var(--rule);
   border-radius:3px; }
 button.reset { font:inherit; font-size:.85rem; padding:.2rem .6rem;
@@ -593,13 +619,34 @@ JS = r"""
   D.series.forEach(function (s) { visible[s.key] = s.on; });
   var trackOn = {};
   D.tracks.forEach(function (t) { trackOn[t.key] = true; });
-  var from = null, to = null;
+  var catOn = {};
+  D.cats.forEach(function (c) { catOn[c] = true; });
 
   var first = new Date(D.first + 'T00:00:00Z');
   function dayOf(iso) {
     return Math.round((new Date(iso + 'T00:00:00Z') - first) / 86400000);
   }
-  function xOf(iso) { return D.padL + D.inner * (dayOf(iso) / D.span); }
+  function isoOf(day) {
+    return new Date(first.getTime() + day * 86400000).toISOString().slice(0, 10);
+  }
+  // The visible domain, in days from the first event. Changing the date
+  // inputs moves these, and everything positioned in time is laid out again
+  // against them. Filtering marks without moving the axis was the bug: the
+  // reader narrowed the range and the chart stayed the same width with gaps
+  // in it, which is not what a date range is for.
+  var dom = {a: 0, b: D.span};
+  function xOf(iso) { return xOfDay(dayOf(iso)); }
+  function xOfDay(day) {
+    return D.padL + D.inner * ((day - dom.a) / (dom.b - dom.a));
+  }
+  function inDom(day) { return day >= dom.a && day <= dom.b; }
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  function svgEl(tag, attrs) {
+    var n = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    return n;
+  }
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
   // Every string below originates in scraped UCL email or a fetched PDF.
   // It reaches the DOM through textContent only. Nothing is concatenated
@@ -611,10 +658,152 @@ JS = r"""
     return n;
   }
 
-  function inRange(iso) {
-    if (from && iso < from) return false;
-    if (to && iso > to) return false;
-    return true;
+  function inRange(iso) { return inDom(dayOf(iso)); }
+
+  // Everything positioned in time, redrawn for the current domain.
+  function layout() {
+    // 1. series lines
+    D.series.forEach(function (s, si) {
+      var p = svg.querySelector('path[data-series="' + s.key + '"]');
+      if (!p) return;
+      var d = '', started = false;
+      D.cases.forEach(function (row) {
+        var day = dayOf(row[0]), v = row[si + 1];
+        if (v === null || !inDom(day)) { started = false; return; }
+        var x = xOfDay(day);
+        var y = D.uclTop + D.uclH - (v / D.topVal) * D.uclH;
+        d += (started ? ' L' : 'M') + x.toFixed(1) + ',' + y.toFixed(1);
+        started = true;
+      });
+      p.setAttribute('d', d || 'M0,0');
+    });
+    // 2. Camden line and its wash
+    var line = svg.querySelector('.camden-line');
+    var wash = svg.querySelector('.camden-wash');
+    if (line) {
+      var pts = [];
+      D.camden.forEach(function (row) {
+        var day = dayOf(row[0]);
+        if (!inDom(day)) return;
+        pts.push([xOfDay(day),
+          D.camTop + D.camH - (row[1] / D.camTop_val) * D.camH]);
+      });
+      var dd = pts.map(function (q, i) {
+        return (i ? ' L' : 'M') + q[0].toFixed(1) + ',' + q[1].toFixed(1);
+      }).join('');
+      line.setAttribute('d', dd || 'M0,0');
+      if (wash && pts.length) {
+        var base = (D.camTop + D.camH).toFixed(1);
+        wash.setAttribute('d', 'M' + pts[0][0].toFixed(1) + ',' + base +
+          ' L' + dd.slice(1) + ' L' + pts[pts.length - 1][0].toFixed(1) +
+          ',' + base + ' Z');
+      } else if (wash) { wash.setAttribute('d', 'M0,0'); }
+    }
+    // 3. event marks
+    Array.prototype.forEach.call(svg.querySelectorAll('.mark'), function (g) {
+      var m = D.marks[+g.getAttribute('data-i')];
+      var day = dayOf(m.date);
+      var cats = (g.getAttribute('data-cats') || '').split(',');
+      var catShown = cats.some(function (c) { return catOn[c]; });
+      var show = trackOn[m.track] && catShown && inDom(day);
+      var x = xOfDay(day);
+      g.setAttribute('data-x', x.toFixed(1));
+      var r = g.querySelector('rect');
+      if (r) r.setAttribute('x', (x - D.tickW / 2).toFixed(1));
+      if (show) { g.removeAttribute('hidden'); g.setAttribute('tabindex', '0'); }
+      else { g.setAttribute('hidden', 'hidden'); g.setAttribute('tabindex', '-1'); }
+    });
+    // 4. phase bands
+    var bands = document.getElementById('bands');
+    if (bands) {
+      bands.replaceChildren();
+      D.phases.forEach(function (ph) {
+        var a = Math.max(dayOf(ph.start), dom.a);
+        var b = Math.min(dayOf(ph.end), dom.b);
+        if (b <= a) return;
+        var x0 = xOfDay(a), x1 = xOfDay(b);
+        if (ph.shade) bands.appendChild(svgEl('rect', {
+          x: x0.toFixed(1), y: D.bandTop, width: (x1 - x0).toFixed(1),
+          height: D.bandBot - D.bandTop, 'class': 'band'}));
+        if (dayOf(ph.start) > dom.a) bands.appendChild(svgEl('line', {
+          x1: x0.toFixed(1), y1: D.bandTop, x2: x0.toFixed(1),
+          y2: D.bandBot, 'class': 'band-edge'}));
+        if (x1 - x0 > 54) {
+          var g = svgEl('g', {'class': 'phase-tag'});
+          var ti = document.createElementNS(SVGNS, 'title');
+          ti.textContent = 'Phase ' + ph.n + ': ' + ph.name;
+          g.appendChild(ti);
+          g.appendChild(svgEl('rect', {x: x0.toFixed(1), y: D.bandTop - 20,
+            width: Math.min(x1 - x0, 90).toFixed(1), height: 18,
+            'class': 'phase-hit'}));
+          var tx = svgEl('text', {x: (x0 + 5).toFixed(1), y: D.bandTop - 8,
+            'class': 'phase-num'});
+          tx.textContent = String(ph.n);
+          g.appendChild(tx);
+          bands.appendChild(g);
+        }
+      });
+    }
+    // 5. x-axis ticks, at a spacing that suits the visible span
+    var xt = document.getElementById('xticks');
+    if (xt) {
+      xt.replaceChildren();
+      var days = dom.b - dom.a;
+      var step = days > 540 ? 3 : days > 150 ? 1 : 0;   // months, 0 = weekly
+      var marksAt = [];
+      if (step === 0) {
+        for (var dd2 = Math.ceil(dom.a / 7) * 7; dd2 <= dom.b; dd2 += 7)
+          marksAt.push(dd2);
+      } else {
+        var s0 = new Date(first.getTime() + dom.a * 86400000);
+        var yy = s0.getUTCFullYear(), mm = s0.getUTCMonth();
+        for (var i = 0; i < 200; i++) {
+          var dt = Date.UTC(yy, mm, 1);
+          var day = Math.round((dt - first.getTime()) / 86400000);
+          if (day > dom.b) break;
+          if (day >= dom.a && mm % step === 0) marksAt.push(day);
+          mm += 1; if (mm > 11) { mm = 0; yy += 1; }
+        }
+      }
+      var lastYear = null;
+      marksAt.forEach(function (day, i) {
+        var x = xOfDay(day);
+        xt.appendChild(svgEl('line', {x1: x.toFixed(1), y1: D.axisY,
+          x2: x.toFixed(1), y2: D.axisY + 4, 'class': 'axis'}));
+        var dt = new Date(first.getTime() + day * 86400000);
+        var lab = MON[dt.getUTCMonth()];
+        if (step === 0) lab = dt.getUTCDate() + ' ' + lab;
+        // The year appears on the first tick and whenever it changes, not on
+        // every January tick: at weekly spacing that repeated "Jan 2022" four
+        // times in a row.
+        if (i === 0 || dt.getUTCFullYear() !== lastYear) {
+          lab += ' ' + dt.getUTCFullYear();
+          lastYear = dt.getUTCFullYear();
+        }
+        var tx = svgEl('text', {x: x.toFixed(1), y: D.axisY + 16,
+          'class': 'tick', 'text-anchor': 'middle'});
+        tx.textContent = lab;
+        xt.appendChild(tx);
+      });
+    }
+    // 6. the one direct label
+    var call = svg.querySelector('.callout');
+    if (call && D.peak) {
+      var pday = dayOf(D.peak.date);
+      var show = visible['student7.on'] && inDom(pday);
+      if (show) {
+        var px = xOfDay(pday);
+        var py = D.uclTop + D.uclH - (D.peak.value / D.topVal) * D.uclH;
+        var ln = call.querySelector('line'), tx2 = call.querySelector('text');
+        if (ln) { ln.setAttribute('x1', (px - 6).toFixed(1));
+                  ln.setAttribute('x2', (px - 16).toFixed(1));
+                  ln.setAttribute('y1', py.toFixed(1));
+                  ln.setAttribute('y2', py.toFixed(1)); }
+        if (tx2) { tx2.setAttribute('x', (px - 21).toFixed(1));
+                   tx2.setAttribute('y', (py + 4).toFixed(1)); }
+        call.removeAttribute('hidden');
+      } else { call.setAttribute('hidden', 'hidden'); }
+    }
   }
 
   function applyFilters() {
@@ -623,21 +812,11 @@ JS = r"""
       if (p) { if (visible[s.key]) p.removeAttribute('hidden');
                else p.setAttribute('hidden', 'hidden'); }
     });
-    var call = svg.querySelector('.callout');
-    if (call) {
-      if (visible['student7.on']) call.removeAttribute('hidden');
-      else call.setAttribute('hidden', 'hidden');
-    }
-    Array.prototype.forEach.call(svg.querySelectorAll('.mark'), function (g) {
-      var m = D.marks[+g.getAttribute('data-i')];
-      var show = trackOn[m.track] && inRange(m.date);
-      if (show) { g.removeAttribute('hidden'); g.setAttribute('tabindex', '0'); }
-      else { g.setAttribute('hidden', 'hidden'); g.setAttribute('tabindex', '-1'); }
-    });
     Array.prototype.forEach.call(
       document.querySelectorAll('.legend span[data-key]'), function (s) {
         s.classList.toggle('off', !visible[s.getAttribute('data-key')]);
       });
+    layout();
   }
 
   function place(x, y) {
@@ -727,7 +906,7 @@ JS = r"""
   plot.addEventListener('pointermove', function (ev) {
     var loc = toSvg(ev);
     var frac = (loc.x - D.padL) / D.inner;
-    var day = frac * D.span;
+    var day = dom.a + frac * (dom.b - dom.a);
     var best = null, bestD = Infinity;
     D.cases.forEach(function (row) {
       var dd = Math.abs(dayOf(row[0]) - day);
@@ -784,23 +963,76 @@ JS = r"""
       applyFilters();
     });
   });
+  document.querySelectorAll('input[data-cat]').forEach(function (box) {
+    box.addEventListener('change', function () {
+      catOn[box.getAttribute('data-cat')] = box.checked;
+      syncAllCats();
+      layout();
+    });
+  });
+  var allCats = document.getElementById('allcats');
+  function syncAllCats() {
+    var boxes = document.querySelectorAll('input[data-cat]');
+    var on = 0;
+    boxes.forEach(function (b) { if (b.checked) on++; });
+    allCats.checked = on === boxes.length;
+    allCats.indeterminate = on > 0 && on < boxes.length;
+  }
+  allCats.addEventListener('change', function () {
+    document.querySelectorAll('input[data-cat]').forEach(function (b) {
+      b.checked = allCats.checked;
+      catOn[b.getAttribute('data-cat')] = allCats.checked;
+    });
+    allCats.indeterminate = false;
+    layout();
+  });
+
   var f = document.getElementById('from'), t = document.getElementById('to');
   function onRange() {
-    from = f.value || null; to = t.value || null;
-    applyFilters();
+    var a = f.value ? dayOf(f.value) : 0;
+    var b = t.value ? dayOf(t.value) : D.span;
+    // A domain needs width. Refuse to inflame the axis rather than dividing
+    // by zero, and put the inputs back to what is actually being shown.
+    if (b - a < 7) { f.value = isoOf(dom.a); t.value = isoOf(dom.b); return; }
+    dom.a = Math.max(0, a); dom.b = Math.min(D.span, b);
+    hide();
+    layout();
   }
   f.addEventListener('change', onRange);
   t.addEventListener('change', onRange);
+
+  // Theme. The CSS already declares the dark values under both the media
+  // query and a [data-theme] scope, with the media block guarded so an
+  // explicit light stamp beats an OS set to dark; until now nothing ever set
+  // the attribute, so the page could only follow the system.
+  var themeSel = document.getElementById('theme');
+  function applyTheme(v) {
+    if (v === 'auto') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', v);
+    try { localStorage.setItem('uclcovid-theme', v); } catch (e) {}
+  }
+  var savedTheme = 'auto';
+  try { savedTheme = localStorage.getItem('uclcovid-theme') || 'auto'; } catch (e) {}
+  themeSel.value = savedTheme;
+  applyTheme(savedTheme);
+  themeSel.addEventListener('change', function () { applyTheme(themeSel.value); });
+
   document.getElementById('reset').addEventListener('click', function () {
-    f.value = ''; t.value = ''; from = to = null;
+    f.value = D.first; t.value = isoOf(D.span);
+    dom.a = 0; dom.b = D.span;
     document.querySelectorAll('input[data-track]').forEach(function (b) {
       b.checked = true; trackOn[b.getAttribute('data-track')] = true;
     });
+    document.querySelectorAll('input[data-cat]').forEach(function (b) {
+      b.checked = true; catOn[b.getAttribute('data-cat')] = true;
+    });
+    allCats.checked = true; allCats.indeterminate = false;
     document.querySelectorAll('input[data-series]').forEach(function (b) {
       var k = b.getAttribute('data-series');
       var def = D.series.filter(function (s) { return s.key === k; })[0].on;
       b.checked = def; visible[k] = def;
     });
+    hide();
     applyFilters();
   });
 
@@ -861,12 +1093,27 @@ def page(svg, height, payload, rows, cfg, first, last):
           f'<span class="swatch" style="background:var(--series-{s["slot"]})">'
           f'</span> {esc(s["label"])}</label>')
     a('</fieldset>')
+    # The date inputs open showing the full span rather than an empty
+    # dd/mm/yyyy, so the reader can see what range they are narrowing from.
     a('<fieldset><legend>Dates</legend><span class="range">'
       f'<label for="from">from</label><input type="date" id="from" '
+      f'value="{first.isoformat()}" '
       f'min="{first.isoformat()}" max="{last.isoformat()}">'
       f'<label for="to">to</label><input type="date" id="to" '
+      f'value="{last.isoformat()}" '
       f'min="{first.isoformat()}" max="{last.isoformat()}">'
       '</span></fieldset>')
+    a('<fieldset><legend>Categories</legend>'
+      '<label><input type="checkbox" id="allcats" checked> '
+      '<em>all</em></label>')
+    for cat in payload['cats']:
+        a(f'<label><input type="checkbox" data-cat="{esc(cat)}" checked> '
+          f'{esc(cat)}</label>')
+    a('</fieldset>')
+    a('<fieldset><legend>Theme</legend>'
+      '<select id="theme"><option value="auto">match system</option>'
+      '<option value="light">light</option>'
+      '<option value="dark">dark</option></select></fieldset>')
     a('<button type="button" class="reset" id="reset">Reset</button>')
     a('</form>')
 
