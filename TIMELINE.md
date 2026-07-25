@@ -57,7 +57,7 @@ A negative lag is UCL acting before the national measure, a positive lag is UCL 
 ### March 2020
 
 **A mitigation working group meets daily across fifteen strands of activity**  
-*9 March 2020 · governance · reported* · [issue 1](../home/uclcovid/data/updates/000_9_March__Issue_1_.html)
+*9 March 2020 · governance · reported* · [issue 1](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/000_9_March__Issue_1_.html)
 
 Deans, heads of department, senior management and Students' Union UCL, meeting daily, with Education Committee weekly.
 
@@ -66,7 +66,7 @@ Deans, heads of department, senior management and Students' Union UCL, meeting d
 The fifteen strands are the earliest statement of what UCL thought was at risk. Issue 2 records the group meeting daily and Education Committee weekly.
 
 **Campus remains open on Public Health England advice**  
-*9 March 2020 · restrictions · reported* · [issue 1](../home/uclcovid/data/updates/000_9_March__Issue_1_.html)
+*9 March 2020 · restrictions · reported* · [issue 1](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/000_9_March__Issue_1_.html)
 
 UCL's opening position: follow PHE, NHS and FCO advice rather than act independently.
 
@@ -75,7 +75,7 @@ UCL's opening position: follow PHE, NHS and FCO advice rather than act independe
 The baseline against which every later closure is measured. Four days later face-to-face teaching ceased.
 
 **UCL begins a daily coronavirus update for staff**  
-*9 March 2020 · governance · reported* · [issue 1](../home/uclcovid/data/updates/000_9_March__Issue_1_.html)
+*9 March 2020 · governance · reported* · [issue 1](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/000_9_March__Issue_1_.html)
 
 The first of what became 165 numbered issues, running to 4 May 2022. The stated reason is that the situation was changing faster than the FAQ page could carry.
 
@@ -84,21 +84,21 @@ The first of what became 165 numbered issues, running to 4 May 2022. The stated 
 The newsletter series begins seven months before the case statistics, which start 2020-10-09. The timeline's first act has no data track.
 
 **Students who choose not to attend teaching will not be penalised**  
-*10 March 2020 · teaching · announced* · [issue 2](../home/uclcovid/data/updates/001_10_March__Issue_2_.html)
+*10 March 2020 · teaching · announced* · [issue 2](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/001_10_March__Issue_2_.html)
 
 Teaching continued in person, but attendance stopped being compulsory. The first crack in normal operation.
 
 > UCL will not penalise any students who choose not to attend teaching events
 
 **UCL advises against all international UCL trips**  
-*10 March 2020 · restrictions · announced* · [issue 2](../home/uclcovid/data/updates/001_10_March__Issue_2_.html)
+*10 March 2020 · restrictions · announced* · [issue 2](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/001_10_March__Issue_2_.html)
 
 Applied in both directions and to contractors and visitors as well as staff and students.
 
 > UCL is advising against all international UCL trips for staff, undergraduate students, contractors and visitors, in-bound and out-bound
 
 **International travel on UCL business halted until 1 May**  
-*11 March 2020 · restrictions · took effect* · [issue 3](../home/uclcovid/data/updates/002_11_March__Issue_3_.html)
+*11 March 2020 · restrictions · took effect* · [issue 3](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/002_11_March__Issue_3_.html)
 
 Advice of the previous day hardened into an instruction, with delegations cancelled and incoming visitors postponed.
 
@@ -107,7 +107,7 @@ Advice of the previous day hardened into an instruction, with delegations cancel
 Same day the WHO declared a pandemic. Whether UCL was responding to that is not stated in the newsletter and should not be asserted.
 
 **First confirmed coronavirus case in the UCL community**  
-*12 March 2020 · epidemiology · observed* · [issue 5](../home/uclcovid/data/updates/005_13_March__Issue_5_.html)
+*12 March 2020 · epidemiology · observed* · [issue 5](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/005_13_March__Issue_5_.html)
 
 A student, reported to staff on 12 March and referred back to in issue 5 the following day.
 
@@ -116,14 +116,14 @@ A student, reported to staff on 12 March and referred back to in issue 5 the fol
 Filed on 12 March, the date of the event, though the source is the newsletter of 13 March. Seven months before the case statistics begin, so this case appears in no dataset.
 
 **Study Abroad and affiliate students formally recalled**  
-*12 March 2020 · teaching · announced* · [issue 4](../home/uclcovid/data/updates/003_12_March__Issue_4_.html)
+*12 March 2020 · teaching · announced* · [issue 4](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/003_12_March__Issue_4_.html)
 
 Students already overseas were asked to return to the UK or their home country; those about to depart were told not to go.
 
 > the university is formally recalling students who are taking part in Study Abroad, Double or Dual degree, or international Affiliate programmes
 
 **UCL-managed halls to stay open all year even if UCL closes**  
-*12 March 2020 · accommodation · announced* · [issue 4](../home/uclcovid/data/updates/003_12_March__Issue_4_.html)
+*12 March 2020 · accommodation · announced* · [issue 4](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/003_12_March__Issue_4_.html)
 
 An early and load-bearing commitment: accommodation was decoupled from campus operation from the outset.
 
@@ -132,28 +132,28 @@ An early and load-bearing commitment: accommodation was decoupled from campus op
 Held to. Eight days later students were urged to leave, but the halls stayed open for those with nowhere to go.
 
 **Walk-in service at the partner GP surgery suspended**  
-*12 March 2020 · wellbeing · took effect* · [issue 4](../home/uclcovid/data/updates/003_12_March__Issue_4_.html)
+*12 March 2020 · wellbeing · took effect* · [issue 4](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/003_12_March__Issue_4_.html)
 
 Ridgmount Practice moved to telephone triage on PHE advice.
 
 > the walk-in service at Ridgmount Practice (UCL's partner GP surgery) is suspended until further notice
 
 **All term 3 teaching to be delivered online via Moodle**  
-*13 March 2020 · teaching · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](../home/uclcovid/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
+*13 March 2020 · teaching · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
 
 Decided in March for a term beginning in April, so UCL had committed to a remote summer term before the first lockdown began.
 
 > All teaching in term 3 will be delivered online via Moodle as far as possible.
 
 **Alternative assessment replaces exams for taught students**  
-*13 March 2020 · assessment · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](../home/uclcovid/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
+*13 March 2020 · assessment · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
 
 Open-book assessment and coursework, so that students could complete the year away from campus.
 
 > Alternative forms of assessment will be put in place for all other taught students, such as open book assessments and further coursework, to enable students to complete assessments away from the university.
 
 **Clinical academics released to support the NHS**  
-*13 March 2020 · civic · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](../home/uclcovid/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
+*13 March 2020 · civic · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
 
 A standing release rather than a case-by-case one, and the first of UCL's civic contributions in the record.
 
@@ -162,7 +162,7 @@ A standing release rather than a case-by-case one, and the first of UCL's civic 
 Category civic, so that the civic contributions can be filtered out of the lag analysis. See TIMELINE-PLAN.md open question 3.
 
 **Face-to-face teaching ceases; teaching moves online from 16 March**  
-*13 March 2020 · teaching · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](../home/uclcovid/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html) · lag **-10 days**
+*13 March 2020 · teaching · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html) · lag **-10 days**
 
 Approved by Academic Committee on 13 March and announced the same day in both the Provost's View and issue 5.
 
@@ -171,7 +171,7 @@ Approved by Academic Committee on 13 March and announced the same day in both th
 Ten days before the national lockdown of 23 March 2020, and the clearest case in the record of UCL acting ahead of national policy. The lag is negative. Also carried verbatim in issue 5 the same day.
 
 **Formal assessment for first-year undergraduates to be reduced**  
-*13 March 2020 · assessment · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](../home/uclcovid/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
+*13 March 2020 · assessment · announced* · [004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/004_Provost_s_View__13_March__UCL_s_response_to_the_coronavirus_outbreak.html)
 
 Framed as reducing the burden on staff rather than on students.
 
@@ -180,7 +180,7 @@ Framed as reducing the burden on staff rather than on students.
 Hardened a week later into outright cancellation and a pass/fail capstone.
 
 **Second confirmed case at UCL, a contractor's employee**  
-*13 March 2020 · epidemiology · observed* · [issue 5](../home/uclcovid/data/updates/005_13_March__Issue_5_.html)
+*13 March 2020 · epidemiology · observed* · [issue 5](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/005_13_March__Issue_5_.html)
 
 Reported the day after the first student case.
 
@@ -189,7 +189,7 @@ Reported the day after the first student case.
 UCL was naming individual cases at this stage. By October 2020 it was publishing aggregate counts, which is the series the archive preserves.
 
 **All staff able to work remotely told to do so from 17 March**  
-*16 March 2020 · restrictions · announced* · [issue 6](../home/uclcovid/data/updates/006_16_March__Issue_6_.html)
+*16 March 2020 · restrictions · announced* · [issue 6](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/006_16_March__Issue_6_.html)
 
 Campus stayed open for those who could not work from home.
 
@@ -198,7 +198,7 @@ Campus stayed open for those who could not work from home.
 Announced 16 March, effective 17 March. The one-day gap is why date_kind exists.
 
 **External events suspended and the theatre, galleries and museums closed**  
-*16 March 2020 · civic · took effect* · [issue 6](../home/uclcovid/data/updates/006_16_March__Issue_6_.html)
+*16 March 2020 · civic · took effect* · [issue 6](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/006_16_March__Issue_6_.html)
 
 Covered offer-holder events, the Bloomsbury Theatre, all UCL galleries and museums, and staff recruitment that could not be held remotely.
 
@@ -207,7 +207,7 @@ Covered offer-holder events, the Bloomsbury Theatre, all UCL galleries and museu
 The 1 May horizon recurs across March 2020 decisions and is consistently too optimistic.
 
 **Staff over 70 or with health conditions must work from home**  
-*16 March 2020 · restrictions · announced* · [issue 6](../home/uclcovid/data/updates/006_16_March__Issue_6_.html)
+*16 March 2020 · restrictions · announced* · [issue 6](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/006_16_March__Issue_6_.html)
 
 An instruction rather than advice, extended to those living with or caring for people at higher risk.
 
@@ -216,14 +216,14 @@ An instruction rather than advice, extended to those living with or caring for p
 Predates the national shielding programme, which opened to letters from 21 March 2020. Needs checking against the primary record in stage 2 before the comparison is made in the rendering.
 
 **Coronavirus sickness absence exempted from absence triggers and paid in full**  
-*17 March 2020 · governance · announced* · [issue 7](../home/uclcovid/data/updates/007_17_March__Issue_7_.html)
+*17 March 2020 · governance · announced* · [issue 7](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/007_17_March__Issue_7_.html)
 
 Regardless of length of service or sick pay status.
 
 > sickness absence for coronavirus will not count towards the number of days’ absence which would trigger a formal process for managing absence under our usual policy
 
 **Remote working extended to research, facilities and services**  
-*17 March 2020 · research · announced* · [issue 7](../home/uclcovid/data/updates/007_17_March__Issue_7_.html)
+*17 March 2020 · research · announced* · [issue 7](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/007_17_March__Issue_7_.html)
 
 The Provost's own decision, taken in response to the government's recommendation of the previous evening.
 
@@ -232,7 +232,7 @@ The Provost's own decision, taken in response to the government's recommendation
 An explicit statement of national policy being the cause, which is rarer in the record than one might expect and is what makes this row usable for lag analysis.
 
 **Students strongly advised to return home**  
-*17 March 2020 · accommodation · announced* · [issue 7](../home/uclcovid/data/updates/007_17_March__Issue_7_.html) · lag **-6 days**
+*17 March 2020 · accommodation · announced* · [issue 7](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/007_17_March__Issue_7_.html) · lag **-6 days**
 
 With accommodation offered to any student unable to travel.
 
@@ -241,12 +241,12 @@ With accommodation offered to any student unable to travel.
 Six days before the national lockdown, and anticipating the travel restrictions rather than following them.
 
 **Summer placements, summer schools and pre-sessional teaching cancelled**  
-*17 March 2020 · teaching · announced* · [issue 7](../home/uclcovid/data/updates/007_17_March__Issue_7_.html)
+*17 March 2020 · teaching · announced* · [issue 7](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/007_17_March__Issue_7_.html)
 
 > all summer placements, summer schools and pre-sessional teaching have now been cancelled
 
 **UCL to stay on a remote working footing until 15 April**  
-*17 March 2020 · restrictions · announced* · [issue 7](../home/uclcovid/data/updates/007_17_March__Issue_7_.html)
+*17 March 2020 · restrictions · announced* · [issue 7](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/007_17_March__Issue_7_.html)
 
 Explicitly framed as not a closure, with teaching, assessment and research continuing remotely.
 
@@ -264,12 +264,12 @@ Schools closed at the end of Friday 20 March and did not reopen on Monday 23 Mar
 UCL restricted its Day Nursery to national-interest and essential staff the next day, a lag of one. The UCL note described this as closure "by 20 March" and the Commons Library timeline as closure "from 23 March"; both describe the same break, from opposite ends of the weekend.
 
 **All library loans renewed to 5 June and recalls suspended**  
-*18 March 2020 · teaching · announced* · [issue 8](../home/uclcovid/data/updates/008_18_March__Issue_8_.html)
+*18 March 2020 · teaching · announced* · [issue 8](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/008_18_March__Issue_8_.html)
 
 > We arranged yesterday to renew all books on loan until 5 June and all recalls have been suspended.
 
 **Mitigation group restructured into subgroups under the Provost**  
-*18 March 2020 · governance · announced* · [issue 8](../home/uclcovid/data/updates/008_18_March__Issue_8_.html)
+*18 March 2020 · governance · announced* · [issue 8](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/008_18_March__Issue_8_.html)
 
 With trade union and Students' Union representation, and epidemiological advice from Professor Andrew Hayward.
 
@@ -278,7 +278,7 @@ With trade union and Students' Union representation, and epidemiological advice 
 Effective 20 March per issue 9. The decision-making structure itself changed to survive remote working.
 
 **Day Nursery to stay open only for national-interest and essential staff**  
-*19 March 2020 · wellbeing · announced* · [issue 9](../home/uclcovid/data/updates/009_19_March__Issue_9_.html) · lag **+1 day**
+*19 March 2020 · wellbeing · announced* · [issue 9](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/009_19_March__Issue_9_.html) · lag **+1 day**
 
 Narrowed from the previous week's position that it remained open to all staff and students.
 
@@ -287,14 +287,14 @@ Narrowed from the previous week's position that it remained open to all staff an
 Follows the government's announcement of 18 March that schools and nurseries would close by 20 March. A one-day lag.
 
 **Staff with caring responsibilities to keep normal pay without taking leave**  
-*19 March 2020 · governance · announced* · [issue 9](../home/uclcovid/data/updates/009_19_March__Issue_9_.html)
+*19 March 2020 · governance · announced* · [issue 9](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/009_19_March__Issue_9_.html)
 
 > Please be assured that we wish to support you and will understand that you may have to change work routines, take holiday at short notice and perhaps not work your normal number of hours.
 
 Restated more firmly on 23 March: caring for dependents became an authorised absence.
 
 **First-year undergraduate assessments cancelled and replaced by a capstone**  
-*20 March 2020 · assessment · announced* · [issue 11](../home/uclcovid/data/updates/011_23_March__Issue_11_.html)
+*20 March 2020 · assessment · announced* · [issue 11](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/011_23_March__Issue_11_.html)
 
 A single pass/fail piece of reflective work with a late June deadline, required to progress to year two.
 
@@ -303,7 +303,7 @@ A single pass/fail piece of reflective work with a late June deadline, required 
 Filed on 20 March, the date of the action; the source is issue 11 of 23 March, which reports it retrospectively. Students had petitioned for deferral instead and UCL declined.
 
 **Most UCL buildings and all libraries close**  
-*20 March 2020 · restrictions · took effect* · [issue 7](../home/uclcovid/data/updates/007_17_March__Issue_7_.html) · lag **-3 days**
+*20 March 2020 · restrictions · took effect* · [issue 7](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/007_17_March__Issue_7_.html) · lag **-3 days**
 
 The Student Centre, accommodation services, some residences and buildings supporting essential research stayed open.
 
@@ -312,7 +312,7 @@ The Student Centre, accommodation services, some residences and buildings suppor
 Three days before the national lockdown. The Student Centre closed on 24 March, the day after it.
 
 **Only research in the immediate national interest may continue on site**  
-*20 March 2020 · research · took effect* · [issue 7](../home/uclcovid/data/updates/007_17_March__Issue_7_.html)
+*20 March 2020 · research · took effect* · [issue 7](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/007_17_March__Issue_7_.html)
 
 Announced 17 March with a deadline of 5.30pm on Friday 20 March.
 
@@ -321,12 +321,12 @@ Announced 17 March with a deadline of 5.30pm on Friday 20 March.
 Filed on the effective date, 20 March; announced 17 March. Faculties coordinated the shutdown of experiments in the intervening three days.
 
 **Students may self-certify extenuating circumstances for the rest of the year**  
-*20 March 2020 · assessment · announced* · [issue 10](../home/uclcovid/data/updates/010_20_March__Issue_10_.html)
+*20 March 2020 · assessment · announced* · [issue 10](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/010_20_March__Issue_10_.html)
 
 > UCL has agreed that students can self-certify if they have Extenuating Circumstances for the remainder of the 2019/20 academic year.
 
 **Students urged to vacate halls; no Term 3 accommodation fees**  
-*20 March 2020 · accommodation · announced* · [issue 10](../home/uclcovid/data/updates/010_20_March__Issue_10_.html)
+*20 March 2020 · accommodation · announced* · [issue 10](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/010_20_March__Issue_10_.html)
 
 Halls stayed open for students with nowhere else to go, consistent with the commitment given on 12 March.
 
@@ -335,7 +335,7 @@ Halls stayed open for students with nowhere else to go, consistent with the comm
 The fee waiver applied to students who had already checked out as well as those planning to.
 
 **UCL PCR machines made available to the NHS for testing**  
-*20 March 2020 · civic · announced* · [issue 10](../home/uclcovid/data/updates/010_20_March__Issue_10_.html)
+*20 March 2020 · civic · announced* · [issue 10](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/010_20_March__Issue_10_.html)
 
 Alongside medical students volunteering and clinical academics released to the NHS.
 
@@ -351,7 +351,7 @@ Announced on the evening of 23 March; the measures became law three days later.
 The counterpart for five UCL rows, and the anchor of the lag analysis in both directions. UCL had already stopped face-to-face teaching ten days earlier and barred staff from campus the day after this.
 
 **All staff must work from home; campus only for key workers**  
-*23 March 2020 · restrictions · took effect* · [issue 11](../home/uclcovid/data/updates/011_23_March__Issue_11_.html)
+*23 March 2020 · restrictions · took effect* · [issue 11](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/011_23_March__Issue_11_.html)
 
 Campus access restricted to key workers and Dean-authorised national-interest research.
 
@@ -360,7 +360,7 @@ Campus access restricted to key workers and Dean-authorised national-interest re
 Published the same day as the national lockdown announcement, but the substance had been in force since 20 March. The national announcement came in the evening; issue 12 the next day is the response to it.
 
 **Contractor staff get sick pay from the first day of absence**  
-*23 March 2020 · governance · took effect* · [issue 10](../home/uclcovid/data/updates/010_20_March__Issue_10_.html)
+*23 March 2020 · governance · took effect* · [issue 10](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/010_20_March__Issue_10_.html)
 
 Axis, Sodexo and Aramark staff brought into line with directly employed staff. Agreed with UNISON for July and brought forward.
 
@@ -369,14 +369,14 @@ Axis, Sodexo and Aramark staff brought into line with directly employed staff. A
 Announced 20 March, effective 23 March. UCL contractors also honoured all contracted hours whether staff worked or not.
 
 **Day Nursery fees refunded and places held during closure**  
-*23 March 2020 · wellbeing · took effect* · [issue 20](../home/uclcovid/data/updates/020_3_April__Issue_20_.html)
+*23 March 2020 · wellbeing · took effect* · [issue 20](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/020_3_April__Issue_20_.html)
 
 > fees paid in advance for the period from 23 March 2020 will be refunded. Further fees will not be collected during this period, but all places will be held until the nursery is able to open again.
 
 Filed on 23 March, the date the refund period begins; announced in issue 20 of 3 April.
 
 **UCL joins the national coronavirus genome sequencing consortium**  
-*23 March 2020 · research · reported* · [issue 11](../home/uclcovid/data/updates/011_23_March__Issue_11_.html)
+*23 March 2020 · research · reported* · [issue 11](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/011_23_March__Issue_11_.html)
 
 Professor Judith Breuer of the UCL Pathogen Genomics Unit named among the scientists mapping the spread of the virus.
 
@@ -385,7 +385,7 @@ Professor Judith Breuer of the UCL Pathogen Genomics Unit named among the scient
 The consortium is COG-UK, though the newsletter does not name it. Do not add the name to the ledger without a primary source.
 
 **Staff must not attend campus unless authorised key workers**  
-*24 March 2020 · restrictions · took effect* · [issue 12](../home/uclcovid/data/updates/012_24_March__Issue_12_.html) · lag **+1 day**
+*24 March 2020 · restrictions · took effect* · [issue 12](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/012_24_March__Issue_12_.html) · lag **+1 day**
 
 UCL's direct response to the stay-at-home order announced the previous evening, with authorisation letters and ID required.
 
@@ -394,7 +394,7 @@ UCL's direct response to the stay-at-home order announced the previous evening, 
 One day after the national announcement of 23 March 2020. The clearest positive lag in the record and the counterpart to the negative lag of 13 March.
 
 **The Student Centre closes and Bidborough House is restricted**  
-*24 March 2020 · restrictions · took effect* · [issue 12](../home/uclcovid/data/updates/012_24_March__Issue_12_.html) · lag **+1 day**
+*24 March 2020 · restrictions · took effect* · [issue 12](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/012_24_March__Issue_12_.html) · lag **+1 day**
 
 The last general-access buildings shut, four days after the main closure.
 
@@ -403,7 +403,7 @@ The last general-access buildings shut, four days after the main closure.
 On 23 March the Student Centre was still open for staff who could not work at home. The national order closed it.
 
 **REF 2021 data submission postponed by the funding bodies**  
-*25 March 2020 · research · announced* · [issue 13](../home/uclcovid/data/updates/013_25_March__Issue_13_.html)
+*25 March 2020 · research · announced* · [issue 13](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/013_25_March__Issue_13_.html)
 
 > The funding bodies have agreed to postpone the Research Excellence Framework 2021 data submission until further notice.
 
@@ -419,7 +419,7 @@ Three days after the announcement.
 The gap between announcement and legal force is why the ledger separates announced from effective dates.
 
 **Remote, Not Distant at UCL launched to support remote working**  
-*26 March 2020 · wellbeing · reported* · [issue 14](../home/uclcovid/data/updates/014_26_March__Issue_14_.html)
+*26 March 2020 · wellbeing · reported* · [issue 14](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/014_26_March__Issue_14_.html)
 
 An HR website covering workspace setup, staying connected, managing teams remotely and mental health. It recurs in the newsletters for the next two years.
 
@@ -428,7 +428,7 @@ An HR website covering workspace setup, staying connected, managing teams remote
 The start date of a recurring thread, which the plan's inclusion test admits even though the later repetitions do not earn rows.
 
 **Students in shared-bathroom halls moved to en-suite rooms on PHE advice**  
-*26 March 2020 · accommodation · took effect* · [issue 14](../home/uclcovid/data/updates/014_26_March__Issue_14_.html)
+*26 March 2020 · accommodation · took effect* · [issue 14](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/014_26_March__Issue_14_.html)
 
 So that a student who fell ill could self-isolate without exposing others. No extra fees, and UCL arranged the moves.
 
@@ -437,7 +437,7 @@ So that a student who fell ill could self-isolate without exposing others. No ex
 An infection-control measure inside UCL's own estate, distinct from the national restrictions, and among the earliest.
 
 **Students told alternative assessments will be confirmed by 6 April**  
-*27 March 2020 · assessment · announced* · [issue 16](../home/uclcovid/data/updates/016_30_March__Issue_16_.html)
+*27 March 2020 · assessment · announced* · [issue 16](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/016_30_March__Issue_16_.html)
 
 With an assurance that no assessment would fall earlier than previously advertised.
 
@@ -446,28 +446,28 @@ With an assurance that no assessment would fall earlier than previously advertis
 Filed on 27 March, the date students were contacted; reported in issue 16 of 30 March.
 
 **UCL Together launched to redeploy staff to teams needing support**  
-*27 March 2020 · governance · reported* · [issue 15](../home/uclcovid/data/updates/015_27_March__Issue_15_.html)
+*27 March 2020 · governance · reported* · [issue 15](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/015_27_March__Issue_15_.html)
 
 An HR initiative matching volunteers to teams under pressure, and to the NHS and emergency services outside UCL. Individual registration opened 30 March.
 
 > colleagues in Human Resources have developed UCL Together, a new initiative to connect teams in need of more support, with offers of help from other areas of the university
 
 **UCL laboratories donate nitrile gloves to UCLH**  
-*27 March 2020 · civic · observed* · [issue 15](../home/uclcovid/data/updates/015_27_March__Issue_15_.html)
+*27 March 2020 · civic · observed* · [issue 15](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/015_27_March__Issue_15_.html)
 
 Collected at the North Lodge on Gower Street for delivery to the hospital.
 
 > UCL staff working in our laboratories are donating supplies of nitrile gloves to UCLH, which is in urgent need of Personal Protective Equipment for NHS workers treating coronavirus patients.
 
 **All 2020 graduation ceremonies cancelled**  
-*30 March 2020 · assessment · announced* · [issue 16](../home/uclcovid/data/updates/016_30_March__Issue_16_.html)
+*30 March 2020 · assessment · announced* · [issue 16](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/016_30_March__Issue_16_.html)
 
 June, July and September 2020 ceremonies, with an alternative celebration promised for the following year.
 
 > All graduation ceremonies this year have been cancelled. This covers ceremonies in June, July and September 2020.
 
 **UCL-Ventura breathing aid approved for NHS use in ten days**  
-*30 March 2020 · civic · reported* · [issue 16](../home/uclcovid/data/updates/016_30_March__Issue_16_.html)
+*30 March 2020 · civic · reported* · [issue 16](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/016_30_March__Issue_16_.html)
 
 Developed by UCL engineers with Mercedes Formula One and UCLH clinicians. One hundred devices sent to UCLH for trials.
 
@@ -478,21 +478,21 @@ The single most visible UCL civic contribution of the pandemic. Category civic s
 ### April 2020
 
 **Government orders up to 10,000 UCL-Ventura breathing aids**  
-*1 April 2020 · civic · reported* · [issue 18](../home/uclcovid/data/updates/018_1_April__Issue_18_.html)
+*1 April 2020 · civic · reported* · [issue 18](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/018_1_April__Issue_18_.html)
 
 Two days after regulatory approval, with mass production targeted for the following week.
 
 > The Government has now ordered up to 10,000 of the devices, known as UCL-Ventura, which gained regulatory approval for use in the NHS in just ten days.
 
 **Over 300 final-year medical students fast-tracked into the NHS**  
-*2 April 2020 · civic · reported* · [issue 19](../home/uclcovid/data/updates/019_2_April__Issue_19_.html)
+*2 April 2020 · civic · reported* · [issue 19](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/019_2_April__Issue_19_.html)
 
 Part of the government's response; around 200 were already volunteering.
 
 > More than 300 of UCL’s final year medical students are being fast-tracked through graduation this week, ready to be made frontline NHS doctors, as part of the Government’s response to the coronavirus outbreak.
 
 **Pay deductions for March strike action cancelled**  
-*2 April 2020 · governance · announced* · [issue 19](../home/uclcovid/data/updates/019_2_April__Issue_19_.html)
+*2 April 2020 · governance · announced* · [issue 19](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/019_2_April__Issue_19_.html)
 
 Framed as recognition of the effort staff were making to move teaching and assessment online.
 
@@ -501,7 +501,7 @@ Framed as recognition of the effort staff were making to move teaching and asses
 The UCU strike ran into March 2020 and was called off as the pandemic took hold, noted in issue 10.
 
 **Buildings to stay closed after Easter, with a review on 1 May**  
-*3 April 2020 · restrictions · announced* · [issue 20](../home/uclcovid/data/updates/020_3_April__Issue_20_.html)
+*3 April 2020 · restrictions · announced* · [issue 20](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/020_3_April__Issue_20_.html)
 
 The first of many review dates that passed without reopening.
 
@@ -510,14 +510,14 @@ The first of many review dates that passed without reopening.
 Explicitly attributed to government advice, so usable for lag analysis.
 
 **Final-year PGR writing-up extended and hardship fund raised to £3,000**  
-*3 April 2020 · research · announced* · [issue 20](../home/uclcovid/data/updates/020_3_April__Issue_20_.html)
+*3 April 2020 · research · announced* · [issue 20](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/020_3_April__Issue_20_.html)
 
 With UCL lobbying UKRI, Wellcome and government through the Russell Group for sector-wide support.
 
 > We’ve agreed that the writing-up period for all PGR students in their final year will be extended, and we’ve also agreed to ensure that the hardship fund will support those students in need for the duration of the crisis, with an increase in the amount claimable to £3,000.
 
 **Disturbance allowance introduced for on-site key workers**  
-*6 April 2020 · governance · announced* · [issue 21](../home/uclcovid/data/updates/021_6_April__Issue_21_.html)
+*6 April 2020 · governance · announced* · [issue 21](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/021_6_April__Issue_21_.html)
 
 £350, £175 or £75 a month by days on site, extended to clinical staff seconded to the NHS, temporary staff and outsourced workers.
 
@@ -526,19 +526,19 @@ With UCL lobbying UKRI, Wellcome and government through the Russell Group for se
 One of the few decisions in the record that treats the people who could not work from home as a distinct group.
 
 **Term 4 accommodation fees waived as well as Term 3**  
-*7 April 2020 · accommodation · announced* · [issue 22](../home/uclcovid/data/updates/022_7_April__Issue_22_.html)
+*7 April 2020 · accommodation · announced* · [issue 22](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/022_7_April__Issue_22_.html)
 
 > We will not be charging accommodation fees for students for this Term 4 period who will no longer be staying with us, as we have done for the Term 3 period.
 
 **UCL adopts a no-detriment principle for summer assessments**  
-*7 April 2020 · assessment · announced* · [issue 22](../home/uclcovid/data/updates/022_7_April__Issue_22_.html)
+*7 April 2020 · assessment · announced* · [issue 22](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/022_7_April__Issue_22_.html)
 
 Exceptional amendments to Academic Regulations, guaranteeing classifications at least in line with work to date.
 
 > We have written to all students to let them know that UCL has adopted a “no detriment” principle, which recognises students’ academic performance so far and ensures that academic outcomes won’t be negatively impacted by the alternative assessments due to take place this summer.
 
 **UCL-Ventura designs released worldwide free of charge**  
-*7 April 2020 · civic · reported* · [issue 22](../home/uclcovid/data/updates/022_7_April__Issue_22_.html)
+*7 April 2020 · civic · reported* · [issue 22](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/022_7_April__Issue_22_.html)
 
 Published so manufacturers anywhere could produce the device.
 
@@ -547,14 +547,14 @@ Published so manufacturers anywhere could produce the device.
 By the following day 233 download requests had come from 25 countries.
 
 **Annual leave carry-over raised from five days to seven**  
-*8 April 2020 · governance · announced* · [issue 23](../home/uclcovid/data/updates/023_8_April__Issue_23_.html)
+*8 April 2020 · governance · announced* · [issue 23](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/023_8_April__Issue_23_.html)
 
 A one-off change for the year, with no limit for key workers who had worked throughout.
 
 > UCL has increased the number of days of annual leave that can be carried forward from this leave period to the next, from five to seven.
 
 **Cyber-attacks on universities reported up 37% since the outbreak**  
-*8 April 2020 · governance · reported* · [issue 23](../home/uclcovid/data/updates/023_8_April__Issue_23_.html)
+*8 April 2020 · governance · reported* · [issue 23](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/023_8_April__Issue_23_.html)
 
 UCL identified its high-profile pandemic work as raising its own exposure.
 
@@ -563,7 +563,7 @@ UCL identified its high-profile pandemic work as raising its own exposure.
 UCL is relaying an external claim without attributing it. Do not repeat the 37% figure as established. Checked twice and still unattributable: the newsletter names no source, and the archive's inventory of every link in that issue shows the only security link goes to UCL's own Stay Secure pages. There is no trail to follow, which is itself the finding. This is the one claim of the three stage 1 flagged that could not be verified.
 
 **Travel restrictions extended to 1 August after FCO advice**  
-*15 April 2020 · restrictions · took effect* · [issue 24](../home/uclcovid/data/updates/024_15_April__Issue_24_.html)
+*15 April 2020 · restrictions · took effect* · [issue 24](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/024_15_April__Issue_24_.html)
 
 Following the FCO advising against all but essential international travel indefinitely. UCL stopped accepting expense claims for travel booked from that day.
 
@@ -572,14 +572,14 @@ Following the FCO advising against all but essential international travel indefi
 A direct extension of the 11 March restriction, whose original horizon of 1 May had become untenable. Names the FCO advice as the cause.
 
 **Copyright restrictions relaxed so teaching material could be digitised**  
-*16 April 2020 · teaching · announced* · [issue 25](../home/uclcovid/data/updates/025_16_April__Issue_25_.html)
+*16 April 2020 · teaching · announced* · [issue 25](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/025_16_April__Issue_25_.html)
 
 > Some copyright restrictions have been temporarily relaxed to allow more educational material to be digitised and made available online, to support taught courses during the pandemic.
 
 A sector-level change UCL is relaying, not a UCL decision. The publishers' and Jisc side belongs on the sector track if it is retrieved in stage 2.
 
 **Assessment programme confirmed: 3,333 assessments across 2,367 modules adjusted**  
-*17 April 2020 · assessment · reported* · [issue 26](../home/uclcovid/data/updates/026_17_April__Issue_26_.html)
+*17 April 2020 · assessment · reported* · [issue 26](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/026_17_April__Issue_26_.html)
 
 Equating to 130,000 individual student assessments, 31% of the total. Of 2,000 invigilated exams, 1,061 became coursework, 667 became 24-hour timed exams, 237 were excluded and 40 deferred.
 
@@ -588,7 +588,7 @@ Equating to 130,000 individual student assessments, 31% of the total. Of 2,000 i
 The clearest quantification in the whole record of what moving a university online actually cost in work.
 
 **Gold, Silver and Bronze crisis structure endorsed by UCL Council**  
-*17 April 2020 · governance · reported* · [issue 26](../home/uclcovid/data/updates/026_17_April__Issue_26_.html)
+*17 April 2020 · governance · reported* · [issue 26](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/026_17_April__Issue_26_.html)
 
 Led by the Provost and covering business continuity, education, research and external engagement.
 
@@ -597,7 +597,7 @@ Led by the Provost and covering business continuity, education, research and ext
 The emergency-services command model, adopted by a university. Supersedes the mitigation-group structure of 18 March.
 
 **Coronavirus: The Whole Story podcast launched**  
-*20 April 2020 · research · reported* · [issue 27](../home/uclcovid/data/updates/027_20_April__Issue_27_.html)
+*20 April 2020 · research · reported* · [issue 27](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/027_20_April__Issue_27_.html)
 
 A weekly podcast presented by Vivienne Parry, running through the pandemic and referenced in newsletters for the next two years.
 
@@ -606,14 +606,14 @@ A weekly podcast presented by Vivienne Parry, running through the pandemic and r
 First appearance of a recurring thread, so it earns a row; the later weekly mentions do not.
 
 **Grand Challenges initiative on recovery from Covid-19 opened**  
-*20 April 2020 · research · announced* · [issue 27](../home/uclcovid/data/updates/027_20_April__Issue_27_.html)
+*20 April 2020 · research · announced* · [issue 27](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/027_20_April__Issue_27_.html)
 
 Expressions of interest to 4 May 2020, aimed at researchers unable to continue their usual work.
 
 > UCL Grand Challenges invites you to engage with our new initiative to address the urgent issues posed by the coronavirus outbreak.
 
 **PhD students given automatic writing-up extensions and stipend underwriting**  
-*20 April 2020 · research · announced* · [issue 27](../home/uclcovid/data/updates/027_20_April__Issue_27_.html)
+*20 April 2020 · research · announced* · [issue 27](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/027_20_April__Issue_27_.html)
 
 Financial Assistance Fund raised to £3,000, a new Emergency Assistance Grant of up to £500, and final-year funded students underwritten at the minimum UKRI rate for up to three months.
 
@@ -622,7 +622,7 @@ Financial Assistance Fund raised to £3,000, a new Emergency Assistance Grant of
 UCL acting ahead of the funders while lobbying them, which the Provost states explicitly: this is not a problem UCL can solve on its own.
 
 **Learning Opportunities Fund reopened for students affected by strike action**  
-*21 April 2020 · teaching · announced* · [issue 28](../home/uclcovid/data/updates/028_21_April__Issue_28_.html)
+*21 April 2020 · teaching · announced* · [issue 28](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/028_21_April__Issue_28_.html)
 
 Grants of up to £500 for students whose learning was disrupted by the industrial action of 24 February to 20 March 2020.
 
@@ -631,21 +631,21 @@ Grants of up to £500 for students whose learning was disrupted by the industria
 A pre-pandemic disruption being settled during the pandemic. The strike ended four days before the national lockdown.
 
 **Biosafety guidance approved for work with coronavirus samples**  
-*23 April 2020 · research · announced* · [issue 30](../home/uclcovid/data/updates/030_23_April__Issue_30_.html)
+*23 April 2020 · research · announced* · [issue 30](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/030_23_April__Issue_30_.html)
 
 Covering research using samples from confirmed or suspected patients and work with the virus directly.
 
 > The UCL Genetic Modification & Biosafety Committee has approved new guidance for those planning to work with samples from confirmed or suspected coronavirus patients, or those planning to work with the virus directly.
 
 **UCL Together has supplied 497 days of redeployed support in four weeks**  
-*23 April 2020 · governance · reported* · [issue 30](../home/uclcovid/data/updates/030_23_April__Issue_30_.html)
+*23 April 2020 · governance · reported* · [issue 30](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/030_23_April__Issue_30_.html)
 
 > To date, we have provided 497 days of additional support to teams across the university by matching volunteers to those departments who have requested help.
 
 A measured outcome for the scheme launched on 27 March, which is rare in the record; most initiatives are announced and never quantified.
 
 **Recruitment freeze and capital spending paused as income falls**  
-*24 April 2020 · governance · announced* · [issue 31](../home/uclcovid/data/updates/031_24_April__Issue_31_.html)
+*24 April 2020 · governance · announced* · [issue 31](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/031_24_April__Issue_31_.html)
 
 With drastic cuts to non-pay expenditure to build cash reserves, and additional borrowing drawn down.
 
@@ -654,28 +654,28 @@ With drastic cuts to non-pay expenditure to build cash reserves, and additional 
 The pivot from crisis response to financial survival, one month into lockdown.
 
 **Single-year budgeting adopted with the contribution model set aside**  
-*24 April 2020 · governance · announced* · [issue 31](../home/uclcovid/data/updates/031_24_April__Issue_31_.html)
+*24 April 2020 · governance · announced* · [issue 31](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/031_24_April__Issue_31_.html)
 
 Normal processes suspended through Term 1, pending clarity on tuition fee income.
 
 > We will do single-year budgeting, in which we set temporarily aside our usual processes through Term 1.
 
 **UCL declines an across-the-board pay freeze adopted by other universities**  
-*24 April 2020 · governance · announced* · [issue 31](../home/uclcovid/data/updates/031_24_April__Issue_31_.html)
+*24 April 2020 · governance · announced* · [issue 31](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/031_24_April__Issue_31_.html)
 
 > You may be aware that other universities have announced an across-the-board pay freeze. This is something that we are not yet considering and we will exhaust all other options before we do so.
 
 A rare explicit contrast with sector practice, and one the sector track should be able to test once the comparator institutions are identified in stage 2.
 
 **Looking out for our students phone campaign launched**  
-*27 April 2020 · wellbeing · reported* · [issue 32](../home/uclcovid/data/updates/032_27_April__Issue_32_.html)
+*27 April 2020 · wellbeing · reported* · [issue 32](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/032_27_April__Issue_32_.html)
 
 Staff volunteers calling students to check how they were coping, committing at least one day a week to the end of May.
 
 > Colleagues from across UCL have launched ‘Looking out for our students’, a new phone call campaign to keep in touch with our students and help them feel cared for during the coronavirus outbreak.
 
 **Building closures to be reviewed on 8 May, with 15 May the earliest reopening**  
-*28 April 2020 · restrictions · announced* · [issue 33](../home/uclcovid/data/updates/033_28_April__Issue_33_.html)
+*28 April 2020 · restrictions · announced* · [issue 33](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/033_28_April__Issue_33_.html)
 
 Explicitly contingent on whether the national lockdown was extended again.
 
@@ -684,14 +684,14 @@ Explicitly contingent on whether the national lockdown was extended again.
 The second review date to pass without reopening, after 1 May. Campus did not reopen to most staff in 2020 at all.
 
 **Furloughed staff barred from any work, including writing up UCL results**  
-*30 April 2020 · research · announced* · [issue 35](../home/uclcovid/data/updates/035_30_April__Issue_35_.html)
+*30 April 2020 · research · announced* · [issue 35](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/035_30_April__Issue_35_.html)
 
 > It is important to note that any staff on furlough cannot undertake any work for UCL. This means that activities such as writing up results obtained at UCL and analysing UCL data are not allowed.
 
 A condition of the national scheme with a sharp effect on research careers, and the clearest instance in the record of national policy constraining UCL rather than merely prompting it.
 
 **Grant-funded staff offered furlough with UCL topping pay up to 100%**  
-*30 April 2020 · research · announced* · [issue 35](../home/uclcovid/data/updates/035_30_April__Issue_35_.html)
+*30 April 2020 · research · announced* · [issue 35](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/035_30_April__Issue_35_.html)
 
 Staff due to leave in May or June had leaving dates extended to the end of June; those due to leave in July or August were extended to the end of August on core funding.
 
@@ -702,21 +702,21 @@ UCL's use of the national Coronavirus Job Retention Scheme. The newsletter notes
 ### May 2020
 
 **Self-funded PhD students given until 31 July to pay final fee instalment**  
-*1 May 2020 · research · announced* · [issue 36](../home/uclcovid/data/updates/036_1_May__Issue_36_.html)
+*1 May 2020 · research · announced* · [issue 36](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/036_1_May__Issue_36_.html)
 
 Extended from 2 May, alongside Financial Assistance Fund grants of up to £3,000 prioritised for self-funders.
 
 > the third and final instalment of tuition fees has now been extended from 2 May until 31 July 2020
 
 **UCL-Ventura designs downloaded by over 1,800 teams in 105 countries**  
-*1 May 2020 · civic · reported* · [issue 36](../home/uclcovid/data/updates/036_1_May__Issue_36_.html)
+*1 May 2020 · civic · reported* · [issue 36](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/036_1_May__Issue_36_.html)
 
 Twenty-four days after the designs were released free of charge, with prototypes built in Mexico, South Africa, Canada, Bulgaria and Russia.
 
 > In the 24 days since they were published, the designs have been downloaded by over 1,800 teams in 105 countries, representing non-profits, manufacturers, health experts and research institutes.
 
 **Extenuating circumstances self-certified with no evidence required**  
-*6 May 2020 · assessment · took effect* · [issue 39](../home/uclcovid/data/updates/039_6_May__Issue_39_.html)
+*6 May 2020 · assessment · took effect* · [issue 39](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/039_6_May__Issue_39_.html)
 
 Introduced immediately before the summer assessment period began.
 
@@ -734,14 +734,14 @@ Deaths from 2 March to 10 April 2020 in England and Wales. The published figures
 UCL relayed this on 2 June 2020 and stage 1 flagged it as not to be repeated until the primary source was checked. It checks out: UCL's "four times" is a fair reading of 4.2 and 4.3. The ONS analysis adjusts for age only; the publication is explicit that it does not by itself establish cause.
 
 **Faculties told to decide which modules not to run in 2020-21**  
-*7 May 2020 · teaching · announced* · [issue 40](../home/uclcovid/data/updates/040_7_May__Issue_40_.html)
+*7 May 2020 · teaching · announced* · [issue 40](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/040_7_May__Issue_40_.html)
 
 Faculty Delivery Teams identifying modules best suited to online delivery rather than moving everything online.
 
 > An excellent teaching programme for 2020-21 will necessarily be different from what we might have planned in more conventional times – and will require decisions about what not to run.
 
 **Gold team has post-lockdown plans ready ahead of the government announcement**  
-*7 May 2020 · governance · reported* · [issue 40](../home/uclcovid/data/updates/040_7_May__Issue_40_.html) · lag **-3 days**
+*7 May 2020 · governance · reported* · [issue 40](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/040_7_May__Issue_40_.html) · lag **-3 days**
 
 Prepared in advance of the Prime Minister's expected statement on easing restrictions.
 
@@ -750,7 +750,7 @@ Prepared in advance of the Prime Minister's expected statement on easing restric
 Evidence of UCL preparing before rather than after a national announcement, which is what the lag analysis is meant to distinguish. The response itself came on 11 May, one day after the announcement of 10 May.
 
 **Provost asks staff to prioritise education over research for the crisis period**  
-*7 May 2020 · teaching · announced* · [issue 40](../home/uclcovid/data/updates/040_7_May__Issue_40_.html)
+*7 May 2020 · teaching · announced* · [issue 40](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/040_7_May__Issue_40_.html)
 
 With an assurance that the prioritisation would be recognised in appraisals and promotion cases.
 
@@ -768,7 +768,7 @@ The first easing of the first lockdown, including a return to the workplace for 
 UCL diverged from this the next day, asking staff not to return to campus. That is the clearest case in the record of UCL declining an easing rather than following one.
 
 **First timed alternative assessments taken by over 800 students**  
-*11 May 2020 · assessment · observed* · [issue 42](../home/uclcovid/data/updates/042_12_May__Issue_42_.html)
+*11 May 2020 · assessment · observed* · [issue 42](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/042_12_May__Issue_42_.html)
 
 Nineteen papers released on 11 May, the first test of the assessment redesign agreed in March.
 
@@ -777,28 +777,28 @@ Nineteen papers released on 11 May, the first test of the assessment redesign ag
 Filed on 11 May, the date of the assessments; reported in issue 42 of 12 May. Roughly eight weeks from the decision of 13 March to the first paper sat.
 
 **No member of staff to be compelled to return for the pilots**  
-*11 May 2020 · restrictions · announced* · [issue 41](../home/uclcovid/data/updates/041_11_May__Issue_41_.html)
+*11 May 2020 · restrictions · announced* · [issue 41](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/041_11_May__Issue_41_.html)
 
 Transport, caring responsibilities and health concerns all accepted as reasons to decline.
 
 > Please be assured that no one will be compelled to return to UCL for the pilots.
 
 **Phased return to begin with a small number of pilots, most likely in June**  
-*11 May 2020 · restrictions · announced* · [issue 41](../home/uclcovid/data/updates/041_11_May__Issue_41_.html)
+*11 May 2020 · restrictions · announced* · [issue 41](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/041_11_May__Issue_41_.html)
 
 Aimed at laboratory and research work that could not be done from home, with nobody compelled to take part.
 
 > The first stage of reopening will comprise a small number of pilots, where we will consult with colleagues in specific areas to identify opportunities to start working on campus again, most likely in June.
 
 **Reopening made explicitly conditional on the national reproduction number**  
-*11 May 2020 · restrictions · announced* · [issue 41](../home/uclcovid/data/updates/041_11_May__Issue_41_.html)
+*11 May 2020 · restrictions · announced* · [issue 41](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/041_11_May__Issue_41_.html)
 
 > If the rate of infection (R) rises again nationally, then we acknowledge that we may have to row back on this cautious reopening plan.
 
 The clearest statement in the record that UCL's campus policy was indexed to a national epidemiological measure rather than to its own case counts, which did not yet exist. Directly relevant to the blog post's claim that the on-campus line tracks policy.
 
 **Staff asked not to return to campus despite the easing of restrictions**  
-*11 May 2020 · restrictions · announced* · [issue 41](../home/uclcovid/data/updates/041_11_May__Issue_41_.html) · lag **+1 day**
+*11 May 2020 · restrictions · announced* · [issue 41](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/041_11_May__Issue_41_.html) · lag **+1 day**
 
 UCL's response to the Prime Minister's announcement of 10 May 2020, published the following day.
 
@@ -807,12 +807,12 @@ UCL's response to the Prime Minister's announcement of 10 May 2020, published th
 A one-day lag, and the substance is divergence rather than compliance: national restrictions eased and UCL did not. The counterpart to 13 March, where UCL moved first in the other direction.
 
 **Furloughed staff guaranteed against later detriment**  
-*12 May 2020 · governance · announced* · [issue 42](../home/uclcovid/data/updates/042_12_May__Issue_42_.html)
+*12 May 2020 · governance · announced* · [issue 42](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/042_12_May__Issue_42_.html)
 
 > I want to be particularly clear that furloughed staff will not be subject to any disadvantage or detriment at a later date as a result of having been placed on Furlough Leave
 
 **UCL furloughs staff who cannot work remotely, on full pay**  
-*12 May 2020 · governance · announced* · [issue 42](../home/uclcovid/data/updates/042_12_May__Issue_42_.html)
+*12 May 2020 · governance · announced* · [issue 42](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/042_12_May__Issue_42_.html)
 
 Following advice from the Higher Education Minister that universities should use the national scheme. UCL topped the capped government contribution up to full salary and benefits.
 
@@ -821,14 +821,14 @@ Following advice from the Higher Education Minister that universities should use
 Names the minister and the advice, so the national event is identifiable and the lag computable once the ministerial statement is retrieved in stage 2.
 
 **UCL-Ventura in use at 46 NHS hospitals across the UK**  
-*13 May 2020 · civic · reported* · [issue 43](../home/uclcovid/data/updates/043_13_May__Issue_43_.html)
+*13 May 2020 · civic · reported* · [issue 43](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/043_13_May__Issue_43_.html)
 
 With prototypes manufactured for testing in eleven countries.
 
 > The UCL-Ventura breathing aid, a low-flow Continuous Positive Airway Pressure (CPAP) device, is now being deployed to treat coronavirus patients in 46 NHS hospitals across the UK
 
 **Reopening plan drawn up with UCL's own health and behaviour researchers**  
-*15 May 2020 · restrictions · announced* · [issue 45](../home/uclcovid/data/updates/045_15_May__Issue_45_.html)
+*15 May 2020 · restrictions · announced* · [issue 45](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/045_15_May__Issue_45_.html)
 
 A bespoke plan rather than a direct application of the government guidance, explicitly drawing on internal expertise.
 
@@ -837,14 +837,14 @@ A bespoke plan rather than a direct application of the government guidance, expl
 A university using its own epidemiologists to set its own policy. Relevant to the blog post's claim that the campus signal informed decisions, though the case statistics did not begin until October.
 
 **UCL Covid-19 Rapid Response funding call opened**  
-*19 May 2020 · research · announced* · [issue 47](../home/uclcovid/data/updates/047_19_May__Issue_47_.html)
+*19 May 2020 · research · announced* · [issue 47](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/047_19_May__Issue_47_.html)
 
 Projects of six to twelve months costing £20,000 to £50,000, supported by the UCL Coronavirus Response Fund with UCLH and Moorfields NIHR Biomedical Research Centres. First deadline 2 June 2020.
 
 > Applications are now invited for projects focused on rapid responses and novel solutions to understand and tackle the challenges faced during and after the coronavirus pandemic.
 
 **Much of 2020-21 teaching to be remote, with face-to-face set by social distancing**  
-*20 May 2020 · teaching · announced* · [issue 48](../home/uclcovid/data/updates/048_20_May__Issue_48_.html)
+*20 May 2020 · teaching · announced* · [issue 48](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/048_20_May__Issue_48_.html)
 
 UCL naming Manchester and Cambridge as institutions that had already said large-group teaching would be online.
 
@@ -853,14 +853,14 @@ UCL naming Manchester and Cambridge as institutions that had already said large-
 The decision that shapes the whole 2020-21 year and therefore the autumn case data. Made in May for a September term, under acknowledged uncertainty.
 
 **UCL signs the Wellcome Statement on Open Data**  
-*21 May 2020 · research · announced* · [issue 49](../home/uclcovid/data/updates/049_21_May__Issue_49_.html)
+*21 May 2020 · research · announced* · [issue 49](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/049_21_May__Issue_49_.html)
 
 With its own statement on research transparency during the pandemic.
 
 > UCL has signed The Wellcome Statement on Open Data and issued its own statement to make clear our position on supporting research transparency in the context of the pandemic.
 
 **Face coverings required on campus where distancing is not possible**  
-*22 May 2020 · restrictions · announced* · [issue 50](../home/uclcovid/data/updates/050_22_May__Issue_50_.html) · lag **-24 days**
+*22 May 2020 · restrictions · announced* · [issue 50](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/050_22_May__Issue_50_.html) · lag **-24 days**
 
 Alongside temperature checks, frequent handwashing, a one-way system and increased cleaning.
 
@@ -869,7 +869,7 @@ Alongside temperature checks, frequent handwashing, a one-way system and increas
 Well ahead of national requirements: face coverings became mandatory on public transport in England on 15 June 2020 and in shops on 24 July. Both national dates need retrieving in stage 2 before the comparison is stated in the rendering.
 
 **Two reopening pilots named for the first weeks of June**  
-*22 May 2020 · restrictions · announced* · [issue 50](../home/uclcovid/data/updates/050_22_May__Issue_50_.html)
+*22 May 2020 · restrictions · announced* · [issue 50](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/050_22_May__Issue_50_.html)
 
 Pilot 1 from 1 June covered the Cancer Institute, Queen Square Institute of Neurology, Chemical Engineering and the Student Centre; Pilot 2 from 8 June the Main Library, Institute of Child Health, MRC LMCB and Chemistry.
 
@@ -878,21 +878,21 @@ Pilot 1 from 1 June covered the Cancer Institute, Queen Square Institute of Neur
 The first named reopening of any part of the estate since the closure of 20 March, ten weeks earlier.
 
 **Campus reopening pilots aligned with the dates schools were due to return**  
-*26 May 2020 · restrictions · announced* · [issue 51](../home/uclcovid/data/updates/051_26_May__Issue_51_.html) · lag **-6 days**
+*26 May 2020 · restrictions · announced* · [issue 51](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/051_26_May__Issue_51_.html) · lag **-6 days**
 
 > we have aligned our campus reopening pilot activity with the proposed dates for schools to return, although we know that not all children will be returning
 
 A direct dependency of UCL's timetable on a national schools decision, and a clean case for the lag analysis.
 
 **Face-to-face teaching to be limited to groups of about fifteen**  
-*26 May 2020 · teaching · announced* · [issue 51](../home/uclcovid/data/updates/051_26_May__Issue_51_.html)
+*26 May 2020 · teaching · announced* · [issue 51](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/051_26_May__Issue_51_.html)
 
 With significant parts of delivery online until a vaccine or treatment was available globally.
 
 > Depending on room size, this will likely be in groups of 15 or fewer.
 
 **Staff consultation launched on education principles for 2020-21**  
-*26 May 2020 · teaching · announced* · [issue 51](../home/uclcovid/data/updates/051_26_May__Issue_51_.html)
+*26 May 2020 · teaching · announced* · [issue 51](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/051_26_May__Issue_51_.html)
 
 Open to all staff until 1 July, feeding Education Committee on 8 June and Academic Committee and Council in June and July.
 
@@ -901,7 +901,7 @@ Open to all staff until 1 July, feeding Education Committee on 8 June and Academ
 Two documents were put out with it, the UCL Commitment to Students and Connected Learning at UCL.
 
 **Term 1 plans forced early by the UCAS deadline and OfS expectations**  
-*26 May 2020 · teaching · announced* · [issue 51](../home/uclcovid/data/updates/051_26_May__Issue_51_.html)
+*26 May 2020 · teaching · announced* · [issue 51](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/051_26_May__Issue_51_.html)
 
 UCL stating that decisions on 2020-21 had to be taken before June so offer holders could choose.
 
@@ -910,7 +910,7 @@ UCL stating that decisions on 2020-21 had to be taken before June so offer holde
 An explicit sector-level constraint on the timing of a UCL decision. The OfS statement is a stage 2 retrieval target; reference [38] in the research document is the OfS coronavirus briefing series.
 
 **UCL working with Camden and Newham on local pandemic projects**  
-*28 May 2020 · civic · reported* · [issue 53](../home/uclcovid/data/updates/053_28_May__Issue_53_.html)
+*28 May 2020 · civic · reported* · [issue 53](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/053_28_May__Issue_53_.html)
 
 Including support for autistic young Londoners, translation for the Hasidic community and free legal advice for residents.
 
@@ -919,7 +919,7 @@ Including support for autistic young Londoners, translation for the Hasidic comm
 The only borough-level civic work named in this period, and the local counterpart to the Camden case comparator in the data track.
 
 **Keeping safe on campus guidance published**  
-*29 May 2020 · testing · reported* · [issue 54](../home/uclcovid/data/updates/054_29_May__Issue_54_.html)
+*29 May 2020 · testing · reported* · [issue 54](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/054_29_May__Issue_54_.html)
 
 Risk assessments, reduced occupancy, flexible hours to avoid peak commuting, temperature checks and face coverings.
 
@@ -928,12 +928,12 @@ Risk assessments, reduced occupancy, flexible hours to avoid peak commuting, tem
 First appearance of a heading that recurs in 110 of the 168 newsletters, so this is the start date of the standing on-campus safety regime.
 
 **Reopening pilots developed with the recognised trade unions**  
-*29 May 2020 · restrictions · announced* · [issue 54](../home/uclcovid/data/updates/054_29_May__Issue_54_.html)
+*29 May 2020 · restrictions · announced* · [issue 54](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/054_29_May__Issue_54_.html)
 
 > The pilots are being carried out in line with UK Government guidance, drawing on the advice of UCL’s recognised unions and the expertise of our researchers, including specialists in health, education, human behaviour and infection prevention.
 
 **UCL healthcare staff invited to the Oxford vaccine trial at UCLH**  
-*29 May 2020 · vaccination · announced* · [issue 54](../home/uclcovid/data/updates/054_29_May__Issue_54_.html)
+*29 May 2020 · vaccination · announced* · [issue 54](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/054_29_May__Issue_54_.html)
 
 Open to clinical and non-clinical healthcare staff other than office-based roles.
 
@@ -953,7 +953,7 @@ The date UCL aligned its first campus reopening pilots with.
 UCL said on 26 May that it had aligned its pilot activity with the proposed dates for schools to return, which makes this a dependency of a UCL timetable on a national schools decision.
 
 **Student Centre reopens as staff workspace, capped at 130 users**  
-*1 June 2020 · restrictions · took effect* · [issue 51](../home/uclcovid/data/updates/051_26_May__Issue_51_.html)
+*1 June 2020 · restrictions · took effect* · [issue 51](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/051_26_May__Issue_51_.html)
 
 Open 10.00 to 20.00 Monday to Friday for staff unable to work remotely, by pre-booking.
 
@@ -962,7 +962,7 @@ Open 10.00 to 20.00 Monday to Friday for staff unable to work remotely, by pre-b
 The Student Centre closed on 24 March. It reopens ten weeks later, to staff only and at a fraction of capacity.
 
 **Temporary Operating Model for 2020-21 published and sent to all students**  
-*1 June 2020 · teaching · reported* · [issue 55](../home/uclcovid/data/updates/055_1_June__Issue_55_.html)
+*1 June 2020 · teaching · reported* · [issue 55](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/055_1_June__Issue_55_.html)
 
 Approved by Academic Committee on 29 May and communicated to current students and offer holders via Portico, with a dedicated helpline for offer holders.
 
@@ -971,7 +971,7 @@ Approved by Academic Committee on 29 May and communicated to current students an
 The formal statement of how UCL would run the year in which the case statistics begin. Everything in the autumn 2020 data happens under this model.
 
 **Oxford vaccine phase III trial to vaccinate 500 UCLH staff volunteers**  
-*2 June 2020 · vaccination · reported* · [issue 56](../home/uclcovid/data/updates/056_2_June__Issue_56_.html)
+*2 June 2020 · vaccination · reported* · [issue 56](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/056_2_June__Issue_56_.html)
 
 UCL's Vax-Hub collaboration with the Jenner Institute supplied the manufacturing platform the Oxford team adapted.
 
@@ -980,7 +980,7 @@ UCL's Vax-Hub collaboration with the Jenner Institute supplied the manufacturing
 Six months before the national rollout began. UCL's involvement in the vaccine is upstream of the vaccination programme, not part of receiving it.
 
 **Student Centre entry conditional on temperature check, booking and face covering**  
-*2 June 2020 · testing · took effect* · [issue 56](../home/uclcovid/data/updates/056_2_June__Issue_56_.html)
+*2 June 2020 · testing · took effect* · [issue 56](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/056_2_June__Issue_56_.html)
 
 Bookable Monday to Friday, 100 people a day maximum, ID and confirmation required at reception.
 
@@ -989,7 +989,7 @@ Bookable Monday to Friday, 100 people a day maximum, ID and confirmation require
 The daily cap tightened from the 130 announced on 26 May to 100 in practice.
 
 **UCL cites ONS finding that Covid deaths are four times likelier among black adults**  
-*2 June 2020 · epidemiology · reported* · [issue 56](../home/uclcovid/data/updates/056_2_June__Issue_56_.html)
+*2 June 2020 · epidemiology · reported* · [issue 56](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/056_2_June__Issue_56_.html)
 
 Used to argue that the disparity could not be explained by health inequalities alone.
 
@@ -998,7 +998,7 @@ Used to argue that the disparity could not be explained by health inequalities a
 UCL relaying an ONS finding, and it checks out: the ONS publication of 7 May 2020 gives 4.2 for Black males and 4.3 for Black females against White males and females, after adjusting for age. Now carried on the national track with the ONS wording. The ONS is explicit that adjusting for age alone does not establish cause.
 
 **UCL commits to racial equality action in the context of coronavirus**  
-*2 June 2020 · governance · reported* · [issue 56](../home/uclcovid/data/updates/056_2_June__Issue_56_.html)
+*2 June 2020 · governance · reported* · [issue 56](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/056_2_June__Issue_56_.html)
 
 An institutional plan for 2020-21 covering fair admissions after exam disruption, the BAME degree awarding gap, belonging, and hardship including digital poverty.
 
@@ -1007,7 +1007,7 @@ An institutional plan for 2020-21 covering fair admissions after exam disruption
 Published four days after the killing of George Floyd. The newsletter connects it to the pandemic through the disproportionate mortality figures cited in the same issue.
 
 **UCL works with Camden Council to make commuting possible without public transport**  
-*3 June 2020 · civic · announced* · [issue 57](../home/uclcovid/data/updates/057_3_June__Issue_57_.html)
+*3 June 2020 · civic · announced* · [issue 57](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/057_3_June__Issue_57_.html)
 
 Aimed at making cycling viable for staff returning under the pilots.
 
@@ -1016,7 +1016,7 @@ Aimed at making cycling viable for staff returning under the pilots.
 Transport is named repeatedly as the constraint on returning to campus, and here as a reason for a borough-level partnership.
 
 **Face-covering guidance issued distinguishing coverings from PPE**  
-*4 June 2020 · restrictions · reported* · [issue 58](../home/uclcovid/data/updates/058_4_June__Issue_58_.html)
+*4 June 2020 · restrictions · reported* · [issue 58](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/058_4_June__Issue_58_.html)
 
 Coverings required when moving around, removable at a desk two metres from others, with PPE reserved for those who need it and exemptions acknowledged.
 
@@ -1025,7 +1025,7 @@ Coverings required when moving around, removable at a desk two metres from other
 Exemptions are named explicitly for respiratory conditions and for deaf staff and those with hearing loss who rely on lip reading.
 
 **Gold, Silver and Bronze structure replaced by a Crisis Leadership Team**  
-*8 June 2020 · governance · took effect* · [issue 59](../home/uclcovid/data/updates/059_5_June__Issue_59_.html)
+*8 June 2020 · governance · took effect* · [issue 59](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/059_5_June__Issue_59_.html)
 
 The command structure adopted in April gave way to an implementation framework once the closure and planning work was done.
 
@@ -1034,7 +1034,7 @@ The command structure adopted in April gave way to an implementation framework o
 Filed on the effective date of 8 June; announced 5 June. The second reorganisation of UCL's decision-making in three months.
 
 **UCL sets policy for staff caught by the new quarantine on UK arrivals**  
-*8 June 2020 · restrictions · took effect* · [issue 58](../home/uclcovid/data/updates/058_4_June__Issue_58_.html)
+*8 June 2020 · restrictions · took effect* · [issue 58](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/058_4_June__Issue_58_.html)
 
 Staff abroad were told to return two weeks before they were needed and to work from home, volunteer through UCL Together, stay on furlough or take paid leave.
 
@@ -1043,7 +1043,7 @@ Staff abroad were told to return two weeks before they were needed and to work f
 Filed on 8 June, the date the national rule took effect; UCL's guidance was published on 4 June, four days ahead of it. A negative lag.
 
 **All library loans extended to 1 October with no late penalties**  
-*9 June 2020 · teaching · announced* · [issue 61](../home/uclcovid/data/updates/061_9_June__Issue_61_.html)
+*9 June 2020 · teaching · announced* · [issue 61](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/061_9_June__Issue_61_.html)
 
 Correcting a technical fault that had brought some due dates forward.
 
@@ -1052,7 +1052,7 @@ Correcting a technical fault that had brought some due dates forward.
 Extends the 5 June date set on 18 March.
 
 **Provost asks for review of buildings named after eugenicists**  
-*11 June 2020 · governance · announced* · [issue 63](../home/uclcovid/data/updates/063_11_June__Issue_63_.html)
+*11 June 2020 · governance · announced* · [issue 63](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/063_11_June__Issue_63_.html)
 
 Following the recommendations of the Inquiry into the History of Eugenics at UCL, chaired by Professor Iyiola Solanke, with a recommendation due to Council on 18 June.
 
@@ -1070,7 +1070,7 @@ The Health Protection (Coronavirus, Wearing of Face Coverings on Public Transpor
 UCL had required face coverings on campus where distancing was not possible from 22 May, twenty-four days before this. The date was carried for a while on a UCL newsletter's authority and then withdrawn, because reference 7 gives 15 June as the day non-essential shops reopened and says nothing about transport. Both are true of that day; the regulations are what establish the second.
 
 **Connected Learning Essentials staff development course launched**  
-*15 June 2020 · teaching · reported* · [issue 72](../home/uclcovid/data/updates/072_24_June__Issue_72_.html)
+*15 June 2020 · teaching · reported* · [issue 72](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/072_24_June__Issue_72_.html)
 
 Over 800 colleagues had engaged with it within nine days.
 
@@ -1079,7 +1079,7 @@ Over 800 colleagues had engaged with it within nine days.
 Filed on 15 June, the launch date; reported in issue 72 of 24 June.
 
 **Library Click and Collect service to open at the Main and Science Libraries**  
-*15 June 2020 · teaching · announced* · [issue 51](../home/uclcovid/data/updates/051_26_May__Issue_51_.html)
+*15 June 2020 · teaching · announced* · [issue 51](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/051_26_May__Issue_51_.html)
 
 Requesting, collecting, borrowing and returning books, 12.00 to 16.00 Monday to Friday.
 
@@ -1088,14 +1088,14 @@ Requesting, collecting, borrowing and returning books, 12.00 to 16.00 Monday to 
 Filed on 15 June, the target date; announced 26 May. Issue 51 exists partly to correct a wrong date given in issue 50 on 22 May, which is itself a caution against trusting a single newsletter mention.
 
 **Over 180 live UCL projects investigating coronavirus, almost half externally funded**  
-*15 June 2020 · research · reported* · [issue 65](../home/uclcovid/data/updates/065_15_June__Issue_65_.html)
+*15 June 2020 · research · reported* · [issue 65](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/065_15_June__Issue_65_.html)
 
 > There are now over 180 live projects across all UCL’s faculties investigating coronavirus and its impact. Of these, almost half are externally funded.
 
 Up from the hundred reported on 15 May.
 
 **Reopening widens from nine areas to about forty**  
-*15 June 2020 · restrictions · took effect* · [issue 65](../home/uclcovid/data/updates/065_15_June__Issue_65_.html)
+*15 June 2020 · restrictions · took effect* · [issue 65](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/065_15_June__Issue_65_.html)
 
 With line managers contacting staff individually and no compulsion to return.
 
@@ -1104,7 +1104,7 @@ With line managers contacting staff individually and no compulsion to return.
 The step from pilot to programme. Three months after the closure of 20 March.
 
 **All staff and postgraduate researchers asked to complete a workstation assessment**  
-*18 June 2020 · teaching · announced* · [issue 68](../home/uclcovid/data/updates/068_18_June__Issue_68_.html)
+*18 June 2020 · teaching · announced* · [issue 68](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/068_18_June__Issue_68_.html)
 
 A display screen equipment assessment for the home working environment, with issues referred to line managers.
 
@@ -1113,7 +1113,7 @@ A display screen equipment assessment for the home working environment, with iss
 Three months into remote working, which is when the temporary arrangement started being treated as a workplace.
 
 **Emergency Timetabling Policy approved by the Crisis Management Team**  
-*18 June 2020 · teaching · announced* · [issue 68](../home/uclcovid/data/updates/068_18_June__Issue_68_.html)
+*18 June 2020 · teaching · announced* · [issue 68](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/068_18_June__Issue_68_.html)
 
 With a revised timetabling process for 2020-21 and FAQs on how the Temporary Operating Model would work in practice.
 
@@ -1122,7 +1122,7 @@ With a revised timetabling process for 2020-21 and FAQs on how the Temporary Ope
 The mechanism by which the Temporary Operating Model reached individual rooms and hours, which is what determined how many people were on campus in autumn 2020.
 
 **Face-to-face invigilated exams ruled unlikely for 2020-21**  
-*18 June 2020 · assessment · announced* · [issue 68](../home/uclcovid/data/updates/068_18_June__Issue_68_.html)
+*18 June 2020 · assessment · announced* · [issue 68](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/068_18_June__Issue_68_.html)
 
 Replaced by short, timed, online and un-invigilated exams, with staff required to confirm assessment modes by 24 July for the August Module Catalogue update.
 
@@ -1131,7 +1131,7 @@ Replaced by short, timed, online and un-invigilated exams, with staff required t
 Consumer legislation is given as the reason for the July deadline, which is a legal rather than epidemiological constraint on the timing.
 
 **REF2021 submission deadline reset to 31 March 2021**  
-*19 June 2020 · research · announced* · [issue 69](../home/uclcovid/data/updates/069_19_June__Issue_69_.html)
+*19 June 2020 · research · announced* · [issue 69](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/069_19_June__Issue_69_.html)
 
 With the impact assessment period extended to 31 December 2020 and the exercise resuming on 31 July 2020. The staff census date of 31 July 2020 was unchanged.
 
@@ -1140,7 +1140,7 @@ With the impact assessment period extended to 31 December 2020 and the exercise 
 Resolves the indefinite postponement announced on 25 March. A sector-level decision by the funding bodies; the primary announcement belongs on the sector track in stage 2.
 
 **UCL denames the Galton and Pearson spaces**  
-*19 June 2020 · governance · took effect* · [issue 69](../home/uclcovid/data/updates/069_19_June__Issue_69_.html)
+*19 June 2020 · governance · took effect* · [issue 69](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/069_19_June__Issue_69_.html)
 
 Decided by the Provost and ratified by Council, with signs removed immediately.
 
@@ -1149,7 +1149,7 @@ Decided by the Provost and ratified by Council, with signs removed immediately.
 Eight days from the Provost's request to the decision. As above, contemporaneous with the pandemic rather than part of the response to it.
 
 **Library Click and Collect opens at the Portico entrance**  
-*22 June 2020 · teaching · took effect* · [issue 69](../home/uclcovid/data/updates/069_19_June__Issue_69_.html)
+*22 June 2020 · teaching · took effect* · [issue 69](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/069_19_June__Issue_69_.html)
 
 Up to ten books per request, collected 12.00 to 15.00 Monday to Friday, with ID, confirmation email and a face covering required on campus.
 
@@ -1158,7 +1158,7 @@ Up to ten books per request, collected 12.00 to 15.00 Monday to Friday, with ID,
 Filed on 22 June, the date collection began. The first library service of any kind since the closure of 20 March, and it is contactless.
 
 **Weekly Your Wellbeing check-in survey launched for staff and researchers**  
-*22 June 2020 · wellbeing · reported* · [issue 70](../home/uclcovid/data/updates/070_22_June__Issue_70_.html)
+*22 June 2020 · wellbeing · reported* · [issue 70](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/070_22_June__Issue_70_.html)
 
 Reported to the Crisis Leadership Team and to faculty level, and designed partly to test whether crisis measures were harming under-represented staff.
 
@@ -1176,21 +1176,21 @@ The move that became the "1 metre plus" guidance, taking effect with the wider e
 The source records a relaxing of the 2 metre rule and does not use the phrase "one metre plus"; the headline follows the source rather than UCL's wording for it. UCL kept 2 metres for Term 1 timetable planning, which is the sharpest deliberate divergence in the whole record.
 
 **Fieldwork permitted to restart under Dean-approved risk assessment**  
-*25 June 2020 · research · took effect* · [issue 73](../home/uclcovid/data/updates/073_25_June__Issue_73_.html)
+*25 June 2020 · research · took effect* · [issue 73](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/073_25_June__Issue_73_.html)
 
 Conditional on voluntary participation, the reopening plans, and UK and destination travel rules. International travel on UCL business remained barred until 1 August.
 
 > Fieldwork can restart from this week, as long as individuals wish to take part
 
 **UCL passes £1m raised for its pandemic response**  
-*25 June 2020 · research · reported* · [issue 73](../home/uclcovid/data/updates/073_25_June__Issue_73_.html)
+*25 June 2020 · research · reported* · [issue 73](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/073_25_June__Issue_73_.html)
 
 Directed at research on tracking, treating and preventing the virus, at societal recovery, and at student hardship.
 
 > UCL has raised over £1m to drive the university’s response to the pandemic, through generous donations from our supporters, alumni and friends.
 
 **Virus Watch launched with 42,500 participants**  
-*25 June 2020 · epidemiology · reported* · [issue 73](../home/uclcovid/data/updates/073_25_June__Issue_73_.html)
+*25 June 2020 · epidemiology · reported* · [issue 73](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/073_25_June__Issue_73_.html)
 
 Regular symptom surveys, a movement-tracking app, and blood tests and swabs for 10,000 participants, intended to inform government and NHS planning.
 
@@ -1199,7 +1199,7 @@ Regular symptom surveys, a movement-tracking app, and blood tests and swabs for 
 UCL running national community surveillance while having no case data of its own. Its own counting begins 12 October 2020.
 
 **Undergraduate bursaries increased for 2020-21**  
-*26 June 2020 · accommodation · announced* · [issue 74](../home/uclcovid/data/updates/074_26_June__Issue_74_.html)
+*26 June 2020 · accommodation · announced* · [issue 74](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/074_26_June__Issue_74_.html)
 
 The lowest income band rose from £2,500 to £3,350, with uplifts across all four bands, applied automatically and extended to students who joined from 2017-18.
 
@@ -1217,7 +1217,7 @@ Announced by the Secretary of State for Health and Social Care.
 UCL cited this on 8 July as a reason for caution in its own planning.
 
 **Government research support package announced in two parts**  
-*June 2020 · research · announced* · [issue 83](../home/uclcovid/data/updates/083_9_July__Issue_83_.html)
+*June 2020 · research · announced* · [issue 83](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/083_9_July__Issue_83_.html)
 
 A COVID-19 Grant Extension Allocation to sustain UKRI and National Academies awards to September 2021, and a Research Stabilisation Package of low-interest loans with some grants.
 
@@ -1228,7 +1228,7 @@ Dated to June 2020 with month precision, because the newsletter says only 'at th
 ### July 2020
 
 **Staff allowed onto campus by rota to collect belongings**  
-*1 July 2020 · restrictions · took effect* · [issue 76](../home/uclcovid/data/updates/076_30_June__Issue_76_.html)
+*1 July 2020 · restrictions · took effect* · [issue 76](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/076_30_June__Issue_76_.html)
 
 Buildings opened on set dates in morning or afternoon slots, by request through Faculty Directors of Operations or Security.
 
@@ -1261,7 +1261,7 @@ The same day as the wider easing in the rest of England.
 The two limbs of this entry are why 4 July is the phase boundary in this chronology: England eased and one city did not.
 
 **Taught postgraduates given access to Student Centre and Click and Collect**  
-*6 July 2020 · teaching · took effect* · [issue 79](../home/uclcovid/data/updates/079_3_July__Issue_79_.html)
+*6 July 2020 · teaching · took effect* · [issue 79](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/079_3_July__Issue_79_.html)
 
 For students unable to study remotely, by advance booking, with distancing and face coverings in force.
 
@@ -1270,7 +1270,7 @@ For students unable to study remotely, by advance booking, with distancing and f
 The first return of any students to campus since March, and it is limited to those who cannot work at home.
 
 **UCL signs the London Higher COVID-19 Secure Charter**  
-*6 July 2020 · restrictions · announced* · [issue 80](../home/uclcovid/data/updates/080_6_July__Issue_80_.html)
+*6 July 2020 · restrictions · announced* · [issue 80](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/080_6_July__Issue_80_.html)
 
 Ten principles for a safe return to campus, adopted by more than twenty London institutions.
 
@@ -1279,14 +1279,14 @@ Ten principles for a safe return to campus, adopted by more than twenty London i
 A sector-level commitment with a named document. London Higher is a stage 2 retrieval target for the sector track.
 
 **Wellbeing survey results reviewed weekly by the Provost and Crisis Leadership Team**  
-*6 July 2020 · wellbeing · reported* · [issue 80](../home/uclcovid/data/updates/080_6_July__Issue_80_.html)
+*6 July 2020 · wellbeing · reported* · [issue 80](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/080_6_July__Issue_80_.html)
 
 > The Provost and Crisis Leadership Team review these results in person every week. They form a central part of their decision-making process
 
 Establishes that a weekly internal data feed was already part of decision-making before the case statistics existed. Relevant to how the October 2020 case page was used.
 
 **Digital first recommended for Term 1, with local teams deciding specifics**  
-*8 July 2020 · teaching · announced* · [issue 82](../home/uclcovid/data/updates/082_8_July__Issue_82_.html)
+*8 July 2020 · teaching · announced* · [issue 82](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/082_8_July__Issue_82_.html)
 
 A mix of asynchronous and synchronous learning with some campus-based, laboratory and studio teaching, and decisions devolved to programme teams.
 
@@ -1295,7 +1295,7 @@ A mix of asynchronous and synchronous learning with some campus-based, laborator
 Names Tier 4 visa requirements and the implications of wholly online programmes as planning considerations, which is an immigration constraint on teaching mode.
 
 **Four additional closure days added, extending the Christmas break to two weeks**  
-*8 July 2020 · governance · announced* · [issue 82](../home/uclcovid/data/updates/082_8_July__Issue_82_.html)
+*8 July 2020 · governance · announced* · [issue 82](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/082_8_July__Issue_82_.html)
 
 Friday 28 August before the bank holiday, and 21 to 23 December, closing UCL from 18 December 2020 to 4 January 2021.
 
@@ -1304,7 +1304,7 @@ Friday 28 August before the bank holiday, and 21 to 23 December, closing UCL fro
 Decided in July. The closure period turned out to coincide with the Alpha wave and the second national lockdown, and with the highest weekly case count in the whole UCL series.
 
 **Roadmap for returning to campus published, targeting 25% of staff on site**  
-*8 July 2020 · restrictions · reported* · [issue 82](../home/uclcovid/data/updates/082_8_July__Issue_82_.html)
+*8 July 2020 · restrictions · reported* · [issue 82](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/082_8_July__Issue_82_.html)
 
 Setting out which buildings would reopen and when, while most staff continued to work from home.
 
@@ -1313,7 +1313,7 @@ Setting out which buildings would reopen and when, while most staff continued to
 The 25% ceiling is the planning assumption behind the autumn 2020 campus population, and therefore behind the on-campus case counts when they begin in October.
 
 **Temperature checks extended from the Student Centre across campus**  
-*8 July 2020 · testing · took effect* · [issue 82](../home/uclcovid/data/updates/082_8_July__Issue_82_.html)
+*8 July 2020 · testing · took effect* · [issue 82](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/082_8_July__Issue_82_.html)
 
 Alongside handwashing, distancing, additional cleaning, face coverings and PPE where appropriate.
 
@@ -1322,21 +1322,21 @@ Alongside handwashing, distancing, additional cleaning, face coverings and PPE w
 Temperature screening was later widely judged ineffective for COVID-19. Recorded as what UCL did, not as a measure that worked.
 
 **UCL cites the Leicester local lockdown as a reason for caution**  
-*8 July 2020 · restrictions · reported* · [issue 82](../home/uclcovid/data/updates/082_8_July__Issue_82_.html) · lag **+9 days**
+*8 July 2020 · restrictions · reported* · [issue 82](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/082_8_July__Issue_82_.html) · lag **+9 days**
 
 > The local lockdown announced in Leicester last week, and the possibility of lockdowns in some London boroughs, show us that we cannot yet take our safety for granted.
 
 An explicit reference to a national event shaping a UCL decision. The Leicester lockdown of 29 June 2020 is a stage 2 retrieval target.
 
 **UCL joins the Hidden Disabilities Sunflower scheme**  
-*8 July 2020 · wellbeing · announced* · [issue 82](../home/uclcovid/data/updates/082_8_July__Issue_82_.html)
+*8 July 2020 · wellbeing · announced* · [issue 82](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/082_8_July__Issue_82_.html)
 
 So that staff with non-visible disabilities could signal a need for help while returning to campus.
 
 > UCL has recently signed up to the Hidden Disabilities Sunflower scheme , which allows colleagues to discreetly signal to others that they may need additional help
 
 **UCL keeps 2 metre distancing after the government moves to one metre plus**  
-*8 July 2020 · restrictions · announced* · [issue 82](../home/uclcovid/data/updates/082_8_July__Issue_82_.html) · lag **+15 days**
+*8 July 2020 · restrictions · announced* · [issue 82](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/082_8_July__Issue_82_.html) · lag **+15 days**
 
 Justified by reference to the Chief Medical Officer's advice and PHE guidance, and by the need for flexibility if guidance changed or a second wave came.
 
@@ -1345,7 +1345,7 @@ Justified by reference to the Chief Medical Officer's advice and PHE guidance, a
 The clearest deliberate divergence from national policy in the record, and in the cautious direction. It set the room capacities for the whole of Term 1 and so directly shaped how many people were on campus in autumn 2020.
 
 **Face coverings made mandatory on campus for staff, students and visitors**  
-*10 July 2020 · restrictions · took effect* · [issue 84](../home/uclcovid/data/updates/084_10_July__Issue_84_.html)
+*10 July 2020 · restrictions · took effect* · [issue 84](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/084_10_July__Issue_84_.html)
 
 Required when moving between or around buildings and wherever 2 metres could not be maintained, with a published exemptions policy and Sunflower lanyards for invisible disabilities.
 
@@ -1354,7 +1354,7 @@ Required when moving between or around buildings and wherever 2 metres could not
 Fourteen days before face coverings became mandatory in English shops on 24 July 2020, and framed as protecting others from an asymptomatic wearer rather than protecting the wearer.
 
 **Bloomsbury Café reopens as the first Students' Union outlet on campus**  
-*week of 13 July 2020 · restrictions · took effect* · [issue 89](../home/uclcovid/data/updates/089_17_July__Issue_89_.html)
+*week of 13 July 2020 · restrictions · took effect* · [issue 89](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/089_17_July__Issue_89_.html)
 
 Monday to Friday, 11.00 to 15.00, with other outlets to follow in September.
 
@@ -1372,7 +1372,7 @@ Week precision: issue 89 of 17 July says only 'earlier this week', so the exact 
 UCL relayed this on 16 July 2020 and stage 1 flagged the Rt figure as not to be repeated until checked. It checks out, with a distinction worth keeping: 1.7 is an assumption the model was run under to explore a reasonable worst case, not a forecast of what Rt would be. Reporting it as a prediction would misstate what the report did.
 
 **Council postpones performance-related pay for grade 10 staff to August 2021**  
-*14 July 2020 · governance · announced* · [issue 86](../home/uclcovid/data/updates/086_14_July__Issue_86_.html)
+*14 July 2020 · governance · announced* · [issue 86](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/086_14_July__Issue_86_.html)
 
 Framed as intergenerational fairness, with staff at lower grades unaffected.
 
@@ -1381,7 +1381,7 @@ Framed as intergenerational fairness, with staff at lower grades unaffected.
 One of three payroll measures confirmed by Council on 14 July, and the only one that is not voluntary.
 
 **Voluntary Retirement Scheme opened for staff aged 66 and over**  
-*14 July 2020 · governance · announced* · [issue 86](../home/uclcovid/data/updates/086_14_July__Issue_86_.html)
+*14 July 2020 · governance · announced* · [issue 86](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/086_14_July__Issue_86_.html)
 
 Open until 31 October 2020, with eligibility set at age 66 on 1 October 2020, alongside voluntary unpaid leave, career breaks and temporary part-time working.
 
@@ -1390,7 +1390,7 @@ Open until 31 October 2020, with eligibility set at age 66 on 1 October 2020, al
 Explicitly to preserve the jobs of staff earlier in their careers. UCL still had not made compulsory redundancies at this point.
 
 **Travel ban partially lifted for the Common Travel Area and FCO-exempted countries**  
-*15 July 2020 · restrictions · took effect* · [issue 87](../home/uclcovid/data/updates/087_15_July__Issue_87_.html)
+*15 July 2020 · restrictions · took effect* · [issue 87](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/087_15_July__Issue_87_.html)
 
 Only essential travel permitted elsewhere until 1 October 2020, and all international travel to be booked through Key Travel.
 
@@ -1399,7 +1399,7 @@ Only essential travel permitted elsewhere until 1 October 2020, and all internat
 Follows the FCO relaxing its advice the previous week. The first loosening of the travel restriction imposed on 11 March 2020, four months earlier.
 
 **Advisory report warns of an Rt of 1.7 from September as a reasonable worst case**  
-*16 July 2020 · epidemiology · reported* · [issue 88](../home/uclcovid/data/updates/088_16_July__Issue_88_.html)
+*16 July 2020 · epidemiology · reported* · [issue 88](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/088_16_July__Issue_88_.html)
 
 'Preparing for a challenging winter 2020/21', produced by 37 experts including UCL academics at the request of the Government Chief Scientific Adviser.
 
@@ -1408,7 +1408,7 @@ Follows the FCO relaxing its advice the previous week. The first loosening of th
 UCL relaying a report its own academics contributed to, and it checks out against the Academy of Medical Sciences report itself. One distinction the newsletter loses: 1.7 is an assumption the model was run under to explore a reasonable worst case, not a forecast. The warning is issued two months before the autumn term and the surge that followed it.
 
 **Recruitment freeze partially relaxed where student numbers exceed forecast**  
-*17 July 2020 · governance · announced* · [issue 89](../home/uclcovid/data/updates/089_17_July__Issue_89_.html)
+*17 July 2020 · governance · announced* · [issue 89](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/089_17_July__Issue_89_.html)
 
 A phased relaxation for some academic and professional services posts, with the freeze otherwise still in force and internal sourcing required first.
 
@@ -1417,7 +1417,7 @@ A phased relaxation for some academic and professional services posts, with the 
 The first sign that the feared collapse in student numbers was not materialising. It reverses part of the emergency measure of 24 April.
 
 **Term 1 room allocations issued under social distancing, with a 10 August timetable deadline**  
-*23 July 2020 · teaching · announced* · [issue 93](../home/uclcovid/data/updates/093_23_July__Issue_93_.html)
+*23 July 2020 · teaching · announced* · [issue 93](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/093_23_July__Issue_93_.html)
 
 Departments required to enter all online and on-site synchronous activity into CMIS.
 
@@ -1426,7 +1426,7 @@ Departments required to enter all online and on-site synchronous activity into C
 The point at which the 2 metre decision of 8 July becomes a concrete allocation of rooms, and therefore the mechanism setting autumn campus occupancy.
 
 **Eugenics inquiry group to report an implementation plan by December**  
-*24 July 2020 · governance · reported* · [issue 94](../home/uclcovid/data/updates/094_24_July__Issue_94_.html)
+*24 July 2020 · governance · reported* · [issue 94](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/094_24_July__Issue_94_.html)
 
 With a second working group set up on the recommendations from the staff and student Town Hall on Race, also reporting before the end of the year.
 
@@ -1435,7 +1435,7 @@ With a second working group set up on the recommendations from the staff and stu
 As with the denaming rows, this is contemporaneous with the pandemic rather than part of the response to it, and is filed under governance so it can be filtered out.
 
 **UCL funds local pandemic projects in Newham, one of the worst-affected boroughs**  
-*24 July 2020 · civic · reported* · [issue 94](../home/uclcovid/data/updates/094_24_July__Issue_94_.html)
+*24 July 2020 · civic · reported* · [issue 94](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/094_24_July__Issue_94_.html)
 
 Small grants to projects co-developed with local groups, support for artists and researchers in the Olympic boroughs, and work with east London schools.
 
@@ -1444,7 +1444,7 @@ Small grants to projects co-developed with local groups, support for artists and
 The second borough-level civic strand after Camden. UCL's claim about Newham's standing is not evidenced in the newsletter and should not be repeated without checking.
 
 **UCL notes face coverings becoming mandatory in English shops**  
-*24 July 2020 · restrictions · took effect* · [issue 87](../home/uclcovid/data/updates/087_15_July__Issue_87_.html)
+*24 July 2020 · restrictions · took effect* · [issue 87](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/087_15_July__Issue_87_.html)
 
 UCL convened a group with its own experts and Students' Union leaders to consider whether to extend campus requirements further.
 
@@ -1453,14 +1453,14 @@ UCL convened a group with its own experts and Students' Union leaders to conside
 Filed on 24 July, the national effective date; reported by UCL on 15 July. UCL's own campus mandate had come into force on 10 July, ahead of it. The national date is a stage 2 retrieval target.
 
 **Individual Risk Assessments offered to staff worried about returning**  
-*27 July 2020 · wellbeing · announced* · [issue 95](../home/uclcovid/data/updates/095_27_July__Issue_95_.html)
+*27 July 2020 · wellbeing · announced* · [issue 95](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/095_27_July__Issue_95_.html)
 
 With the explicit possibility that the outcome is not returning to campus at this stage.
 
 > You may be asked to complete an Individual Risk Assessment to help understand your concerns and identify any measures that might manage any risks to your health and take into account your circumstances. In some cases that may mean that you do not return to campus at this stage.
 
 **Staff who can work remotely may do so until January 2021**  
-*27 July 2020 · restrictions · announced* · [issue 95](../home/uclcovid/data/updates/095_27_July__Issue_95_.html)
+*27 July 2020 · restrictions · announced* · [issue 95](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/095_27_July__Issue_95_.html)
 
 With an option to work on campus from 1 September when most buildings opened, subject to the 25% occupancy cap.
 
@@ -1469,7 +1469,7 @@ With an option to work on campus from 1 September when most buildings opened, su
 The policy under which the whole of autumn 2020 was run, and therefore the policy behind the on-campus case counts when the series begins on 12 October.
 
 **UCL installs 600 cycle racks in response to commuting fears in the wellbeing survey**  
-*27 July 2020 · civic · announced* · [issue 95](../home/uclcovid/data/updates/095_27_July__Issue_95_.html)
+*27 July 2020 · civic · announced* · [issue 95](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/095_27_July__Issue_95_.html)
 
 With a cycling buddy scheme, the tax-free cycle scheme, and advice on off-peak travel and part-journey walking.
 
@@ -1478,7 +1478,7 @@ With a cycling buddy scheme, the tax-free cycle scheme, and advice on off-peak t
 A traceable line from an internal data collection to a physical change on campus, which is the pattern the case statistics later followed.
 
 **UKRI allocates UCL £10.8m to sustain grant-funded research**  
-*28 July 2020 · research · announced* · [issue 96](../home/uclcovid/data/updates/096_28_July__Issue_96_.html)
+*28 July 2020 · research · announced* · [issue 96](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/096_28_July__Issue_96_.html)
 
 About 6% of UCL's UKRI award portfolio, prioritising projects ending before 31 March 2021 and those with staff who had been furloughed.
 
@@ -1489,7 +1489,7 @@ The concrete outcome of the government research support package recorded in June
 ### August 2020
 
 **Provost takes a 20% pay reduction donated to the student hardship fund**  
-*1 August 2020 · governance · announced* · [issue 31](../home/uclcovid/data/updates/031_24_April__Issue_31_.html)
+*1 August 2020 · governance · announced* · [issue 31](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/031_24_April__Issue_31_.html)
 
 For six months from 1 August 2020, alongside a Give as You Earn scheme opened for the Senior Management Team.
 
@@ -1498,7 +1498,7 @@ For six months from 1 August 2020, alongside a Give as You Earn scheme opened fo
 Filed on the effective date of 1 August 2020; announced 24 April in issue 31.
 
 **Newsletter cadence drops from daily to twice weekly at issue 100**  
-*3 August 2020 · governance · took effect* · [issue 100](../home/uclcovid/data/updates/100_3_August__Issue_100_.html)
+*3 August 2020 · governance · took effect* · [issue 100](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/100_3_August__Issue_100_.html)
 
 Mondays and Wednesdays, in response to a reader survey asking for fewer emails.
 
@@ -1507,7 +1507,7 @@ Mondays and Wednesdays, in response to a reader survey asking for fewer emails.
 The first cadence change in the series. It thins again to weekly on 12 October 2020 and to roughly monthly through 2022, so the frequency of the newsletters is itself a record of how urgent the situation felt.
 
 **Staff quarantining after non-essential travel must use leave, not paid absence**  
-*3 August 2020 · restrictions · took effect* · [issue 100](../home/uclcovid/data/updates/100_3_August__Issue_100_.html)
+*3 August 2020 · restrictions · took effect* · [issue 100](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/100_3_August__Issue_100_.html)
 
 Prompted by the Foreign Office revoking Spain's travel corridor at short notice on 27 July, and Luxembourg soon after.
 
@@ -1516,7 +1516,7 @@ Prompted by the Foreign Office revoking Spain's travel corridor at short notice 
 A tightening. In June, staff caught by quarantine were offered paid leave as a fallback; from August the fallback is unpaid.
 
 **UCL reports shutting over 200 buildings and delivering 647 online exams**  
-*3 August 2020 · governance · reported* · [issue 100](../home/uclcovid/data/updates/100_3_August__Issue_100_.html)
+*3 August 2020 · governance · reported* · [issue 100](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/100_3_August__Issue_100_.html)
 
 A hundred-working-day retrospective, also recording 147 student interns appointed to move teaching materials online.
 
@@ -1525,7 +1525,7 @@ A hundred-working-day retrospective, also recording 147 student interns appointe
 UCL's own summary of the first phase, and the source of the 647 online exams figure. Both numbers are UCL's own and are not independently checkable from the archive.
 
 **No Detriment Principle for Staff published, covering promotions and appraisals**  
-*5 August 2020 · governance · reported* · [issue 101](../home/uclcovid/data/updates/101_5_August__Issue_101_.html)
+*5 August 2020 · governance · reported* · [issue 101](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/101_5_August__Issue_101_.html)
 
 UCL estimated around 40% of employees had been caring for children or loved ones during the pandemic.
 
@@ -1534,7 +1534,7 @@ UCL estimated around 40% of employees had been caring for children or loved ones
 The staff counterpart to the student no-detriment principle adopted on 7 April 2020, four months earlier.
 
 **UCL undertakes not to reuse teaching recordings without the originator's consent**  
-*10 August 2020 · teaching · announced* · [issue 102](../home/uclcovid/data/updates/102_10_August__Issue_102_.html)
+*10 August 2020 · teaching · announced* · [issue 102](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/102_10_August__Issue_102_.html)
 
 Setting aside the position in the Intellectual Property Policy, which assigns film and sound recordings to UCL, for the 2019-20 and 2020-21 academic years.
 
@@ -1543,7 +1543,7 @@ Setting aside the position in the Intellectual Property Policy, which assigns fi
 A staff concern created directly by the move online: recording lectures turned teaching into an asset the policy already claimed.
 
 **Face covering policy widened to inside offices, labs and teaching spaces**  
-*12 August 2020 · restrictions · reported* · [issue 103](../home/uclcovid/data/updates/103_12_August__Issue_103_.html)
+*12 August 2020 · restrictions · reported* · [issue 103](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/103_12_August__Issue_103_.html)
 
 Strongly encouraged throughout campus and mandatory within two metres of another person, with clear-panel coverings procured centrally for classroom teaching.
 
@@ -1552,7 +1552,7 @@ Strongly encouraged throughout campus and mandatory within two metres of another
 The third tightening in two months: 22 May when distancing was impossible, 10 July mandatory when moving around, 12 August extended indoors throughout.
 
 **Protecting Time for Work recommendations issued in response to workload data**  
-*12 August 2020 · wellbeing · announced* · [issue 103](../home/uclcovid/data/updates/103_12_August__Issue_103_.html)
+*12 August 2020 · wellbeing · announced* · [issue 103](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/103_12_August__Issue_103_.html)
 
 Meetings in core hours, hour-long meetings cut to 50 minutes, and email and meeting efficiency measures.
 
@@ -1561,7 +1561,7 @@ Meetings in core hours, hour-long meetings cut to 50 minutes, and email and meet
 A second traceable line from the weekly survey to a policy change, after the cycle racks in July.
 
 **All Term One core teaching to be online, with 1 to 2 hours a week face to face**  
-*17 August 2020 · teaching · announced* · [issue 104](../home/uclcovid/data/updates/104_17_August__Issue_104_.html)
+*17 August 2020 · teaching · announced* · [issue 104](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/104_17_August__Issue_104_.html)
 
 Students free to study on campus or from anywhere in the world, and to change their mind mid-term without penalty.
 
@@ -1570,7 +1570,7 @@ Students free to study on campus or from anywhere in the world, and to change th
 The most concrete statement of how much on-campus contact autumn 2020 actually involved, and essential context for reading the on-campus case counts that begin in October.
 
 **UCL accepts all students meeting their original offer after the A level U-turn**  
-*17 August 2020 · assessment · reported* · [issue 104](../home/uclcovid/data/updates/104_17_August__Issue_104_.html)
+*17 August 2020 · assessment · reported* · [issue 104](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/104_17_August__Issue_104_.html)
 
 Following the government's decision to use teacher-predicted grades rather than the Ofqual algorithm.
 
@@ -1579,7 +1579,7 @@ Following the government's decision to use teacher-predicted grades rather than 
 The decision that produced the exceptionally large first-year intake, which UCL names on 26 August as one cause of the study-space shortage. It is therefore upstream of how crowded campus was in autumn 2020.
 
 **Campus Opening Guide sets out a four-stage building reopening process**  
-*19 August 2020 · restrictions · reported* · [issue 105](../home/uclcovid/data/updates/105_19_August__Issue_105_.html)
+*19 August 2020 · restrictions · reported* · [issue 105](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/105_19_August__Issue_105_.html)
 
 Planning, building preparation, approval to open and confirmation, with each department nominating a liaison to the Estates team.
 
@@ -1588,7 +1588,7 @@ Planning, building preparation, approval to open and confirmation, with each dep
 The procedure by which all campus buildings were open by 2 September 2020.
 
 **Fieldwork framework published to govern planning, approval and management**  
-*19 August 2020 · research · reported* · [issue 105](../home/uclcovid/data/updates/105_19_August__Issue_105_.html)
+*19 August 2020 · research · reported* · [issue 105](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/105_19_August__Issue_105_.html)
 
 Working alongside existing risk assessments, with pre-conditions and a checklist before approval, overseen by a dedicated group.
 
@@ -1597,7 +1597,7 @@ Working alongside existing risk assessments, with pre-conditions and a checklist
 Formalises the fieldwork restart permitted on 25 June 2020. Added after a coverage check flagged issue 105 as decision-bearing but uncited.
 
 **Visitors to campus must declare symptoms and register where they went**  
-*24 August 2020 · testing · reported* · [issue 106](../home/uclcovid/data/updates/106_24_August__Issue_106_.html)
+*24 August 2020 · testing · reported* · [issue 106](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/106_24_August__Issue_106_.html)
 
 Contact details and areas visited collected so UCL could respond to cases.
 
@@ -1606,7 +1606,7 @@ Contact details and areas visited collected so UCL could respond to cases.
 UCL building its own contact-tracing capability three weeks before the case reporting tool was announced.
 
 **Staff offices released to students as study space after distancing cuts capacity**  
-*26 August 2020 · accommodation · announced* · [issue 107](../home/uclcovid/data/updates/107_26_August__Issue_107_.html)
+*26 August 2020 · accommodation · announced* · [issue 107](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/107_26_August__Issue_107_.html)
 
 Floors in Bidborough House and Torrington Place given over to students, against the 6,000 study spaces available the previous year.
 
@@ -1636,7 +1636,7 @@ A negative lag is UCL acting before the national measure, a positive lag is UCL 
 ### September 2020
 
 **Presumption of return from 1 September for staff whose work requires the site**  
-*1 September 2020 · restrictions · took effect* · [issue 95](../home/uclcovid/data/updates/095_27_July__Issue_95_.html)
+*1 September 2020 · restrictions · took effect* · [issue 95](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/095_27_July__Issue_95_.html)
 
 Covering face-to-face teaching, some professional services and technical services in laboratories.
 
@@ -1645,7 +1645,7 @@ Covering face-to-face teaching, some professional services and technical service
 Filed on 1 September, the effective date; announced 27 July. The two limbs of this policy — presumption to return for some, remote until January for others — are what the on-campus and off-campus split in the case data is measuring.
 
 **All campus buildings open on schedule for the new academic year**  
-*2 September 2020 · restrictions · took effect* · [issue 108](../home/uclcovid/data/updates/108_2_September__Issue_108_.html)
+*2 September 2020 · restrictions · took effect* · [issue 108](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/108_2_September__Issue_108_.html)
 
 Over 100 buildings requiring safety and statutory checks, completed to the July roadmap.
 
@@ -1654,14 +1654,14 @@ Over 100 buildings requiring safety and statutory checks, completed to the July 
 Five and a half months after the closure of 20 March 2020. Open, but under the 25% occupancy cap and 2 metre distancing.
 
 **Pre-enrolment data used to forecast how many students would be on campus**  
-*2 September 2020 · epidemiology · reported* · [issue 108](../home/uclcovid/data/updates/108_2_September__Issue_108_.html)
+*2 September 2020 · epidemiology · reported* · [issue 108](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/108_2_September__Issue_108_.html)
 
 > It is particularly urgent this year, as we will use this to forecast student numbers on campus and manage activities within our 2-metre social distancing guidelines.
 
 UCL predicting campus occupancy from enrolment before it could measure it. The case statistics that began six weeks later gave it a measurement instead.
 
 **Zoom licensed for a year because it was the most reliable platform for China**  
-*2 September 2020 · teaching · took effect* · [issue 107](../home/uclcovid/data/updates/107_26_August__Issue_107_.html)
+*2 September 2020 · teaching · took effect* · [issue 107](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/107_26_August__Issue_107_.html)
 
 Supported by ISD from 2 September alongside Blackboard Collaborate and Microsoft Teams.
 
@@ -1670,14 +1670,14 @@ Supported by ISD from 2 September alongside Blackboard Collaborate and Microsoft
 A platform decision driven by where students physically were. Many were expected to study the whole of Term 1 from outside the UK.
 
 **Student Success Advisers appointed, one for every 200 undergraduates**  
-*7 September 2020 · wellbeing · announced* · [issue 109](../home/uclcovid/data/updates/109_7_September__Issue_109_.html)
+*7 September 2020 · wellbeing · announced* · [issue 109](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/109_7_September__Issue_109_.html)
 
 Embedded in academic departments and contacting students before and after arrival.
 
 > Each Adviser will be responsible for around 200 students, acting as their first point of contact for any questions or problems they may have, and proactively contacting them before and after they arrive.
 
 **Student Support Fund opened for students facing severe financial hardship**  
-*7 September 2020 · wellbeing · announced* · [issue 109](../home/uclcovid/data/updates/109_7_September__Issue_109_.html)
+*7 September 2020 · wellbeing · announced* · [issue 109](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/109_7_September__Issue_109_.html)
 
 Prioritising students from low-income families and BAME backgrounds, disabled students and those with experience of care or homelessness, and receiving the Provost's donated salary.
 
@@ -1686,7 +1686,7 @@ Prioritising students from low-income families and BAME backgrounds, disabled st
 The destination of the 20% salary reduction announced on 24 April, now opened to staff donations.
 
 **No national pay uplift for 2020-21; UCL raises London weighting by 2%**  
-*9 September 2020 · governance · announced* · [issue 110](../home/uclcovid/data/updates/110_9_September__Issue_110_.html)
+*9 September 2020 · governance · announced* · [issue 110](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/110_9_September__Issue_110_.html)
 
 National negotiations agreed no uplift because of the sector's financial position. UCL kept automatic incremental progression on grades 1 to 9 and backdated the London weighting rise to 1 August.
 
@@ -1695,7 +1695,7 @@ National negotiations agreed no uplift because of the sector's financial positio
 A sector-level decision by UCEA that UCL partly offset locally. The UCEA settlement is a stage 2 retrieval target for the sector track.
 
 **Provost notes the national daily case count clearly rising again**  
-*9 September 2020 · epidemiology · reported* · [issue 110](../home/uclcovid/data/updates/110_9_September__Issue_110_.html)
+*9 September 2020 · epidemiology · reported* · [issue 110](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/110_9_September__Issue_110_.html)
 
 Written the week the rule of six was introduced and three weeks before term began.
 
@@ -1704,7 +1704,7 @@ Written the week the rule of six was introduced and three weeks before term bega
 UCL watching national figures because it had none of its own. The reporting tool announced in the same issue is the answer to exactly this.
 
 **UCL announces a reporting tool to monitor and respond to cases at UCL**  
-*9 September 2020 · epidemiology · announced* · [issue 110](../home/uclcovid/data/updates/110_9_September__Issue_110_.html)
+*9 September 2020 · epidemiology · announced* · [issue 110](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/110_9_September__Issue_110_.html)
 
 Due mid-September, designed with UCL public health experts who had been advising the government.
 
@@ -1722,28 +1722,28 @@ Applied indoors and outdoors.
 UCL noted it on 9 September while saying it had not yet decided what to do, which is rare candour in the record.
 
 **Quality assurance processes temporarily relaxed to cut administrative workload**  
-*14 September 2020 · assessment · announced* · [issue 111](../home/uclcovid/data/updates/111_14_September__Issue_111_.html)
+*14 September 2020 · assessment · announced* · [issue 111](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/111_14_September__Issue_111_.html)
 
 Internal Quality Review deferred a year for most departments, extenuating circumstances reporting suspended, the emergency module amendment procedure continued, and peer observation reporting suspended.
 
 > A series of temporary modifications to quality assurance processes at departmental level has been agreed for 2020-21, to uphold UCL’s academic standards while reducing administrative workload.
 
 **Rule of six noted as UCL considers its response**  
-*14 September 2020 · restrictions · took effect* · [issue 110](../home/uclcovid/data/updates/110_9_September__Issue_110_.html)
+*14 September 2020 · restrictions · took effect* · [issue 110](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/110_9_September__Issue_110_.html)
 
 > the Government has reported a rise in coronavirus cases and limited social gatherings to six people from Monday. UCL is monitoring the situation and considering our response.
 
 Filed on 14 September, the Monday the national limit took effect; reported by UCL on 9 September. A rare case of UCL saying openly that it had not yet decided what to do.
 
 **Asymptomatic testing ruled out as a routine offer**  
-*16 September 2020 · testing · announced* · [issue 112](../home/uclcovid/data/updates/112_16_September__Issue_112_.html)
+*16 September 2020 · testing · announced* · [issue 112](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/112_16_September__Issue_112_.html)
 
 > Testing of asymptomatic staff or students will only be undertaken where our public health advisers consider this appropriate, and will not be offered routinely.
 
 Load-bearing for reading the case data. The published counts are confirmed cases arising largely from symptomatic testing, so they undercount by design and the size of the undercount is unknown.
 
 **UCL to provide up to 1,000 tests a day for symptomatic staff and students**  
-*16 September 2020 · testing · announced* · [issue 112](../home/uclcovid/data/updates/112_16_September__Issue_112_.html)
+*16 September 2020 · testing · announced* · [issue 112](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/112_16_September__Issue_112_.html)
 
 Built on an August pilot in the Paul O'Gorman Building, complementing rather than replacing national testing, with positives referred to NHS Test and Trace.
 
@@ -1752,14 +1752,14 @@ Built on an August pilot in the Paul O'Gorman Building, complementing rather tha
 Prompted by the widely reported failure of NHS testing capacity in September 2020. UCL built its own because the national system could not be relied on.
 
 **UCL to work with Camden and Islington public health teams on case response**  
-*16 September 2020 · testing · announced* · [issue 112](../home/uclcovid/data/updates/112_16_September__Issue_112_.html)
+*16 September 2020 · testing · announced* · [issue 112](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/112_16_September__Issue_112_.html)
 
 > We will, of course, continue to work with Camden and Islington public health teams and with the London Coronavirus Response Cell.
 
 Names Camden explicitly as a public health partner, which is the institutional counterpart to the Camden case comparator in the data track.
 
 **Connect to Protect reporting tool launched for staff and students**  
-*17 September 2020 · testing · took effect* · [issue 113](../home/uclcovid/data/updates/113_21_September__Issue_113_.html)
+*17 September 2020 · testing · took effect* · [issue 113](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/113_21_September__Issue_113_.html)
 
 Collecting symptoms, testing status, self-isolation status and areas of campus recently visited, to monitor the number and location of potential cases.
 
@@ -1768,14 +1768,14 @@ Collecting symptoms, testing status, self-isolation status and areas of campus r
 Filed on 17 September, the day issue 112 said the tool would be available; the description here is from issue 113 of 21 September. This is the collection mechanism behind the published case counts.
 
 **Scenario plans published for positive cases and further lockdowns**  
-*21 September 2020 · governance · reported* · [issue 113](../home/uclcovid/data/updates/113_21_September__Issue_113_.html)
+*21 September 2020 · governance · reported* · [issue 113](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/113_21_September__Issue_113_.html)
 
 Including criteria for closing buildings, additional cleaning, and how people at risk would be notified.
 
 > Colleagues across UCL have also completed detailed planning in case any students or members of staff test positive for coronavirus, or if further lockdown restrictions are introduced by Government.
 
 **Face coverings extended to UCL's outdoor spaces**  
-*23 September 2020 · restrictions · reported* · [issue 114](../home/uclcovid/data/updates/114_23_September__Issue_114_.html)
+*23 September 2020 · restrictions · reported* · [issue 114](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/114_23_September__Issue_114_.html)
 
 Expected everywhere on campus and mandatory within two metres of another person.
 
@@ -1784,7 +1784,7 @@ Expected everywhere on campus and mandatory within two metres of another person.
 The fourth and widest version of the policy, five days before term began.
 
 **NHS COVID-19 contact tracing app launched and promoted to UCL staff**  
-*24 September 2020 · testing · reported* · [issue 115](../home/uclcovid/data/updates/115_28_September__Issue_115_.html)
+*24 September 2020 · testing · reported* · [issue 115](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/115_28_September__Issue_115_.html)
 
 Recommended alongside, not instead of, reporting symptoms through Connect to Protect.
 
@@ -1793,7 +1793,7 @@ Recommended alongside, not instead of, reporting symptoms through Connect to Pro
 Filed on 24 September, the national launch date of the app in England and Wales; reported by UCL on 28 September. The national date needs confirming against a primary source in stage 2.
 
 **Community Commitment to Protect Each Other issued with the Students' Union**  
-*28 September 2020 · governance · reported* · [issue 115](../home/uclcovid/data/updates/115_28_September__Issue_115_.html)
+*28 September 2020 · governance · reported* · [issue 115](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/115_28_September__Issue_115_.html)
 
 Setting expectations on respecting others, reporting sickness and safety on campus and beyond, sent to all students on the first day of term.
 
@@ -1802,7 +1802,7 @@ Setting expectations on respecting others, reporting sickness and safety on camp
 Issued alongside student disciplinary guidance for breaches of safety requirements, so the commitment was backed by sanction.
 
 **Free seasonal flu vaccination vouchers offered to all UK staff**  
-*28 September 2020 · vaccination · announced* · [issue 115](../home/uclcovid/data/updates/115_28_September__Issue_115_.html)
+*28 September 2020 · vaccination · announced* · [issue 115](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/115_28_September__Issue_115_.html)
 
 In partnership with Boots, framed as reducing the burden of respiratory disease on the NHS.
 
@@ -1811,14 +1811,14 @@ In partnership with Boots, framed as reducing the burden of respiratory disease 
 The only vaccination UCL could offer in autumn 2020. COVID-19 vaccination did not begin nationally until 8 December 2020.
 
 **RegisterUCL attendance system introduced to meet public health requirements**  
-*28 September 2020 · testing · reported* · [issue 115](../home/uclcovid/data/updates/115_28_September__Issue_115_.html)
+*28 September 2020 · testing · reported* · [issue 115](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/115_28_September__Issue_115_.html)
 
 > The Registrar has written to Faculty Tutors and DOOs explaining how attendance must be captured in the coming year to ensure we are complying with Public Health England’s regulations to keep our campus safe.
 
 A second presence-recording system alongside Connect to Protect. Neither is the same as the on-campus marker in the published case data, which records a visit of 15 minutes or more in the two days before symptoms or test.
 
 **Term 1 begins on 28 September, coinciding with Yom Kippur**  
-*28 September 2020 · teaching · took effect* · [issue 111](../home/uclcovid/data/updates/111_14_September__Issue_111_.html)
+*28 September 2020 · teaching · took effect* · [issue 111](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/111_14_September__Issue_111_.html)
 
 Departments asked to be flexible about start-of-term requirements for Jewish students observing the fast.
 
@@ -1827,7 +1827,7 @@ Departments asked to be flexible about start-of-term requirements for Jewish stu
 Establishes the first day of Term 1 as 28 September 2020, which is the reference point for reading the October case surge. The published case series begins eleven days later.
 
 **China Connect launched to give students in China reliable access to teaching**  
-*30 September 2020 · teaching · announced* · [issue 116](../home/uclcovid/data/updates/116_30_September__Issue_116_.html)
+*30 September 2020 · teaching · announced* · [issue 116](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/116_30_September__Issue_116_.html)
 
 Routing connections from mainland China to London via Shanghai.
 
@@ -1838,7 +1838,7 @@ By 6 October over 2,800 users were on it, which is a measure of how many student
 ### October 2020
 
 **Busiest online teaching day so far, with 166,000 Moodle visits**  
-*5 October 2020 · teaching · observed* · [issue 119](../home/uclcovid/data/updates/119_12_October__Issue_119_.html)
+*5 October 2020 · teaching · observed* · [issue 119](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/119_12_October__Issue_119_.html)
 
 Nearly 59,000 Moodle users, over 2,800 Zoom sessions and 763 Blackboard Collaborate sessions in one day, with nearly 250 virtual common rooms set up.
 
@@ -1847,7 +1847,7 @@ Nearly 59,000 Moodle users, over 2,800 Zoom sessions and 763 Blackboard Collabor
 A measure of how much of teaching was happening off campus in the week the case counting began.
 
 **Crisis structure stood down and a Public Health Advisory Panel created**  
-*5 October 2020 · governance · took effect* · [issue 117](../home/uclcovid/data/updates/117_5_October__Issue_117_.html)
+*5 October 2020 · governance · took effect* · [issue 117](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/117_5_October__Issue_117_.html)
 
 Normal management resumed, with a new expert panel chaired by Professor Graham Hart, Dean of Population Health Sciences, to inform planning and coordinate public health activity.
 
@@ -1856,7 +1856,7 @@ Normal management resumed, with a new expert panel chaired by Professor Graham H
 The third and final reorganisation: mitigation group in March, Gold/Silver/Bronze in April, Crisis Leadership Team in June, and now back to normal with a standing public health panel. It happens one week before the case page goes live and four weeks before the second national lockdown.
 
 **UCL antigen testing facility begins issuing home self-test kits**  
-*5 October 2020 · testing · took effect* · [issue 117](../home/uclcovid/data/updates/117_5_October__Issue_117_.html)
+*5 October 2020 · testing · took effect* · [issue 117](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/117_5_October__Issue_117_.html)
 
 For symptomatic students in UCL halls and symptomatic staff whose role required them on campus.
 
@@ -1865,14 +1865,14 @@ For symptomatic students in UCL halls and symptomatic staff whose role required 
 Narrower in practice than the 1,000 tests a day for all symptomatic staff and students announced on 16 September. Eligibility is restricted to hall residents and on-site staff.
 
 **Case definition set as positive tests reported to the Public Health Daily Review Group**  
-*12 October 2020 · epidemiology · reported* · [issue 119](../home/uclcovid/data/updates/119_12_October__Issue_119_.html)
+*12 October 2020 · epidemiology · reported* · [issue 119](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/119_12_October__Issue_119_.html)
 
 > New cases are defined as new confirmed positive test results reported to UCL’s Public Health Daily Review Group.
 
 The definition behind every number in the dataset. A case had to be tested, confirmed, and reported to UCL to be counted, which is three separate opportunities for undercounting.
 
 **Case page updated weekday mornings, correct to 5pm the previous day**  
-*12 October 2020 · epidemiology · reported* · [issue 119](../home/uclcovid/data/updates/119_12_October__Issue_119_.html)
+*12 October 2020 · epidemiology · reported* · [issue 119](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/119_12_October__Issue_119_.html)
 
 Weekend figures folded into Tuesday's report.
 
@@ -1881,14 +1881,14 @@ Weekend figures folded into Tuesday's report.
 The primary source for two conventions the archive documents: that Tuesday's figure covers Saturday to Monday, and that each figure lags reality by up to a day. Both must be carried into any reading of the daily series.
 
 **Newsletter cadence drops from twice weekly to weekly on Mondays**  
-*12 October 2020 · governance · took effect* · [issue 119](../home/uclcovid/data/updates/119_12_October__Issue_119_.html)
+*12 October 2020 · governance · took effect* · [issue 119](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/119_12_October__Issue_119_.html)
 
 > To reduce the pressure on your inboxes a little bit, you will now receive a coronavirus update once a week on Monday afternoons.
 
 The second cadence change, in the same issue that launches the case page. From this point the newsletters thin while the data thickens.
 
 **UCL publishes a webpage of confirmed COVID-19 cases among staff and students**  
-*12 October 2020 · epidemiology · reported* · [issue 119](../home/uclcovid/data/updates/119_12_October__Issue_119_.html)
+*12 October 2020 · epidemiology · reported* · [issue 119](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/119_12_October__Issue_119_.html)
 
 Showing cases in the last 24 hours, the last 7 days, and the total since Term 1 began on 28 September.
 
@@ -1906,7 +1906,7 @@ London moved to Tier 2 on 17 October and UCL stayed open.
 The tier system is the mechanism by which national policy reached UCL geographically rather than sectorally.
 
 **London moves to Tier 2 and campus stays open**  
-*17 October 2020 · restrictions · took effect* · [issue 120](../home/uclcovid/data/updates/120_19_October__Issue_120_.html)
+*17 October 2020 · restrictions · took effect* · [issue 120](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/120_19_October__Issue_120_.html)
 
 Indoor socialising outside the household banned, rule of six outdoors, no travel to Tier 3 areas. For students in halls, the household is everyone sharing a kitchen or bathroom.
 
@@ -1915,7 +1915,7 @@ Indoor socialising outside the household banned, rule of six outdoors, no travel
 Filed on 17 October, when London entered Tier 2; reported by UCL on 19 October, a two-day lag. Face-to-face teaching continued unchanged, which is a decision as much as the tiering was.
 
 **Cases found most frequently in student accommodation**  
-*19 October 2020 · epidemiology · reported* · [issue 120](../home/uclcovid/data/updates/120_19_October__Issue_120_.html)
+*19 October 2020 · epidemiology · reported* · [issue 120](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/120_19_October__Issue_120_.html)
 
 With a contact defined as close proximity from two days before symptoms to ten days after onset.
 
@@ -1924,14 +1924,14 @@ With a contact defined as close proximity from two days before symptoms to ten d
 Directly relevant to reading the on-campus marker. If transmission was concentrated in halls rather than in teaching spaces, the on-campus flag records where people had been, not where they were infected — which is exactly what the archive documentation says it means.
 
 **Monthly building safety inspections made mandatory**  
-*19 October 2020 · governance · reported* · [issue 120](../home/uclcovid/data/updates/120_19_October__Issue_120_.html)
+*19 October 2020 · governance · reported* · [issue 120](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/120_19_October__Issue_120_.html)
 
 Approved by the Health and Safety Committee, with 30 departmental inspections across 25 buildings done and Safety Services having visited 58 buildings and 197 teaching spaces.
 
 > UCL’s Health and Safety Committee has approved a mandatory safety monitoring programme, to ensure compliance with existing implemented COVID-19 risk control measures which began in August.
 
 **UCL case management described as its own version of contact tracing**  
-*19 October 2020 · testing · reported* · [issue 120](../home/uclcovid/data/updates/120_19_October__Issue_120_.html)
+*19 October 2020 · testing · reported* · [issue 120](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/120_19_October__Issue_120_.html)
 
 Run in partnership with Camden and Islington Public Health and linked to the national test and trace programme.
 
@@ -1940,7 +1940,7 @@ Run in partnership with Camden and Islington Public Health and linked to the nat
 UCL running a parallel local system to the national one. The published counts come from this system, not from NHS Test and Trace.
 
 **Terms 2 and 3 expected to run like Term 1**  
-*26 October 2020 · teaching · announced* · [issue 121](../home/uclcovid/data/updates/121_26_October__Issue_121_.html)
+*26 October 2020 · teaching · announced* · [issue 121](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/121_26_October__Issue_121_.html)
 
 Core teaching and assessment online with limited on-campus activity, communicated to students jointly with Students' Union officers.
 
@@ -1960,14 +1960,14 @@ This source does not say that universities were to stay open. That is UCL's acco
 ### November 2020
 
 **Provost notes universities were meant to stay open this time**  
-*1 November 2020 · restrictions · reported* · [122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html](../home/uclcovid/data/updates/122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html)
+*1 November 2020 · restrictions · reported* · [122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html)
 
 > One of the main differences between this lockdown and the first earlier this year is the intention for schools, colleges and universities to remain open.
 
 The single sentence that explains why the UCL case series behaves so differently in the two lockdowns. Needs a primary source for the government policy in stage 2.
 
 **UCL to remain open through the second national lockdown**  
-*1 November 2020 · restrictions · announced* · [122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html](../home/uclcovid/data/updates/122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html) · lag **+1 day**
+*1 November 2020 · restrictions · announced* · [122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/122_UCL_s_response_to_new_Government_national_restrictions_from_5_November_2020.html) · lag **+1 day**
 
 The Provost's response to the announcement of 31 October, keeping libraries, study spaces, halls, catering and laboratories open, with face-to-face teaching under review.
 
@@ -1976,7 +1976,7 @@ The Provost's response to the announcement of 31 October, keeping libraries, stu
 A one-day lag on the announcement of Saturday 31 October, and the sharpest contrast with March 2020: the first lockdown closed UCL, the second did not, because government policy this time was for universities to stay open. Files 122 and 124 are the same message duplicated in the archive; only 122 is cited.
 
 **Newsletter frequency increased again in response to the second lockdown**  
-*2 November 2020 · governance · announced* · [issue 122](../home/uclcovid/data/updates/123_3_November__Issue_122_.html)
+*2 November 2020 · governance · announced* · [issue 122](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/123_3_November__Issue_122_.html)
 
 > We will increase the frequency of these Coronavirus update emails to give you the information you need as soon as possible.
 
@@ -1990,14 +1990,14 @@ A four-week closure of non-essential retail, with educational settings treated d
 > Second national lockdown comes into force in England
 
 **COVID-19 Career Support Scheme opened for staff whose careers were set back**  
-*9 November 2020 · research · announced* · [issue 123](../home/uclcovid/data/updates/125_9_November__Issue_123_.html)
+*9 November 2020 · research · announced* · [issue 123](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/125_9_November__Issue_123_.html)
 
 Part of the Equity and Inclusion Plan 2020-21, funding things such as additional childcare or salary costs.
 
 > this scheme invites staff whose careers are at risk of being negatively affected by the pandemic due to equity and inclusion-related circumstances to apply for support or funding to help mitigate this impact
 
 **Temporary operating model for Terms 2 and 3 published**  
-*9 November 2020 · teaching · reported* · [issue 123](../home/uclcovid/data/updates/125_9_November__Issue_123_.html)
+*9 November 2020 · teaching · reported* · [issue 123](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/125_9_November__Issue_123_.html)
 
 Fundamentally the same as Term 1, with the flexibility to increase or decrease on-campus activity according to national, regional and local rules.
 
@@ -2006,7 +2006,7 @@ Fundamentally the same as Term 1, with the flexibility to increase or decrease o
 An explicit statement that campus activity was indexed to external regulation rather than to UCL's own case counts. This is the mechanism the blog post's central claim depends on.
 
 **Travel restricted to essential journeys only until 2 December**  
-*9 November 2020 · restrictions · took effect* · [issue 123](../home/uclcovid/data/updates/125_9_November__Issue_123_.html)
+*9 November 2020 · restrictions · took effect* · [issue 123](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/125_9_November__Issue_123_.html)
 
 With UCL's insurance cover reduced to a £50,000 limit for COVID-related changes and flexible tickets required.
 
@@ -2024,7 +2024,7 @@ Published by the Department for Education and the Minister of State for Universi
 The sector-specific counterpart to the second lockdown, and the reason UCL restricted travel to essential journeys until 2 December.
 
 **Ramsay Hall becomes a COVID-19 testing centre for Camden residents**  
-*16 November 2020 · civic · took effect* · [issue 124](../home/uclcovid/data/updates/126_16_November__Issue_124_.html)
+*16 November 2020 · civic · took effect* · [issue 124](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/126_16_November__Issue_124_.html)
 
 A partnership between UCL, the London Borough of Camden and the Department of Health and Social Care, increasing testing capacity for the borough rather than for UCL.
 
@@ -2033,7 +2033,7 @@ A partnership between UCL, the London Borough of Camden and the Department of He
 UCL estate used for the borough's testing, not its own. Distinct from the Bidborough House centre for UCL students and staff, which opened a fortnight later.
 
 **Asymptomatic lateral flow testing opens for students at Bidborough House**  
-*30 November 2020 · testing · took effect* · [issue 126](../home/uclcovid/data/updates/128_30_November__Issue_126_.html)
+*30 November 2020 · testing · took effect* · [issue 126](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/128_30_November__Issue_126_.html)
 
 Part of the national testing programme for universities, to support travel over the winter break. Free, voluntary, results in about two hours.
 
@@ -2042,7 +2042,7 @@ Part of the national testing programme for universities, to support travel over 
 Reverses the position of 16 September, when asymptomatic testing was ruled out as a routine offer. It arrives as a national programme with a specific purpose: getting students home.
 
 **Staff explicitly excluded from asymptomatic testing at its launch**  
-*30 November 2020 · testing · announced* · [issue 126](../home/uclcovid/data/updates/128_30_November__Issue_126_.html)
+*30 November 2020 · testing · announced* · [issue 126](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/128_30_November__Issue_126_.html)
 
 > If you are a member of UCL staff, please do not book an appointment for an asymptomatic test. The Government has introduced the national testing programme specifically to support students who wish to leave university for the end of term.
 
@@ -2058,7 +2058,7 @@ London returned to Tier 2.
 > Second lockdown ends after four weeks and England returns to a stricter three-tier system of restrictions
 
 **Second national lockdown ends and London returns to Tier 2**  
-*2 December 2020 · restrictions · took effect* · [issue 126](../home/uclcovid/data/updates/128_30_November__Issue_126_.html)
+*2 December 2020 · restrictions · took effect* · [issue 126](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/128_30_November__Issue_126_.html)
 
 > The current national lockdown period in England is due to end this Wednesday, 2 December, after which London will be in Tier 2 (High Alert) restrictions.
 
@@ -2074,7 +2074,7 @@ A six-day window with staggered departure dates set by each university.
 A national policy written specifically for universities, and one of the few that treats the student population as an epidemiological object in its own right.
 
 **Coronavirus updates to pause from the start of Term 2**  
-*14 December 2020 · governance · announced* · [issue 128](../home/uclcovid/data/updates/130_14_December__Issue_128_.html)
+*14 December 2020 · governance · announced* · [issue 128](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/130_14_December__Issue_128_.html)
 
 In line with the Working Smarter initiative and feedback about email volume, with The Week@UCL continuing and coronavirus emails restarting only as needed.
 
@@ -2083,7 +2083,7 @@ In line with the Working Smarter initiative and feedback about email volume, wit
 The pause did not hold. Issue 129 followed on 5 January 2021, three weeks later, after the third national lockdown was announced. The intention to stop is itself evidence of how UCL read the situation in mid-December.
 
 **Phased return of students planned for Term 2 on government guidance**  
-*14 December 2020 · teaching · announced* · [issue 128](../home/uclcovid/data/updates/130_14_December__Issue_128_.html)
+*14 December 2020 · teaching · announced* · [issue 128](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/130_14_December__Issue_128_.html)
 
 Departments prioritised practical, laboratory and studio subjects and early assessments, with students free to study remotely or on campus.
 
@@ -2092,7 +2092,7 @@ Departments prioritised practical, laboratory and studio subjects and early asse
 Overtaken within three weeks by the third national lockdown. The plan for a phased return in January never happened as described.
 
 **Student study spaces in former offices running at over 80% capacity**  
-*14 December 2020 · accommodation · reported* · [issue 128](../home/uclcovid/data/updates/130_14_December__Issue_128_.html)
+*14 December 2020 · accommodation · reported* · [issue 128](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/130_14_December__Issue_128_.html)
 
 Bidborough House, Torrington Place and 1 St Martin's Le Grand given over to study space and the national testing programme.
 
@@ -2135,7 +2135,7 @@ The start of the phase in which UCL's January 2021 rise occurs. Attributing that
 ### January 2021
 
 **Twice-weekly asymptomatic testing extended to staff working on campus**  
-*5 January 2021 · testing · announced* · [issue 129](../home/uclcovid/data/updates/131_5_January_2021__Issue_129_.html)
+*5 January 2021 · testing · announced* · [issue 129](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/131_5_January_2021__Issue_129_.html)
 
 At Bidborough House, free and voluntary, using lateral flow tests.
 
@@ -2144,7 +2144,7 @@ At Bidborough House, free and voluntary, using lateral flow tests.
 Five weeks after staff were told not to book asymptomatic tests. Encouraged on 5 January, expected by 18 January. A change in testing intensity that will show in the staff case counts independently of any change in infection.
 
 **UCL responds to the third national lockdown: work from home if you can**  
-*5 January 2021 · restrictions · announced* · [issue 129](../home/uclcovid/data/updates/131_5_January_2021__Issue_129_.html)
+*5 January 2021 · restrictions · announced* · [issue 129](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/131_5_January_2021__Issue_129_.html)
 
 Campus stayed open for estates, libraries, cleaning, catering and security staff, and for researchers needing specialist facilities. Clinically extremely vulnerable staff told not to attend.
 
@@ -2153,7 +2153,7 @@ Campus stayed open for estates, libraries, cleaning, catering and security staff
 A one-day lag on the announcement of 4 January 2021. This is the policy under which UCL's on-campus student cases fell to their lowest point of the whole series in January 2021, which is the blog post's central claim.
 
 **University staff classed as critical workers for school places**  
-*5 January 2021 · governance · reported* · [issue 129](../home/uclcovid/data/updates/131_5_January_2021__Issue_129_.html)
+*5 January 2021 · governance · reported* · [issue 129](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/131_5_January_2021__Issue_129_.html)
 
 Because universities were being asked to stay open and keep delivering learning, even remotely.
 
@@ -2171,7 +2171,7 @@ Announced by the Prime Minister on the evening of 4 January and in force from 6 
 UCL responded on 5 January, between the announcement and the legal commencement. The ledger dates this row to the date this source gives, which is the commencement.
 
 **2 metre distancing mandated as the default in all settings**  
-*12 January 2021 · restrictions · took effect* · [issue 130](../home/uclcovid/data/updates/132_12_January_2021__Issue_130_.html)
+*12 January 2021 · restrictions · took effect* · [issue 130](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/132_12_January_2021__Issue_130_.html)
 
 Removing the flexibility previously allowed for critical laboratory work, which now needed Head of Department approval and a fresh risk assessment.
 
@@ -2180,7 +2180,7 @@ Removing the flexibility previously allowed for critical laboratory work, which 
 UCL tightening beyond its own July position, which had already been stricter than the national one metre plus.
 
 **Government redefines a contact as 15 minutes cumulative within two metres**  
-*12 January 2021 · testing · took effect* · [issue 130](../home/uclcovid/data/updates/132_12_January_2021__Issue_130_.html)
+*12 January 2021 · testing · took effect* · [issue 130](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/132_12_January_2021__Issue_130_.html)
 
 Counting a single period or time accumulated over one day.
 
@@ -2189,7 +2189,7 @@ Counting a single period or time accumulated over one day.
 The 15-minute threshold in the national contact definition. The on-campus marker in UCL's published data uses a similar 15-minute rule for presence, which is a different thing measured with a similar rule; do not conflate them.
 
 **UCL legally required to report case figures to Camden Council and the OfS**  
-*12 January 2021 · epidemiology · reported* · [issue 130](../home/uclcovid/data/updates/132_12_January_2021__Issue_130_.html)
+*12 January 2021 · epidemiology · reported* · [issue 130](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/132_12_January_2021__Issue_130_.html)
 
 Alongside responding to cases, informing the testing programme and identifying outbreaks.
 
@@ -2198,7 +2198,7 @@ Alongside responding to cases, informing the testing programme and identifying o
 The most important provenance fact about the dataset after the case definition itself. The numbers were not a voluntary publication: UCL had a statutory reporting duty to Camden and the OfS, and the public page sat on top of that obligation. The legal basis is a stage 2 retrieval target.
 
 **All UK travel corridors removed and travel restricted to legally permitted reasons**  
-*18 January 2021 · restrictions · took effect* · [issue 131](../home/uclcovid/data/updates/133_18_January_2021__Issue_131_.html)
+*18 January 2021 · restrictions · took effect* · [issue 131](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/133_18_January_2021__Issue_131_.html)
 
 With faculty approval, a risk assessment, TravelCert registration, a negative test up to three days before departure and self-isolation on return.
 
@@ -2209,7 +2209,7 @@ The tightest travel position of the whole record, and the reversal of the partia
 ### February 2021
 
 **All teaching to remain online for the rest of Term 2**  
-*1 February 2021 · teaching · announced* · [issue 132](../home/uclcovid/data/updates/134_1_February_2021__Issue_132_.html) · lag **+26 days**
+*1 February 2021 · teaching · announced* · [issue 132](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/134_1_February_2021__Issue_132_.html) · lag **+26 days**
 
 Except a small number of exempt courses, with a no-detriment package being developed for assessment.
 
@@ -2218,7 +2218,7 @@ Except a small number of exempt courses, with a no-detriment package being devel
 The decision that keeps the on-campus student line flat through the Alpha wave. Explicitly a response to national guidance rather than to UCL's own case counts.
 
 **Free face masks provided for the commute of staff who must attend campus**  
-*3 February 2021 · restrictions · took effect* · [issue 132](../home/uclcovid/data/updates/134_1_February_2021__Issue_132_.html)
+*3 February 2021 · restrictions · took effect* · [issue 132](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/134_1_February_2021__Issue_132_.html)
 
 From 3 February to 8 March, collectable in Bloomsbury or posted to staff at outlying sites.
 
@@ -2227,7 +2227,7 @@ From 3 February to 8 March, collectable in Bloomsbury or posted to staff at outl
 UCL intervening in the journey to work, which is outside its estate and outside its control, because commuting was the concern staff reported most.
 
 **Confirmatory PCR no longer required after a positive lateral flow test**  
-*8 February 2021 · testing · took effect* · [issue 133](../home/uclcovid/data/updates/135_8_February_2021__Issue_133__.html)
+*8 February 2021 · testing · took effect* · [issue 133](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/135_8_February_2021__Issue_133__.html)
 
 Isolation to begin from the day of the positive lateral flow result.
 
@@ -2236,7 +2236,7 @@ Isolation to begin from the day of the positive lateral flow result.
 A change in what counts as a confirmed case, and therefore a change in the meaning of the published series partway through it. Lateral flow positives now enter the count without PCR confirmation.
 
 **No detriment package published for 2020-21 assessment**  
-*8 February 2021 · assessment · reported* · [issue 133](../home/uclcovid/data/updates/135_8_February_2021__Issue_133__.html)
+*8 February 2021 · assessment · reported* · [issue 133](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/135_8_February_2021__Issue_133__.html)
 
 Developed with Students' Union UCL.
 
@@ -2266,7 +2266,7 @@ Four steps, replacing the regional tier system with uniform national easing.
 UCL published its own roadmap tracking these four steps on 23 March 2021.
 
 **Government roadmap allows practical teaching to resume from 8 March**  
-*22 February 2021 · restrictions · announced* · [issue 134](../home/uclcovid/data/updates/136_23_February_2021__Issue_134_.html)
+*22 February 2021 · restrictions · announced* · [issue 134](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/136_23_February_2021__Issue_134_.html)
 
 A four-step roadmap announced on 22 February, with higher education guidance limited at first to practical and practice-based courses needing specialist facilities.
 
@@ -2277,7 +2277,7 @@ Filed on 22 February, the date of the announcement; UCL reported it on 23 Februa
 ### March 2021
 
 **Practical and practice-based teaching resumes on campus**  
-*8 March 2021 · teaching · took effect* · [issue 135](../home/uclcovid/data/updates/137_2_March_2021__Issue_135_.html)
+*8 March 2021 · teaching · took effect* · [issue 135](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/137_2_March_2021__Issue_135_.html)
 
 Eligible students contacted directly through their programmes.
 
@@ -2286,14 +2286,14 @@ Eligible students contacted directly through their programmes.
 Filed on 8 March, the effective date; announced 2 March. The blog post notes the shaded campus-closed period running to 17 May 2021, so this partial return sits inside it and should be shown as such rather than as a reopening.
 
 **One year of remote working measured in platform use**  
-*16 March 2021 · teaching · reported* · [issue 136](../home/uclcovid/data/updates/138_16_March_2021__Issue_136_.html)
+*16 March 2021 · teaching · reported* · [issue 136](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/138_16_March_2021__Issue_136_.html)
 
 > in the last year, UCL has had 530 Zoom sessions, nearly 40,000 Lecturecast recordings, more than 1.5 million meetings on MS Teams, and over 16 million daily logins on Moodle during term-time
 
 The Zoom figure of 530 is almost certainly wrong by orders of magnitude: issue 119 alone recorded over 2,800 Zoom sessions in a single day in October 2020. Quoted as printed and flagged; do not repeat the 530 figure as a fact.
 
 **Future of Work survey opened on what should return to campus**  
-*23 March 2021 · governance · announced* · [issue 137](../home/uclcovid/data/updates/139_23_March_2021__Issue_137_.html)
+*23 March 2021 · governance · announced* · [issue 137](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/139_23_March_2021__Issue_137_.html)
 
 A seven-question survey open until 18 April 2021 on what worked remotely and what belongs on site.
 
@@ -2302,7 +2302,7 @@ A seven-question survey open until 18 April 2021 on what worked remotely and wha
 The first question in the record about what should be permanent rather than what should be endured.
 
 **UCL publishes its own roadmap tracking the government's four steps**  
-*23 March 2021 · restrictions · announced* · [issue 137](../home/uclcovid/data/updates/139_23_March_2021__Issue_137_.html)
+*23 March 2021 · restrictions · announced* · [issue 137](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/139_23_March_2021__Issue_137_.html)
 
 More campus spaces from 12 April including fitness, study space and outdoor dining, with a hoped-for full return no earlier than 21 June.
 
@@ -2313,7 +2313,7 @@ UCL committing to keep its own testing and reporting running through the reopeni
 ### April 2021
 
 **Free rapid testing opens to everyone in England**  
-*9 April 2021 · testing · took effect* · [issue 139](../home/uclcovid/data/updates/141_12_April_2021__Issue_139_.html)
+*9 April 2021 · testing · took effect* · [issue 139](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/141_12_April_2021__Issue_139_.html)
 
 UCL encouraged twice-weekly use and kept its own Bidborough House centre for those who needed to be on campus.
 
@@ -2322,7 +2322,7 @@ UCL encouraged twice-weekly use and kept its own Bidborough House centre for tho
 Filed on 9 April, the national effective date; reported by UCL on 12 April. From this point UCL's own testing provision is a convenience rather than a necessity, which changes what its case counts are capturing.
 
 **UCL relays advice that COVID tests do not invalidate the Ramadan fast**  
-*12 April 2021 · testing · reported* · [issue 139](../home/uclcovid/data/updates/141_12_April_2021__Issue_139_.html)
+*12 April 2021 · testing · reported* · [issue 139](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/141_12_April_2021__Issue_139_.html)
 
 From the Department of Health and Social Care in consultation with the British Islamic Medical Association.
 
@@ -2331,7 +2331,7 @@ From the Department of Health and Social Care in consultation with the British I
 A testing-uptake measure aimed at a specific community, on the first day of Ramadan 2021.
 
 **Remaining students told to stay away until in-person teaching resumes on 17 May**  
-*21 April 2021 · teaching · announced* · [issue 140](../home/uclcovid/data/updates/142_21_April_2021__Issue_140_.html)
+*21 April 2021 · teaching · announced* · [issue 140](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/142_21_April_2021__Issue_140_.html)
 
 With an exception for students whose mental health or wellbeing was affecting their ability to study.
 
@@ -2342,7 +2342,7 @@ An instruction not to return, which is why the on-campus student line stays flat
 ### May 2021
 
 **UCL sets a three-step return: 17 May, 21 June, then September**  
-*4 May 2021 · restrictions · announced* · [issue 141](../home/uclcovid/data/updates/143_4_May_2021__Issue_141_.html)
+*4 May 2021 · restrictions · announced* · [issue 141](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/143_4_May_2021__Issue_141_.html)
 
 Students and paused research from 17 May, campus fully open from 21 June, majority of staff back for part of the week from September.
 
@@ -2351,7 +2351,7 @@ Students and paused research from 17 May, campus fully open from 21 June, majori
 Explicitly built on three inputs: the government roadmap, UCL's own public health experts, and staff feedback. The 21 June date later slipped by four weeks with the national step 4 delay.
 
 **All remaining students may return to campus and face-to-face teaching restarts**  
-*17 May 2021 · teaching · took effect* · [issue 141](../home/uclcovid/data/updates/143_4_May_2021__Issue_141_.html)
+*17 May 2021 · teaching · took effect* · [issue 141](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/143_4_May_2021__Issue_141_.html)
 
 With parking, FFP2 masks, symptom-free testing and Connect to Protect offered as practical support.
 
@@ -2360,7 +2360,7 @@ With parking, FFP2 masks, symptom-free testing and Connect to Protect offered as
 The end of the campus-closed period the blog post shades on its student figure, which runs January to 17 May 2021. Filed on 17 May, the effective date; announced 4 May.
 
 **Travel permitted to Green and Amber list countries for essential reasons**  
-*17 May 2021 · restrictions · took effect* · [issue 142](../home/uclcovid/data/updates/144_17_May_2021__Issue_142_.html)
+*17 May 2021 · restrictions · took effect* · [issue 142](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/144_17_May_2021__Issue_142_.html)
 
 With quarantine costs met by UCL or the grant where travel was essential, and flexible tickets required.
 
@@ -2369,7 +2369,7 @@ With quarantine costs met by UCL or the grant where travel was essential, and fl
 The first loosening since travel corridors were removed on 18 January 2021.
 
 **Future of Work survey finds most staff want lasting flexibility**  
-*24 May 2021 · governance · reported* · [issue 143](../home/uclcovid/data/updates/145_24_May_2021__Issue_143_.html)
+*24 May 2021 · governance · reported* · [issue 143](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/145_24_May_2021__Issue_143_.html)
 
 Just over a third of staff responded. More than half reported an improved work-life blend, with commuting less and the financial effect named as gains.
 
@@ -2378,7 +2378,7 @@ Just over a third of staff responded. More than half reported an improved work-l
 The evidence base for the 40% on-campus expectation set in the same issue. Response rate is stated as just over a third, so the finding is not a census.
 
 **Staff to spend a minimum of 40% of working time on campus from September**  
-*24 May 2021 · governance · announced* · [issue 143](../home/uclcovid/data/updates/145_24_May_2021__Issue_143_.html)
+*24 May 2021 · governance · announced* · [issue 143](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/145_24_May_2021__Issue_143_.html)
 
 With the exact proportion depending on role and departmental need, and no staff required to work remotely.
 
@@ -2419,7 +2419,7 @@ Delayed in response to the Delta variant.
 UCL's return timetable slipped with it, which is the clearest case in the record of a UCL date moving purely because a national date moved.
 
 **Step 4 delayed four weeks and UCL's return timetable slips with it**  
-*14 June 2021 · restrictions · announced* · [issue 144](../home/uclcovid/data/updates/146_15_June_2021__Issue_144_.html)
+*14 June 2021 · restrictions · announced* · [issue 144](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/146_15_June_2021__Issue_144_.html)
 
 From 21 June to 19 July, with staff asked to keep working remotely until at least that date.
 
@@ -2428,14 +2428,14 @@ From 21 June to 19 July, with staff asked to keep working remotely until at leas
 Filed on 14 June, the date of the announcement; UCL reported it on 15 June, a one-day lag. The clearest case of a UCL date moving purely because a national date moved.
 
 **Staff asked to report every test result, positive or negative, to Connect to Protect**  
-*15 June 2021 · testing · reported* · [issue 144](../home/uclcovid/data/updates/146_15_June_2021__Issue_144_.html)
+*15 June 2021 · testing · reported* · [issue 144](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/146_15_June_2021__Issue_144_.html)
 
 > Once you receive your results, whether positive or negative, you should report your results through the NHS and through UCL’s Connect to Protect tool .
 
 UCL asking for negatives as well as positives, though only confirmed positives reach the published page. The denominator was collected but never published, which is why a positivity rate cannot be recovered from the archive.
 
 **UCL encourages students to register with a GP so they can be invited for vaccination**  
-*15 June 2021 · vaccination · reported* · [issue 144](../home/uclcovid/data/updates/146_15_June_2021__Issue_144_.html)
+*15 June 2021 · vaccination · reported* · [issue 144](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/146_15_June_2021__Issue_144_.html)
 
 > We are encouraging students to register with a GP so they can be invited to book their vaccination as the rollout continues and they become eligible.
 
@@ -2453,7 +2453,7 @@ The end of the legal requirements, including distancing and face coverings.
 UCL kept face coverings in all indoor spaces a week later, and this ends the 2 metre rule UCL had held since 8 July 2020.
 
 **One-way systems removed and social distancing relaxed at step 4**  
-*19 July 2021 · restrictions · took effect* · [issue 146](../home/uclcovid/data/updates/148_13_July_2021__Issue_146_.html) · lag **same day**
+*19 July 2021 · restrictions · took effect* · [issue 146](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/148_13_July_2021__Issue_146_.html) · lag **same day**
 
 Most spaces returned to normal capacity, with face coverings still expected in crowded indoor areas.
 
@@ -2462,7 +2462,7 @@ Most spaces returned to normal capacity, with face coverings still expected in c
 Filed on 19 July, the effective date; announced 13 July. The end of the 2 metre rule UCL had held since 8 July 2020, sixteen months earlier, including through a period when the national rule was one metre plus.
 
 **Face coverings kept in all indoor spaces after legal restrictions ended**  
-*26 July 2021 · restrictions · reported* · [issue 147](../home/uclcovid/data/updates/149_26_July_2021__Issue_147_.html) · lag **+7 days**
+*26 July 2021 · restrictions · reported* · [issue 147](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/149_26_July_2021__Issue_147_.html) · lag **+7 days**
 
 Including lectures, seminar rooms, study spaces, offices and laboratories.
 
@@ -2473,12 +2473,12 @@ A second deliberate divergence from national policy in the cautious direction, a
 ### August 2021
 
 **Pilot Remote Working Policy published with hybrid working guidance**  
-*2 August 2021 · governance · reported* · [issue 148](../home/uclcovid/data/updates/150_2_August_2021__Issue_148_.html)
+*2 August 2021 · governance · reported* · [issue 148](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/150_2_August_2021__Issue_148_.html)
 
 > A new pilot Remote Working Policy and set of hybrid working FAQs have been produced to support existing guidance and policies on working from home and on campus, during the pandemic, including key dates and the expectations of our staff.
 
 **Testing centre moves from Bidborough House to the Student Centre at reduced scale**  
-*2 August 2021 · testing · took effect* · [issue 147](../home/uclcovid/data/updates/149_26_July_2021__Issue_147_.html)
+*2 August 2021 · testing · took effect* · [issue 147](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/149_26_July_2021__Issue_147_.html)
 
 Bidborough House closed on 30 July, with a smaller service opening at the Student Centre for those who preferred to test on site or needed help.
 
@@ -2487,7 +2487,7 @@ Bidborough House closed on 30 July, with a smaller service opening at the Studen
 A reduction in UCL's own testing capacity, once home tests were universally available. Filed on 2 August, the opening date of the replacement.
 
 **Your Wellbeing survey folded into a weekly People Pulse survey**  
-*2 August 2021 · wellbeing · took effect* · [issue 148](../home/uclcovid/data/updates/150_2_August_2021__Issue_148_.html)
+*2 August 2021 · wellbeing · took effect* · [issue 148](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/150_2_August_2021__Issue_148_.html)
 
 After just over a year, with a one-year review published.
 
@@ -2496,7 +2496,7 @@ After just over a year, with a one-year review published.
 The crisis instrument becomes a permanent one. The survey ran weekly from 22 June 2020, which is longer than the published case series.
 
 **Face covering policy reviewed by senior management and deliberately kept**  
-*31 August 2021 · restrictions · announced* · [issue 149](../home/uclcovid/data/updates/151_31_August_2021__Issue_149_.html)
+*31 August 2021 · restrictions · announced* · [issue 149](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/151_31_August_2021__Issue_149_.html)
 
 Staff had raised concerns about wearing coverings all day, and the Senior Management Team decided to maintain the requirement pending a further review on 22 October.
 
@@ -2505,7 +2505,7 @@ Staff had raised concerns about wearing coverings all day, and the Senior Manage
 A documented decision rather than a default, which is what makes it usable as evidence that UCL chose to stay stricter than the law required.
 
 **NHS vaccination centre opens at UCL's Bidborough House**  
-*31 August 2021 · vaccination · took effect* · [issue 149](../home/uclcovid/data/updates/151_31_August_2021__Issue_149_.html)
+*31 August 2021 · vaccination · took effect* · [issue 149](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/151_31_August_2021__Issue_149_.html)
 
 Run by UCLH staff in partnership with UCL, open to local residents and students for first or second doses, bookable through the national system.
 
@@ -2516,7 +2516,7 @@ The same building that housed the asymptomatic testing centre, and before that s
 ### September 2021
 
 **COVID-19 Visitor Policy withdrawn**  
-*14 September 2021 · restrictions · took effect* · [issue 150](../home/uclcovid/data/updates/152_14_September_2021__Issue_150_.html)
+*14 September 2021 · restrictions · took effect* · [issue 150](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/152_14_September_2021__Issue_150_.html)
 
 Visitors still signed in but were no longer required to declare symptoms or register the areas they visited.
 
@@ -2525,7 +2525,7 @@ Visitors still signed in but were no longer required to declare symptoms or regi
 Ends the contact-tracing regime for visitors introduced on 24 August 2020.
 
 **Department for Education says students may decline face coverings**  
-*14 September 2021 · restrictions · reported* · [issue 150](../home/uclcovid/data/updates/152_14_September_2021__Issue_150_.html)
+*14 September 2021 · restrictions · reported* · [issue 150](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/152_14_September_2021__Issue_150_.html)
 
 Setting departmental guidance against UCL's own expectation that everyone wear one indoors.
 
@@ -2534,7 +2534,7 @@ Setting departmental guidance against UCL's own expectation that everyone wear o
 An explicit conflict between UCL policy and national guidance, stated in the newsletter. UCL kept its expectation but could not enforce it against students, which is the clearest limit on institutional autonomy anywhere in the record.
 
 **Ventilation reworked across campus with a CO2 monitoring trial**  
-*14 September 2021 · restrictions · reported* · [issue 150](../home/uclcovid/data/updates/152_14_September_2021__Issue_150_.html)
+*14 September 2021 · restrictions · reported* · [issue 150](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/152_14_September_2021__Issue_150_.html)
 
 Air recirculation turned off in mechanically ventilated rooms, full fresh air supplied, maintenance brought forward before the autumn term.
 
@@ -2543,7 +2543,7 @@ Air recirculation turned off in mechanically ventilated rooms, full fresh air su
 A physical infection-control measure rather than a behavioural one, and the only one in the record that changed the buildings themselves.
 
 **All remaining staff expected back on campus from the start of term**  
-*27 September 2021 · restrictions · took effect* · [issue 150](../home/uclcovid/data/updates/152_14_September_2021__Issue_150_.html)
+*27 September 2021 · restrictions · took effect* · [issue 150](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/152_14_September_2021__Issue_150_.html)
 
 With an expectation of at least 40% of working time on site, agreed individually with line managers.
 
@@ -2552,7 +2552,7 @@ With an expectation of at least 40% of working time on site, agreed individually
 Filed on 27 September, the effective date; announced 14 September. Eighteen months after the closure of 20 March 2020, and the point at which campus population returns to something like normal — which is the context for the Omicron peak three months later.
 
 **Face coverings expected during classroom teaching for the new academic year**  
-*29 September 2021 · restrictions · reported* · [issue 151](../home/uclcovid/data/updates/153_29_September_2021__Issue_151_.html)
+*29 September 2021 · restrictions · reported* · [issue 151](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/153_29_September_2021__Issue_151_.html)
 
 With no evidence required from anyone exempt, and a review scheduled for 22 October 2021.
 
@@ -2563,7 +2563,7 @@ The policy in force at the start of the academic year that ends with the Omicron
 ### October 2021
 
 **Face coverings retained after a University Management Committee review**  
-*22 October 2021 · restrictions · announced* · [issue 153](../home/uclcovid/data/updates/155_25_October_2021__Issue_153_.html)
+*22 October 2021 · restrictions · announced* · [issue 153](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/155_25_October_2021__Issue_153_.html)
 
 Reviewed on 22 October and kept, with a further review set for 6 December.
 
@@ -2572,7 +2572,7 @@ Reviewed on 22 October and kept, with a further review set for 6 December.
 Filed on 22 October, the date of the review; reported 25 October. The second documented decision to stay stricter than the law required.
 
 **Traffic light travel system replaced by a Red List of seven countries**  
-*25 October 2021 · restrictions · took effect* · [issue 153](../home/uclcovid/data/updates/155_25_October_2021__Issue_153_.html)
+*25 October 2021 · restrictions · took effect* · [issue 153](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/155_25_October_2021__Issue_153_.html)
 
 UCL permitted business travel to any country not on the Red List where the need was justified.
 
@@ -2612,7 +2612,7 @@ A negative lag is UCL acting before the national measure, a positive lag is UCL 
 ### November 2021
 
 **All UCL-sponsored staff social gatherings cancelled**  
-*30 November 2021 · restrictions · took effect* · [issue 155](../home/uclcovid/data/updates/157_30_November_2021__Issue_155_.html)
+*30 November 2021 · restrictions · took effect* · [issue 155](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/157_30_November_2021__Issue_155_.html)
 
 Applying to any gathering where UCL contributed to costs, on or off campus, with teams strongly advised to postpone parties.
 
@@ -2621,7 +2621,7 @@ Applying to any gathering where UCL contributed to costs, on or off campus, with
 Explicitly to protect teaching: cutting non-essential gatherings so that essential activity could continue. Lifted on 7 February 2022.
 
 **Face coverings made mandatory indoors on campus as Omicron emerges**  
-*30 November 2021 · restrictions · took effect* · [issue 155](../home/uclcovid/data/updates/157_30_November_2021__Issue_155_.html)
+*30 November 2021 · restrictions · took effect* · [issue 155](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/157_30_November_2021__Issue_155_.html)
 
 Following the Prime Minister's announcement of precautionary measures on 27 November.
 
@@ -2630,7 +2630,7 @@ Following the Prime Minister's announcement of precautionary measures on 27 Nove
 A move from expected to mandatory. UCL's own advisory panel is named alongside government guidance as the basis.
 
 **Staff encouraged to work remotely to December to cut campus footfall**  
-*30 November 2021 · restrictions · announced* · [issue 155](../home/uclcovid/data/updates/157_30_November_2021__Issue_155_.html)
+*30 November 2021 · restrictions · announced* · [issue 155](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/157_30_November_2021__Issue_155_.html)
 
 With campus staying open for in-person teaching, research and support.
 
@@ -2657,7 +2657,7 @@ This source does not record the higher education exemption. That is UCL's accoun
 UCL had made face coverings mandatory indoors on campus on 30 November, ten days ahead of this.
 
 **Plan B: office workers to work from home, with higher education exempted**  
-*13 December 2021 · restrictions · took effect* · [issue 157](../home/uclcovid/data/updates/159_9_December_2021__Issue_157_.html)
+*13 December 2021 · restrictions · took effect* · [issue 157](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/159_9_December_2021__Issue_157_.html)
 
 Face coverings required by law in most indoor public places from 10 December, NHS COVID Pass for large venues from 15 December, though not for teaching events.
 
@@ -2666,7 +2666,7 @@ Face coverings required by law in most indoor public places from 10 December, NH
 Filed on 13 December, the effective date; announced by the government on 8 December and by UCL on 9 December, a one-day lag. The higher education exemption is why UCL stayed open and why the December case counts are as high as they are.
 
 **Staff permitted to move teaching online for the final week of Term 1**  
-*13 December 2021 · teaching · announced* · [issue 158](../home/uclcovid/data/updates/160_13_December_2021__Issue_158_.html)
+*13 December 2021 · teaching · announced* · [issue 158](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/160_13_December_2021__Issue_158_.html)
 
 At the discretion of the programme and Head of Department, with no requirement to do so.
 
@@ -2675,21 +2675,21 @@ At the discretion of the programme and Head of Department, with no requirement t
 Permission rather than instruction, and taken eight days before the on-campus student peak of 525 cases in the week to 21 December 2021. Whether the permission was widely used cannot be established from the archive.
 
 **UCL states cases are rising on campus as well as nationally**  
-*13 December 2021 · epidemiology · reported* · [issue 158](../home/uclcovid/data/updates/160_13_December_2021__Issue_158_.html)
+*13 December 2021 · epidemiology · reported* · [issue 158](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/160_13_December_2021__Issue_158_.html)
 
 > Just as numbers of COVID-19 cases are rising throughout the UK, including the new Omicron variant, so too are they on campus.
 
 The clearest instance in the whole record of UCL acting on its own case data rather than on national policy: the newsletter cites the campus figures directly, and the on-campus student series peaks at its highest point of the entire dataset in the week to 21 December. This is the passage quoted in the blog post.
 
 **Winter closure extended by a day to 23 December**  
-*13 December 2021 · governance · announced* · [issue 158](../home/uclcovid/data/updates/160_13_December_2021__Issue_158_.html)
+*13 December 2021 · governance · announced* · [issue 158](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/160_13_December_2021__Issue_158_.html)
 
 Running from 22 December 2021 to 4 January 2022.
 
 > UCL's winter closure has been extended by one day to include Thursday, 23 December 2021 in recognition of our community's hard work over a difficult year
 
 **Term 2 to open with face-to-face teaching, disruption anticipated**  
-*17 December 2021 · teaching · announced* · [issue 159](../home/uclcovid/data/updates/161_17_December_2021__Issue_159_.html) · lag **+9 days**
+*17 December 2021 · teaching · announced* · [issue 159](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/161_17_December_2021__Issue_159_.html) · lag **+9 days**
 
 Campus open, large teaching events online, all students including those overseas told to come to campus.
 
@@ -2698,7 +2698,7 @@ Campus open, large teaching events online, all students including those overseas
 Decided at the peak of the Omicron wave, with UCL's own case counts at their highest. Campus stayed open because government and UCL's public health experts both advised it.
 
 **UCL expects two to three weeks of disruption at the start of January**  
-*17 December 2021 · epidemiology · reported* · [issue 159](../home/uclcovid/data/updates/161_17_December_2021__Issue_159_.html)
+*17 December 2021 · epidemiology · reported* · [issue 159](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/161_17_December_2021__Issue_159_.html)
 
 From delayed student arrivals and from staff and student absence through self-isolation.
 
@@ -2709,7 +2709,7 @@ A forecast made in December that the January 2022 data can be read against. Janu
 ### January 2022
 
 **COVID absence paid and exempt from the sickness procedure for up to four weeks**  
-*6 January 2022 · governance · announced* · [issue 160](../home/uclcovid/data/updates/162_6_January_2022__Issue_160_.html)
+*6 January 2022 · governance · announced* · [issue 160](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/162_6_January_2022__Issue_160_.html)
 
 With no medical evidence required for the first 28 days of absences beginning between 10 December 2021 and 26 January 2022.
 
@@ -2718,7 +2718,7 @@ With no medical evidence required for the first 28 days of absences beginning be
 A limit put on the open-ended commitment of 17 March 2020, which had exempted COVID absence from the procedure entirely.
 
 **Staff who are unvaccinated by choice must still attend campus**  
-*6 January 2022 · restrictions · announced* · [issue 160](../home/uclcovid/data/updates/162_6_January_2022__Issue_160_.html)
+*6 January 2022 · restrictions · announced* · [issue 160](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/162_6_January_2022__Issue_160_.html)
 
 Staff unable to be vaccinated for medical reasons were not required to attend and teaching staff in that group could work remotely.
 
@@ -2736,14 +2736,14 @@ SI 2021/1400 amends regulation 15 of the Plan B face covering regulations, subst
 UCL kept face coverings mandatory on the day the legal requirement ended and narrowed them to teaching settings twenty-six days later. This is the second time the record shows UCL holding a measure after the law dropped it, the first being step 4 in July 2021.
 
 **Face coverings kept mandatory at UCL after the legal requirement ended**  
-*27 January 2022 · restrictions · took effect* · [issue 161](../home/uclcovid/data/updates/163_20_January_2022__Issue_161_.html)
+*27 January 2022 · restrictions · took effect* · [issue 161](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/163_20_January_2022__Issue_161_.html)
 
 > As part of our measures to reduce the risk of infection, face coverings will remain mandatory at UCL while you are indoors in our buildings, unless you are exempt.
 
 The third and last documented divergence in the cautious direction, and the longest-running: UCL held a mask requirement from 10 July 2020 to 21 February 2022.
 
 **Plan B removed and UCL reinstates the 40% on-campus expectation**  
-*27 January 2022 · restrictions · took effect* · [issue 161](../home/uclcovid/data/updates/163_20_January_2022__Issue_161_.html)
+*27 January 2022 · restrictions · took effect* · [issue 161](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/163_20_January_2022__Issue_161_.html)
 
 Work-from-home guidance, vaccine certificates and the legal mask requirement all lifted nationally.
 
@@ -2754,7 +2754,7 @@ Filed on 27 January, the effective date; announced 20 January. Restores the sett
 ### February 2022
 
 **Restriction on staff social gatherings lifted and event size limits removed**  
-*7 February 2022 · restrictions · took effect* · [issue 162](../home/uclcovid/data/updates/164_7_February_2022__Issue_162_.html)
+*7 February 2022 · restrictions · took effect* · [issue 162](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/164_7_February_2022__Issue_162_.html)
 
 With risk assessments still encouraged and the face coverings policy still in force.
 
@@ -2763,7 +2763,7 @@ With risk assessments still encouraged and the face coverings policy still in fo
 Ten weeks after the December cancellation.
 
 **UCL's asymptomatic testing centre closes**  
-*18 February 2022 · testing · took effect* · [issue 163](../home/uclcovid/data/updates/165_14_February_2022__Issue_163_.html)
+*18 February 2022 · testing · took effect* · [issue 163](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/165_14_February_2022__Issue_163_.html)
 
 Replaced by a home test kit collection service on the Student Centre mezzanine.
 
@@ -2798,7 +2798,7 @@ A negative lag is UCL acting before the national measure, a positive lag is UCL 
 ### February 2022
 
 **Face coverings narrowed to teaching settings only**  
-*21 February 2022 · restrictions · took effect* · [issue 163](../home/uclcovid/data/updates/165_14_February_2022__Issue_163_.html) · lag **+26 days**
+*21 February 2022 · restrictions · took effect* · [issue 163](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/165_14_February_2022__Issue_163_.html) · lag **+26 days**
 
 Strongly advised elsewhere in crowded and enclosed spaces, following discussion by the University Management Committee, the Workplace Health and Safety Committee and the Public Health Advisory Panel.
 
@@ -2809,28 +2809,28 @@ The first relaxation of the face covering policy since it was introduced, and it
 ### May 2022
 
 **Unlimited COVID carers leave reverts to five days a year**  
-*1 May 2022 · governance · took effect* · [issue 165](../home/uclcovid/data/updates/167_4_May_2022__Issue_165_.html)
+*1 May 2022 · governance · took effect* · [issue 165](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/167_4_May_2022__Issue_165_.html)
 
 > Parents and carers leave for COVID-19 related absences will no longer be unlimited and will revert to 5 days per year from 1 May
 
 Closes the commitment made on 19 March 2020 that caring responsibilities would not cost staff leave or pay. Filed on 1 May, the effective date; reported 4 May.
 
 **COVID-19 telephone helpline closed**  
-*4 May 2022 · governance · reported* · [issue 165](../home/uclcovid/data/updates/167_4_May_2022__Issue_165_.html)
+*4 May 2022 · governance · reported* · [issue 165](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/167_4_May_2022__Issue_165_.html)
 
 > The COVID-19 telephone helpline service has now ended.
 
 The helpline had run since June 2020. Its closure in the final newsletter is the clearest marker that UCL considered the emergency over.
 
 **Connect to Protect kept running for reporting positive cases**  
-*4 May 2022 · epidemiology · announced* · [issue 165](../home/uclcovid/data/updates/167_4_May_2022__Issue_165_.html)
+*4 May 2022 · epidemiology · announced* · [issue 165](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/167_4_May_2022__Issue_165_.html)
 
 > Please continue to use UCL’s Connect to Protect service to report positive cases, so that we can monitor cases and identify potential outbreaks.
 
 Reporting was retained after testing advice was withdrawn, so the collection mechanism outlived the thing that fed it. Whether the public page continued to be updated is answered by the data, not the newsletters: the last row of covid_raw.csv is 2022-05-11.
 
 **Face coverings no longer expected anywhere on campus**  
-*4 May 2022 · restrictions · took effect* · [issue 165](../home/uclcovid/data/updates/167_4_May_2022__Issue_165_.html)
+*4 May 2022 · restrictions · took effect* · [issue 165](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/167_4_May_2022__Issue_165_.html)
 
 Except in areas managed by partner hospitals, with individual choice acknowledged.
 
@@ -2839,7 +2839,7 @@ Except in areas managed by partner hospitals, with individual choice acknowledge
 The end of a requirement that ran, in one form or another, from 22 May 2020.
 
 **Remaining domestic restrictions removed and UCL adopts living safely guidance**  
-*4 May 2022 · restrictions · reported* · [issue 165](../home/uclcovid/data/updates/167_4_May_2022__Issue_165_.html)
+*4 May 2022 · restrictions · reported* · [issue 165](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/167_4_May_2022__Issue_165_.html)
 
 The final newsletter of the series, relaying the government's advice on living safely with respiratory infections including COVID-19.
 
@@ -2848,7 +2848,7 @@ The final newsletter of the series, relaying the government's advice on living s
 Issue 165, the last of the 168 files. It is not on UCL's index page and was fetched separately; manifest.csv records this.
 
 **Twice-weekly testing advice dropped as free national testing ends**  
-*4 May 2022 · testing · announced* · [issue 165](../home/uclcovid/data/updates/167_4_May_2022__Issue_165_.html)
+*4 May 2022 · testing · announced* · [issue 165](https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/167_4_May_2022__Issue_165_.html)
 
 > In line with Government guidance and the end of the free national testing programme, we no longer advise staff and students to test for COVID-19 twice a week.
 

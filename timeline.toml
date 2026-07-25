@@ -78,9 +78,24 @@ url = "https://www.legislation.gov.uk/uksi/2020/592/made"
 title = "The Health Protection (Coronavirus, Wearing of Face Coverings on Public Transport) (England) Regulations 2020"
 
 [markdown]
-# Where TIMELINE.md points when it cites a newsletter. Relative to the rendered
-# file, so this changes if the timeline ever moves into the archive repository.
-source_prefix = "../home/uclcovid/data/updates/"
+# Where TIMELINE.md points when it cites a newsletter.
+#
+# This repository is published on its own, so a path relative to the rendered
+# file has nothing to reach: the newsletters live in the archive repository,
+# not this one. Citing them at their public URL is what makes the 283 links
+# followable by a reader who has only the published page — which the document's
+# own AI-generated notice tells them to do before trusting anything in it.
+#
+# For a local build against a checkout of the archive, override without editing
+# anything tracked:
+#
+#   UCLTL_MARKDOWN_SOURCE_PREFIX=../home/uclcovid/data/updates/ ...
+#   python3 build/render_md.py --set markdown.source_prefix=../home/uclcovid/data/updates/
+#
+# `blob/main` shows each newsletter as source. The archive also serves them
+# rendered at https://sjmurdoch.github.io/uclcovid/data/updates/, which reads
+# far better but depends on Pages staying enabled there.
+source_prefix = "https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/"
 
 # Pandemic phases used to section the Markdown chronology. These are a
 # judgement call and belong in a config file rather than a renderer. Dates are

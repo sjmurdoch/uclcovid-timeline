@@ -29,6 +29,8 @@ DEFAULTS = {
     'paths.progress': 'PROGRESS.md',
     'paths.markdown_out': 'TIMELINE.md',
     'paths.html_out': 'timeline.html',
+    'markdown.source_prefix':
+        'https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/',
     'range.start': '2020-01-01',
     'range.end': '2022-12-31',
     'extract.date_window': 1200,
