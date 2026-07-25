@@ -1,6 +1,6 @@
 # UCL and the pandemic: a chronology
 
-345 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 23 are the national and sector measures those decisions respond to, taken from 5 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.
+348 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 26 are the national and sector measures those decisions respond to, taken from 8 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.
 
 Every event on the first two tracks carries a verbatim quotation from the document that announced it, and every one of those quotations is checked mechanically against the preserved source before this document is built. Nothing here rests on a recollection of what a source said.
 
@@ -10,12 +10,12 @@ Each entry states what UCL decided, when, and in what words. The date is the dat
 
 The blockquote under each entry is the newsletter's own wording, not a summary of it. The paragraph above it is a plain-language reading of what was decided; the paragraph below it, where there is one, is context or a caveat that the newsletter itself does not supply. Where the two are in tension the quotation is the record and the paragraphs are commentary.
 
-Where a UCL action responds to a national or sector one, the two are shown side by side at the head of the phase with the **lag in days** between them. A negative lag is UCL moving before the national measure, a positive lag is UCL moving after it. 17 of these pairings are measured. A further 3 are declared but not measured, because the national measure has not yet been established from a primary source; they are listed at the end rather than given a number that would look like evidence.
+Where a UCL action responds to a national or sector one, the two are shown side by side at the head of the phase with the **lag in days** between them. A negative lag is UCL moving before the national measure, a positive lag is UCL moving after it. 18 of these pairings are measured. A further 2 are declared but not measured, because the national measure has not yet been established from a primary source; they are listed at the end rather than given a number that would look like evidence.
 
 ## Contents
 
-1. [First wave and the first lockdown](#1-first-wave-and-the-first-lockdown) · 9 March 2020 to 1 July 2020 · 140 events
-2. [Summer easing](#2-summer-easing) · 4 July 2020 to 26 August 2020 · 40 events
+1. [First wave and the first lockdown](#1-first-wave-and-the-first-lockdown) · 9 March 2020 to 1 July 2020 · 142 events
+2. [Summer easing](#2-summer-easing) · 4 July 2020 to 26 August 2020 · 41 events
 3. [Autumn resurgence and tiering](#3-autumn-resurgence-and-tiering) · 1 September 2020 to 14 December 2020 · 55 events
 4. [Winter, Alpha and the second closure](#4-winter-alpha-and-the-second-closure) · 19 December 2020 to 8 February 2021 · 13 events
 5. [The roadmap out of lockdown](#5-the-roadmap-out-of-lockdown) · 22 February 2021 to 1 June 2021 · 14 events
@@ -23,16 +23,17 @@ Where a UCL action responds to a national or sector one, the two are shown side 
 7. [Omicron](#7-omicron) · 30 November 2021 to 18 February 2022 · 18 events
 8. [Living with COVID](#8-living-with-covid) · 21 February 2022 to 11 May 2022 · 7 events
 
-Tracks in this build: 283 UCL, 21 national, 2 sector, 39 data.
+Tracks in this build: 283 UCL, 24 national, 2 sector, 39 data.
 
 ## 1. First wave and the first lockdown
 
-*Phase window 1 January 2020 to 3 July 2020. 140 events and 0 case-data readings, running 9 March 2020 to 1 July 2020.*
+*Phase window 1 January 2020 to 3 July 2020. 142 events and 0 case-data readings, running 9 March 2020 to 1 July 2020.*
 
 UCL's response opens on 9 March 2020 with a mitigation group meeting daily across fifteen strands of activity and a campus still open on Public Health England's advice, and arrives fourteen days later at a national lockdown with the buildings shut and the institution working from home. This is the densest concentration of events in the whole record, carried by a newsletter that appeared almost every weekday. Two of them fix the shape of the lag analysis: face-to-face teaching ceased on 13 March, ten days before the national lockdown, and staff were barred from campus on 24 March, one day after it.
 
 | National or sector event | Date | UCL response | Date | Lag |
 |---|---|---|---|---|
+| The Prime Minister announces the closure of schools for most pupils | 18 March 2020 | Day Nursery to stay open only for national-interest and essential staff | 19 March 2020 | +1 day |
 | The Prime Minister announces the first national lockdown | 23 March 2020 | Face-to-face teaching ceases; teaching moves online from 16 March | 13 March 2020 | -10 days |
 | The Prime Minister announces the first national lockdown | 23 March 2020 | Students strongly advised to return home | 17 March 2020 | -6 days |
 | The Prime Minister announces the first national lockdown | 23 March 2020 | Most UCL buildings and all libraries close | 20 March 2020 | -3 days |
@@ -245,6 +246,15 @@ Explicitly framed as not a closure, with teaching, assessment and research conti
 
 The stated end date passed without campus reopening. The horizon UCL set in March was wrong by more than a year for most activity.
 
+**The Prime Minister announces the closure of schools for most pupils**  
+*18 March 2020 · teaching · announced* · [source](https://commonslibrary.parliament.uk/house-of-commons-coronavirus-timeline/)
+
+Schools closed at the end of Friday 20 March and did not reopen on Monday 23 March, which is why the newsletters and this source date the same measure differently.
+
+> announcing closure of schools for most pupils from 23 March
+
+UCL restricted its Day Nursery to national-interest and essential staff the next day, a lag of one. The UCL note described this as closure "by 20 March" and the Commons Library timeline as closure "from 23 March"; both describe the same break, from opposite ends of the weekend.
+
 **All library loans renewed to 5 June and recalls suspended**  
 *18 March 2020 · teaching · announced* · [issue 8](../home/uclcovid/data/updates/008_18_March__Issue_8_.html)
 
@@ -260,7 +270,7 @@ With trade union and Students' Union representation, and epidemiological advice 
 Effective 20 March per issue 9. The decision-making structure itself changed to survive remote working.
 
 **Day Nursery to stay open only for national-interest and essential staff**  
-*19 March 2020 · wellbeing · announced* · [issue 9](../home/uclcovid/data/updates/009_19_March__Issue_9_.html)
+*19 March 2020 · wellbeing · announced* · [issue 9](../home/uclcovid/data/updates/009_19_March__Issue_9_.html) · lag **+1 day**
 
 Narrowed from the previous week's position that it remained open to all staff and students.
 
@@ -542,7 +552,7 @@ UCL identified its high-profile pandemic work as raising its own exposure.
 
 > there has been a significant increase in cyber-attacks on universities, with some reports showing an increase of 37% above previous levels
 
-UCL is relaying an external claim without attributing it. Do not repeat the 37% figure as established; it is unsourced in the newsletter.
+UCL is relaying an external claim without attributing it. Do not repeat the 37% figure as established. Checked twice and still unattributable: the newsletter names no source, and the archive's inventory of every link in that issue shows the only security link goes to UCL's own Stay Secure pages. There is no trail to follow, which is itself the finding. This is the one claim of the three stage 1 flagged that could not be verified.
 
 **Travel restrictions extended to 1 August after FCO advice**  
 *15 April 2020 · restrictions · took effect* · [issue 24](../home/uclcovid/data/updates/024_15_April__Issue_24_.html)
@@ -705,6 +715,15 @@ Introduced immediately before the summer assessment period began.
 > changes have been made to UCL’s Extenuating Circumstances process, to reduce any burden on our students. Students can now self-certify and no longer need to provide evidence when applying.
 
 Extends the self-certification agreed on 20 March by removing the evidence requirement entirely.
+
+**ONS finds Black adults far likelier to die of COVID-19 after adjusting for age**  
+*7 May 2020 · epidemiology · reported* · [source](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/articles/coronavirusrelateddeathsbyethnicgroupenglandandwales/2march2020to10april2020)
+
+Deaths from 2 March to 10 April 2020 in England and Wales. The published figures are 4.2 for Black males and 4.3 for Black females against White males and females.
+
+> When taking into account age in the analysis, Black males are 4.2 times more likely to die from a COVID-19-related death and Black females are 4.3 times more likely than White ethnicity males and females
+
+UCL relayed this on 2 June 2020 and stage 1 flagged it as not to be repeated until the primary source was checked. It checks out: UCL's "four times" is a fair reading of 4.2 and 4.3. The ONS analysis adjusts for age only; the publication is explicit that it does not by itself establish cause.
 
 **Faculties told to decide which modules not to run in 2020-21**  
 *7 May 2020 · teaching · announced* · [issue 40](../home/uclcovid/data/updates/040_7_May__Issue_40_.html)
@@ -968,7 +987,7 @@ Used to argue that the disparity could not be explained by health inequalities a
 
 > According to the ONS, Covid-19 deaths are four times more likely among black adults than those of white ethnicity in the UK.
 
-UCL relaying an ONS finding. The ONS publication is a stage 2 retrieval target; the figure must not be repeated as established until the primary source is checked.
+UCL relaying an ONS finding, and it checks out: the ONS publication of 7 May 2020 gives 4.2 for Black males and 4.3 for Black females against White males and females, after adjusting for age. Now carried on the national track with the ONS wording. The ONS is explicit that adjusting for age alone does not establish cause.
 
 **UCL commits to racial equality action in the context of coronavirus**  
 *2 June 2020 · governance · reported* · [issue 56](../home/uclcovid/data/updates/056_2_June__Issue_56_.html)
@@ -1211,7 +1230,7 @@ Filed on 1 July, the effective date; announced 30 June.
 
 ## 2. Summer easing
 
-*Phase window 4 July 2020 to 31 August 2020. 40 events and 0 case-data readings, running 4 July 2020 to 26 August 2020.*
+*Phase window 4 July 2020 to 31 August 2020. 41 events and 0 case-data readings, running 4 July 2020 to 26 August 2020.*
 
 With the campus closed and the term over, UCL spent the summer deciding how much of it to reopen and on what terms. The decision that mattered most was taken on 8 July: the Prime Minister had announced a relaxing of the 2 metre distancing rule on 23 June, and fifteen days later UCL confirmed it would keep a 2 metre guideline for Term 1 timetable planning anyway, a divergence that set room capacities for the whole of the autumn and so determined how many people were on campus once the case counting began in October. Face coverings became mandatory across campus on 10 July, ahead of the national requirement in shops that UCL recorded on 24 July, and the newsletter dropped from daily to twice weekly at issue 100 on 3 August.
 
@@ -1335,6 +1354,15 @@ Monday to Friday, 11.00 to 15.00, with other outlets to follow in September.
 
 Week precision: issue 89 of 17 July says only 'earlier this week', so the exact day is not established. Filed at the start of that week.
 
+**Advisory report models an Rt of 1.7 from September as its worst-case scenario**  
+*14 July 2020 · epidemiology · reported* · [source](https://acmedsci.ac.uk/file-download/51353957)
+
+"Preparing for a challenging winter 2020/21", produced at the request of the Government Chief Scientific Adviser.
+
+> The model assumes that Rt rises to 1.7 from September 2020
+
+UCL relayed this on 16 July 2020 and stage 1 flagged the Rt figure as not to be repeated until checked. It checks out, with a distinction worth keeping: 1.7 is an assumption the model was run under to explore a reasonable worst case, not a forecast of what Rt would be. Reporting it as a prediction would misstate what the report did.
+
 **Council postpones performance-related pay for grade 10 staff to August 2021**  
 *14 July 2020 · governance · announced* · [issue 86](../home/uclcovid/data/updates/086_14_July__Issue_86_.html)
 
@@ -1369,7 +1397,7 @@ Follows the FCO relaxing its advice the previous week. The first loosening of th
 
 > ‘Preparing for a challenging winter 2020/21’ has found there is a high degree of uncertainty about how the pandemic will evolve in the UK over the coming months, but suggests we should prepare for a ‘reasonable worst-case scenario’ where the average number of people that one infected person will pass the virus on to (Rt value) rises to 1.7 from September 2020 onwards.
 
-UCL relaying a report its own academics contributed to. The primary report is a stage 2 retrieval target and the Rt figure must not be repeated as established until it is checked. Note the warning is issued two months before the autumn term and the surge that followed it.
+UCL relaying a report its own academics contributed to, and it checks out against the Academy of Medical Sciences report itself. One distinction the newsletter loses: 1.7 is an assumption the model was run under to explore a reasonable worst case, not a forecast. The warning is issued two months before the autumn term and the surge that followed it.
 
 **Recruitment freeze partially relaxed where student numbers exceed forecast**  
 *17 July 2020 · governance · announced* · [issue 89](../home/uclcovid/data/updates/089_17_July__Issue_89_.html)
@@ -2824,7 +2852,6 @@ The newsletters name the national measures UCL was responding to, and those stat
 
 | National or sector measure | Provisional date | UCL response | Date |
 |---|---|---|---|
-| The government announces that schools and nurseries in England will close by 20 March | 18 March 2020 | Day Nursery to stay open only for national-interest and essential staff | 19 March 2020 |
 | The Coronavirus Job Retention Scheme sets its conditions on work by furloughed staff | *not yet established* | Furloughed staff barred from any work, including writing up UCL results | 30 April 2020 |
 | The Office for Students sets its expectations for 2020-21 admissions and teaching | *not yet established* | Term 1 plans forced early by the UCAS deadline and OfS expectations | 26 May 2020 |
 

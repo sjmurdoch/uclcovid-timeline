@@ -1,0 +1,259 @@
+Coronavirus (COVID-19) related deaths by ethnic group, England and Wales - Office for National Statistics 
+
+ Cookies on ons.gov.uk 
+ Cookies are small files stored on your device when you visit a website. We use some essential cookies to make this website work. 
+ We would like to set additional cookies to remember your settings and understand how you use the site. This helps us to improve our services. 
+
+ Accept additional cookies
+
+ Reject additional cookies
+
+ Manage settings 
+
+ You have accepted all additional cookies. 
+ You have rejected all additional cookies. 
+ You can change your cookie preferences at any time. 
+ Hide 
+
+ Skip to main content
+
+ /peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/articles/coronavirusrelateddeathsbyethnicgroupenglandandwales/2march2020to10april2020 
+
+ English (EN) | 
+ Cymraeg (CY) 
+
+ Release calendar 
+
+ Methodology 
+
+ Media 
+
+ About 
+
+ Blog 
+
+ Search for a keyword(s) or time series ID 
+
+ Search 
+
+ Data and analysis from Census 2021 
+
+ Coronavirus (COVID-19) related deaths by ethnic group, England and Wales: 2 March 2020 to 10 April 2020
+
+ Comparison of deaths where the coronavirus (COVID-19) was mentioned on the death certificate by broad age group, sex and ethnic group, using linked census and mortality records on deaths registered up to 17 April 2020. Includes death counts, cause-specific mortality ratios and odds ratios to identify differential risks of COVID-19-related deaths. 
+
+ This is the latest release. 
+ View previous releases 
+
+ Contact: Chris White and Vahé Nafilyan 
+
+ Release date: 7 May 2020 
+
+ Table of contents 
+
+ Main points 
+
+ Introduction 
+
+ Ethnic breakdown of deaths by age and sex 
+
+ Ethnic group differences in deaths involving COVID-19 adjusted for main socio-demographic factors 
+
+ Wider literature on ethnicity and mortality 
+
+ Analysis of COVID-19 deaths by ethnicity in England and Wales 
+
+ Strengths and limitations 
+
+ Print this 
+
+Article
+
+ Download as PDF
+
+ View all data used in this 
+
+Article
+
+ 1. Main points 
+
+ This provisional analysis has shown that the risk of death involving the coronavirus (COVID-19) among some ethnic groups is significantly higher than that of those of White ethnicity. 
+ When taking into account age in the analysis, Black males are 4.2 times more likely to die from a COVID-19-related death and Black females are 4.3 times more likely than White ethnicity males and females. 
+ People of Bangladeshi and Pakistani, Indian, and Mixed ethnicities also had statistically significant raised risk of death involving COVID-19 compared with those of White ethnicity. 
+ After taking account of age and other socio-demographic characteristics and measures of self-reported health and disability at the 2011 Census, the risk of a COVID-19-related death for males and females of Black ethnicity reduced to 1.9 times more likely than those of White ethnicity. 
+ Similarly, males in the Bangladeshi and Pakistani ethnic group were 1.8 times more likely to have a COVID-19-related death than White males when age and other socio-demographic characteristics and measures of self-reported health and disability were taken into account; for females, the figure was 1.6 times more likely. 
+ These results show that the difference between ethnic groups in COVID-19 mortality is partly a result of socio-economic disadvantage and other circumstances, but a remaining part of the difference has not yet been explained. 
+
+ Back to table of contents 
+
+ 2. Introduction 
+
+ This article presents provisional analysis of deaths involving the coronavirus (COVID-19) by ethnicity for England and Wales. The analysis includes deaths involving COVID-19 that occurred between 2 March and 10 April 2020, registered by 17 April. Ethnicity is not recorded on the death certificate. To enable us to undertake this analysis, deaths involving COVID-19 have been linked to the 2011 Census, which allowed us to ascertain the self-reported ethnicity of the deceased and other demographic factors. Analysis included those aged nine years and above. More details on the data used can be found in Section 7 and in the Technical appendix . The breakdown of ethnicity we have used in this publication was guided by the number of deaths available for use in analyses and its distribution across ethnic groups. Table 1 shows the breakdown of ethnic groups used. We will repeat this analysis in the future as more data become available; this will include age-standardised mortality rates of deaths involving COVID-19 and, where possible, more detailed breakdowns. 
+
+ Table 1. Ethnic breakdowns used in this publication 
+
+ Ethnic breakdowns used Their detailed composition 
+ White White British; Irish; Gypsy or Irish Traveller; Other White 
+ Mixed/Multiple ethnic groups White and Black Caribbean; White and Asian; White and Black African; Other Mixed 
+ Indian Indian 
+ Bangladeshi and Pakistani Bangladeshi and Pakistani 
+ Chinese Chinese 
+ Black Black Caribbean; Black African; Black Other 
+ Other ethnic group Asian other; Arab; Other ethnic group 
+
+ Download this table Table 1. Ethnic breakdowns used in this publication 
+ .xls 
+ .csv 
+
+ Back to table of contents 
+
+ 3. Ethnic breakdown of deaths by age and sex 
+
+ Table 2 shows the number of deaths involving the coronavirus (COVID-19) and their percentage distribution across ethnic groups among the study population. For comparison, figures of hospital deaths involving COVID-19 by ethnicity (Excel, 131KB) published by NHS England, updated up to 21 April, not taking account of more recent updates are also shown. It is important to note that our data differ from NHS England's as we report deaths for both England and Wales, include deaths outside of hospital, and include both confirmed and suspected cases of COVID-19. Despite these differences in the data, the results are very similar. In our data, the proportion of deaths occurring among those of White ethnicity was 83.8%, while the largest minority ethnic group was Black with 6.0%. Of those for whom ethnicity could be established in the NHS England data, approximately 82.7% were of White ethnicity, and those with Black ethnicity made up 5.7%. The only large difference between the two sources occurs in the category "Other Ethnic Group". The similarity between these two independent sets of figures supports the reliability of the findings. 
+
+ Table 2. Number and percentage of COVID-19 deaths by ethnic group and source 
+
+ NHS England (all ages) ONS (all ages) 
+ Deaths Percent Deaths Percent 
+ White 14781 82.73 10726 83.76 
+ Mixed 130 0.73 94 0.73 
+ Indian 560 3.13 483 3.77 
+ Bangladeshi and Pakistani 501 2.80 386 3.01 
+ Chinese 66 0.37 59 0.46 
+ Black 1022 5.72 766 5.98 
+ Other ethnic group 806 4.51 291 2.27 
+
+ Download this table Table 2. Number and percentage of COVID-19 deaths by ethnic group and source 
+ .xls 
+ .csv 
+ Notes: 
+
+ Office for National Statistics (ONS) figures are based on death registrations up 17 April 2020 that occurred between 2 March and 10 April 2020 and that could be linked to the 2011 Census. 
+ “Other ethnic group” encompasses Asian other, Arab and Other Ethnic Group categories in the classification. 
+ “Mixed” encompasses White and Black Caribbean; White and Asian; White and Black African; and Other Mixed ethnic group categories in the classification. 
+ “Black” encompasses Black Caribbean; Black African; and Black Other ethnic group categories in the classification. 
+ Breaking the deaths down further by age and sex, we see that deaths involving COVID-19 are more numerous for males and in people aged 65 years and older compared with those aged under 65 years, for all ethnic groups (Table 3). 
+
+ Table 3: COVID-19 death occurrences by age, sex and ethnic group, England and Wales, 2 March to 10 April 2020 
+
+ Deaths 
+ White Mixed Indian Bangladeshi/ Pakistani Chinese Black Other ethnic group Total 
+ Males 
+ 0-64 627 9 56 65 7 105 49 918 
+ 65+ 5,762 51 242 192 34 348 148 6,777 
+ Females 
+ 0-64 409 9 26 35 3 80 16 578 
+ 65+ 3928 25 159 94 15 233 78 4532 
+ Total 10,726 94 483 386 59 766 291 12,805 
+
+ Download this table Table 3: COVID-19 death occurrences by age, sex and ethnic group, England and Wales, 2 March to 10 April 2020 
+ .xls 
+ .csv 
+ Notes 
+
+ Office for National Statistics (ONS) figures are based on death registrations up 17 April 2020 that occurred between 2 March and 10 April 2020 and that could be linked to the 2011 Census. 
+ “Other ethnic group” encompasses Asian other, Arab and Other Ethnic Group categories in the classification. 
+ “Mixed” encompasses White and Black Caribbean; White and Asian; White and Black African; and Other Mixed ethnic group categories in the classification. 
+ “Black” encompasses Black Caribbean; Black African; and Black Other ethnic group categories in the classification. 
+
+ Embed code 
+
+ Embed this interactive 
+ '
+ id="embed-d55-480d-8625-afbe1fbe9de3"
+ name="embed-d55-480d-8625-afbe1fbe9de3"
+ readonly
+ />
+
+ Copy 
+
+ Back to table of contents 
+
+ 4. Ethnic group differences in deaths involving COVID-19 adjusted for main socio-demographic factors 
+
+ Differences in the risk of dying from the coronavirus (COVID-19) across ethnic groups may be driven by differences in a group's demographic and socio-economic profile. Existing evidence indicates that most ethnic minority groups tend to be more disadvantaged than their White counterparts . For more detail, see How ethnicity intersects with other dimensions of social disadvantage in the Technical appendix . Differences in the risk of dying from COVID-19 across ethnic groups may be related to demographic and socio-economic factors as well as to a person's past health profile. Differences in these characteristics and what they may imply for current circumstances may also be associated with the probability of being infected or the risk of death once infected. We used binary logistic regression models to estimate whether the risk of dying from COVID-19 is greater among the Black and other minority ethnic groups than among the White ethnic population, after taking into account a number of geographic, demographic, socio-economic, living arrangements and health measures from the 2011 Census. The statistical models are explained in the Technical appendix . These characteristics have the potential to confound any association with ethnicity, and they are important to adjust for to enable us to quantify the excess risk specifically associated with ethnicity. In Figure 1, we show how the risk of dying from COVID-19 varies by ethnic groups for men and women. We report the odds ratio for each minority ethnic group relative to the White population, after adjusting for age in Panel A and for a range of geographic, demographic and socio-economic characteristics in Panel B. 1 An odds ratio is a measure of the relative risk of an outcome in one population compared with a different population, where odds ratios greater than one indicate the outcome is more likely while less than one is less likely. The risk of death generally, and specifically death from COVID-19, is closely related to age. After adjusting for age (Panel A), men and women from all ethnic minority groups (except females with Chinese ethnicity) are at greater risk of dying from COVID-19 compared with those of White ethnicity. Black males are 4.2 times more likely to die from COVID-19 than White males, while Black females are 4.3 times more likely to die from COVID-19 than White females. People of Bangladeshi and Pakistani, Indian, and Mixed ethnicities also had statistically significantly raised odds of death compared with those of White ethnicity. For the Chinese ethnic group, we find a raised risk among males but not females. Odds ratios together with their confidence intervals are available in the accompanying data tables . To ensure that a broad range of factors were taken into account, we also adjusted for region, rural and urban classification, area deprivation, household composition, socio-economic position, highest qualification held, household tenure, and health or disability in the 2011 Census (Panel B). Therefore, the fully adjusted results show differences in risk between ethnic groups that are specific to those ethnic groups and are not caused by any of the factors listed on which members of the groups might differ. Adjusting for these factors substantially reduces the odds of a death involving COVID-19 relative to those of White ethnicity for all ethnic groups. More information on how the odds ratios change when adjusting for different sets of characteristics can be found in the Technical appendix . Model diagnostics are also available. In the fully adjusted model (Panel B), Black males and females are 1.9 times more likely to die from COVID-19 than the White ethnic group. Males of Bangladeshi and Pakistani ethnicity are 1.8 times more likely to die; for females, odds of death are reduced to 1.6 times more likely. Individuals from the Chinese and Mixed ethnic group have similar risks to those with White ethnicity. To test whether the differences in risk of COVID-19-related death within ethnic groups differed by their socio-economic class, we estimated logistic regression models separately for the three condensed socio-economic classes of the National Statistics Socio-economic Classification (NS-SEC) . By doing so, we compared the risk of COVID-19-related death across ethnic groups within the same socio-economic class, adjusting for other individual and household characteristics. This showed the differences in risk of COVID-19-related death across ethnic groups are of similar magnitudes within all three socio-economic classes. Figure 1: Risk of COVID-19-related death by ethnic group and sex, England and Wales, 2 March to 10 April 2020 Panel A - Age-adjusted model 
+
+ Embed code 
+
+ Embed this interactive 
+ '
+ id="embed-e95-4fa5-aee0-f743544ec5d5"
+ name="embed-e95-4fa5-aee0-f743544ec5d5"
+ readonly
+ />
+
+ Copy 
+
+ Download the data Panel B - Fully adjusted model 
+
+ Embed code 
+
+ Embed this interactive 
+ '
+ id="embed-55c-4765-903e-1daf6c6bc23e"
+ name="embed-55c-4765-903e-1daf6c6bc23e"
+ readonly
+ />
+
+ Copy 
+
+ Download the data Source: Office for National Statistics – Coronavirus-related deaths by ethnic group Notes: 
+
+ Logistic regression models adjusting for five-year age bands. Fully adjusted models include region indicators; rural and urban classification; IMD deciles; household composition and Socio-economic Status highest qualification held; NS-SEC of household person of reference; household tenure); and health (self-reported health and having a limiting health problem or disability). 
+ Office for National Statistics (ONS) figures are based on death registrations up 17 April 2020 that occurred between 2 March and 10 April 2020 that could be linked to the 2011 Census. 
+ "Other ethnic group" encompasses Asian other, Arab and Other Ethnic Group categories in the classification. 
+ Risk of death between 2 March and 10 April 2020. 
+ Horizontal lines on bars represent 95% confidence intervals. 
+ This means that a substantial part of the difference in COVID-19 mortality between ethnic groups is explained by the different circumstances in which members of those groups are known to live, such as areas with socio-economic deprivation. Geographic and socio-economic factors were accounting for over half of the difference in risk between males and females of Black and White ethnicity. However, these factors do not explain all of the difference, suggesting that other causes are still to be identified. Individuals from the different ethnic groups may differ in terms of socio-economic characteristics or health outcomes not included in our model, which could drive the residual differences in the risk of dying from COVID-19. For instance, some ethnic groups may be over-represented in public-facing occupations and may therefore be more likely to be infected by COVID-19. For example, individuals in the Bangladeshi and Pakistani ethnic group are more likely to work as transport operatives than those in any other ethnic group. We plan to conduct further work to identify occupations that are particularly at risk and adjust for working in those. Our adjustment for demographic and socio-economic profile has limitations, since the characteristics we use were retrieved from the 2011 Census. Therefore, these may not accurately reflect the study population's current circumstances in 2020. While we adjust for some dimensions of health (self-reported health and having a limiting health problem or disability), the information was collected in 2011 and does not distinguish between different types of comorbidities that are a likely modifier of these differential risks observed. Similarly, some ethnic groups may have a greater propensity to suffer from comorbidities that are associated with worse outcomes among those infected by COVID-19, which we will take account of in future analyses. Notes for: Ethnic group differences in deaths involving COVID-19 adjusted for main socio-demographic factors 
+
+ Because the probability of death from COVID-19 is very low, the odds ratios can be interpreted as risk ratios. 
+
+ Back to table of contents 
+
+ 5. Wider literature on ethnicity and mortality 
+
+ When profiling ethnic groups in the context of the social determinants of health, the patterns are not uniform, as shown briefly in this section. 
+
+ An analysis of the English Housing Survey data between 2014 to 2017 found marked ethnic group contrasts in their experience of living in overcrowded households; while only 2% of White British households experienced overcrowding, 30% of Bangladeshi households (the highest percentage), 16% of Pakistani households and 12% of Black households experienced this. 
+ There is a contrast in the propensity to live in a multi-family household: unpublished analyses of Labour Force Survey (LFS) data showed that in 2018, those with a Bangladeshi and Pakistani ethnicity were much more likely than those of any other ethnic groups to live in a multi-family household. 
+ The English Housing Survey in 2014 found ethnic minority groups were more likely to live in private rented accommodation households than those of the White British population. 
+ An analysis of the 2011 Census found that those with Bangladeshi and Pakistani and Black ethnicities were most likely to live in deprived neighbourhoods. 
+ A report published by the Joseph Rowntree Foundation showed that the highest educational attainment at GCSE and degree levels was among those of Chinese and Indian ethnicity. 
+ A Department for Work and Pensions (DWP) report in 2015 showed that unemployment was found to be highest among the Black and Bangladeshi and Pakistani populations and lowest among the White and Indian ethnic groups. 
+ A further DWP report examining low income and childhood poverty found those of Bangladeshi and Pakistani, Chinese, and Black ethnicities were about twice as likely to be living on a low income and experiencing child poverty, compared with those of White ethnicity. 
+ A study by Victor and others (2012) found higher rates of loneliness in those minority ethnic groups aged over 60 years old with family origins in China, Africa, the Caribbean, Pakistan and Bangladesh. 
+ Further details of ethnic variation in measures of disadvantage can be found in the Technical appendix . 
+ Back to table of contents 
+
+ 6. Analysis of COVID-19 deaths by ethnicity in England and Wales 
+
+ Data used These analyses are based on a new dataset developed by the Office for National Statistics (ONS) that links 2011 Census records to deaths that occurred between 2 March and 10 April 2020 registered by death registrations up to 17 April 2020, with deaths being added on a weekly basis. This represents a large dataset with which to examine mortality variations by ethnicity during a short time frame, benefiting from assignment of ethnicity at a census and then following individuals for death events occurring during the coronavirus (COVID-19) pandemic. Such a dataset reduces the risk of introducing numerator and denominator biases that can be problematic in analyses using unlinked data. More details on how the census and deaths records were linked can be found in the Technical appendix. Deaths were defined using the International Classification of Diseases, 10th Revision (ICD-10). Deaths involving COVID-19 include those with an underlying cause, or any mention, of ICD-10 codes U07.1 (COVID-19, virus identified) or U07.2 (COVID-19, virus not identified). 
+ Back to table of contents 
+
+ 7. Strengths and limitations 
+
+ Strengths The rate of linkage of deaths to a census based on the linkage keys used is high (90%) and thereby representative of the risk of death among the population being followed-up. The cohort design links deaths to individuals with their characteristics measured at a point in time before the death event occurs; in this sense, it is a prospective study population and we can therefore infer the direction of causality. As the study population is large and linkage of deaths is robust, it is possible to detect statistically significant differences, should they exist. The study population has enough statistical power to enable: 
+
+ the building of statistical models containing many covariates 
+ adjustment for known confounders and exploration of the effects of potential confounders 
+ investigation of interaction effects across a range of socio-demographic attributes 
+ identification of sub-groups of the population at higher or lower risk of wanted and unwanted outcomes 
+ Limitations The study design does not directly measure emigrations since the 2011 Census, which is likely to be variable across ethnicities. This has the potential to both introduce bias and underestimate mortality risk because denominators do not represent the true population at risk on 2 March 2020. To account for this, age-specific adjustment factors have been applied to ethnic group populations who had not died before 2 March 2020, which are based on: 
+
+ observed emigration recorded on the Office for National Statistics (ONS) Longitudinal Study (LS) 
+ unobserved migration indicated through de-registration from the patient register 
+ reconciliation with outflows estimated using the International Passenger Survey (IPS) 
+ The study population is not currently refreshed with new births or immigrations. Therefore, some deaths will have occurred to immigrants entering since 2011; COVID-19 deaths among those born since the 2011 Census and resident in England and Wales will be very small as they will be nine years old or younger. Because of the delay between registration of a death and its date of occurrence, there could be COVID-19-related deaths that occurred in the analysis period that had yet to be registered by 17 April 2020. While the number of these is likely to be small, we plan to update these figures and extend the analysis period as records accrue. The number of deaths has guided our decision on the level of detail in ethnic breakdowns we are able to report on. This will be reviewed on a regular basis once more up-to-date deaths data linked to the 2011 Census become available for analyses. We are primarily using socio-demographic factors recorded at the 2011 Census to adjust risk, which is now dated. In future releases, we will seek to reconcile how much change can be discerned at the population level from other sources. 
+ Back to table of contents 
+
+ View all data used in this 
+
+Article
+
+ Contact details for this 
+
+Article
+
+ Chris White and Vahé Nafilyan 
+ health.data@ons.gov.uk 
+ Telephone: +44 (0)1633 455865

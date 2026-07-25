@@ -40,11 +40,32 @@ SI_FACE_TRANSPORT = 'https://www.legislation.gov.uk/uksi/2020/592/made'
 # The instrument that sets the final expiry of the Plan B face covering
 # requirement, by amending regulation 15 of SI 2021/1340.
 SI_PLAN_B_EXPIRY = 'https://www.legislation.gov.uk/uksi/2021/1400/made'
+# Two claims stage 1 recorded as relayed by UCL and flagged not to be repeated
+# as established. Both now check out against the body that made them.
+ONS_ETHNICITY = ('https://www.ons.gov.uk/peoplepopulationandcommunity/'
+                 'birthsdeathsandmarriages/deaths/articles/'
+                 'coronavirusrelateddeathsbyethnicgroupenglandandwales/'
+                 '2march2020to10april2020')
+AMS_WINTER = 'https://acmedsci.ac.uk/file-download/51353957'
+HOC_TIMELINE = ('https://commonslibrary.parliament.uk/'
+                'house-of-commons-coronavirus-timeline/')
 
 # The scope test from the plan: a national event earns a row when UCL responded
 # to it, when it constrained UCL, or when it explains a visible feature of the
 # case data. Eat Out to Help Out is in the sources and is not here.
 ROWS = [
+    dict(date='2020-03-18', kind='announced', track='national', cat='teaching',
+         headline='The Prime Minister announces the closure of schools for most pupils',
+         src=HOC_TIMELINE, start='announcing closure of schools',
+         end='for most pupils from 23 March',
+         detail='Schools closed at the end of Friday 20 March and did not '
+                'reopen on Monday 23 March, which is why the newsletters and '
+                'this source date the same measure differently.',
+         notes='UCL restricted its Day Nursery to national-interest and '
+               'essential staff the next day, a lag of one. The UCL note '
+               'described this as closure "by 20 March" and the Commons '
+               'Library timeline as closure "from 23 March"; both describe '
+               'the same break, from opposite ends of the weekend.'),
     dict(date='2020-03-23', kind='announced', track='national', cat='restrictions',
          headline='The Prime Minister announces the first national lockdown',
          src=IFG_2021, start='PM announces the first', end='stay at home',
@@ -117,6 +138,30 @@ ROWS = [
                'twenty-six days later. This is the second time the record '
                'shows UCL holding a measure after the law dropped it, the '
                'first being step 4 in July 2021.'),
+    dict(date='2020-05-07', kind='published', track='national', cat='epidemiology',
+         headline='ONS finds Black adults far likelier to die of COVID-19 after adjusting for age',
+         src=ONS_ETHNICITY, start='When taking into account age in the analysis',
+         end='times more likely than White ethnicity males and females',
+         detail='Deaths from 2 March to 10 April 2020 in England and Wales. '
+                'The published figures are 4.2 for Black males and 4.3 for '
+                'Black females against White males and females.',
+         notes='UCL relayed this on 2 June 2020 and stage 1 flagged it as not '
+               'to be repeated until the primary source was checked. It '
+               'checks out: UCL\'s "four times" is a fair reading of 4.2 and '
+               '4.3. The ONS analysis adjusts for age only; the publication '
+               'is explicit that it does not by itself establish cause.'),
+    dict(date='2020-07-14', kind='published', track='national', cat='epidemiology',
+         headline='Advisory report models an Rt of 1.7 from September as its worst-case scenario',
+         src=AMS_WINTER, start='The model assumes that Rt rises',
+         end='The model assumes that Rt rises to 1.7 from September 2020',
+         detail='"Preparing for a challenging winter 2020/21", produced at '
+                'the request of the Government Chief Scientific Adviser.',
+         notes='UCL relayed this on 16 July 2020 and stage 1 flagged the Rt '
+               'figure as not to be repeated until checked. It checks out, '
+               'with a distinction worth keeping: 1.7 is an assumption the '
+               'model was run under to explore a reasonable worst case, not '
+               'a forecast of what Rt would be. Reporting it as a prediction '
+               'would misstate what the report did.'),
     dict(date='2020-06-29', kind='announced', track='national', cat='restrictions',
          headline='The first local lockdown is announced for Leicester',
          src=IFG_2021, scope='29 June', scope_end='4 July',

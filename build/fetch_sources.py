@@ -56,7 +56,16 @@ def get(url, attempts=3):
     return None, f'FAILED: {last}'
 
 
-def extension(url, content_type):
+def extension(url, content_type, body=b''):
+    """What the document actually is, not what the server claims.
+
+    The Academy of Medical Sciences serves its winter 2020/21 report as
+    `text/plain` from a URL with no extension. Trusting either would have run
+    a PDF through the HTML tag-stripper and produced convincing-looking
+    rubbish, so the magic bytes decide.
+    """
+    if body[:5] == b'%PDF-':
+        return '.pdf'
     if 'pdf' in content_type.lower() or url.lower().endswith('.pdf'):
         return '.pdf'
     return '.html'
@@ -173,7 +182,7 @@ def main():
             failures.append(ref)
             continue
 
-        path = out_dir / f'ref-{ref:02d}{extension(url, ctype)}'
+        path = out_dir / f'ref-{ref:02d}{extension(url, ctype, body)}'
         path.write_bytes(body)
         text_path = path.with_suffix('.txt')
         ok = to_text(path, text_path)

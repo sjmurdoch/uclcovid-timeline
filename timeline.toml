@@ -244,7 +244,7 @@ label = "The first national lockdown is announced"
 [[links]]
 ucl = "2020-03-19|Day Nursery to stay open only for national-interest and essential staff"
 counterpart = "2020-03-18"
-label = "The government announces that schools and nurseries in England will close by 20 March"
+label = "The Prime Minister announces the closure of schools for most pupils"
 
 [[links]]
 ucl = "2020-03-20|Most UCL buildings and all libraries close"
@@ -340,3 +340,13 @@ label = "The Plan B face covering requirement in England expires"
 id = 102
 url = "https://www.legislation.gov.uk/uksi/2021/1400/made"
 title = "The Health Protection (Coronavirus, Wearing of Face Coverings) (England) (Amendment) Regulations 2021"
+
+[[extra_sources]]
+id = 103
+url = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/articles/coronavirusrelateddeathsbyethnicgroupenglandandwales/2march2020to10april2020"
+title = "Coronavirus (COVID-19) related deaths by ethnic group, England and Wales - Office for National Statistics"
+
+[[extra_sources]]
+id = 104
+url = "https://acmedsci.ac.uk/file-download/51353957"
+title = "Preparing for a challenging winter 2020/21 - Academy of Medical Sciences"

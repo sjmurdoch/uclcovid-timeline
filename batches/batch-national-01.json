@@ -1,5 +1,20 @@
 [
   {
+    "date": "2020-03-18",
+    "date_kind": "announced",
+    "date_precision": "day",
+    "track": "national",
+    "category": "teaching",
+    "headline": "The Prime Minister announces the closure of schools for most pupils",
+    "detail": "Schools closed at the end of Friday 20 March and did not reopen on Monday 23 March, which is why the newsletters and this source date the same measure differently.",
+    "quote": "announcing closure of schools for most pupils from 23 March",
+    "source_type": "web",
+    "source_ref": "https://commonslibrary.parliament.uk/house-of-commons-coronavirus-timeline/",
+    "issue": "",
+    "verified": "primary-retrieved",
+    "notes": "UCL restricted its Day Nursery to national-interest and essential staff the next day, a lag of one. The UCL note described this as closure \"by 20 March\" and the Commons Library timeline as closure \"from 23 March\"; both describe the same break, from opposite ends of the weekend."
+  },
+  {
     "date": "2020-03-23",
     "date_kind": "announced",
     "date_precision": "day",
@@ -103,6 +118,36 @@
     "issue": "",
     "verified": "primary-retrieved",
     "notes": "UCL kept face coverings mandatory on the day the legal requirement ended and narrowed them to teaching settings twenty-six days later. This is the second time the record shows UCL holding a measure after the law dropped it, the first being step 4 in July 2021."
+  },
+  {
+    "date": "2020-05-07",
+    "date_kind": "published",
+    "date_precision": "day",
+    "track": "national",
+    "category": "epidemiology",
+    "headline": "ONS finds Black adults far likelier to die of COVID-19 after adjusting for age",
+    "detail": "Deaths from 2 March to 10 April 2020 in England and Wales. The published figures are 4.2 for Black males and 4.3 for Black females against White males and females.",
+    "quote": "When taking into account age in the analysis, Black males are 4.2 times more likely to die from a COVID-19-related death and Black females are 4.3 times more likely than White ethnicity males and females",
+    "source_type": "web",
+    "source_ref": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/articles/coronavirusrelateddeathsbyethnicgroupenglandandwales/2march2020to10april2020",
+    "issue": "",
+    "verified": "primary-retrieved",
+    "notes": "UCL relayed this on 2 June 2020 and stage 1 flagged it as not to be repeated until the primary source was checked. It checks out: UCL's \"four times\" is a fair reading of 4.2 and 4.3. The ONS analysis adjusts for age only; the publication is explicit that it does not by itself establish cause."
+  },
+  {
+    "date": "2020-07-14",
+    "date_kind": "published",
+    "date_precision": "day",
+    "track": "national",
+    "category": "epidemiology",
+    "headline": "Advisory report models an Rt of 1.7 from September as its worst-case scenario",
+    "detail": "\"Preparing for a challenging winter 2020/21\", produced at the request of the Government Chief Scientific Adviser.",
+    "quote": "The model assumes that Rt rises to 1.7 from September 2020",
+    "source_type": "web",
+    "source_ref": "https://acmedsci.ac.uk/file-download/51353957",
+    "issue": "",
+    "verified": "primary-retrieved",
+    "notes": "UCL relayed this on 16 July 2020 and stage 1 flagged the Rt figure as not to be repeated until checked. It checks out, with a distinction worth keeping: 1.7 is an assumption the model was run under to explore a reasonable worst case, not a forecast of what Rt would be. Reporting it as a prediction would misstate what the report did."
   },
   {
     "date": "2020-06-29",
