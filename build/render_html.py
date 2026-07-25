@@ -605,6 +605,16 @@ svg { display:block; width:100%; height:auto; min-width:56rem;
 svg.dragging { cursor:ew-resize; }
 .plot-hit { fill:transparent; }
 
+/* The page tells the reader how to drive it, and the answer differs by input:
+   a mouse drags to zoom, a finger drags to pan a chart wider than the screen.
+   Printing an instruction that does not work on the device reading it is worse
+   than printing none, so both are rendered and the device picks. */
+.touch-only { display:none; }
+@media (hover: none) {
+  .hover-only { display:none; }
+  .touch-only { display:inline; }
+}
+
 .legend { display:flex; flex-wrap:wrap; gap:.4rem 1.25rem; margin:.6rem 0 0;
   padding:0 1rem .75rem;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -613,7 +623,11 @@ svg.dragging { cursor:ew-resize; }
 .legend .off { opacity:.35; }
 
 #tip {
-  position:absolute; z-index:5; max-width:26rem; pointer-events:none;
+  /* 26rem is wider than a phone. The tooltip is positioned inside the figure,
+     which scrolls on its own axis, so an overwide one would be clipped by the
+     very container it sits in rather than simply hanging off the edge. */
+  position:absolute; z-index:5; max-width:min(26rem, calc(100% - 1rem));
+  pointer-events:none;
   background:var(--bg); color:var(--ink);
   border:1px solid var(--rule); border-radius:5px;
   box-shadow:0 2px 10px rgba(0,0,0,.16); padding:.55rem .7rem;
@@ -912,25 +926,52 @@ JS = r"""
     lit = g;
     if (lit) lit.classList.add('on');
   }
+  // The closest visible mark on a lane to an x in SVG space, or null if the
+  // pointer is not near one. A fingertip is a blunter instrument than a mouse,
+  // so touch gets a wider reach than the 14px a pointer is held to.
+  function nearestMark(track, x, reach) {
+    var best = null, bestD = Infinity;
+    Array.prototype.forEach.call(
+      svg.querySelectorAll('.mark[data-track="' + track + '"]'),
+      function (g) {
+        if (g.hasAttribute('hidden')) return;
+        var dx = Math.abs(parseFloat(g.getAttribute('data-x')) - x);
+        if (dx < bestD) { bestD = dx; best = g; }
+      });
+    return bestD > reach ? null : best;
+  }
+
+  function revealMark(g) {
+    if (!g) { light(null); hide(); return; }
+    light(g);
+    var r = g.getBoundingClientRect();
+    showMark(g, r.left + r.width / 2, r.top);
+  }
+
   Array.prototype.forEach.call(svg.querySelectorAll('.lane'), function (lane) {
     var track = lane.getAttribute('data-lane');
     lane.addEventListener('pointermove', function (ev) {
-      if (dragFrom !== null) return;
-      var loc = toSvg(ev);
-      var best = null, bestD = Infinity;
-      Array.prototype.forEach.call(
-        svg.querySelectorAll('.mark[data-track="' + track + '"]'),
-        function (g) {
-          if (g.hasAttribute('hidden')) return;
-          var dx = Math.abs(parseFloat(g.getAttribute('data-x')) - loc.x);
-          if (dx < bestD) { bestD = dx; best = g; }
-        });
-      if (!best || bestD > 14) { light(null); hide(); return; }
-      light(best);
-      var r = best.getBoundingClientRect();
-      showMark(best, r.left + r.width / 2, r.top);
+      if (dragFrom !== null || ev.pointerType === 'touch') return;
+      revealMark(nearestMark(track, toSvg(ev).x, 14));
+    });
+    // Touch has no hover, and the tooltip is the only place the page says what
+    // an event actually was, so without a tap path every mark on a phone is a
+    // tick that cannot be read. A tap is also unambiguous here: touch does not
+    // start a zoom drag, so nothing else wants this gesture.
+    lane.addEventListener('pointerup', function (ev) {
+      if (ev.pointerType === 'mouse') return;
+      revealMark(nearestMark(track, toSvg(ev).x, 22));
     });
     lane.addEventListener('pointerleave', function () { light(null); hide(); });
+  });
+
+  // Tapping away from the chart puts the tooltip back down again, since touch
+  // never fires the pointerleave that does it for a mouse.
+  document.addEventListener('pointerup', function (ev) {
+    if (ev.pointerType === 'mouse') return;
+    if (ev.target && ev.target.closest &&
+        ev.target.closest('.lane, .plot-hit')) return;
+    light(null); hide();
   });
 
   // Keyboard focus shows exactly what hover shows.
@@ -976,6 +1017,13 @@ JS = r"""
 
   svg.addEventListener('pointerdown', function (ev) {
     if (ev.button !== 0) return;
+    // Touch does not get drag-to-zoom, because sideways already means
+    // something there: the chart holds a 56rem minimum width, so on a phone it
+    // is two and a half screens wide and dragging is how a reader reaches
+    // October 2021 at all. The browser owns that gesture and should. Zoom on
+    // touch is the date boxes, which are native pickers on a phone and better
+    // at the job than a fingertip on a two-year axis.
+    if (ev.pointerType === 'touch') return;
     var loc = toSvg(ev);
     if (loc.x < D.padL || loc.x > D.padL + D.inner) return;
     if (loc.y < D.bandTop || loc.y > D.axisY) return;
@@ -999,17 +1047,23 @@ JS = r"""
     setHidden(brush, false);
   });
 
-  function endDrag(ev) {
-    if (dragFrom === null) return;
-    var x = clampX(toSvg(ev).x);
-    var wasDragging = dragging;
-    var a0 = dragFrom;
+  // Put the brush away and give up the pointer. Returns where the drag began,
+  // or null if there was no drag worth committing.
+  function clearDrag(ev) {
+    var was = dragging, a0 = dragFrom;
     dragFrom = null; dragging = false;
     setHidden(brush, true);
     brush.classList.remove('too-narrow');
     svg.classList.remove('dragging');
     try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
-    if (!wasDragging) return;
+    return was ? a0 : null;
+  }
+
+  function endDrag(ev) {
+    if (dragFrom === null) return;
+    var x = clampX(toSvg(ev).x);
+    var a0 = clearDrag(ev);
+    if (a0 === null) return;
     var d1 = dayAtX(Math.min(a0, x)), d2 = dayAtX(Math.max(a0, x));
     // A window narrower than a week has nothing in it and divides badly.
     if (d2 - d1 < 7) return;
@@ -1018,8 +1072,19 @@ JS = r"""
     syncDateInputs();
     layout();
   }
+
+  // A cancelled pointer is the gesture being taken away -- a scroll winning
+  // the arbitration, the window losing focus -- and not a release, so it must
+  // not commit a zoom. It used to, which meant every sideways scroll of the
+  // chart on a phone ended by jumping the view to whatever range the finger
+  // had happened to cross on its way.
+  function abortDrag(ev) {
+    if (dragFrom === null) return;
+    clearDrag(ev);
+  }
+
   svg.addEventListener('pointerup', endDrag);
-  svg.addEventListener('pointercancel', endDrag);
+  svg.addEventListener('pointercancel', abortDrag);
 
   // Double-click anywhere on the plot zooms back out to the whole record.
   svg.addEventListener('dblclick', function () {
@@ -1032,7 +1097,7 @@ JS = r"""
   // Crosshair on the case panels: snaps to the nearest reading, so the pointer
   // never has to land on a line.
   var plot = document.getElementById('plot-hit');
-  plot.addEventListener('pointermove', function (ev) {
+  function showReading(ev) {
     if (dragFrom !== null) return;
     var loc = toSvg(ev);
     var frac = (loc.x - D.padL) / D.inner;
@@ -1078,6 +1143,18 @@ JS = r"""
       tip.appendChild(r2);
     }
     place(ev.clientX, ev.clientY);
+  }
+  plot.addEventListener('pointermove', function (ev) {
+    // A touch pointermove over the case panels is a pan in progress, not a
+    // reading. Acting on it paints a crosshair the finger is already dragging
+    // away from, and then leaves it standing, because touch fires no
+    // pointerleave to take it back down.
+    if (ev.pointerType === 'touch') return;
+    showReading(ev);
+  });
+  plot.addEventListener('pointerup', function (ev) {
+    if (ev.pointerType === 'mouse') return;
+    showReading(ev);
   });
   plot.addEventListener('pointerleave', hide);
 
@@ -1223,7 +1300,9 @@ def page(svg, height, payload, rows, cfg, first, last):
       'series UCL published. Every event carries a verbatim quotation from '
       'the document that announced it, checked mechanically against the '
       'preserved source.</p>')
-    a('<p class="muted">Hover or focus any mark for the events on that day. '
+    a('<p class="muted"><span class="hover-only">Hover or focus any mark for '
+      'the events on that day.</span><span class="touch-only">Tap any mark for '
+      'the events on that day.</span> '
       'The case panels share one time axis with the lanes above them and with '
       'each other. Camden is drawn in its own panel rather than on the same '
       'scale: it peaks near six thousand cases in a week against UCL\'s five '
@@ -1299,12 +1378,19 @@ def page(svg, height, payload, rows, cfg, first, last):
       'for the case series. One mark is one day in one lane: several '
       'decisions often landed on a single day, and a mark for each would '
       'overplot into a smear implying a density the record does not support. '
-      'The tooltip lists everything that happened on that day.</p>')
-    a('<p><strong>Drag sideways across the chart to zoom into a date '
-      'range.</strong> Only the time axis moves; the case scales stay put, so '
-      'a zoomed view cannot make a rise look steeper than it is. Double-click '
-      'to zoom back out, or use the date boxes, which follow the drag and can '
-      'be typed into directly.</p>')
+      'The tooltip lists what happened on that day in the categories currently '
+      'selected, so a mark never speaks for a category you have filtered '
+      'out.</p>')
+    a('<p><span class="hover-only"><strong>Drag sideways across the chart to '
+      'zoom into a date range.</strong> Only the time axis moves; the case '
+      'scales stay put, so a zoomed view cannot make a rise look steeper than '
+      'it is. Double-click to zoom back out, or use the date boxes, which take '
+      'the range you drag and can be typed into directly.</span>'
+      '<span class="touch-only"><strong>The chart is wider than this screen: '
+      'drag sideways to move through the period.</strong> To narrow it, use '
+      'the date boxes above. Zooming moves only the time axis; the case scales '
+      'stay put, so a zoomed view cannot make a rise look steeper than it '
+      'is.</span></p>')
     a('<p>Shaded bands are the eight pandemic phases, numbered along the top '
       'and drawn in neutral greys. They are regions, not series, and a '
       'categorical hue there would impersonate one.</p>')
