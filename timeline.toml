@@ -1,0 +1,324 @@
+# Configuration for the UCL pandemic-response timeline.
+#
+# Every setting here is overridable, with the precedence
+#     command line  >  environment  >  this file  >  built-in default
+# Environment variables take the prefix UCLTL_ and the dotted path upper-cased
+# with dots as underscores, e.g. paths.archive -> UCLTL_PATHS_ARCHIVE.
+
+[paths]
+# The archive repository, relative to this file's parent directory.
+archive = "../home/uclcovid"
+# Preserved newsletters and their source-URL manifest.
+updates = "../home/uclcovid/data/updates"
+# The published case series, unsmoothed.
+cases = "../home/uclcovid/data/covid_raw.csv"
+# The research synthesis, with citation markers restored.
+resources = "../UK COVID-19 Timeline Resources.md"
+
+# Everything below is written by the build, not read from the archive.
+text = "text"
+data = "data"
+ledger = "timeline.csv"
+progress = "PROGRESS.md"
+markdown_out = "TIMELINE.md"
+html_out = "timeline.html"
+
+[range]
+# The ledger's admissible date window. Rows outside it fail validation.
+start = "2020-01-01"
+end = "2022-12-31"
+
+[extract]
+# Characters of extracted text searched for the newsletter's own date line.
+date_window = 1200
+
+[data_track]
+# A month enters the data track when a group's total moves by at least this
+# fraction from the previous month, and by at least this absolute count. Both
+# gates must pass, so that a jump from 2 cases to 6 does not register as a
+# 200% surge.
+month_change_fraction = 0.5
+month_change_absolute = 25
+# The UCL series is reported weekly; comparisons align on weeks ending Tuesday,
+# which is the day the seven-day totals were published.
+week_ends = "Tuesday"
+
+[camden]
+# The local comparator. Fetched once by build/fetch_camden.py and cached; no
+# renderer may fetch at run time. See TIMELINE-PLAN.md section 2b.
+base = "https://api.ukhsa-dashboard.data.gov.uk"
+theme = "infectious_disease"
+sub_theme = "respiratory"
+topic = "COVID-19"
+geography_type = "Lower Tier Local Authority"
+geography = "Camden"
+metric = "COVID-19_cases_casesByDay"
+page_size = 365
+cache = "data/camden-cases.csv"
+
+[sources]
+# Primary documents cached once by build/fetch_sources.py and verified against
+# thereafter. The numbers are references in the works-cited list of the
+# research synthesis, chosen by how many dated claims rest on each: 7 and 11
+# are the two Institute for Government timelines and carry most of the
+# restriction dates, 9 and 6 are the Commons Library briefings, and 57, 49 and
+# 38 are the higher-education-specific documents.
+retrieve = [7, 11, 9, 6, 57, 49, 38]
+cache = "sources"
+
+[markdown]
+# Where TIMELINE.md points when it cites a newsletter. Relative to the rendered
+# file, so this changes if the timeline ever moves into the archive repository.
+source_prefix = "../home/uclcovid/data/updates/"
+
+# Pandemic phases used to section the Markdown chronology. These are a
+# judgement call and belong in a config file rather than a renderer. Dates are
+# inclusive starts; each phase runs to the day before the next.
+# The `framing` fields are the only prose in TIMELINE.md that the ledger does
+# not supply, so every factual claim in one has to be checkable against the
+# rows of the phase it introduces. They are wrapped here for legibility and
+# rendered as a single line, per the Markdown convention for paragraphs.
+
+[[phases]]
+name = "First wave and the first lockdown"
+start = "2020-01-01"
+framing = """
+UCL's response opens on 9 March 2020 with a mitigation group meeting daily
+across fifteen strands of activity and a campus still open on Public Health
+England's advice, and arrives fourteen days later at a national lockdown with
+the buildings shut and the institution working from home. This is the densest
+concentration of events in the whole record, carried by a newsletter that
+appeared almost every weekday. Two of them fix the shape of the lag analysis:
+face-to-face teaching ceased on 13 March, ten days before the national
+lockdown, and staff were barred from campus on 24 March, one day after it.
+"""
+
+[[phases]]
+name = "Summer easing"
+start = "2020-07-04"
+framing = """
+With the campus closed and the term over, UCL spent the summer deciding how
+much of it to reopen and on what terms. The decision that mattered most was
+taken on 8 July: the Prime Minister had announced a relaxing of the 2 metre
+distancing rule on 23 June, and fifteen days later UCL confirmed it would keep
+a 2 metre guideline for Term 1 timetable planning anyway, a divergence that set
+room capacities for the whole of the autumn and so determined how many people
+were on campus once the case counting began in October. Face coverings became
+mandatory across campus on 10 July, ahead of the national requirement in shops
+that UCL recorded on 24 July, and the newsletter dropped from daily to twice
+weekly at issue 100 on 3 August.
+"""
+
+[[phases]]
+name = "Autumn resurgence and tiering"
+start = "2020-09-01"
+framing = """
+Term 1 began on 28 September with students back in London and UCL still holding
+no measurements of its own. That changes on 12 October, when UCL published a
+webpage of confirmed cases among staff and students, fixed the case definition
+that governs every figure in the dataset, and moved the newsletter to a weekly
+Monday cadence; testing is the largest single category of decision in this
+phase. The second national lockdown did not close the university, and the
+Provost's observation that universities were meant to stay open this time is
+the single sentence that explains why the case series behaves so differently in
+the two lockdowns.
+"""
+
+[[phases]]
+name = "Winter, Alpha and the second closure"
+start = "2020-12-19"
+framing = """
+The thinnest stretch of the record for institutional decisions, set against
+case-data readings that move very sharply: staff cases off campus
+rise from 15 in December 2020 to 154 in January 2021 and fall back to 18 in
+February. UCL responded to the third national lockdown on 5 January by
+returning to work from home, and on 1 February moved all remaining teaching
+online for the rest of Term 2, a decision the newsletter attributes explicitly
+to government guidance rather than to UCL's own figures. On-campus student
+cases in January 2021 totalled nine, and that is the number the January 2022
+comparison is measured against.
+"""
+
+[[phases]]
+name = "The roadmap out of lockdown"
+start = "2021-02-22"
+framing = """
+Practical and practice-based teaching resumed on campus on 8 March 2021, and on
+23 March UCL published its own roadmap tracking the government's four steps,
+which is the plainest instance in the record of an institutional timetable
+written as a function of a national one. Remaining students were told on 21
+April to stay away until in-person teaching resumed, which they did on 17 May,
+and that instruction is why the on-campus line stays flat through the spring
+while national restrictions were easing. The single case-data reading in this
+phase is on-campus student cases rising from 1 in May 2021 to 54 in June.
+"""
+
+[[phases]]
+name = "Delta and the summer reopening"
+start = "2021-06-14"
+framing = """
+Step 4 was delayed by four weeks on 14 June and UCL's return timetable slipped
+with it, which is the clearest case in the record of a UCL date moving purely
+because a national date moved. When the remaining legal restrictions ended, UCL
+kept face coverings in all indoor spaces, reviewed that policy on 31 August and
+again on 22 October, and deliberately kept it both times: a second divergence
+in the cautious direction, a year after the 2 metre decision. The limit of that
+autonomy is recorded on 14 September, when the Department for Education's
+position that students may decline a face covering left UCL holding an
+expectation it could not enforce.
+"""
+
+[[phases]]
+name = "Omicron"
+start = "2021-11-27"
+framing = """
+This is the phase in which UCL acts on its own case data rather than on
+national policy. The newsletter of 13 December states that cases were rising on
+campus as well as nationally, and the on-campus student series peaks at 525 in
+the week to 21 December, the highest seven-day total anywhere in the record,
+with on-campus staff peaking at 131 in the same week. Higher education was
+exempted from Plan B and the campus stayed open, which sets up the sharpest
+measurement in the dataset: 9 on-campus student cases in January 2021 against
+696 in January 2022, a 77-fold rise, while Camden's own cases rose 2.4-fold
+across the same two months. Both series rise, and it is the difference in
+magnitude rather than in direction that the local epidemic cannot account for.
+"""
+
+[[phases]]
+name = "Living with COVID"
+start = "2022-02-21"
+framing = """
+UCL narrowed its face covering expectation to teaching settings on 21 February
+2022, and on-campus staff cases then rose from 142 in February to 339 in March,
+the last increase anywhere in the record. The final issue of 4 May 2022
+withdrew the remaining expectations, closed the COVID-19 telephone helpline and
+dropped the twice-weekly testing advice as free national testing ended. The
+published series stops a week later on 11 May 2022, so the record closes
+because the counting stopped rather than because the pandemic did.
+"""
+
+# ---------------------------------------------------------------------------
+# Lag pairings.
+#
+# Where a UCL action responds to a national or sector one, the two are declared
+# here and render_md.py computes the gap in days between them. The pairing is
+# declared rather than inferred: matching a UCL row to the nearest national row
+# by date and category would manufacture correspondences that nobody has
+# checked, and a lag is a factual claim about cause.
+#
+# `ucl` names the ledger row by date and headline, which validate.py has
+# already established are unique together. `counterpart` is the date of the
+# national or sector event, and is deliberately OPTIONAL: several of these are
+# pairings where the newsletter makes the dependency plain without dating the
+# measure it responds to, and a date is not invented for them here. `label` is
+# what stage 2 must go and find.
+#
+# Every dated counterpart below is a date the newsletters themselves assert, so
+# each is UCL's account of national policy rather than the policy itself. Until
+# stage 2 retrieves the primary source and puts a `national` or `sector` row in
+# the ledger, these render as a worklist and no lag is computed from them.
+# ---------------------------------------------------------------------------
+
+[[links]]
+ucl = "2020-03-13|Face-to-face teaching ceases; teaching moves online from 16 March"
+counterpart = "2020-03-23"
+label = "The first national lockdown is announced"
+note = "The clearest case of UCL acting ahead of national policy."
+
+[[links]]
+ucl = "2020-03-17|Students strongly advised to return home"
+counterpart = "2020-03-23"
+label = "The first national lockdown is announced"
+
+[[links]]
+ucl = "2020-03-19|Day Nursery to stay open only for national-interest and essential staff"
+counterpart = "2020-03-18"
+label = "The government announces that schools and nurseries in England will close by 20 March"
+
+[[links]]
+ucl = "2020-03-20|Most UCL buildings and all libraries close"
+counterpart = "2020-03-23"
+label = "The first national lockdown is announced"
+
+[[links]]
+ucl = "2020-03-24|Staff must not attend campus unless authorised key workers"
+counterpart = "2020-03-23"
+label = "The first national lockdown is announced"
+note = "The counterpart to 13 March, and the clearest positive lag in the record."
+
+[[links]]
+ucl = "2020-03-24|The Student Centre closes and Bidborough House is restricted"
+counterpart = "2020-03-23"
+label = "The first national lockdown is announced"
+
+[[links]]
+ucl = "2020-04-30|Furloughed staff barred from any work, including writing up UCL results"
+label = "The Coronavirus Job Retention Scheme sets its conditions on work by furloughed staff"
+note = "National policy constraining UCL rather than prompting it."
+
+[[links]]
+ucl = "2020-05-07|Gold team has post-lockdown plans ready ahead of the government announcement"
+counterpart = "2020-05-10"
+label = "The Prime Minister announces the first easing of the first lockdown"
+
+[[links]]
+ucl = "2020-05-11|Staff asked not to return to campus despite the easing of restrictions"
+counterpart = "2020-05-10"
+label = "The Prime Minister announces the first easing of the first lockdown"
+note = "Divergence rather than compliance: the national restrictions eased and UCL did not."
+
+[[links]]
+ucl = "2020-05-22|Face coverings required on campus where distancing is not possible"
+label = "Face coverings become mandatory on public transport in England"
+note = "Dated 15 June 2020 by a UCL newsletter. Reference 7 gives 15 June as the day non-essential shops reopened and does not carry the transport mandate at all, so the date is withdrawn until a source for it is found."
+
+[[links]]
+ucl = "2020-05-26|Campus reopening pilots aligned with the dates schools were due to return"
+counterpart = "2020-06-01"
+label = "Schools in England begin a phased reopening"
+
+[[links]]
+ucl = "2020-05-26|Term 1 plans forced early by the UCAS deadline and OfS expectations"
+track = "sector"
+label = "The Office for Students sets its expectations for 2020-21 admissions and teaching"
+
+[[links]]
+ucl = "2020-07-08|UCL cites the Leicester local lockdown as a reason for caution"
+counterpart = "2020-06-29"
+label = "Leicester enters the first local lockdown"
+
+[[links]]
+ucl = "2020-07-08|UCL keeps 2 metre distancing after the government moves to one metre plus"
+counterpart = "2020-06-23"
+label = "The Prime Minister announces a relaxing of the 2 metre distancing rule"
+note = "The sharpest deliberate divergence in the record, and it set Term 1 room capacities."
+
+[[links]]
+ucl = "2020-11-01|UCL to remain open through the second national lockdown"
+counterpart = "2020-10-31"
+label = "The Prime Minister announces a second national lockdown for England"
+
+[[links]]
+ucl = "2021-02-01|All teaching to remain online for the rest of Term 2"
+counterpart = "2021-01-06"
+label = "England enters the third national lockdown"
+
+[[links]]
+ucl = "2021-07-19|One-way systems removed and social distancing relaxed at step 4"
+counterpart = "2021-07-19"
+label = "Step 4 removes most legal limits on social contact in England"
+
+[[links]]
+ucl = "2021-07-26|Face coverings kept in all indoor spaces after legal restrictions ended"
+counterpart = "2021-07-19"
+label = "Step 4 removes the remaining legal restrictions in England"
+note = "The second deliberate divergence in the cautious direction, a year after the first."
+
+[[links]]
+ucl = "2021-12-17|Term 2 to open with face-to-face teaching, disruption anticipated"
+counterpart = "2021-12-08"
+label = "The government announces a move to Plan B measures in England"
+
+[[links]]
+ucl = "2022-02-21|Face coverings narrowed to teaching settings only"
+label = "Plan B measures end in England"

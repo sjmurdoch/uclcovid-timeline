@@ -1,0 +1,371 @@
+#!/usr/bin/env python3
+"""Tests for the stage 5 renderer, run against fixtures rather than the ledger.
+
+The reason this file exists: on the real ledger the lag feature renders
+nothing. Stage 2 has not run, so there are no `national` or `sector` rows for a
+UCL action to be paired against, and every declared pairing comes out pending.
+A feature that has never once produced output is not evidence that it works,
+and the lag is the one number in the whole document that the renderer computes
+rather than copies. So it is exercised here against a fixture ledger that does
+have national rows in it, with the arithmetic and the signs checked.
+
+The same fixtures cover the failure modes, because a check that cannot fail is
+not a check: a pairing naming a UCL row that is not in the ledger, and a phase
+with no framing prose, must both stop the build.
+
+Standard library only. Usage:
+    python3 test_render_md.py
+"""
+import csv
+import re
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+RENDER = HERE / 'render_md.py'
+
+FIELDS = ['date', 'date_kind', 'date_precision', 'track', 'category',
+          'headline', 'detail', 'quote', 'source_type', 'source_ref',
+          'issue', 'verified', 'notes']
+
+
+def row(date, track, headline, **kw):
+    r = dict.fromkeys(FIELDS, '')
+    r.update(date=date, track=track, headline=headline,
+             date_kind=kw.get('date_kind', 'announced'),
+             date_precision=kw.get('date_precision', 'day'),
+             category=kw.get('category', 'restrictions'),
+             detail=kw.get('detail', ''), quote=kw.get('quote', ''),
+             source_type=kw.get('source_type', 'newsletter'),
+             source_ref=kw.get('source_ref', '000_test.html'),
+             issue=kw.get('issue', '1'),
+             verified=kw.get('verified', 'quote-exact'),
+             notes=kw.get('notes', ''))
+    return r
+
+
+# A ledger with both sides of several pairings present, which the real one does
+# not yet have. Dates chosen so the three cases the plan cares about all appear:
+# UCL ahead of the measure, UCL behind it, and a sector rather than national
+# counterpart.
+LEDGER = [
+    row('2020-03-13', 'ucl', 'UCL stops face-to-face teaching',
+        quote='Face-to-face teaching will cease.', category='teaching'),
+    row('2020-03-23', 'national', 'The first national lockdown is announced',
+        source_type='web', source_ref='https://example.invalid/lockdown',
+        verified='primary-retrieved', issue=''),
+    row('2020-03-24', 'ucl', 'UCL bars staff from campus',
+        quote='Staff must not attend campus.'),
+    row('2020-05-26', 'sector', 'The regulator sets its expectations',
+        source_type='web', source_ref='https://example.invalid/ofs',
+        verified='primary-retrieved', issue=''),
+    row('2020-05-26', 'ucl', 'UCL brings its Term 1 planning forward',
+        quote='We must decide now.', category='teaching'),
+    row('2020-07-08', 'ucl', 'UCL keeps its own distancing rule',
+        quote='We will continue to use a 2 metre guideline.'),
+    row('2020-11-01', 'ucl', 'UCL stays open',
+        quote='We will remain open.'),
+    row('2021-01-15', 'data', 'A case-data reading',
+        date_kind='observed', category='epidemiology', source_type='dataset',
+        source_ref='covid_raw.csv', verified='computed', issue='',
+        detail='Nine cases in January 2021.'),
+]
+
+CONFIG = '''
+[paths]
+ledger = "{ledger}"
+markdown_out = "{out}"
+
+[markdown]
+source_prefix = "updates/"
+
+[[phases]]
+name = "First phase"
+start = "2020-01-01"
+framing = "Framing for the first phase."
+
+[[phases]]
+name = "Second phase"
+start = "2020-09-01"
+{second_framing}
+
+[[links]]
+ucl = "2020-03-13|UCL stops face-to-face teaching"
+counterpart = "2020-03-23"
+label = "The first national lockdown is announced"
+
+[[links]]
+ucl = "2020-03-24|UCL bars staff from campus"
+counterpart = "2020-03-23"
+label = "The first national lockdown is announced"
+
+[[links]]
+ucl = "2020-05-26|UCL brings its Term 1 planning forward"
+counterpart = "2020-05-26"
+track = "sector"
+label = "The regulator sets its expectations"
+
+[[links]]
+ucl = "2020-11-01|UCL stays open"
+counterpart = "2020-10-31"
+label = "The second national lockdown is announced"
+
+[[links]]
+ucl = "2020-07-08|UCL keeps its own distancing rule"
+label = "The government moves to one metre plus"
+{stale}
+'''
+
+STALE_LINK = '''
+[[links]]
+ucl = "2020-03-13|A headline that is not in the ledger"
+counterpart = "2020-03-23"
+label = "Something"
+'''
+
+FAILURES = []
+
+
+def check(name, ok, detail=''):
+    print(f'{"pass" if ok else "FAIL"}  {name}' + (f'  {detail}' if detail else ''))
+    if not ok:
+        FAILURES.append(name)
+
+
+def write_fixture(tmp, second_framing='framing = "Framing for the second."',
+                  stale=''):
+    ledger = tmp / 'fixture.csv'
+    with open(ledger, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=FIELDS)
+        w.writeheader()
+        w.writerows(LEDGER)
+    out = tmp / 'FIXTURE.md'
+    conf = tmp / 'fixture.toml'
+    conf.write_text(CONFIG.format(ledger=ledger, out=out,
+                                  second_framing=second_framing, stale=stale),
+                    encoding='utf-8')
+    return conf, out
+
+
+def run(conf, *extra):
+    return subprocess.run([sys.executable, str(RENDER), '--config', str(conf),
+                           *extra],
+                          capture_output=True, text=True)
+
+
+def main():
+    with tempfile.TemporaryDirectory() as td:
+        tmp = Path(td)
+        conf, out = write_fixture(tmp)
+
+        proc = run(conf)
+        check('renders a fixture ledger cleanly', proc.returncode == 0,
+              proc.stderr.strip()[:200])
+        if proc.returncode != 0:
+            return 1
+        text = out.read_text(encoding='utf-8')
+
+        # 1. The lag, which is the only number the renderer computes.
+        check('negative lag when UCL moves first',
+              '| -10 days |' in text,
+              '13 March against 23 March')
+        check('positive lag when UCL follows',
+              '| +1 day |' in text,
+              'and singular "day", not "days"')
+        check('a same-day response says so rather than reading "+0 days"',
+              '| same day |' in text and '+0 day' not in text,
+              'the sector pairing on 26 May')
+        check('lag also appears on the entry itself',
+              'lag **+1 day**' in text and 'lag **-10 days**' in text)
+
+        # 2. Pairings that cannot be measured must not be measured.
+        check('a counterpart absent from the ledger stays pending',
+              'UCL stays open' in text.split('awaiting primary sources')[1],
+              '31 October has no national row')
+        check('an undated counterpart says so rather than guessing',
+              '*not yet established*' in text)
+        check('no lag is invented for a pending pairing',
+              '| +1 days |' not in text and '| +2 days |' not in text)
+
+        # 3. Structure.
+        rows_in_tables = [l for l in text.splitlines()
+                          if l.startswith('|') and not set(l) <= set('|- ')]
+        widths = {l.count('|') for l in rows_in_tables}
+        check('every table row has a consistent cell count',
+              widths in ({5}, {5, 6}), f'pipe counts {sorted(widths)}')
+        # The data row must appear in the phase's summary list and nowhere in
+        # the dated entries, which is what "a summary line per phase rather
+        # than interleaved row by row" means in practice.
+        data_lines = [l for l in text.splitlines()
+                      if 'A case-data reading' in l]
+        check('the data track is summarised, not interleaved',
+              len(data_lines) == 1 and data_lines[0].startswith('- **'),
+              str(data_lines))
+        check('a plural count reads as a plural and a single one does not',
+              '1 event and 1 case-data reading,' in text
+              and '6 events and 0 case-data readings,' in text)
+        check('phase headings and contents anchors agree',
+              '[First phase](#1-first-phase)' in text
+              and '## 1. First phase' in text)
+
+        # 4. Quotations survive the round trip byte for byte, since that is
+        #    what stage 4 verified and what a reader will check against.
+        quotes = [r['quote'] for r in LEDGER if r['quote']]
+        missing = [q for q in quotes if f'> {q}' not in text]
+        check('every quotation renders verbatim', not missing, str(missing[:2]))
+
+        # 5. Failure modes. A check that cannot fail is not a check.
+        conf2, _ = write_fixture(tmp, second_framing='')
+        proc2 = run(conf2)
+        check('a phase with no framing stops the build',
+              proc2.returncode != 0 and 'framing' in proc2.stderr.lower())
+
+        proc3 = run(conf2, '--draft')
+        check('--draft renders it anyway, visibly marked',
+              proc3.returncode == 0 and 'framing not yet written'
+              in out.read_text(encoding='utf-8'))
+
+        conf4, _ = write_fixture(tmp, stale=STALE_LINK)
+        proc4 = run(conf4)
+        check('a pairing naming a row that is not in the ledger stops the build',
+              proc4.returncode != 0 and 'stale' in proc4.stderr.lower(),
+              proc4.stderr.strip()[:120])
+
+    check_real_output()
+    check_html_output()
+
+    print()
+    if FAILURES:
+        print(f'{len(FAILURES)} failed: ' + ', '.join(FAILURES))
+        return 1
+    print('all checks passed')
+    return 0
+
+
+def check_real_output():
+    """The fixtures prove the renderer behaves; these prove the document it
+    actually produced is intact. Skipped rather than failed when TIMELINE.md
+    has not been built, so the fixture tests still run on a clean checkout."""
+    import config
+    cfg, _ = config.load(argv=[])
+    out = cfg.path('paths.markdown_out')
+    ledger = cfg.path('paths.ledger')
+    if not out.exists() or not ledger.exists():
+        print('skip  real-output checks (nothing rendered yet)')
+        return
+    print()
+    text = out.read_text(encoding='utf-8')
+    with open(ledger, newline='', encoding='utf-8') as fh:
+        rows = list(csv.DictReader(fh))
+
+    check('the rendered document has no draft placeholders',
+          'framing not yet written' not in text)
+
+    # Every newsletter citation must resolve to a file that is actually there.
+    prefix = str(cfg.get('markdown.source_prefix', ''))
+    targets = re.findall(r'\]\(' + re.escape(prefix) + r'([^)]+)\)', text)
+    updates = cfg.path('paths.updates')
+    broken = sorted({t for t in targets if not (updates / t).exists()})
+    check('every newsletter citation resolves to a file on disk',
+          not broken, f'{len(targets)} links, broken: {broken[:3]}')
+
+    # Every contents anchor must match a heading GitHub will generate.
+    headings = {re.sub(r'[^\w\s-]', '', h.lower()).strip().replace(' ', '-')
+                for h in re.findall(r'^## (.+)$', text, re.M)}
+    anchors = set(re.findall(r'\]\(#([^)]+)\)', text))
+    check('every contents anchor matches a heading',
+          anchors <= headings, f'unmatched: {sorted(anchors - headings)}')
+
+    # The load-bearing one: stage 4 verified these quotations against the
+    # newsletters, so the renderer must not alter a single character of them.
+    quotes = [q for q in (r['quote'].strip() for r in rows) if q]
+    blocks = {l[2:].strip() for l in text.splitlines() if l.startswith('> ')}
+    lost = [q for q in quotes if re.sub(r'\s+', ' ', q) not in blocks]
+    check('every verified quotation reaches the document unaltered',
+          not lost, f'{len(quotes)} quotations, {len(lost)} altered or missing')
+
+    events = [r for r in rows if r['track'] != 'data']
+    entries = len(re.findall(r'^\*\d{1,2} \w+ \d{4} · |^\*(?:week of|'
+                             r'[A-Z][a-z]+ \d{4}) ', text, re.M))
+    check('every non-data row is rendered as an entry',
+          entries == len(events), f'{entries} entries for {len(events)} rows')
+
+    # Per table, not across the document: the lag tables have five columns and
+    # the pending-counterparts table four, and both are correct.
+    blocks, current = [], []
+    for line in text.splitlines():
+        if line.startswith('|'):
+            current.append(line)
+        elif current:
+            blocks.append(current)
+            current = []
+    if current:
+        blocks.append(current)
+    ragged = [b[0][:60] for b in blocks
+              if len({l.count('|') for l in b}) != 1]
+    check('every table is internally consistent in its cell count',
+          not ragged, f'{len(blocks)} tables, ragged: {ragged}')
+
+
+
+
+def check_html_output():
+    """Structural checks on the interactive page.
+
+    These are the properties a screenshot cannot confirm and a reader cannot
+    see: that the page reaches for nothing external, that no scraped string is
+    ever concatenated into markup, and that no panel crops its own data. The
+    last one is here because it happened — an axis whose top tick fell below
+    the maximum drew the December 2021 peak out through the top of the plot,
+    and only opening the page revealed it.
+    """
+    import config
+    import render_html
+    cfg, _ = config.load(argv=[])
+    out = cfg.path('paths.html_out')
+    if not out.exists():
+        print('skip  html checks (nothing rendered yet)')
+        return
+    print()
+    text = out.read_text(encoding='utf-8')
+
+    check('the page loads nothing from any external host',
+          not re.search(r'(src|href)\s*=\s*"https?://', text)
+          and not re.search(r'@import|url\(\s*https?:', text))
+    check('the page issues no requests of its own',
+          not re.search(r'\bfetch\s*\(|XMLHttpRequest|WebSocket|EventSource',
+                        text))
+    # Every quotation and headline on this page began as scraped UCL email.
+    check('no scraped string can reach the DOM as markup',
+          'innerHTML' not in text and 'outerHTML' not in text
+          and 'insertAdjacentHTML' not in text and 'document.write' not in text)
+
+    check('gridlines and axes are solid, never dashed',
+          'dasharray' not in text)
+    check('a legend is present and the table view is linked',
+          'class="legend"' in text and 'href="TIMELINE.md"' in text
+          and 'href="timeline.csv"' in text)
+    check('the chart renders before any script runs',
+          '<svg id="chart"' in text.split('<script')[0]
+          and 'class="mark"' in text.split('<script')[0])
+    check('the no-script path says what it is missing',
+          '<noscript>' in text and 'needs JavaScript' in text)
+
+    # No axis may crop its own series. nice_ticks is the function that got this
+    # wrong; check it directly across the range the page actually plots, plus
+    # the awkward values around a decade boundary.
+    bad = [hi for hi in (1, 7, 9, 10, 11, 99, 100, 101, 131, 159, 525, 696,
+                         1000, 1001, 5922, 9999, 11211)
+           if render_html.nice_ticks(hi)[-1] < hi
+           or render_html.nice_ticks(hi, 3)[-1] < hi]
+    check('no axis top tick ever falls below the data it must show',
+          not bad, f'cropped at: {bad}')
+
+    check('every categorical hue is a validated slot',
+          len(set(re.findall(r'--series-\d:\s*(#[0-9a-f]{6})', text))) == 8,
+          'four light steps and four dark ones, no others')
+
+if __name__ == '__main__':
+    sys.exit(main())

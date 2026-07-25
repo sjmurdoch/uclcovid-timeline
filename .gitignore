@@ -1,0 +1,45 @@
+# What this repository is for: the work that cannot be regenerated.
+#
+# The test for keeping a file is whether losing it would cost anything other
+# than compute. Everything excluded below rebuilds deterministically from the
+# uclcovid archive, which has its own git history and a Zenodo DOI, so it is
+# already safe somewhere else.
+
+# Derived from ../home/uclcovid/data/updates by build/extract_text.py, which
+# stage 0 established is a pure function of its input: two consecutive runs
+# produce an identical digest over all 169 outputs. 1.4 MB.
+text/
+
+# Derived from text/ by build/digest.py. A reading aid for stage 1, and stage 1
+# is finished. 1.7 MB.
+digest/
+
+# Derived from ../home/uclcovid/data/covid_raw.csv by build/data_events.py and
+# build/camden_events.py, both of which rewrite their JSON from source.
+data_events.json
+camden_events.json
+
+__pycache__/
+*.pyc
+.DS_Store
+
+# NOT ignored, and deliberately so:
+#
+#   batches/       the hand-written work of stage 1, 283 rows read out of 1.09
+#                  million characters. Irreplaceable.
+#   timeline.toml  eight framing paragraphs and twenty declared lag pairings,
+#                  hand-written and existing nowhere else.
+#   build/         including make_national_batch.py, whose anchors and notes
+#                  are the same kind of hand work as the stage 1 batches.
+#   sources/       3.2 MB of fetched primary documents. Re-fetchable only for
+#                  as long as those URLs resolve, which is precisely the
+#                  assumption this whole project exists to distrust. Kept.
+#   data/          the Camden comparator, fetched once from an API that has
+#                  already changed shape once.
+#   timeline.csv   regenerable from batches/ via add_rows.py, but cheap to keep
+#                  and it is what the deliverables are built from.
+#   TIMELINE.md    generated, but versioning it makes the diffs reviewable,
+#   timeline.html  which is worth more than the 456 KB it costs.
+#
+# Before this is ever pushed to a public remote, sources/ needs a second look:
+# those seven documents are third-party and this project does not own them.

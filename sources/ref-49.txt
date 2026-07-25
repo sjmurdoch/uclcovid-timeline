@@ -1,0 +1,879 @@
+1
+Children’s Task and finish Group: Paper on Higher Education Settings
+Background and aim
+Higher Education (HE) courses are delivered at levels 4 and above (Diploma/certificate of HE,
+Foundation degree, Bachelor’s degree, Masters, Medicine, PGCE and PhDs) and include both
+academic and technical qualifications. They are delivered at a range of different settings (e.g.,
+universities, FE colleges, private providers).
+In September 2020, a SAGE paper1
+described the principles of managing SARS-CoV-2 transmission
+associated with HE. This paper highlighted that there was a significant risk that HE could amplify
+local and national transmission, requiring national oversight; that it was essential to develop clear
+strategies for testing, tracing and isolation; that safe provision of education must be based on a
+hierarchy of risk; that accommodation and social interactions may be a high-risk environment for
+transmission; that specific strategies may be required to consider the wider physical and mental
+health of students; and that communication strategies are a critical part of minimising transmission
+associated with HE.
+In response to a request from the Department for Education (DfE), this paper provides an update on
+evidence related to COVID-19 in HE settings, drawing upon data from the Office of National Statistics
+(ONS), Public Health England (PHE), and the COVID-19 Genomics UK (COG UK) consortium.
+This paper does not aim to cover all aspects comprehensively (e.g., the impacts of COVID-19 on the
+mental health and wellbeing of student populations; infection/mortality risk to HE staff). Some of
+these have been covered in more detail elsewhere2
+.
+The data sources used for this report are as follows:
+• Descriptive analysis of the percentage of 16–24-year-olds testing positive for COVID-19, by
+employment status from the ONS COVID-19 Infection Survey (CIS)
+• PHE national routine lab-based surveillance data (Data source: SGSS Pillar 1 (NHS and PHE
+testing) and Pillar 2 (community testing)) presented by educational-aged-cohorts
+• NHS Test & Trace contact tracing data from PHE
+• ONS outbreak investigations drawing on information from 10 Universities
+• PHE national routine surveillance of COVID-19 outbreaks in educational settings (Data Source:
+HPZone)
+• PHE: A Cross-Sectional Study Examining the Seroprevalence of SARS-CoV-2 Antibodies in
+University Students in England, December 2020
+• COG-UK investigations of Portsmouth, Glasgow and Cambridge Universities
+• ONS Student COVID Insights Survey
+• REACT-2 antibody prevalence data
+• Investigation of cumulative confirmed cases and seroprevalence in students at a research-
+intensive provincial university
+• Updated evidence and analysis provided by SPI-B
+1
+https://www.gov.uk/government/publications/principles-for-managing-sars-cov-2-transmission-associated-with-higher-education-3-
+september-2020
+2
+E.g. SPI-B: Return to campus for Spring term: risk of increased transmission from student migration (13 January 2021) [currently
+unpublished]2
+Executive Summary:
+• Multiple data sources (including ONS, PHE and COG-UK) show that the rates of COVID-19
+infection rose among many HE student populations in October 2020 (moderate evidence,
+moderate data), with rates of infection subsequently reducing in November (high confidence).
+• PHE testing data suggests that the first peak of infection among those attending HE, and of the
+main HE aged cohorts (18-22 years) coincided with the timing of when HE institutions opened
+and closed, and was prior to peaks seen in younger age groups (medium confidence). However,
+this also reflected the broader epidemic curve at the time, and many of those in the main HE
+aged cohorts would not have been enrolled in HE. In contrast, the timing of the second peaks at
+the end of 2020 did not differ significantly between different age groups. This evidence is limited
+and not reflective of the whole HE student population.
+• Several case studies of individual outbreaks and/or transmission in HE settings document
+outbreaks among students in HE settings in late September - October 2020.
+• Evidence from ONS outbreak investigations, PHE surveillance data, genomic and antibody
+studies in a number of HE settings suggest a higher risk of transmission in residential settings,
+and particularly in some halls of residence (medium confidence). ONS outbreak analyses from
+Exeter and Loughborough found greater transmission spikes in halls of residence than private
+accommodation (medium confidence), and antibody studies from two universities suggest
+higher prevalence of antibodies among those living in halls of residence (medium confidence)
+• Limited, anecdotal evidence from 10 universities presented by ONS suggests that when face-to-
+face learning was happening, minimal cases of transmission were attributed to face-to-face
+learning environments. Instances where transmission did occur were associated with guidance
+not being followed, for example, the removal of a face mask, rather than systemic failures (low
+confidence).
+• Evidence from genomic studies in a limited number of universities suggests that mitigation
+measures were successful in minimising transmission. Limited evidence suggests that
+environmental and behavioural infection control measures, increased testing, use of remote
+learning, and self-isolation by students appear to have been effective during the small amount of
+face-to-face learning over the Autumn term, and may have contributed to reducing prevalence
+in student communities (low confidence).
+• As noted in previous advice, transmission related to HE settings has the potential to increase
+rates of local community transmission. Whilst genomic data presented here indicates student-
+student transmission and some evidence of potential onward transmission to the local
+community, current evidence comes from a limited number of HE settings, and it is unclear how
+generalisable the results are across different HE settings. A range of factors will influence the
+potential impact on levels of local community transmission, including factors such as the relative
+incidence of infection in the community and student populations; and the types and levels of
+social connection between students and the wider community.
+• There is strong evidence that the majority of HE students (those aged 18-24 years), because of
+their age, are less susceptible to severe clinical disease than older people (high confidence).
+However, some HE students are older (DfE estimate 70% of HE students are aged 18-24 years;
+11% are aged 25-29, and 19% are aged 30 and over) and may or may have underlying conditions
+that make them vulnerable to COVID-19.
+• Survey evidence related to COVID-19 indicates disruption to research and learning, lower
+wellbeing, and increased mental distress in HE students (medium confidence). Recent data
+from the ONS Student Insights Survey finds that a greater proportion of students reported being
+dissatisfied or very dissatisfied with their academic experience since the start of the autumn3
+term, with limited opportunities for social or recreational activity, meeting others, and access to
+sports and fitness facilities driving dissatisfaction (low confidence).
+• The assessments are limited by the lack of representativeness of several data sources, including
+the exclusion of those living in student residences from ONS COVID Infection survey data, and
+PHE data by educational age cohort excluding mature students, and including young people
+(aged 18-22 years) who are not enrolled in HE. Evidence on the amount and approach to face-to-
+face teaching over the period are lacking. Further evidence, including on the differential
+approaches to mitigation measures applied across the sector or the level of compliance within
+different institutions would help inform mitigation actions.
+• Maximising uptake of testing and protective health behaviours must be underpinned by greater
+understanding of the costs, feasibility and acceptability of approaches to testing.
+Communication and tailored support packages are needed to enable self-isolation (high
+confidence).4
+Background
+Higher education settings consist of a diverse demographic of people. However, in England
+approximately 70% of HE students are aged 24 and under, and study for various levels of
+qualifications ranging from Diplomas (Level 4) to Bachelor’s degree (Level 6) to PhDs (Level 8)3
+.
+Alongside studies, approximately 62% of students in the HE sector undertake employment, with 24%
+in part-time employment, 13% with zero hours contracts, and 12% in full-time employment4
+. Of
+those who hold jobs alongside their studies, 87% have had to make adjustments to their work since
+the start of the COVID-19 pandemic, for example via furlough (18%), unpaid leave (14%), reduction
+in hours (12%) and redundancy (11%)5
+. According to published HESA data, around 37% of all full-
+time students lived in either the parental/guardian home or their ‘own’ residence during term time.
+The remaining 63% presumably moved to attend UK HE institutions5
+. In 2014-2015 (the most recent
+year with available data), 74.4% of full-time, under 20-year-old students moved home to attend
+while enrolled at UK HE institutions (‘Movers’). The vast majority of the remainder commuted a
+‘short’ distance from their family home to their provider (‘Commuters’)6
+. Data from 8 universities in
+England suggest that 50-85% of students have returned to campus or will not be travelling
+(especially those who are remaining overseas), and therefore the proportion of students who would
+be considered ‘movers’ may be minimal. There appears to be variation in the amount of face-to-face
+learning that took place during October to December 2020, with one university reporting 35% of
+students being taught face-to-face, and one reporting 85%7
+.
+1 Risk of COVID-19 infection among higher education students
+There is evidence from multiple data sources (including ONS and PHE) that the rate of COVID-19
+infection rose among many HE student populations in October 2020, following the start of autumn
+term and reflecting broader increasing community prevalence at the time, with rates of infection
+subsequently reducing (high confidence). The wider prevalence of COVID-19 infection within the
+general population began to rise in late August. Prevalence began to drop among all 16/17 to 24-
+year-olds and age 11/12 to 15/16-year-olds towards the end of October, although prevalence in the
+latter group rose again in early November. Meanwhile, prevalence among other age groups
+continued to rise or remained relatively flat (reported until mid-November)8
+.
+1.1 Evidence from ONS COVID-19 Infection Survey (CIS)
+Summary
+ONS CIS data by employment status which can distinguish some but not all students, indicates that
+COVID-19 positivity rates were highest for students aged 16/17 (school year 12) – 24 years,
+compared to employed people of the same age, during October 2020, at a time following the start of
+Autumn 2020 term. Importantly, these data do not capture those living in halls of residence or
+mature students, and rely on individuals listing ‘student’ as occupation, so may miss some groups
+and/or not reflect the entire student population (medium confidence).
+ONS analysis of people aged 16-24 testing positive for COVID-19, by employment status.
+3
+DfE data; see also 3rd
+Sept SAGE paper on HE
+4
+COVID-19 and Students Survey Report, https://www.nusconnect.org.uk/resources/covid-19-and-students-survey-report.
+5
+https://www.hesa.ac.uk/data-and-analysis/students/chart-4
+6
+https://www.suttontrust.com/wp-content/uploads/2019/12/Home_and_away_FINAL.pdf
+7
+Data provided by the Russell Group 17/02/21
+8
+ONS COVID-19 Infection Survey5
+• During September 2020 to January 2021, COVID-19 positivity was highest for people that are
+employed (Figure 1). However, this has varied over time and rates were highest for students
+aged school year 12 to 24 years during October 2020.
+• In recent weeks however, positivity has been increasing among both employed individuals and
+students in this age group.
+• The ‘Other’ occupation category includes people who are furloughed or not working (such as
+unemployed, long-term sick etc.). Caution should be taken in over-interpreting the trend in the
+‘Other’ category due to wide credible intervals.
+Figure 1 ONS analysis of CIS showing proportion of students aged school year 12 to age 24 testing positive for COVID-
+19 by employment status
+Figure 2 – ONS official estimates of people testing positive for COVID-19 in England9
+9
+ONS COVID-19 Infection Survey, 12 February 2021.
+https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronaviruscovid19infect
+ionsurveypilot/12february20216
+Caveats:
+• Sample sizes are smaller in age groups 16-24 and modelling is therefore more challenging, and
+may lead to a higher level of uncertainty around the modelled trends.
+• These data do not reflect those living in halls of residence accommodation, and do not capture
+those who are part-time student/part time employed (only those who put student as
+occupation), and do not capture mature students – DfE estimate that 70% of university students
+are under 25 years of age10
+. As noted above DfE report 62% of students in HE having a job
+alongside study, though many of these have been affected by the pandemic, for example
+resulting in furlough or reduced hours.
+• These trends are at an aggregate level, and may mask substantial heterogeneity between
+regions.
+1.2 Incidence of infection using Pillar 1 (NHS and PHE) and Pillar 2 (community testing) lab-based
+data for England, by ‘educational-aged cohorts’ - PHE analyses.
+Summary
+In PHE testing data, which may not capture all potential exposures and is likely to underestimate e.g.
+asymptomatic infections, reported incidence of infection by educational age cohort (corresponding
+to year groups) rose exponentially from mid-September to early October 2020 in the college /
+university age cohort. Following a decline in incidence in November, a further exponential rise in
+reported incidence was seen to early January 2021 when the third national lockdown was
+implemented (Figure 1). Note that these data are more reflective of the general increase in cases
+among young people, as educational age cohorts are determined by age rather than by their
+educational status, and therefore many of those defined as college/university age cohort will not be
+attending or enrolled in HE.
+Cases were reported regardless of attendance at educational settings or if educational settings were
+open. Whilst the first reported rise was around the time of the start of Autumn term, it is not
+possible from these data to identify where transmission was occurring, and reported incidence in
+18–22-year-olds was high prior to the start of the Autumn term (low-medium confidence) (Figure 3).
+A similar pattern was seen in positivity rates (peaking at 20% for university cohorts in October),
+however in January reported positivity rates were higher for primary and secondary aged children.
+• Educational age cohorts were calculated from national Pillar 1 and Pillar 2 test data, using
+individual’s dates of birth, which corresponded to a particular educational year group.
+• Cases are included regardless of whether they attended an educational setting or whether the
+educational setting was open during the reporting period.
+• Weekly COVID-19 incidence shows that college and university aged cohorts (18-22-year-olds)
+started the academic term in September 2020 with an incidence rate of 159 per 100,000
+population which at the time was already four times the incidence rate in secondary school aged
+children and seven times the incidence rate in primary school aged children.
+• The incidence in this university aged cohort rose exponentially from mid-September (week 38,
+2020), peaking in early October (week 41, 2020) at 1,111 cases per 100,000 population. The
+incidence declined thereafter and following the second national lockdown in England, which
+started on Thursday 5 November (week 45, 2020), fell to a low of 219 per 100,000 population in
+late November (week 48, 2020) when incidence matched that in secondary school aged cohorts
+10
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/914978/S0728_Principles_for_Man
+aging_SARS-CoV-2_Transmission_Associated_with_Higher_Education_.pdf7
+for the first time. Incidence then started to climb again as the more infectious B.1.1.7 variant
+increased in prevalence and became dominant, resulting in another exponential escalation of
+cases peaking at 960 cases per 100,000 population in January (week 1, 2021) when the third
+national lockdown was implemented. The recent late December/early January 2021 peak in the
+university cohort was double the incidence compared to secondary school aged cohorts and four
+times that in the primary school aged cohorts. Incidence among 18–22-year-olds had come
+down to 317 per 100,000 in late January (week 4, 2021) (data for week 4 are still provisional)
+(Figure 3).
+Figure 3 PHE data showing weekly incidence of laboratory confirmed COVID-19 cases per 100,000 population in
+nursery/preschool, primary school, secondary school and college/university age cohorts in England
+• PHE data (4) also showed that positivity in college and university aged cohorts peaked in early
+October (week 41, 2020) at 20%, with a steady decline until early December (week 49, 2020)
+after which it rose again to a peak of 17% in late December to early January (week 53, 2020-
+2021). Peaks in positivity mirrored peaks in incidence in this age group. Interestingly positivity
+in secondary and primary school aged cohorts started out much lower than that in college and
+university aged cohorts in early September (week 36, 2020) and remained lower up until late
+October (week 44, 2020) when positivity in secondary school aged students overtook it.
+Positivity in secondary school aged cohorts and to a certain extent primary school aged cohorts
+have remined high since then and have not been overtaken by the college and university aged
+cohorts despite incidence being higher in the latter group since mid-December (week 51,
+2020).8
+Figure 4 PHE data showing weekly positivity rates of confirmed COVID-19 cases, in nursery/preschool, primary school,
+secondary school and college/University age cohorts in England. N.B. positivity rates for school cohorts include PCR and LFD
+tests, whereas all population positivity includes PCR tests only.
+1.3 Incidence reported from NHS Test & Trace data, by PHE
+Summary
+NHS Test and Trace data, which may not capture all potential exposures or transmission events in
+education settings and are likely to underestimate asymptomatic cases/transmission compared to
+e.g. ONS CIS data, indicates that of cases that reported attending an educational setting, university
+settings were the most common in late October. Whilst an increase in cases reporting attendance at
+a university setting was seen in late Dec 2020 / early Jan 20201, this represented a lower proportion
+of overall reported cases than in October. It is not possible to tell specifically where transmission was
+occurring from these data (low-medium confidence).
+• According to the NHS Test & Trace educational settings report, there have been 271,013 cases
+that reported attending an educational setting from 23 October (week 43, 2020) to 31 January
+(week 4, 2021). This ranged from 6.2%-15.9% of all cases reported each week, the largest
+proportion during early to mid-December (week 50, 2020) just prior to the end of school term
+for the Christmas break (Figure 5).
+• Note that cases are presented by the day when they were reported to Test and Trace, and this
+does not represent when they attended an educational setting. Further work is needed to define
+if exposure was related to attendance, and transmission cannot be inferred by this data.9
+Figure 5 : NHS T&T data showing the number of cases, and percentage of the total number of cases each week, that
+reported attending an educational setting by week, England, October 23 - 03 February; PHE. NOTE that graph is presented
+in terms of number of cases with the percentage in brackets, with high numbers in late Dec/Jan reflecting national
+prevalence
+• According to NHS T&T data, secondary schools were the most commonly reported educational
+setting attended by students who tested positive between week 45 2020 (when students
+returned to school after half-term) and week 1 2021 (the end of the Christmas holidays). Earlier,
+among cases reported in late October (weeks 43-44, 2020), university settings were the most
+common. From mid-January (week 2, 2021) onwards, primary schools were most frequently
+reported (Figure 6).
+Figure 6 Number of cases attending an educational setting by week stratified by education setting type, England, October
+23-03 February. N.B. Week 5 data incomplete at time of report
+• NHS Test & Trace recorded 49,236 cases that reported attending university from 23 October
+(week 43, 2020) to 31 January (week 4, 2021). This ranged from 1.1% to 5% of all cases reported
+each week. The largest proportion was reported in late October (week 43, 2020) and the
+smallest in mid-late January (weeks 3 and 4, 2021) (Figure 7). It is important to note that mid-
+late January reflects a period of significant national restrictions, where the vast majority of other
+settings, including many workplaces, are closed.10
+• Note that cases are presented by the day when they were reported to Test and Trace, and this
+does not represent when they attended a university setting, or if they attended during the
+time when they may have been exposed. Further work is needed to define if exposure was
+related to attendance, and transmission cannot be inferred by this data.
+1.4 Severity of disease among HE student populations
+There is strong evidence that the majority of HE students (those aged 18-24) are less susceptible to
+severe clinical disease than older people (high confidence). For example, in recent CO-CIN data11
+hospital case fatality rates were 0.2% or below for all 5-year age bands reported between 15-29
+years, and 0.5% or below for all under 44 years (male or female). In this dataset, around 30% of
+SARS-CoV-2 positive cases admitted to hospital were under 60, with around 6% under 30 (Figure 8).
+11
+https://isaric4c.net/reports/ accessed 10th
+Feb 2021
+Figure 7 NHS T&T data showing the number of cases that reported attending an education setting - "University" only,
+England, October 23 - 03 February; PHE. NOTE that graph is presented in terms of number of cases who self-report as
+students with the percentage in brackets, with high numbers in late Dec/Jan reflecting national prevalence11
+Figure 8 Age, sex and status at 28 days for hospital in-patients with proven SARS-CoV-2 infection
+from Co-CIN
+However, as noted in previous advice12
+, some HE students are older (DfE estimate 70% of HE
+students are aged 18-24 years; 11% are aged 25-29, and 19% are aged 30 and over) or may have
+underlying conditions that make them vulnerable to COVID-19.
+1.4 Student behaviour
+Student intention to engage with university testing programmes appear high. A December ONS survey
+exploring student intentions and views on COVID-19 testing found that 2/3 of students downloaded the
+NHSCOVID-19orProtectScotlandapps;between85-89%saidthattheywouldrequestatestiftheyhad
+COVID-19symptoms;82-86%saidthattheywouldstayathome; and85%reportedthattheywerelikely
+or extremely likely to share contact details with NHS test and trace13
+.
+This adds additional evidence to the previous SPI-B work on HE return to campus for Spring term. As
+such, maximising uptake of testing and protective health behaviours must be underpinned by
+greater understanding of the costs, feasibility and acceptability of approaches to testing.
+Communication and tailored support packages are needed to enable self-isolation14,15
+.
+Impacts of COVID-19 restrictions on HE student populations
+Summary
+Survey evidence indicates disruption to research and learning, lower wellbeing and increased mental
+distress in HE students; however, these findings are heavily caveated due to low response rates and
+potential for bias (low confidence). Recent data from the ONS Student COVID Insights Survey (8
+January-18 January 2021) (Annex 1), with responses from 2,698 students, found that:
+• Of those students who travelled to stay with family or friends over the winter break, 40% have
+since returned and 60% have not yet returned to their term-time address.
+• Of those students who provided complete travel information, 33% travelled to stay with family
+or friends over the winter break and 37% stayed in their accommodation; the remaining 30%
+were already living at their usual non-term address or family home, or in ‘other’
+accommodation.
+• The majority of students (over 94%) reported performing the following most or all of the time:
+reducing the number of people they meet, trying to keep a 2-metre distance from people
+outside their household, and washing hands thoroughly and regularly. This was a similar
+proportion to the general population.
+• Almost two-thirds (63%) of students indicated that their well-being and mental health had
+worsened since the start of the autumn 2020 term.
+• A statistically significantly higher number (63%) of students reported a worsening in their well-
+being and mental health, compared with 57% reporting the same in the previous student survey
+(20 to 25 November 2020).
+12
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/914978/S0728_Principles_for_Man
+aging_SARS-CoV-2_Transmission_Associated_with_Higher_Education_.pdf
+13
+ONS, “Coronavirus and the impact on students in higher education in England: September to December 2020,” 2020
+14
+J. R. P. Philip T Gressman, “Simulating COVID-19 in a university environment,” Math BioSci, vol. 328, 2020.
+15
+T. Berger-Gillam, J. Cole, K. Gharbi and ". al", “Norwich COVID-19 testing initiative pilot: evaluating the feasibility of asymptomatic
+testing on a university campus,” Journal of Public Health, no. https://doi.org/10.1093/pubmed/fdaa194, 2020.12
+• Average life satisfaction scores of students decreased by 9% from 5.3 to 4.8 out of 10, between
+20 to 25 November 2020 and 8 to 18 January 2021.
+• A greater proportion of students reported being dissatisfied or very dissatisfied with their
+academic experience since the start of the autumn term (37%), compared with 29% reporting
+the same at the end of November 2020 (20 to 25 November 2020). The main reasons for
+dissatisfaction related to limited opportunities for social or recreational activity (86%), limited
+opportunities to meet others (84%), and limited access to sports and fitness facilities (52%).
+• These findings are heavily caveated, the statistics provided are experimental, so care needs to be
+taken when interpreting them. This wave of the survey had a low response rate of just 2.7%,
+little understanding of response bias and error in the sample and reflecting the views of only a
+small proportion of students (not representative) (low confidence). For more detailed evidence
+on student behaviour, risk to students and those of their age groups, including the mental health
+impacts and mitigation measures, see recent SPI-B paper on return to campus for spring term16
+16
+SPI-B: Return to campus for Spring term: risk of increased transmission from student migration (13 January 2021) [currently
+unpublished]13
+2 Evidence from case studies of outbreaks and transmission in HE settings
+Summary
+Multiple case studies of individual outbreaks and/or transmission in HE settings are consistent in
+reporting a higher number of outbreaks associated with students or HE settings in late September -
+October 2020. More detailed case studies involving genomic and/or antibody studies in an even
+smaller number of specific HE settings suggest that there may be a higher risk of transmission in
+residential settings. There is some evidence that face-to-face learning was taking place during
+Autumn term 2020, and limited evidence from 10 universities presented by ONS suggests minimal
+cases of transmission were attributed to face-to-face learning environments. However, further
+research is required to assess the contribution of various HE settings to transmission risk. It is
+unclear how generalisable the results from these studies are to different HE settings or the wider
+population. Evidence for the risk related to halls of residence vs. other residential settings is more
+mixed (low-medium confidence). Links between university students and the wider community are
+diverse. It is important to gain a better understanding of these links and interactions as, ‘reduction
+of infectious disease transmission in this demographic will reduce overall community transmission,
+lower demands on health services and reduce risk of harm to clinically vulnerable individuals while
+allowing vital education activity to continue’17
+.
+2.1 Office for National Statistics (ONS) data
+• The ONS article “How has coronavirus (COVID-19) spread among students in England?”
+examined trends in transmission using research and volunteered information from 10 higher
+education institutions in total, including case studies from Exeter and Loughborough universities.
+• This analysis showed that COVID-19 cases in the student population rose steeply during the start
+of term in September and October 2020 but fell during November.
+• Outbreak investigation data from Loughborough and Exeter Universities, analysed by ONS,
+showed cases were rising steeply in September and October 2020 but falling during November.
+Data from these two universities showed that transmission spikes were greater in halls of
+residence compared to private accommodation. The peak in cases among students was not
+seen in the wider population of Exeter, although their cases also increased later in 2020. There is
+not sufficient evidence in the data to be certain whether infections spread from the wider
+population into the student population, or whether the arrival of students in Exeter had an
+impact on the rising levels in the wider community. These data include students who tested
+through HE PCR testing and through NHS Test and Trace. Bringing together this with information
+from a number of other English universities, ONS found a higher risk of transmission in
+residential settings (halls and student houses) and limited evidence in face-to-face teaching
+settings18
+.
+• Qualitative and quantitative evidence from 10 universities were analysed by ONS, with minimal
+evidence of transmission in face-to-face learning environments, such as lecture theatres.
+Instances where transmission did occur were associated with guidance not being followed, for
+example, the removal of a face mask, rather than systemic failures. N.B. all data above reflect
+transmission in late 2020 and therefore do not reflect transmission of the new variant of
+concern (B.1.1.7).
+17
+SPI-B: Return to campus for Spring term: risk of increased transmission from student migration (13 January 2021) [currently
+unpublished]
+18
+https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/articles/howhascoronaviruscovid19spreadamongstudentsi
+nengland/2020-12-2114
+2.2 PHE national routine surveillance of COVID-19 outbreaks in educational settings
+• PHE publish weekly national surveillance data of COVID-19 outbreaks in educational settings19
+.
+Data from these reports for the period 31 August 2020 to 31 January 2021 show that from
+early September (week 36, 2020) to late January (week 4, 2021) there have been 202
+outbreaks linked to colleges or universities reported to PHE (Figure 9)
+Figure 9 PHE outbreak surveillance data showing the number of confirmed COVID-19 clusters or outbreaks by type of
+educational setting per EPI Week, 2020/21 academic year, starting from week 36 (31/08/2020 – 06/09/2020) to week 4
+2021 (25/01/2021 to 31/01/2021)
+• Additionally, PHE surveillance data on outbreaks in educational settings show that during the
+period 31/08/20 to 31/01/2021 there have been 131 outbreaks in halls of residence, with a
+peak in late September to early October (week 40, 2020) (Figure 10)
+Figure 10 PHE Surveillance data showing the number of confirmed COVID-19 clusters or outbreaks in Halls of Residence per
+EPI Week, 2020/21 academic year, starting from week 36 (31/08/2020 – 06/09/2020) to week 4 (25/01/2021 to
+31/01/2021), HPZone
+19
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/958478/Weekly_COVID-
+19_and_Influenza_Surveillance_Graphs_W5.pdf15
+PHE Cross-Sectional Study Examining the Seroprevalence of SARS-CoV-2 Antibodies in University
+Students in England, December 2020 (UNICOVID)
+• A cross-sectional serosurvey was conducted by PHE between 02 to 11 December 2020 of
+students aged ≤ 25 years across 5 universities in England - Reading university, Newcastle
+University, Leeds Beckett University, Oxford Brookes University and the University of
+Manchester.
+• Seroprevalence of SARS-CoV-2 in university students (n=2,905) was estimated at 17.8% (95%CI,
+16.5-19.3), ranging from 7.6%-29.7% across the 5 participating universities.
+• Seropositivity was associated with younger students likely to represent first year undergraduates
+(OR 4.1, 95% CI 2.7 to 6.4; aOR 3.2, 95% CI 2.0 to 4.9), those living in halls of residence (OR 2.9,
+95% CI 2.4 to 3.5; aOR 2.1, 95% CI 1.7-2.7) and those who shared a kitchen with a greater
+number of students (shared with 4-7 individuals OR 1.92, 95%CI 1.53 to 2.42; shared with 8 or
+more individuals OR 2.99, 95% CI 2.09 to 4.27). Seropositivity was estimated at 49% for students
+who lived in halls of residence with high reported case rates (>8%) during the autumn term.
+• Overall, less than one in five university students have antibodies to SARS-CoV-2 suggesting that
+despite large outbreaks during September – November 2020, a substantial proportion remain
+susceptible to infection. However, in some halls with reported outbreaks there was evidence of
+extensive transmission with seropositivity approaching 50%.
+2.3 COVID-19 Genomics UK (COG UK) consortium preliminary analysis of data from Universities of
+Cambridge (UoC), Portsmouth (UoP) and Glasgow (UoG) (Annex 2).
+• AtUoCandUoP,asimilarpatternofpositivecasesamongstudentscouldbediscernedinthetesting
+data, with prevalence increasing in the early weeks of term during October, followed by a decline
+towards the end of November. Occasional spikes in cases can be observed.
+• Based ontesting data fromUoP and thesurrounding area, therewas an initialsurge ofcases among
+younger people in early October, and subsequent control of cases amongst students. Overall,
+infectionratesamongstudentswerelowerthanamongyoungpeopleinthesurroundingcommunity
+(Figure 11). Similarly, cases associated with UoG initially rose in late September, involving off-
+campus student residential halls, in the week immediately following Freshers’ week but the
+outbreak was rapidly curtailed following intervention measures.
+• Overall, the pattern suggests that infection control measures, increased testing, use of remote
+learning, and self-isolation by students were successful in reducing prevalence in student
+communities.16
+Figure 11 COG-UK analysis of cases with COVID-19 from the University of Portsmouth compared to community cases in
+Portsmouth
+• Genome sequence data indicates that there were multiple SARS-CoV-2 variants introduced in mid-
+late September into UoG, and early October into UoC and UoP. While some formed clusters with a
+limited number of cases (which generally were not detected again after early weeks of the term),
+others seeded larger clusters consisting of cases from multiple halls of residence/colleges. The
+association of multiple distinct virus variants with one outbreak suggests multiple introductions
+into the residential halls, likely through shared common source(s) linked to social activity, and/or
+sporadic introductions with origins from the local community and/or non-term-time domicile
+locations.
+• However, the relatively low number of distinct viruses, compared to overall sequenced case
+numbers, suggests significant subsequent student-student transmission occurred. Residential halls
+and colleges present similar scenarios for shared households and facilities that may enable
+transmission of SARS-CoV-2. Potential asymptomatic transmission among students within halls of
+residence was observed. However, the likelihood of transmission events to and/or from the local
+community is likely to differ depending on the accommodation and social context of the student17
+population and incidence in the local community. There was some evidenceof potential acquisition
+of infection from, and onward transmission to, the local community in the case of off-campus
+residential halls, although further epidemiological and phylogenetic study is needed to understand
+these putative links.
+• There was no clear evidence for a difference in transmission among students living in halls of
+residence versus private accommodation, although the outbreak at UoG was centred around off-
+campus university residential halls. For full limitations and caveats relating to these data see Annex
+2.
+2.5 REACT-2 Antibody prevalence Data
+• An interim analysis of REACT-2 antibody prevalence data in Imperial College London between
+15-30 Jan 2021 using lateral flow immune-assay self-tests, suggests higher prevalence of past
+infection in students (18.7% [95% CI 15.9, 21.7], 136 of 763) than staff (10.2% [7.9, 13.0], 59 of
+577). Prevalence was particularly high among those living in University halls of residence,
+where 61 of 198 (30.8% [95% CI 24.5, 37.7]) tested positive for antibodies compared to 75 of
+530 (14.2% [11.3, 17.4]) students living elsewhere. Recruitment was opportunistic or linked to
+booking PCR tests as part of asymptomatic testing on campus, so the sample (1,369 returned
+questionnaires) may not be representative or generalisable to other scenarios
+*UG = Undergraduate; PGT = Postgraduate teaching; PGR = Postgraduate research
+2.6 Investigation of cumulative confirmed cases and seroprevalence in students at a single university
+(Annex 4)
+In the period September 2020 to 31 January there were 2,700 reports of positive test results among
+students from a Research-Intensive Provincial University, the majority of which were from students
+reporting testing due to having symptoms of COVID-19 (n=2,193). Some students reported testing18
+due to other reasons, including due to receiving a positive asymptomatic test result n=167. The
+estimated proportion of students reporting symptomatic PCR-confirmed infection since the
+beginning of term in university halls and outside of university halls (Figure 12) shows that a higher
+proportion of students in university halls reported confirmed symptomatic infection. The
+denominators for these proportions were based on estimates of current academic year enrolments
+and known university hall capacity. These are caveated, as there is uncertainty linked to student self-
+report of accommodation type when reporting test results, and some halls may be considered
+privately run which could lead to discrepancies in how accommodation is reported. Additionally,
+positive test results are self-reported by students through a web form, and are not verified e.g.
+through test and trace, which may introduce bias.
+Figure 12: Proportion of students at a single university reporting symptomatic infection by accommodation
+type.
+Antibody tests have been conducted among students and staff since October 2020 using an in-house
+assay validated against PHE standards20
+. Of 3,521 tests taken to 14 December 2020, seroprevalence
+within halls of residence was 36.6% (95% CI: 32.4-41.2%), and outside of residential halls (including
+some staff data) was 15% (95% CI: 13.5-16.6%). This confirms enhanced risk amongst students living
+in residential halls compared to the wider university, with the caveat that sampling has not been
+designed to be representative of the student population (Annex 4)
+20
+Potent anti-SARS-CoV-2 Antibody Responses are Associated with Better Prognosis in Hospital Inpatient COVID-19 Disease. Patrick J.
+Tighe, Richard A. Urbanowicz, C. Lucy Fairclough, C. Patrick McClure, Brian J. Thomson, Nancy Gomez, Joseph G. Chappell, Theocharis
+Tsoleridis, Matthew Loose, Matthew Carlile, Christopher Moore, Nadine Holmes, Fei Sang, Divyateja Hrushikesh, Gemma Clark, Nigel
+Temperton, Tim Brooks, Jonathan K. Ball, William L. Irving, Alexander W. Tarr: https://doi.org/10.1101/2020.08.22.2017683419
+Annex 1: ONS data
+COVID-19 Infection Survey
+Context
+In the last 14 days the Coronavirus (COVID-19) Infection Survey (CIS) had 168,900 individuals from
+85,778 households in a long-term surveillance study involving repeat swab sampling, blood sampling
+and survey data collection, including details of vaccination status. CIS operations and analysis are
+delivered by ONS in collaboration with partners at the University of Oxford, the University of
+Manchester, Public Health England (PHE), Wellcome Trust and IQVIA. CIS aims to estimate the
+number of current positive cases in the community, including cases where people do not report
+having any symptoms, and estimates the number of new cases and change over time in positive
+cases. The data collected can also be used to identify the differences in numbers of positive cases
+between different regions. The CIS is a household survey and does not cover halls of residence.
+Student COVID Insights Survey
+Context
+The Student COVID-19 Insights Survey (SCIS) aims to understand the behaviours of the student
+population, how and when they will travel between home and university, and to understand the
+impact on students’ mental health and wellbeing. The SCIS presents experimental statistics and has
+been designed to produce estimates quickly, providing timely information for policy makers. As with
+all survey data based on a sample, there is an element of uncertainty as they are susceptible to
+respondent error and bias.
+Method
+Four waves of the SCIS have taken place between October 2020 and January 2021. The first two
+waves surveyed a small number of universities directly, whereas the most recent two have used
+email addresses held by the National Union of Students (NUS), which provides greater coverage of
+the student population in England. The survey was conducted using an online survey tool and all
+answers were self-reported. In the latest wave, conducted between 8 January and 18 January 2021,
+a total of 100,000 students were invited to take part via their email address held by National Union
+of Students (NUS). The response rate was 2.7% (2,698 students).
+Key findings (Wave 4 - 8 January and 18 January 2021):
+Student migration
+• Of those students who travelled to stay with family or friends over the winter break, 40%
+have since returned and 60% have not yet returned to their term-time address.
+• Of those students who provided complete travel information, 33% travelled to stay with
+family or friends over the winter break and 37% stayed in their accommodation; the
+remaining 30% were already living at their usual non-term address or family home, or in
+‘other’ accommodation.
+• Of those who travelled to stay with family or friends and haven’t returned to their term time
+accommodation, almost a third (32%) didn’t know when they would return and 14% were
+not planning on returning this term.
+Mitigations to avoid infection20
+• The majority of students (over 94%) reported performing the following most or all of the
+time; reducing the number of people they meet, trying to keep a 2-metre distance from
+people outside their household, and washing hands thoroughly and regularly. This was a
+similar proportion to the general population.
+• A significantly lower proportion of those living in university halls of residence or privately
+managed student accommodation reported ‘reducing the number of people they meet’
+always or most of the time (89%), compared to students in all other living arrangements
+(96%).
+• Of all students, 10% said that they were aware of a large social gathering (more than 10
+people) happening in the last 7 days.
+Self-reported infection
+• 8% of students said they had already had coronavirus (COVID-19), which had been
+confirmed by a test. A further 17% thought they had already had coronavirus (COVID-19),
+although this hadn’t been confirmed.
+• Two thirds (66%) of students have downloaded the NHS COVID-19 app. 89% of students said
+that they were likely or extremely likely to share the details of those they have been in
+contact with if asked by their country’s contact tracing service.
+Testing
+• 9 out of 10 (91%) students said that they would request a test if they developed symptoms
+of COVID-19.
+• The reasons for not requesting a test included “I wouldn't want to use a test that could go to
+someone else who needs it more” (28%), “I only need to self-isolate” (28%) and “If my
+symptoms were only mild or have improved” (25%) among others.
+• 74% of students who have not yet returned to university after the winter break are either
+likely or extremely likely to take a COVID-19 test when returning to their studies, even if they
+do not have symptoms.
+Interactions with general public
+• Two thirds (66%) of all students reported leaving home for any reason in the past 7 days.
+This is lower than the general population, which appears to be 90% according to OPN data.
+Students most commonly left home to go to the shops for groceries or to the pharmacy
+(90%), or to spend time outdoors for recreational purposes or exercise (69%).
+• Of those students who left home in the last 7 days, 35% did so to go to work and 14% had
+used public transport
+Caveats:
+• As with all survey data based on a sample, there is an element of uncertainty as they are
+susceptible to respondent error and bias.
+• These are experimental statistics, so care needs to be taken when interpreting them. While
+this has been weighted and is comparable with previous findings, this has an impact on the
+level of certainty of this research.
+• It is worth noting this survey has a relatively small sample size of 2,698 respondents, which
+represents a 2.7% response rate. We have little understanding of response bias and error
+given the low response rate. Further validation across surveys is required to improve the
+confidence in the estimates.21
+• The NUS sample frame covers around 500,000 students in English universities. While this
+provides the better coverage than other sample frames available it still only represents
+around 20% of higher education students in the UK.
+Outbreak investigations – deep dive
+The article “How has coronavirus (COVID-19) spread among students in England?” examined trends
+in transmission using research from six higher education institutions, including case studies from
+Exeter and Loughborough universities.
+The data from Exeter and Loughborough University showed that COVID-19 cases in the student
+population rose following the start of the autumn term. Cases were rising steeply in September and
+October 2020 but falling during November. Data from these two universities showed that
+transmission was greater in halls of residences compared to private accommodation. The peak in
+cases among students was not seen in the wider population of Exeter, although their cases also
+increased later in 2020. There is not sufficient evidence in the data to be certain whether infections
+spread from the wider population into the student population, or whether the arrival of students in
+Exeter had an impact on the rising levels in the wider community.
+Figure: Cases of COVID-19 among Exeter students rose fastest the week following the start of
+term, particularly in halls of residence.
+Notes
+1. This includes data from students tested via the University’s commercially provided PCR
+testing and from students tested via NHS Test and Trace.
+2. Students attending the University of Exeter had wider access to COVID-19 tests than at
+universities without access to their own testing. This could affect the volume of cases seen
+on campus.
+3. A smaller number of students are typically housed in university halls, meaning the numbers
+of cases in this accommodation type likely represent a larger proportion of the residents.22
+Face-to-Face Teaching
+Bringing together qualitative and quantitative information gathered from 10 universities, we found
+minimal evidence of transmission happening in face-to-face learning environments, such as lecture
+theatres. All of these universities reported face-to-face learning taking place during the autumn
+term. In instances when transmission was traced back to a face-to-face learning environment,
+further investigation showed specific reasons for it happening, usually through appropriate guidance
+not being followed, such as the removal of a face mask. One university described the results of their
+investigations of non-domestic transmission as “human compliance failures rather than systemic
+failures”.
+Assessments into transmission of positive COVID-19 cases at the University of Reading and York St
+John University concluded that the majority of transmission was through domestic or social
+interactions (82% and 76% respectively). Neither university had evidence of direct transmission
+through a face-to-face learning environment. A high proportion of transmission sources were
+‘undetermined’, suggesting that for many cases, the source of infection was unknown (21%). These
+universities conducted internal contact tracing investigations, prompted by self-report data.
+Caveats:
+• The data reflects transmission in late 2020 and therefore does not reflect transmission of
+the new variant.
+• The evidence presented here does not yet provide a comprehensive national picture about
+the nature and level of transmission among HE students but provides some insights into
+where and how COVID-19 transmission happens for ongoing research.23
+Annex 2: COG-UK data
+COG-UK summary for SAGE report to DfE on SARS-CoV-2 in educational settings
+8th January 2020
+Multiple academic and public health partners within the COVID-19 Genomics UK (COG-UK) consortium
+are sequencing SARS-CoV-2 positive samples from university testing programmes (asymptomatic and
+symptomatic), and as part of the public health outbreak response, to generate genomic insights into
+transmissionamongstudentsandstaffattheirinstitution.Aspartofthiseffort,aninterimreportonthe
+genomicepidemiologyofSARS-CoV-2attheUniversityofCambridgewassubmittedtoSAGEonthe10th
+of December.
+This summary briefly describes some of the broad level insights that can be taken from studies
+undertaken by COG-UK members at the University of Cambridge (UoC), the University of Portsmouth
+(UoP), and Public Health Scotland in collaboration with MRC-University of Glasgow (UoG) Centre for
+Virus Research who provided the sequencing. These broad level insights should be viewed as
+preliminary; detailed reports will be prepared in due course.
+• Rates of infection among student populations, how these have changed over time and what
+may have influenced changes (including closures and restrictions).
+AtUoCandUoP,asimilarpatternofpositivecasesamongstudentscouldbediscernedinthetesting
+data,withprevalenceincreasingintheearlyweeks
+of term during October, followed by a decline
+towardstheendofNovember.Occasionalspikesin
+cases can be observed, which may be associated
+with gatherings of students. Based on testing data
+fromUoPandthesurroundingarea,infectionrates
+among students were lower than in the
+surrounding community (See figure). Similarly,
+cases associated with UoG initially rose in late
+September, involving off-campus student
+residential halls, in the week immediately
+following Freshers’ week but the outbreak was
+rapidly curtailed following intervention measures.
+Overall, the pattern suggests that infection control
+measures, increased testing, use of remote
+learning, and self-isolation by students were successful in reducing prevalence in student
+communities.
+• Evidence of transmission between communities and students, students and staff and among
+students.
+Genome sequence data indicates that there were multiple SARS-CoV-2 variants introduced in mid-
+late September into UoG, and early October into UoC and UoP. While some formed clusters with a
+limited number of cases (which generally were not detected again after early weeks of the term),
+*includes both symptomatic and asymptomatic cases.24
+others seeded larger clusters consisting of cases from multiple halls of residence/colleges. The
+associationofmultipledistinctvirusvariantswithoneoutbreaksuggestsmultipleintroductionsinto
+the residential halls, likely through shared common source(s) linked to social activity, and/or
+sporadic introductions with origins from the local community and/or non-term-time domicile
+locations. However, the relatively low number of distinct viruses, compared to overall sequenced
+case numbers, suggests significant subsequent student-student transmission occurred. Residential
+halls and colleges present similar scenarios for shared households and facilities that may enable
+transmission of SARS-CoV-2. Potential asymptomatic transmission among students within halls of
+residence was observed. However, the likelihood of transmission events to and/or from the local
+community is likely to differ depending on the accommodation and social context of the student
+population and incidence in the local community. There was some evidence of potential acquisition
+of infection from, and onward transmission to, the local community in the case of off-campus
+residential halls, although further epidemiological and phylogenetic study is needed to understand
+these putative links.
+• Settings and factors associated with risk of transmission e.g., halls of residence compared to
+private accommodation, student migration and how this influences transmission/risk.
+There was no clear evidence for a difference in transmission among students living in halls of
+residence versus private accommodation, although the outbreak at UoG was centred around off-
+campus university residential halls.
+Several important limitations should be considered when interpreting these findings:
+● Infection risks associated with student social activities, or involving residential halls, cannot
+be directly quantified as the total numbers of infected and uninfected students were not
+known and some cases were probably asymptomatic and not tested.
+● Interpretation of direct student-to-student transmission events is limited by lack of
+information on how cases are linked to individual households/flats within residential halls,
+lack of additional contact tracing information to further define contacts, chains of
+transmissionand linksto social events,and the lowlevelsofvariationin SARS-CoV-2 genomes
+making it difficult to conclusively define direct transmission events.
+● The interpretation of the relative frequency and importance of separate introductions into
+halls, versus subsequent student-student transmission, is limited by the partial coverage of
+cases for sequencing and assumes that the sequenced cases represent a random selection of
+the overall cases.
+● Interpretationoftransmissioneventsbetweenstudentsandthelocalcommunityislimitedby
+lack of knowledge of the non-term-time locations of students, their recent travel histories,
+and the likelihood that genomic surveillance willmissvariants circulating in the community at
+a low level. The background context of circulating viruses is also complicated by the presence
+and numbers of SARS-CoV-2 lineage detections over time and across locations being biased
+by the targeted sampling of outbreaks and varying surveillance coverage.
+● Further epidemiological and phylogenetic work is needed to further investigate the likely
+source of introductions from across the UK and abroad.25
+Annex 3: NHS Test &Trace Data
+Limitations:
+Ascertainment of cases and contacts by the National Test and Trace system may not provide a
+representative population of Covid prevalence in the UK. Common reasons for this may include:
+• Variation in testing procedures for different segments of the population, for instance
+students, health workers and asymptomatic cases, or by region.
+• Not all contacts can be captured by contact tracing, for instance the case may not name
+some due to recall bias or stigma, and interpretations/definitions of contacts can vary by
+educational setting. NHS Test and Trace may not capture all education based contacts that
+were potentially exposed.
+• Data on risks in specific exposure settings can only be captured when those activities occur,
+and so is limited by regional restrictions and lockdowns. Such restrictions can also mean that
+activity events expose one to different risks in different regions, depending on activities
+permitted at any given time.
+• A setting reported by a case does not mean that transmission occurred there.
+Case-control study data and analysis
+• The data for the cases was collected through NHS T&T, where cases provided the
+information either through a digital route (self-completed) or through being interviewed
+over the phone. Information was collected on workplace, education and leisure activities in
+the 7-2 day period before symptom onset (or date of test if onset date was not
+provided). Each activity is categorised in three different categories, each category providing
+further details on the setting where the activity took place. Controls completed an online
+survey with same activity questions. However, they were not asked to provide details about
+their contacts for each activity. Crude odds ratios (cORs) were obtained for each main
+exposure. Adjusted odds ratios (aORs) were obtained through multivariable analyses using
+penalised regression methods (see Firth, 1993). All multivariable analyses were adjusted for
+age, sex, ethnicity, socioeconomic deprivation (using index for multiple deprivation (IMD)),
+geographical region, and non-work community and leisure activities. Finally, a random-
+effects meta-analysis was conducted across the three studies to investigate how the
+association between exposure settings and the odds of infection differed in the three studies
+and to obtain pooled odds ratios (pORs).
+Caveats
+• It is not possible to determine how much of the transmission of SARS-CoV-2 took place
+within the education setting, and how much was associated with social, household or
+transport exposures. Furthermore, selection bias is affecting both cases and controls.
+Asymptomatic cases will not be likely to seek a test, and will be missed by NHS T&T. The
+controls are recruited from Market Research Panels and therefore unlikely to fully
+representative sample of the general population of England. There is also differential
+misclassification of exposure. It is for example plausible that cases are under-reporting their
+activities potentially due to issues with questionnaire fatigue or being more likely to adhere
+to socially desirable reporting. Controls are less likely to be affected by questionnaire
+fatigue, and also are paid to complete the survey. However, it is difficult to determine
+whether the biases causing the misclassification led to under- or overestimation of the effect
+measures. While multivariable models were adjusted for confounding of all the available
+demographic variables, some residual confounding is likely to persist.
+NHS Test & Trace common exposure data
+• The data for the cases was collected through NHS T&T, where cases provided the
+information either through a digital route (self-completed) or through being interviewed
+over the phone. Information was collected on workplace, education and leisure activities in
+the 7-2 day period before26
+• The common exposures report uses enhanced contact tracing data from the period 2 to 7
+days prior to onset of symptoms. If 2 or more cases report the same event postcode and
+category within a 7-day rolling period this is classed as a common exposure. As above, a
+common exposure may not reflect a true epidemiological linkage and does not infer
+transmission occurred. Further local investigation is required to determine this. Settings with
+more visitors/attendees will be more likely to be included.
+References:
+1. NHS Test and Trace Education Report (03/02/2021): unpublished
+2. (Preprint article) Hiironen et al. (2020) Occupational exposures associated with being a
+COVID-19 case; evidence from three case-control studies. doi:
+https://doi.org/10.1101/2020.12.21.20248161
+3. Weekly Influenza and COVID-19 Surveillance graphs
+(https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment
+_data/file/958478/Weekly_COVID-19_and_Influenza_Surveillance_Graphs_W5.pdf)27
+Number of cases that reported attending an education setting, by week, October 23 - 03 February, from Table 7 of NHS Test and Trace Education Report (1)
+Week number: 43 44 45 46 47 48 49 50 51 52 53 1 2 3 4 5
+Childminder 39 58 60 106 66 84 77 86 134 138 92 114 178 155 115 24
+College 864 1487 1732 2278 1783 1400 1226 1593 2121 2238 2699 3789 2063 1377 929 142
+Nursery/Preschoo
+l
+263 484 449 775 625 565 627 815 1162 1396 1119 1476 2117 2307 1812 314
+Other educational
+setting not listed
+117 174 171 208 209 141 154 244 290 291 248 294 226 171 119 22
+Other Higher
+Education
+139 193 191 192 139 106 94 116 184 205 226 289 134 98 81 7
+Primary School 155
+2
+2709 2895 4425 4356 3882 4259 5537 7119 7458 6222 7097 5112 4611 3358 519
+Secondary School 277
+4
+4556 4824 7364 7831 6771 7192 9590 1229
+0
+1001
+2
+8077 8429 4885 3614 2494 410
+Special needs
+educational
+setting
+84 156 126 217 215 159 170 220 269 221 190 247 258 240 146 30
+University 380
+0
+4940 4303 4844 2185 1342 1122 1629 2386 3571 4560 6443 3761 2594 1756 238
+Total 963
+2
+1475
+7
+1475
+1
+2040
+9
+1740
+9
+1445
+0
+1492
+1
+1983
+0
+2595
+5
+2553
+0
+2343
+3
+2817
+8
+1873
+4
+1516
+7
+1081
+0
+170
+628
+Number of contacts who were exposed in an education setting by week, October 23 - 03 February, from Table 16 of NHS Test and Trace Education Report (1)
+Week number: 43 44 45 46 47 48 49 50 51 52 53 1 2 3 4 5
+Childminder 18 29 28 31 19 16 17 24 37 76 98 112 72 67 48 6
+Nursery/Preschool 216 451 500 614 452 358 358 481 680 1013 1133 1321 1550 1303 955 189
+Other educational setting not
+listed
+308 627 613 622 401 309 274 436 694 987 986 1158 756 539 384 68
+Other Higher Education 99 188 164 215 143 112 102 110 198 245 312 353 214 165 101 23
+Primary School 980 2158 1675 2386 2014 1584 1723 2385 3143 4255 3784 3422 2830 2327 1744 348
+Secondary School 806 1557 1163 1601 1513 1171 1302 1767 2609 2978 2381 2080 1309 964 657 125
+Sixth Form Centre 47 101 79 113 62 66 61 79 119 175 152 202 92 74 38 8
+Special needs educational
+setting
+195 361 284 389 342 257 306 387 535 594 621 612 526 450 339 74
+University 436 630 567 607 318 231 229 321 500 781 931 1197 747 532 428 83
+Total 3105 6102 5073 6578 5264 4104 4372 5990 8515 11104 10398 10457 8096 6421 4694 92429
+Annex 4: SARS-CoV-2 infection in students: confirmed symptomatic infections and
+seroprevalence at a single university3031
