@@ -935,8 +935,9 @@ noscript .note { display:block; background:var(--panel);
   var cross = document.getElementById('crosshair');
   var visible = {};
   D.series.forEach(function (s) { visible[s.key] = s.on; });
-  var trackOn = {};
-  D.tracks.forEach(function (t) { trackOn[t.key] = true; });
+  var trackOn = {}, trackLabel = {};
+  D.tracks.forEach(function (t) { trackOn[t.key] = true;
+                                  trackLabel[t.key] = t.label; });
   var catOn = {};
   D.cats.forEach(function (c) { catOn[c] = true; });
 
@@ -1021,15 +1022,22 @@ noscript .note { display:block; background:var(--panel);
     Array.prototype.forEach.call(svg.querySelectorAll('.mark'), function (g) {
       var m = D.marks[+g.getAttribute('data-i')];
       var day = dayOf(m.date);
-      var cats = (g.getAttribute('data-cats') || '').split(',');
-      var catShown = cats.some(function (c) { return catOn[c]; });
-      var show = trackOn[m.track] && catShown && inDom(day);
+      var kept = keptEvents(m);
+      var show = trackOn[m.track] && kept.length > 0 && inDom(day);
       var x = xOfDay(day);
       g.setAttribute('data-x', x.toFixed(1));
       var r = g.querySelector('rect');
       if (r) r.setAttribute('x', (x - D.tickW / 2).toFixed(1));
-      if (show) { g.removeAttribute('hidden'); g.setAttribute('tabindex', '0'); }
-      else { g.setAttribute('hidden', 'hidden'); g.setAttribute('tabindex', '-1'); }
+      // The heavier "several events here" tick and the count a screen reader
+      // hears both count the kept events, so neither promises more than the
+      // tooltip will list.
+      if (r) r.classList.toggle('multi', kept.length > 1);
+      if (show) {
+        g.setAttribute('aria-label', m.when + ', ' + kept.length + ' event' +
+          (kept.length === 1 ? '' : 's') + ' on the ' + trackLabel[m.track] +
+          ' track');
+        g.removeAttribute('hidden'); g.setAttribute('tabindex', '0');
+      } else { g.setAttribute('hidden', 'hidden'); g.setAttribute('tabindex', '-1'); }
     });
     // 4. phase bands
     var bands = document.getElementById('bands');
@@ -1149,11 +1157,21 @@ noscript .note { display:block; background:var(--panel);
     tip.style.top = top + 'px';
   }
 
+  // A day survives the category filter if any one of its events does, so a
+  // mark mixing kept and filtered categories stays on the lane. What it stands
+  // for is then the kept events only: listing the filtered ones as well would
+  // let a deselected category go on speaking through a tick it no longer owns.
+  // The predicate matches the one layout() hides marks by, so a visible mark
+  // always has at least one event left to show.
+  function keptEvents(m) {
+    return m.events.filter(function (e) { return catOn[e.category]; });
+  }
+
   function showMark(g, cx, cy) {
     var m = D.marks[+g.getAttribute('data-i')];
     tip.replaceChildren();
     tip.appendChild(el('div', 'when', m.when));
-    m.events.forEach(function (e) {
+    keptEvents(m).forEach(function (e) {
       var box = el('div', 'ev');
       box.appendChild(el('b', null, e.headline));
       box.appendChild(el('div', 'meta', e.category + ' · ' + e.kind));
