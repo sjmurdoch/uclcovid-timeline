@@ -1,6 +1,6 @@
 # UCL and the pandemic: a chronology
 
-344 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 22 are the national and sector measures those decisions respond to, taken from 4 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.
+345 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 23 are the national and sector measures those decisions respond to, taken from 5 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.
 
 Every event on the first two tracks carries a verbatim quotation from the document that announced it, and every one of those quotations is checked mechanically against the preserved source before this document is built. Nothing here rests on a recollection of what a source said.
 
@@ -10,7 +10,7 @@ Each entry states what UCL decided, when, and in what words. The date is the dat
 
 The blockquote under each entry is the newsletter's own wording, not a summary of it. The paragraph above it is a plain-language reading of what was decided; the paragraph below it, where there is one, is context or a caveat that the newsletter itself does not supply. Where the two are in tension the quotation is the record and the paragraphs are commentary.
 
-Where a UCL action responds to a national or sector one, the two are shown side by side at the head of the phase with the **lag in days** between them. A negative lag is UCL moving before the national measure, a positive lag is UCL moving after it. 16 of these pairings are measured. A further 4 are declared but not measured, because the national measure has not yet been established from a primary source; they are listed at the end rather than given a number that would look like evidence.
+Where a UCL action responds to a national or sector one, the two are shown side by side at the head of the phase with the **lag in days** between them. A negative lag is UCL moving before the national measure, a positive lag is UCL moving after it. 17 of these pairings are measured. A further 3 are declared but not measured, because the national measure has not yet been established from a primary source; they are listed at the end rather than given a number that would look like evidence.
 
 ## Contents
 
@@ -20,10 +20,10 @@ Where a UCL action responds to a national or sector one, the two are shown side 
 4. [Winter, Alpha and the second closure](#4-winter-alpha-and-the-second-closure) · 19 December 2020 to 8 February 2021 · 13 events
 5. [The roadmap out of lockdown](#5-the-roadmap-out-of-lockdown) · 22 February 2021 to 1 June 2021 · 14 events
 6. [Delta and the summer reopening](#6-delta-and-the-summer-reopening) · 14 June 2021 to 1 November 2021 · 19 events
-7. [Omicron](#7-omicron) · 30 November 2021 to 18 February 2022 · 17 events
+7. [Omicron](#7-omicron) · 30 November 2021 to 18 February 2022 · 18 events
 8. [Living with COVID](#8-living-with-covid) · 21 February 2022 to 11 May 2022 · 7 events
 
-Tracks in this build: 283 UCL, 20 national, 2 sector, 39 data.
+Tracks in this build: 283 UCL, 21 national, 2 sector, 39 data.
 
 ## 1. First wave and the first lockdown
 
@@ -2546,7 +2546,7 @@ The loosest travel position since March 2020. It lasted five weeks before Omicro
 
 ## 7. Omicron
 
-*Phase window 27 November 2021 to 20 February 2022. 17 events and 14 case-data readings, running 30 November 2021 to 18 February 2022.*
+*Phase window 27 November 2021 to 20 February 2022. 18 events and 14 case-data readings, running 30 November 2021 to 18 February 2022.*
 
 This is the phase in which UCL acts on its own case data rather than on national policy. The newsletter of 13 December states that cases were rising on campus as well as nationally, and the on-campus student series peaks at 525 in the week to 21 December, the highest seven-day total anywhere in the record, with on-campus staff peaking at 131 in the same week. Higher education was exempted from Plan B and the campus stayed open, which sets up the sharpest measurement in the dataset: 9 on-campus student cases in January 2021 against 696 in January 2022, a 77-fold rise, while Camden's own cases rose 2.4-fold across the same two months. Both series rise, and it is the difference in magnitude rather than in direction that the local epidemic cannot account for.
 
@@ -2690,6 +2690,15 @@ Staff unable to be vaccinated for medical reasons were not required to attend an
 
 The only place in the record where vaccination status carries a direct consequence for a member of staff's attendance, and it distinguishes medical exemption from choice.
 
+**The Plan B face covering requirement in England expires**  
+*26 January 2022 · restrictions · took effect* · [source](https://www.legislation.gov.uk/uksi/2021/1400/made)
+
+SI 2021/1400 amends regulation 15 of the Plan B face covering regulations, substituting 26th January 2022 for 20th December 2021, so the requirement lapses at the end of that day.
+
+> They also extend the period during which the Regulations are in force until 26th January 2022
+
+UCL kept face coverings mandatory on the day the legal requirement ended and narrowed them to teaching settings twenty-six days later. This is the second time the record shows UCL holding a measure after the law dropped it, the first being step 4 in July 2021.
+
 **Face coverings kept mandatory at UCL after the legal requirement ended**  
 *27 January 2022 · restrictions · took effect* · [issue 161](../home/uclcovid/data/updates/163_20_January_2022__Issue_161_.html)
 
@@ -2732,6 +2741,12 @@ The end of UCL's own testing provision, fifteen months after it opened at Bidbor
 
 UCL narrowed its face covering expectation to teaching settings on 21 February 2022, and on-campus staff cases then rose from 142 in February to 339 in March, the last increase anywhere in the record. The final issue of 4 May 2022 withdrew the remaining expectations, closed the COVID-19 telephone helpline and dropped the twice-weekly testing advice as free national testing ended. The published series stops a week later on 11 May 2022, so the record closes because the counting stopped rather than because the pandemic did.
 
+| National or sector event | Date | UCL response | Date | Lag |
+|---|---|---|---|---|
+| The Plan B face covering requirement in England expires | 26 January 2022 | Face coverings narrowed to teaching settings only | 21 February 2022 | +26 days |
+
+A negative lag is UCL acting before the national measure, a positive lag is UCL acting after it.
+
 **Case data.** 9 readings enter the record in this phase.
 
 - **March 2022** · Monthly cases rises to 339 for staff, on campus. 142 in February 2022, 339 in March 2022, a change of +139%.
@@ -2747,7 +2762,7 @@ UCL narrowed its face covering expectation to teaching settings on 21 February 2
 ### February 2022
 
 **Face coverings narrowed to teaching settings only**  
-*21 February 2022 · restrictions · took effect* · [issue 163](../home/uclcovid/data/updates/165_14_February_2022__Issue_163_.html)
+*21 February 2022 · restrictions · took effect* · [issue 163](../home/uclcovid/data/updates/165_14_February_2022__Issue_163_.html) · lag **+26 days**
 
 Strongly advised elsewhere in crowded and enclosed spaces, following discussion by the University Management Committee, the Workplace Health and Safety Committee and the Public Health Advisory Panel.
 
@@ -2812,9 +2827,8 @@ The newsletters name the national measures UCL was responding to, and those stat
 | The government announces that schools and nurseries in England will close by 20 March | 18 March 2020 | Day Nursery to stay open only for national-interest and essential staff | 19 March 2020 |
 | The Coronavirus Job Retention Scheme sets its conditions on work by furloughed staff | *not yet established* | Furloughed staff barred from any work, including writing up UCL results | 30 April 2020 |
 | The Office for Students sets its expectations for 2020-21 admissions and teaching | *not yet established* | Term 1 plans forced early by the UCAS deadline and OfS expectations | 26 May 2020 |
-| Plan B measures end in England | *not yet established* | Face coverings narrowed to teaching settings only | 21 February 2022 |
 
-3 of these have no provisional date at all. The newsletters make the dependency plain without dating the measure they are responding to, and a date has not been invented for them here.
+2 of these have no provisional date at all. The newsletters make the dependency plain without dating the measure they are responding to, and a date has not been invented for them here.
 
 ## How this document was built
 

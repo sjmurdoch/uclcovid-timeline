@@ -37,6 +37,9 @@ DFE_XMAS = ('https://www.gov.uk/government/news/'
 # date was withdrawn until it could be evidenced. The statutory instrument
 # settles it.
 SI_FACE_TRANSPORT = 'https://www.legislation.gov.uk/uksi/2020/592/made'
+# The instrument that sets the final expiry of the Plan B face covering
+# requirement, by amending regulation 15 of SI 2021/1340.
+SI_PLAN_B_EXPIRY = 'https://www.legislation.gov.uk/uksi/2021/1400/made'
 
 # The scope test from the plan: a national event earns a row when UCL responded
 # to it, when it constrained UCL, or when it explains a visible feature of the
@@ -101,6 +104,19 @@ ROWS = [
                'June as the day non-essential shops reopened and says nothing '
                'about transport. Both are true of that day; the regulations '
                'are what establish the second.'),
+    dict(date='2022-01-26', kind='effective', track='national', cat='restrictions',
+         headline='The Plan B face covering requirement in England expires',
+         src=SI_PLAN_B_EXPIRY, start='They also extend the period',
+         end='until 26th January 2022',
+         detail='SI 2021/1400 amends regulation 15 of the Plan B face '
+                'covering regulations, substituting 26th January 2022 for '
+                '20th December 2021, so the requirement lapses at the end of '
+                'that day.',
+         notes='UCL kept face coverings mandatory on the day the legal '
+               'requirement ended and narrowed them to teaching settings '
+               'twenty-six days later. This is the second time the record '
+               'shows UCL holding a measure after the law dropped it, the '
+               'first being step 4 in July 2021.'),
     dict(date='2020-06-29', kind='announced', track='national', cat='restrictions',
          headline='The first local lockdown is announced for Leicester',
          src=IFG_2021, scope='29 June', scope_end='4 July',

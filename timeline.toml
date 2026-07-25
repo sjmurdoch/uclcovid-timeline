@@ -333,4 +333,10 @@ label = "The government announces a move to Plan B measures in England"
 
 [[links]]
 ucl = "2022-02-21|Face coverings narrowed to teaching settings only"
-label = "Plan B measures end in England"
+counterpart = "2022-01-26"
+label = "The Plan B face covering requirement in England expires"
+
+[[extra_sources]]
+id = 102
+url = "https://www.legislation.gov.uk/uksi/2021/1400/made"
+title = "The Health Protection (Coronavirus, Wearing of Face Coverings) (England) (Amendment) Regulations 2021"

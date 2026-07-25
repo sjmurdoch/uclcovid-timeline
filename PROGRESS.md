@@ -151,14 +151,13 @@ Five remain pending and are listed in the document with no number attached: the 
 
 **Face coverings on public transport is now measured, at -24 days.** SI 2020/592 puts the requirement into force on 15 June 2020; UCL had required face coverings on campus where distancing was not possible from 22 May, twenty-four days earlier. This pairing had been carried on a UCL newsletter's authority, withdrawn when reference 7 turned out to give 15 June as the day non-essential shops reopened, and is now restored on the statutory instrument. Both facts are true of that day; only one of them was ever the point.
 
-`fetch_sources.py` gained `[[extra_sources]]` for this. The research synthesis' works-cited list is a secondary source's choice of references and does not carry everything the ledger needs; extra sources are numbered from 101 so they cannot collide with a reference number and are fetched, cached, hashed and verified by exactly the same path. The ledger is **344 rows**, 16 of 20 pairings measured.
+`fetch_sources.py` gained `[[extra_sources]]` for this. The research synthesis' works-cited list is a secondary source's choice of references and does not carry everything the ledger needs; extra sources are numbered from 101 so they cannot collide with a reference number and are fetched, cached, hashed and verified by exactly the same path. The ledger is **345 rows**, 17 of 20 pairings measured.
 
-**The end of Plan B was attempted and not settled.** Three fetches, two timeouts: legislation.gov.uk's full-text pages were not reliably reachable. What the attempt did establish, so resuming is cheap rather than starting over:
+**The end of Plan B is settled too, at +26 days.** It took four attempts. Three shell fetches timed out or failed, and the last of those turned out to have failed on my own `grep` pattern exceeding ugrep's complexity limit rather than on the network. Retrieved through `fetch_sources.py` instead, which uses urllib and caches properly, it came back first time.
 
-- **SI 2021/1340** is the Plan B face-covering instrument for England. It came into force at 4am on 30 November 2021, was made to expire at the end of 20 December 2021, is now marked revoked, and carries an amended version dated **27/01/2022** — which corroborates 27 January 2022 as the operative date without yet evidencing it in quotable words.
-- **SI 2021/1400** is "The Health Protection (Coronavirus, Wearing of Face Coverings) (England) (Amendment) Regulations 2021", the instrument that resets that expiry. One successful fetch of `https://www.legislation.gov.uk/uksi/2021/1400/made` should finish it.
+**SI 2021/1400** amends regulation 15 of SI 2021/1340, substituting "26th January 2022" for "20th December 2021", and its explanatory note reads: *"They also extend the period during which the Regulations are in force until 26th January 2022."* So the Plan B face covering requirement lapsed at the end of 26 January 2022. UCL narrowed its own expectation to teaching settings twenty-six days later — the second time in the record it holds a measure after the law drops it, the first being step 4 in July 2021.
 
-No row was added and no date was asserted. The pairing stays in the pending table with no lag, which is the correct state for something not yet evidenced.
+The ledger is **345 rows**, and **17 of 20 pairings are measured**. Three remain pending: the schools and nurseries closure of 18 March 2020, the Coronavirus Job Retention Scheme conditions, and the OfS expectations that forced UCL's May 2020 timing.
 
 ### Still to do on this stage
 
@@ -295,7 +294,7 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 
 **Built and working:** `timeline.toml` and `config.py` (TOML with `UCLTL_*` environment and `--set` CLI overrides, precedence verified); `extract_text.py`; `digest.py`; `validate.py`; `add_rows.py`; `data_events.py`; `fetch_camden.py`; `camden_events.py`; `render_md.py` and `test_render_md.py`; `seed_national.py`; `fetch_sources.py`; `make_national_batch.py`; `render_html.py`; `review.py`.
 
-**The ledger:** `timeline.csv`, **344 rows, 0 errors, 0 warnings** — 283 `ucl` rows with every quotation verified as an exact substring of its source newsletter, 22 `national` and `sector` rows with every quotation verified against a cached primary document, and 39 `data` rows all marked `computed`.
+**The ledger:** `timeline.csv`, **345 rows, 0 errors, 0 warnings** — 283 `ucl` rows with every quotation verified as an exact substring of its source newsletter, 23 `national` and `sector` rows with every quotation verified against a cached primary document, and 39 `data` rows all marked `computed`.
 
 **The chronology:** `TIMELINE.md`, generated, 200 KB, with 15 measured lag pairings.
 
@@ -304,7 +303,7 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 **To resume, from `timeline/`:**
 
 ```bash
-python3 build/validate.py          # should report 344 rows, 0 errors
+python3 build/validate.py          # should report 345 rows, 0 errors
 python3 build/test_render_md.py    # 31 checks, all passing
 python3 build/render_md.py         # rebuilds TIMELINE.md from the ledger
 python3 build/render_html.py       # rebuilds timeline.html from the ledger
