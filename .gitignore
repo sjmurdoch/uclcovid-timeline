@@ -41,5 +41,11 @@ __pycache__/
 #   TIMELINE.md    generated, but versioning it makes the diffs reviewable,
 #   timeline.html  which is worth more than the 456 KB it costs.
 #
-# Before this is ever pushed to a public remote, sources/ needs a second look:
-# those seven documents are third-party and this project does not own them.
+# sources/ has now had the second look this note used to ask for, ahead of the
+# push to sjmurdoch/uclcovid-timeline. Of the eleven documents, the gov.uk,
+# legislation.gov.uk, ONS and House of Commons Library items carry the Open
+# Government Licence or the Open Parliament Licence and are redistributable
+# with attribution. The Institute for Government, Academy of Medical Sciences
+# and Office for Students PDFs are not clearly so: they are kept and published
+# as the evidence behind figures this project cites, not relicensed. README.md
+# records that; see PUBLISH_PLAN.md for the decision itself.

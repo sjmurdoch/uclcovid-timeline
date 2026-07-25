@@ -14,11 +14,15 @@ Some of it is checked mechanically and some of it is not, and the difference mat
 - whether the commentary in the `detail` and `notes` fields is sound — it is interpretation, written by an AI system, sitting directly beneath a verified quotation where it inherits authority it has not earned;
 - whether the **lag figures** mean anything. Each rests on a pairing between a UCL action and a national measure that an AI system judged to be a response. Those judgements have not been reviewed by anyone.
 
-**So what is this for?** It is a demonstration of what the [uclcovid dataset](../home/uclcovid) makes possible: that a preserved corpus of institutional email plus a preserved statistical series can be turned into something navigable, with every claim traceable back to a source. That is the point being made. The chronology is the vehicle, not the product.
+**So what is this for?** It is a demonstration of what the [uclcovid dataset](https://github.com/sjmurdoch/uclcovid) makes possible: that a preserved corpus of institutional email plus a preserved statistical series can be turned into something navigable, with every claim traceable back to a source. That is the point being made. The chronology is the vehicle, not the product.
 
 **Do not rely on it, quote it, or cite it as a record of UCL's pandemic response.** If a fact here is useful to you, follow its citation to the preserved newsletter and read it in context before using it. The sources are real and were preserved carefully; this layer on top of them was not verified by a person.
 
 ---
+
+## Where it is published
+
+The interactive page is served at **<https://sjmurdoch.github.io/uclcovid-timeline/>**, and the newsletters it cites are preserved in the [uclcovid archive](https://github.com/sjmurdoch/uclcovid). Every citation in `TIMELINE.md` points there, so a claim can be followed to its newsletter from the published page alone — which, given everything above, is the only responsible way to use one.
 
 ## What is here
 
@@ -26,6 +30,7 @@ Some of it is checked mechanically and some of it is not, and the difference mat
 |---|---|
 | `TIMELINE.md` | The chronology, sectioned by pandemic phase, with every quotation |
 | `timeline.html` | An interactive version, self-contained, no network access at run time |
+| `index.html` | The site's front door, which redirects to `timeline.html` |
 | `timeline.csv` | The ledger both are generated from |
 | `build/` | The scripts, including the checks described above |
 | `batches/` | The hand-written row definitions, the irreplaceable part |
@@ -37,11 +42,25 @@ Some of it is checked mechanically and some of it is not, and the difference mat
 
 ```bash
 python3 build/validate.py          # 348 rows, 0 errors
-python3 build/test_render_md.py    # 31 checks over both renderers
+python3 build/test_render_md.py    # 33 checks over both renderers
 python3 build/review.py            # non-zero if any figure is untraceable
 python3 build/review.py --coverage # newsletter sections no row covers
 python3 build/render_md.py         # rebuild TIMELINE.md
 python3 build/render_html.py       # rebuild timeline.html
 ```
 
-`sources/` holds copies of third-party documents, retrieved for verification. They are not this project's to redistribute, and that needs settling before this directory is published anywhere.
+A local build can point the citations back at a checkout of the archive without editing anything tracked:
+
+```bash
+UCLTL_MARKDOWN_SOURCE_PREFIX=../home/uclcovid/data/updates/ python3 build/render_md.py
+```
+
+## Sources and rights
+
+`sources/` holds copies of eleven third-party documents, retrieved so that the figures citing them could be checked against what they actually say rather than against a link that might rot. They are reproduced as evidence, not relicensed.
+
+- The [gov.uk](https://www.gov.uk/), [legislation.gov.uk](https://www.legislation.gov.uk/) and [ONS](https://www.ons.gov.uk/) items are covered by the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), and the House of Commons Library briefings by the [Open Parliament Licence](https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/). Both permit redistribution with attribution, which this section is.
+- The Institute for Government, Academy of Medical Sciences and Office for Students PDFs carry no such licence. They are their authors' copyright, cached here unmodified and cited with their source URL and retrieval date in `sources/manifest.csv`.
+- The newsletter quotations throughout are copyright University College London, quoted for the purpose of citing them and preserved in full in the [uclcovid archive](https://github.com/sjmurdoch/uclcovid), which records the same position.
+
+The build scripts and the generated chronology are this project's own work.
