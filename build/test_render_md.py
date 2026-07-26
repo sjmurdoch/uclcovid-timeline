@@ -341,9 +341,22 @@ def check_html_output():
     print()
     text = out.read_text(encoding='utf-8')
 
-    check('the page loads nothing from any external host',
-          not re.search(r'(src|href)\s*=\s*"https?://', text)
-          and not re.search(r'@import|url\(\s*https?:', text))
+    # What this claims is that nothing is *loaded* from another host, and that
+    # is what it now tests. It used to reject any external href at all, which
+    # caught <a> as well — but a link is not a load: it fetches nothing, sends
+    # nothing, and does not exist until a reader chooses it. The forms that do
+    # load are src, an href on <link> (stylesheets, preconnect, icons), @import
+    # and url(). Those stay forbidden; an anchor does not.
+    loads_external = (
+        re.search(r'\bsrc\s*=\s*"https?://', text)
+        or re.search(r'<link\b[^>]*\bhref\s*=\s*"https?://', text, re.I)
+        or re.search(r'@import|url\(\s*["\']?https?:', text))
+    check('the page loads nothing from any external host', not loads_external)
+    # The links it does carry are anchors and nothing else, so the distinction
+    # above cannot quietly become a loophole.
+    external = re.findall(r'<(\w+)\b[^>]*\bhref\s*=\s*"https?://[^"]*"', text)
+    check('every external reference is a link a reader chooses to follow',
+          set(external) <= {'a'}, f'elements carrying one: {sorted(set(external))}')
     check('the page issues no requests of its own',
           not re.search(r'\bfetch\s*\(|XMLHttpRequest|WebSocket|EventSource',
                         text))

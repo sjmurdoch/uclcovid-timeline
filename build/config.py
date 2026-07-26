@@ -35,8 +35,10 @@ DEFAULTS = {
     'range.start': '2020-01-01',
     'range.end': '2022-12-31',
     'extract.date_window': 1200,
-    # Empty means detect from git; see build_commit() in render_html.py.
+    # Empty means detect from git; see build_commit() and build_repo()
+    # in render_html.py.
     'build.commit': '',
+    'build.repo': '',
 }
 
 

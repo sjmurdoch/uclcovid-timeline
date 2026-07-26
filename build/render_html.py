@@ -83,6 +83,38 @@ def build_commit(cfg):
     except (OSError, subprocess.SubprocessError):
         return '', False
 
+
+def build_repo(cfg):
+    """The repository this page was built in, as (url, owner/name).
+
+    Detected from `origin` on the same terms as the commit, and overridable by
+    `build.repo` for the same reasons. Both the https and the ssh forms of a
+    GitHub remote are normalised, and a remote that is neither is used as-is
+    with no owner/name label, so a self-hosted checkout still links somewhere
+    truthful rather than being silently dropped.
+    """
+    url = str(cfg.get('build.repo', '') or '').strip()
+    if not url:
+        try:
+            r = subprocess.run(('git', '-C', str(config.ROOT), 'remote',
+                                'get-url', 'origin'),
+                               capture_output=True, text=True, timeout=10)
+            if r.returncode != 0:
+                return '', ''
+            url = r.stdout.strip()
+        except (OSError, subprocess.SubprocessError):
+            return '', ''
+    if url.startswith('git@'):                    # git@host:owner/name.git
+        host, _, path = url[4:].partition(':')
+        url = f'https://{host}/{path}'
+    if url.endswith('.git'):
+        url = url[:-4]
+    if not url.startswith('https://'):
+        return '', ''
+    parts = url.split('/')
+    label = '/'.join(parts[-2:]) if len(parts) >= 5 else ''
+    return url, label
+
 # ---------------------------------------------------------------- palette
 #
 # Validated, not chosen by eye. Both modes are selected: the light hexes fail
@@ -1678,15 +1710,27 @@ def page(svg, height, payload, rows, cfg, first, last):
       '<a href="TIMELINE.md">TIMELINE.md</a>. The ledger behind both is '
       '<a href="timeline.csv">timeline.csv</a>.</p>')
 
-    # Which build this is, quietly, at the foot. Plain text rather than a link
-    # to the commit: the page is checked to reference no external host, and
-    # that check reads any external href as a breach. It is not worth loosening
-    # a rule about what the page reaches for in order to save a reader one
-    # paste.
+    # Which build this is, quietly, at the foot, and where to go and read it.
+    # The hash is linked to its own commit rather than left for the reader to
+    # paste: an <a> fetches nothing, so the page still reaches for no external
+    # host on load, which is the property the archive actually claims. Both
+    # links degrade to plain text when there is no remote to point at.
     commit, dirty = build_commit(cfg)
+    repo, repo_label = build_repo(cfg)
     if commit:
-        a(f'<p class="build">Built from <code>{esc(commit)}</code>'
-          + (' with uncommitted changes' if dirty else '') + '</p>')
+        shown = (f'<a href="{esc(repo)}/commit/{esc(commit)}">'
+                 f'<code>{esc(commit)}</code></a>' if repo
+                 else f'<code>{esc(commit)}</code>')
+        line = f'Built from {shown}'
+        if dirty:
+            line += ' with uncommitted changes'
+        if repo:
+            line += (f' · <a href="{esc(repo)}">'
+                     f'{esc(repo_label or repo)}</a>')
+        a(f'<p class="build">{line}</p>')
+    elif repo:
+        a(f'<p class="build"><a href="{esc(repo)}">'
+          f'{esc(repo_label or repo)}</a></p>')
     a('</main>')
     a(f'<script type="application/json" id="payload">'
       f'{json.dumps(payload, separators=(",", ":"))}</script>')

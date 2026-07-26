@@ -256,7 +256,7 @@ Interaction was driven and checked: lane hover snaps and lights exactly one mark
 
 The page renders whole without JavaScript: all four series paths, 183 event marks, the Camden line, 17 axis ticks and all thirteen restriction-regime names as native `<title>` elements are in the markup before the first `<script>`. Script adds the crosshair, the tooltips and the filters, and a `<noscript>` note says exactly that.
 
-`build/test_render_md.py` now covers the HTML too, at 36 checks: no external host, no `fetch`/`XHR`/`WebSocket`, no `innerHTML`/`outerHTML`/`insertAdjacentHTML`/`document.write` anywhere, solid rules only, legend and table-view links present, the chart present before any script, and the axis-crop regression.
+`build/test_render_md.py` now covers the HTML too, at 37 checks: no external host, no `fetch`/`XHR`/`WebSocket`, no `innerHTML`/`outerHTML`/`insertAdjacentHTML`/`document.write` anywhere, solid rules only, legend and table-view links present, the chart present before any script, and the axis-crop regression.
 
 ### The phase bands became restriction shading — **26 July 2026**
 
@@ -311,6 +311,14 @@ A review of the entire project rather than a diff. The pipeline passed throughou
 **Smaller.** An unreachable guard in `lift()` whose real case raised an uncaught `ValueError` instead of joining the collected errors; a shared notes template that made the November row assert October's completeness, gone with the row; dead `data-cats` and `data-mid` attributes on every mark and lane, read by nothing; `build_links` run a second time after the file was written; "168" written into generated prose twice, now counted from `text/index.csv`; `--out` cwd-relative in two generators and root-relative in a third; a double space in the published notes of both `.off` rows, from an empty interpolation `.strip()` cannot reach; and a `UCLTL_*` variable naming no known setting ignored in silence, which now warns — it cannot be honoured, since an unknown name cannot be turned back into a dotted path, but a typo is exactly what needs saying.
 
 One check added, and confirmed to fail on broken input: a gap in the series breaks the line rather than joining across it. **36 checks, all passing**, `validate.py` clean at 347 rows, `review.py` exit 0 with every commentary figure traceable.
+
+### The page says which build it is — **26 July 2026**
+
+A line under the last paragraph: **Built from `<short hash>`**, the hash linked to its own commit, then the repository. `build.commit` and `build.repo` in `timeline.toml` override the lookup, reachable by `--set` and `UCLTL_*` like every other setting; empty means detect with `git rev-parse` and `git remote get-url origin`, normalising the ssh form and the `.git` suffix. A detection that fails prints nothing rather than a guess, since a reader would try to resolve a wrong hash — verified by rendering with git off `PATH`, which drops the line and leaves the page otherwise identical.
+
+**A page cannot carry its own hash.** It is written before it is committed, so this names the state it was built *from*, which is the ledger and the scripts that produced what the reader sees. That is why the marker lands in two commits: the sources, then the page regenerated against them. The generated outputs are excluded from the dirty check, because rendering writes them and including them would report dirty on every run and make the marker mean nothing.
+
+**The external-host check was narrowed to what it claims.** It rejected any external `href`, which caught `<a>` along with everything else, and that is why the hash shipped as plain text at first. But a link is not a load: it fetches nothing and does not exist until a reader chooses it. The check now forbids the forms that actually load — `src`, an `href` on `<link>`, `@import`, `url()` — and a second check holds the line, asserting that every external reference on the page is an anchor and nothing else, so the distinction cannot quietly become a loophole. Probed with four kinds of external load, a script `src`, a stylesheet `<link>`, an `@import` and an `<img>`: all four still fail it.
 
 ## Stage 7 — review — **done**. Placement decision — **open, and not mine to take**
 
@@ -402,7 +410,7 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 
 ```bash
 python3 build/validate.py          # should report 347 rows, 0 errors
-python3 build/test_render_md.py    # 36 checks, all passing
+python3 build/test_render_md.py    # 37 checks, all passing
 python3 build/render_md.py         # rebuilds TIMELINE.md from the ledger
 python3 build/render_html.py       # rebuilds timeline.html from the ledger
 python3 build/review.py            # non-zero if any figure is untraceable

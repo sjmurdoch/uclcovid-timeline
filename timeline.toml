@@ -37,6 +37,15 @@ html_out = "timeline.html"
 # rather than a guess, because a reader would try to resolve a wrong hash.
 commit = ""
 
+# The repository the page links to at its foot. Empty means detect from
+# `git remote get-url origin`, normalising the ssh form and the .git suffix.
+# The short hash links to its own commit under the same URL.
+#
+# This is the only external link the page carries, and it is a link rather
+# than a fetch: the page still loads nothing from any host but the one serving
+# it, which is the property the archive claims and the one the checks enforce.
+repo = ""
+
 [range]
 # The ledger's admissible date window. Rows outside it fail validation.
 start = "2020-01-01"

@@ -43,7 +43,7 @@ The interactive page is served at **<https://sjmurdoch.github.io/uclcovid-timeli
 
 ```bash
 python3 build/validate.py          # 347 rows, 0 errors
-python3 build/test_render_md.py    # 36 checks over both renderers
+python3 build/test_render_md.py    # 37 checks over both renderers
 python3 build/review.py            # non-zero if any figure is untraceable
 python3 build/review.py --coverage # newsletter sections no row covers
 python3 build/render_md.py         # rebuild TIMELINE.md
