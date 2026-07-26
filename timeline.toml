@@ -100,6 +100,11 @@ source_prefix = "https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/"
 # Pandemic phases used to section the Markdown chronology. These are a
 # judgement call and belong in a config file rather than a renderer. Dates are
 # inclusive starts; each phase runs to the day before the next.
+#
+# The phases section TIMELINE.md only. The chart shades its background by the
+# restriction regimes below instead: a reader cannot infer "phase 4" from a
+# grey band, whereas "was there a lockdown on this date, and how strict" is a
+# question the shading can answer on its own.
 # The `framing` fields are the only prose in TIMELINE.md that the ledger does
 # not supply, so every factual claim in one has to be checkable against the
 # rows of the phase it introduces. They are wrapped here for legibility and
@@ -222,6 +227,161 @@ dropped the twice-weekly testing advice as free national testing ended. The
 published series stops a week later on 11 May 2022, so the record closes
 because the counting stopped rather than because the pandemic did.
 """
+
+# ---------------------------------------------------------------------------
+# Restriction regimes: the background shading of the chart.
+#
+# What was legally in force in England, and in London specifically wherever
+# England was tiered, since UCL is in Camden. Dates are the days measures came
+# into force, not the days they were announced: the shading answers "what were
+# the rules on this date", and the announcement is already an event mark on the
+# National lane a few days to its left. The gap between the two is the subject
+# of the lag pairings below, so encoding announcements here would put the same
+# fact in the chart twice and blur the one measurement the archive is for.
+#
+# `level` is ordinal, 0-3, and is the only thing the shading encodes:
+#
+#   0  no legal restrictions
+#   1  limited measures, everything open (face coverings, gathering limits)
+#   2  substantial restrictions short of a stay-at-home order (tiers, closures)
+#   3  a stay-at-home order in force
+#
+# One entry per run of a level, not per announcement. Successive regimes at the
+# same strictness are merged, because a boundary drawn where the shading does
+# not change reads as a change that is not there; the regimes that make up a
+# merged span are named in `name` and their events are on the lanes anyway.
+#
+# `level = 3` is the legal test — a stay-at-home order — and not a measure of
+# how closed the university was. The second national lockdown scores 3 while
+# UCL stayed open, which is the divergence the record exists to show, so the
+# shading must not quietly absorb it.
+#
+# `source` records where each start date comes from. Three are not backed by a
+# row of the ledger and are marked `checked = false`: they come from the general
+# England chronology rather than from a cited archive source, and want checking
+# against the regulations before this is published.
+
+[[restrictions]]
+start = "2020-01-01"
+level = 0
+label = "No restrictions"
+name = "No legal restrictions"
+source = "Start of the ledger's date window."
+checked = true
+
+[[restrictions]]
+start = "2020-03-26"
+level = 3
+label = "Lockdown 1"
+name = "First national lockdown"
+source = "Ledger, national/restrictions, 2020-03-26 effective: the first lockdown measures come into force."
+checked = true
+
+[[restrictions]]
+start = "2020-05-13"
+level = 2
+name = "First easing: the stay-at-home order replaced"
+label = "Easing"
+source = "England chronology: the stay-at-home regulation was replaced on 13 May 2020. The ledger has only the announcement of the conditional plan, 2020-05-10, and the resources synthesis dates the easing loosely to June."
+checked = false
+
+[[restrictions]]
+start = "2020-07-04"
+level = 1
+label = "Summer"
+name = "Summer easing, then the rule of six and face coverings"
+source = "Ledger, national/restrictions, 2020-07-04 effective, whose quotation reads: more restrictions are eased in England, including reopening of pubs, restaurants, hairdressers."
+checked = true
+
+[[restrictions]]
+start = "2020-10-14"
+level = 2
+label = "Tiers"
+name = "Three-tier system, London in Tier 2 from 17 October"
+source = "Ledger, national/restrictions, 2020-10-14 effective: a three-tier system of restrictions starts in England."
+checked = true
+
+[[restrictions]]
+start = "2020-11-05"
+level = 3
+label = "Lockdown 2"
+name = "Second national lockdown, with universities open"
+source = "Ledger, national/restrictions, 2020-11-05 effective: the second national lockdown comes into force in England."
+checked = true
+
+[[restrictions]]
+start = "2020-12-02"
+level = 2
+label = "Tiers"
+name = "Tiers return, London in Tier 2"
+source = "Ledger, national/restrictions, 2020-12-02 effective: the second lockdown ends and England returns to the tier system."
+checked = true
+
+[[restrictions]]
+start = "2020-12-20"
+level = 3
+label = "Lockdown 3"
+name = "Tier 4 in London, then the third national lockdown"
+source = "Announcement is in the ledger at 2020-12-19; Tier 4 came into force in London the following day. The third national lockdown of 2021-01-06 continues the same level and so does not open a span of its own."
+checked = false
+
+[[restrictions]]
+start = "2021-03-29"
+level = 2
+label = "Steps 1-2"
+name = "Roadmap steps 1 and 2, after the stay-at-home rule ended"
+source = "England chronology: the stay-at-home rule ended on 29 March 2021. Not in the ledger, which has the roadmap's publication on 2021-02-22 and step 1 on 2021-03-08."
+checked = false
+
+[[restrictions]]
+start = "2021-05-17"
+level = 1
+label = "Step 3"
+name = "Roadmap step 3: indoor mixing resumes"
+source = "Resources synthesis: Step 3, commencing on 17 May, saw the resumption of indoor mixing under the rule of six."
+checked = true
+
+[[restrictions]]
+start = "2021-07-19"
+level = 0
+label = "Step 4"
+name = "Step 4: most legal limits removed"
+source = "Ledger, national/restrictions, 2021-07-19 effective: step 4 removes most legal limits on social contact in England."
+checked = true
+
+[[restrictions]]
+start = "2021-12-10"
+level = 1
+label = "Plan B"
+name = "Plan B: face coverings compulsory indoors"
+source = "Ledger, national/restrictions, 2021-12-10 effective: face masks become compulsory in most indoor venues under Plan B."
+checked = true
+
+[[restrictions]]
+start = "2022-01-27"
+level = 0
+label = "No restrictions"
+name = "No legal restrictions"
+source = "Ledger, national/restrictions, 2022-01-26 effective, whose detail records that the requirement lapses at the end of 26 January 2022."
+checked = true
+
+# The legend for the shading. Ordinal, so the wording has to read as a scale
+# and not as four unrelated states.
+[[restriction_levels]]
+level = 0
+name = "No legal restrictions"
+
+[[restriction_levels]]
+level = 1
+name = "Limited measures"
+
+[[restriction_levels]]
+level = 2
+name = "Substantial restrictions"
+
+[[restriction_levels]]
+level = 3
+name = "Stay-at-home lockdown"
 
 # ---------------------------------------------------------------------------
 # Lag pairings.

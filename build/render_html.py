@@ -103,6 +103,33 @@ def fmt_date(d):
     return f'{d.day} {MONTHS[d.month - 1]} {d.year}'
 
 
+# Band labels come from the config, so their width is not knowable in advance
+# and a fixed threshold would let a longer one spill into the regime next to it.
+# Estimated at the band label's 10px semibold system sans, checked against the
+# rendered page: the estimate runs a few pixels wide of the truth, which is the
+# direction that errs towards dropping a label rather than overlapping one. The
+# same three constants are used by the script, so a redraw at a zoomed range
+# makes the same decision as the server did.
+LABEL_WIDE, LABEL_NARROW, LABEL_THIN = 6.3, 5.2, 3.0
+LABEL_PAD = 8.0
+
+
+WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
+         'nine', 'ten', 'eleven', 'twelve', 'thirteen']
+
+
+def spell(n):
+    """Small counts read as words in the page's prose, the way the rest of it
+    is written; the sentence they appear in is generated, so the number is not
+    known when the sentence is."""
+    return WORDS[n] if n < len(WORDS) else str(n)
+
+
+def label_width(s):
+    return sum(LABEL_WIDE if c.isupper() or c.isdigit()
+               else LABEL_NARROW if c.isalpha() else LABEL_THIN for c in s)
+
+
 # ------------------------------------------------------------------- data
 
 def load_cases(cfg):
@@ -216,6 +243,7 @@ class Canvas:
 
 
 def build(rows, cfg):
+    levels = cfg.restriction_levels()
     ucl_rows = load_cases(cfg)
     case_dates = [d for d, _ in ucl_rows]
     camden = load_camden(cfg, case_dates)
@@ -238,37 +266,56 @@ def build(rows, cfg):
 
     c = Canvas()
 
-    # --- phase bands, drawn first so everything sits above them.
-    # Neutral by rule: a categorical hue here would impersonate a series, and
-    # the boundaries are solid because a dashed region reads as a projection.
-    phases = cfg.phases()
+    # --- restriction bands, drawn first so everything sits above them.
+    #
+    # The background used to alternate light and dark by pandemic phase, which
+    # encoded nothing a reader could recover: shading that means "an odd
+    # numbered phase" is decoration wearing the clothes of data. It now carries
+    # one ordinal quantity, the strictness of the restrictions legally in force,
+    # on a monotonic neutral ramp: no fill at all when nothing was in force,
+    # then three steps to the darkest for a stay-at-home order. Neutral because
+    # a categorical hue here would impersonate a series, and grey is the only
+    # family the four case slots do not already claim.
+    #
+    # The steps are recessive by design — the darkest sits 1.34:1 against the
+    # chart surface — because the bands lie under the lines and marks that
+    # carry the actual measurements, and a background that competes with them
+    # is the worse error. Strictness therefore never rests on the shading
+    # alone: a boundary rule at every change, a label along the top, and the
+    # legend under the figure all repeat it.
+    restrictions = cfg.restrictions()
     band_top, band_bot = lanes_top - 6, cam_top + CAM_H + 6
-    phase_spans = []
+    band_spans = []
     c.add('<g id="bands">')
-    for i, p in enumerate(phases):
+    for i, p in enumerate(restrictions):
         start = date.fromisoformat(str(p['start']))
-        nxt = (date.fromisoformat(str(phases[i + 1]['start']))
-               if i + 1 < len(phases) else last + timedelta(days=1))
+        nxt = (date.fromisoformat(str(restrictions[i + 1]['start']))
+               if i + 1 < len(restrictions) else last + timedelta(days=1))
         if nxt < first or start > last:
             continue
+        level = int(p['level'])
         x0, x1 = x_of(max(start, first)), x_of(min(nxt, last))
-        if i % 2 == 0:
-            c.rect(x0, band_top, x1 - x0, band_bot - band_top, 'band')
+        if level:
+            c.rect(x0, band_top, x1 - x0, band_bot - band_top,
+                   f'band band-{level}')
         if first < start <= last:
             c.line(x0, band_top, x0, band_bot, 'band-edge')
-        if x1 - x0 > 54:
-            # The number is the whole label there is room for, so the phase
-            # name goes in a native <title>: it needs no script, so it still
-            # works on the no-JavaScript path.
-            c.add(f'<g class="phase-tag"><title>Phase {i + 1}: '
-                  f'{esc(p["name"])}</title>')
-            c.rect(x0, band_top - 20, min(x1 - x0, 90), 18, 'phase-hit')
-            c.text(x0 + 5, band_top - 8, f'{i + 1}', 'phase-num')
+        # The hit area spans the whole regime even when the label will not fit.
+        # Autumn 2020 changes regime three times in eight weeks, and those are
+        # the spans a reader most wants named; without this they are the only
+        # ones that cannot be. The full name goes in a native <title>, which
+        # needs no script and so survives the no-JavaScript path.
+        label = str(p.get('label') or '')
+        if label:
+            c.add(f'<g class="band-tag"><title>{esc(p["name"])} '
+                  f'({esc(levels[level])})</title>')
+            c.rect(x0, band_top - 20, x1 - x0, 18, 'band-hit')
+            if x1 - x0 > label_width(label) + LABEL_PAD:
+                c.text(x0 + 5, band_top - 8, label, 'band-label')
             c.add('</g>')
-        phase_spans.append({'n': i + 1, 'name': p['name'],
-                            'start': max(start, first).isoformat(),
-                            'end': min(nxt, last).isoformat(),
-                            'shade': i % 2 == 0})
+        band_spans.append({'level': level, 'name': p['name'], 'label': label,
+                           'start': max(start, first).isoformat(),
+                           'end': min(nxt, last).isoformat()})
     c.add('</g>')
 
     # --- x axis, shared by every panel. Drawn once at the foot.
@@ -440,7 +487,10 @@ def build(rows, cfg):
         'marks': marks,
         'tracks': [{'key': k, 'label': l} for k, l in TRACKS],
         'cats': sorted({r['category'] for r in rows if r['track'] != 'data'}),
-        'phases': phase_spans,
+        'bands': band_spans,
+        'levels': {str(k): v for k, v in levels.items()},
+        'labelWide': LABEL_WIDE, 'labelNarrow': LABEL_NARROW,
+        'labelThin': LABEL_THIN, 'labelPad': LABEL_PAD,
         'axisY': axis_y, 'bandTop': band_top, 'bandBot': band_bot,
         'tickW': TICK_W,
         'peak': ({'date': peak_d.isoformat(), 'value': peak_v}
@@ -460,7 +510,11 @@ CSS = """
   --surface-1:#fcfcfb; --text-primary:#1a1a1a; --text-secondary:#5c5c5c;
   --grid:#e7e7e4; --mark:#54544e; --mark-strong:#1a1a1a;
   --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a; --series-4:#eda100;
-  --band:#f2f2ef; --band-edge:#e0e0dc; --camden:#8d8d84;
+  /* Ordinal shading for the restriction bands: one neutral ramp,
+     light to dark, monotonic in lightness and deliberately
+     recessive so the series stay legible over the darkest step. */
+  --band-1:#f4f4f1; --band-2:#e9e9e4; --band-3:#dcdcd5;
+  --band-edge:#dcdcd6; --camden:#8d8d84;
 }
 @media (prefers-color-scheme: dark) {
   :root:where(:not([data-theme="light"])) {
@@ -470,7 +524,10 @@ CSS = """
     --surface-1:#1a1a19; --text-primary:#ffffff; --text-secondary:#c3c2b7;
     --grid:#2e2e2b; --mark:#a8a89f; --mark-strong:#ffffff;
     --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
-    --band:#201f1e; --band-edge:#333330; --camden:#8b8a81;
+    /* Dark is its own set of steps from the same neutral ramp, not a
+       flip: the anchor moves to the dark surface and the ramp runs up. */
+    --band-1:#232321; --band-2:#2e2e2b; --band-3:#3d3d38;
+    --band-edge:#3d3d38; --camden:#8b8a81;
   }
 }
 :root[data-theme="dark"] {
@@ -480,7 +537,8 @@ CSS = """
   --surface-1:#1a1a19; --text-primary:#ffffff; --text-secondary:#c3c2b7;
   --grid:#2e2e2b; --mark:#a8a89f; --mark-strong:#ffffff;
   --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
-  --band:#201f1e; --band-edge:#333330; --camden:#8b8a81;
+  --band-1:#232321; --band-2:#2e2e2b; --band-3:#3d3d38;
+  --band-edge:#3d3d38; --camden:#8b8a81;
 }
 .warning {
   background:#fdf6e3; border:2px solid #d9a441; border-left-width:8px;
@@ -563,12 +621,24 @@ button.reset { font:inherit; font-size:.85rem; padding:.2rem .6rem;
 svg { display:block; width:100%; height:auto; min-width:56rem;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
 
-.band { fill:var(--band); }
+.band-1 { fill:var(--band-1); }
+.band-2 { fill:var(--band-2); }
+.band-3 { fill:var(--band-3); }
 .band-edge { stroke:var(--band-edge); stroke-width:1; }
-.phase-num { fill:var(--text-secondary); font-size:10px; font-weight:600;
+.band-label { fill:var(--text-secondary); font-size:10px; font-weight:600;
   pointer-events:none; }
-.phase-hit { fill:transparent; }
-.phase-tag { cursor:help; }
+.band-hit { fill:transparent; }
+.band-tag { cursor:help; }
+/* The shading is an ordinal ramp, so the legend swatches are the same three
+   steps in the same order, sitting on the chart surface rather than on the
+   page background: a swatch shown against a different backdrop from the band
+   it stands for is not the colour the reader is being asked to match. */
+.legend.bands { padding-top:0; }
+.legend.bands .swatch { width:22px; height:12px; border-radius:2px;
+  border:1px solid var(--band-edge); background:var(--surface-1); }
+.legend.bands .swatch.lvl-1 { background:var(--band-1); }
+.legend.bands .swatch.lvl-2 { background:var(--band-2); }
+.legend.bands .swatch.lvl-3 { background:var(--band-3); }
 .lane-rule { stroke:var(--grid); stroke-width:1; }
 .lane-label { fill:var(--text-secondary); font-size:12px; }
 .axis { stroke:var(--text-secondary); stroke-width:1; }
@@ -695,6 +765,19 @@ JS = r"""
   }
   var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
+  // Mirrors label_width() in the renderer, so a band label appears at a zoomed
+  // range exactly where the server would have put it at that width.
+  function labelWidth(s) {
+    var w = 0;
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (/[A-Z0-9]/.test(c)) w += D.labelWide;
+      else if (/[a-z]/i.test(c)) w += D.labelNarrow;
+      else w += D.labelThin;
+    }
+    return w;
+  }
+
   // Every string below originates in scraped UCL email or a fetched PDF.
   // It reaches the DOM through textContent only. Nothing is concatenated
   // into markup anywhere in this file.
@@ -767,33 +850,35 @@ JS = r"""
         g.removeAttribute('hidden'); g.setAttribute('tabindex', '0');
       } else { g.setAttribute('hidden', 'hidden'); g.setAttribute('tabindex', '-1'); }
     });
-    // 4. phase bands
+    // 4. restriction bands. Same rules as the server-side draw: no fill at
+    // level 0, a rule at every change, the short label only where it fits.
     var bands = document.getElementById('bands');
     if (bands) {
       bands.replaceChildren();
-      D.phases.forEach(function (ph) {
-        var a = Math.max(dayOf(ph.start), dom.a);
-        var b = Math.min(dayOf(ph.end), dom.b);
+      D.bands.forEach(function (bd) {
+        var a = Math.max(dayOf(bd.start), dom.a);
+        var b = Math.min(dayOf(bd.end), dom.b);
         if (b <= a) return;
         var x0 = xOfDay(a), x1 = xOfDay(b);
-        if (ph.shade) bands.appendChild(svgEl('rect', {
+        if (bd.level) bands.appendChild(svgEl('rect', {
           x: x0.toFixed(1), y: D.bandTop, width: (x1 - x0).toFixed(1),
-          height: D.bandBot - D.bandTop, 'class': 'band'}));
-        if (dayOf(ph.start) > dom.a) bands.appendChild(svgEl('line', {
+          height: D.bandBot - D.bandTop, 'class': 'band band-' + bd.level}));
+        if (dayOf(bd.start) > dom.a) bands.appendChild(svgEl('line', {
           x1: x0.toFixed(1), y1: D.bandTop, x2: x0.toFixed(1),
           y2: D.bandBot, 'class': 'band-edge'}));
-        if (x1 - x0 > 54) {
-          var g = svgEl('g', {'class': 'phase-tag'});
+        if (bd.label) {
+          var g = svgEl('g', {'class': 'band-tag'});
           var ti = document.createElementNS(SVGNS, 'title');
-          ti.textContent = 'Phase ' + ph.n + ': ' + ph.name;
+          ti.textContent = bd.name + ' (' + D.levels[bd.level] + ')';
           g.appendChild(ti);
           g.appendChild(svgEl('rect', {x: x0.toFixed(1), y: D.bandTop - 20,
-            width: Math.min(x1 - x0, 90).toFixed(1), height: 18,
-            'class': 'phase-hit'}));
-          var tx = svgEl('text', {x: (x0 + 5).toFixed(1), y: D.bandTop - 8,
-            'class': 'phase-num'});
-          tx.textContent = String(ph.n);
-          g.appendChild(tx);
+            width: (x1 - x0).toFixed(1), height: 18, 'class': 'band-hit'}));
+          if (x1 - x0 > labelWidth(bd.label) + D.labelPad) {
+            var tx = svgEl('text', {x: (x0 + 5).toFixed(1), y: D.bandTop - 8,
+              'class': 'band-label'});
+            tx.textContent = bd.label;
+            g.appendChild(tx);
+          }
           bands.appendChild(g);
         }
       });
@@ -1369,6 +1454,15 @@ def page(svg, height, payload, rows, cfg, first, last):
     a('<span><span class="swatch" style="background:var(--camden)"></span>'
       'Camden borough</span>')
     a('</figcaption>')
+    # The shading is a second encoding and gets a legend of its own, in level
+    # order so that the ramp is read as a scale rather than four states.
+    levels = cfg.restriction_levels()
+    a('<div class="legend bands">')
+    a('<span class="muted">Background:</span>')
+    for lvl in sorted(levels):
+        a(f'<span><span class="swatch lvl-{lvl}"></span>'
+          f'{esc(levels[lvl])}</span>')
+    a('</div>')
     a('<div id="tip" hidden></div>')
     a('</figure>')
 
@@ -1391,9 +1485,39 @@ def page(svg, height, payload, rows, cfg, first, last):
       'the date boxes above. Zooming moves only the time axis; the case scales '
       'stay put, so a zoomed view cannot make a rise look steeper than it '
       'is.</span></p>')
-    a('<p>Shaded bands are the eight pandemic phases, numbered along the top '
-      'and drawn in neutral greys. They are regions, not series, and a '
-      'categorical hue there would impersonate one.</p>')
+    a('<p>The background shading is how strict the legal restrictions were, '
+      'on one scale from no shading at all when nothing was in force to the '
+      'darkest step for a stay-at-home order. It is drawn in neutral greys '
+      'because the bands are regions rather than series, and a categorical '
+      'hue there would impersonate one. The regime is named along the top and '
+      'in full on hovering that label; a vertical rule marks every change. '
+      'The shading follows what applied in England, and in London wherever '
+      'England was tiered.</p>')
+    # The page marks what is checked and what is not everywhere else, and the
+    # shading is the one part of the figure that is neither quoted from a
+    # newsletter nor computed from the case series. Generated from the config
+    # so it cannot go stale: verify a date there and this sentence follows.
+    regimes = cfg.restrictions()
+    unchecked = [r for r in regimes if not r.get('checked')]
+    if unchecked:
+        when = ', '.join(fmt_date(date.fromisoformat(str(r['start'])))
+                         for r in unchecked)
+        a(f'<p class="muted">{spell(len(regimes) - len(unchecked)).title()} of '
+          f'the {spell(len(regimes))} shaded regimes begin on a date taken '
+          f'from a cited row of the ledger or from the research synthesis. '
+          f'{spell(len(unchecked)).title()} do not — {esc(when)} — and come '
+          f'from the general '
+          f'England chronology with no source in this archive behind them. '
+          f'They are marked as unchecked in the configuration and want '
+          f'verifying against the regulations.</p>')
+    a('<p>The dates are the days measures came into force rather than the days '
+      'they were announced, so the shading changes a few days to the right of '
+      'the announcement on the National lane. That gap is the point: the '
+      'chronology gives the lag in days wherever a UCL action responds to a '
+      'national one. A stay-at-home order is a legal test and not a measure of '
+      'how closed the university was — the second national lockdown is shaded '
+      'as darkly as the first while UCL stayed open, which is exactly the '
+      'divergence the UCL lane is there to show.</p>')
     a('<p>The full chronology, with every quotation and the lag in days '
       'wherever a UCL action responds to a national one, is in '
       '<a href="TIMELINE.md">TIMELINE.md</a>. The ledger behind both is '

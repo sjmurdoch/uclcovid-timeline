@@ -11,6 +11,7 @@ Some of it is checked mechanically and some of it is not, and the difference mat
 - whether the right events were selected from 1.09 million characters of newsletters, and whether anything important was passed over;
 - whether each event has been *read* correctly, as opposed to quoted correctly;
 - whether the dates, categories and phase boundaries are right;
+- whether the chart's background shading is right. It encodes how strict the legal restrictions were, and ten of its thirteen start dates come from a cited row or the research synthesis. **Three do not** — 13 May 2020, 20 December 2020 and 29 March 2021 — and are marked `checked = false` in `timeline.toml`;
 - whether the commentary in the `detail` and `notes` fields is sound — it is interpretation, written by an AI system, sitting directly beneath a verified quotation where it inherits authority it has not earned;
 - whether the **lag figures** mean anything. Each rests on a pairing between a UCL action and a national measure that an AI system judged to be a response. Those judgements have not been reviewed by anyone.
 
@@ -35,14 +36,14 @@ The interactive page is served at **<https://sjmurdoch.github.io/uclcovid-timeli
 | `build/` | The scripts, including the checks described above |
 | `batches/` | The hand-written row definitions, the irreplaceable part |
 | `sources/` | Cached copies of the primary documents cited, with SHA-256 |
-| `timeline.toml` | Configuration, phase framing prose, and the declared lag pairings |
+| `timeline.toml` | Configuration, phase framing prose, the restriction regimes, and the declared lag pairings |
 | `PROGRESS.md` | The build record, including what went wrong and what was corrected |
 
 ## Rebuilding and checking
 
 ```bash
 python3 build/validate.py          # 348 rows, 0 errors
-python3 build/test_render_md.py    # 33 checks over both renderers
+python3 build/test_render_md.py    # 35 checks over both renderers
 python3 build/review.py            # non-zero if any figure is untraceable
 python3 build/review.py --coverage # newsletter sections no row covers
 python3 build/render_md.py         # rebuild TIMELINE.md

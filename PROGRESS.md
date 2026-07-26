@@ -212,7 +212,7 @@ The Omicron framing states the January comparison the way stage 3's correction r
 
 ## Stage 6 — the interactive HTML timeline — **done**
 
-`build/render_html.py` → `timeline.html`, 260 KB, self-contained. Four event lanes over two case panels on one shared time axis, eight phase bands, a filter row scoping the whole page, a crosshair on the case panels and a per-day tooltip on the lanes.
+`build/render_html.py` → `timeline.html`, 260 KB, self-contained. Four event lanes over two case panels on one shared time axis, background shading for the restriction regimes, a filter row scoping the whole page, a crosshair on the case panels and a per-day tooltip on the lanes.
 
 **Verified rather than assumed: the page fetches nothing.** `performance.getEntriesByType('resource')` returns an empty array on load, and the network panel shows only the document itself plus a `data:` URI that Chrome generates for its own date-picker icon. No external host appears anywhere in the file.
 
@@ -254,9 +254,27 @@ Camden therefore has its own panel underneath, sharing the x-axis and the crossh
 
 Interaction was driven and checked: lane hover snaps and lights exactly one mark, keyboard focus shows what hover shows, the series toggle does not repaint survivors, the track toggle scopes every lane, the date range cuts 143 UCL marks to 37, and reset restores the defaults.
 
-The page renders whole without JavaScript: all four series paths, 183 event marks, the Camden line, 17 axis ticks and all eight phase names as native `<title>` elements are in the markup before the first `<script>`. Script adds the crosshair, the tooltips and the filters, and a `<noscript>` note says exactly that.
+The page renders whole without JavaScript: all four series paths, 183 event marks, the Camden line, 17 axis ticks and all thirteen restriction-regime names as native `<title>` elements are in the markup before the first `<script>`. Script adds the crosshair, the tooltips and the filters, and a `<noscript>` note says exactly that.
 
-`build/test_render_md.py` now covers the HTML too, at 31 checks: no external host, no `fetch`/`XHR`/`WebSocket`, no `innerHTML`/`outerHTML`/`insertAdjacentHTML`/`document.write` anywhere, solid rules only, legend and table-view links present, the chart present before any script, and the axis-crop regression.
+`build/test_render_md.py` now covers the HTML too, at 35 checks: no external host, no `fetch`/`XHR`/`WebSocket`, no `innerHTML`/`outerHTML`/`insertAdjacentHTML`/`document.write` anywhere, solid rules only, legend and table-view links present, the chart present before any script, and the axis-crop regression.
+
+### The phase bands became restriction shading — **26 July 2026**
+
+The chart's background alternated light and dark by pandemic phase, numbered 1 to 8 along the top. Reported as confusing, and it was: the shading encoded nothing a reader could recover from it. A band was shaded because its phase index was even, so the darker regions and the lighter ones stood for nothing in common, and "phase 4" is not a fact a grey rectangle can convey even once the reader hovers to find the number. It was decoration in the position of data, on the largest area of the figure.
+
+The background now carries one ordinal quantity: **how strict the restrictions legally in force were**, on a four-step scale from no shading at all through limited measures and substantial restrictions to a stay-at-home order. That is a question the shading can answer without help — was there a lockdown on this date, and how hard — and it is the question the whole record is about.
+
+**The regimes are configuration, not renderer.** Thirteen `[[restrictions]]` spans in `timeline.toml`, one per run of a level rather than one per announcement, each with the level, a short chart label, a full name for the tooltip, and a `source` field recording where its start date comes from. Successive regimes at the same strictness are merged, because a boundary drawn where the shading does not change reads as a change that is not there.
+
+**Three decisions inside that are worth stating.** Dates are the days measures came into force, not the days they were announced, so the shading changes a few days to the right of the announcement mark on the National lane — and that gap is the lag the chronology measures, so encoding announcements here would have put the same fact in the figure twice. The scale follows England, and London specifically wherever England was tiered, because UCL is in Camden. And `level = 3` is the legal test, a stay-at-home order, not a measure of how closed the university was: the second national lockdown is shaded as darkly as the first while UCL stayed open, which is precisely the divergence the UCL lane exists to show and which a shading that quietly absorbed it would destroy.
+
+**Ten of the thirteen start dates come from a ledger row or the resources synthesis. Three do not**, and carry `checked = false` in the TOML: 13 May 2020 (the stay-at-home order replaced), 20 December 2020 (Tier 4 in force in London, where the ledger has only the announcement of the 19th), and 29 March 2021 (the stay-at-home rule ended). They come from the general England chronology and want checking against the regulations before publication.
+
+**Colour, and why it stays grey.** The ramp is neutral in both modes, monotonic in lightness, and deliberately recessive: the darkest light-mode step sits 1.34:1 against the chart surface. The bands lie under the lines and marks that carry the measurements, and a background that competes with them is the worse error, so strictness never rests on the shading alone — a rule at every change, a label along the top, the full name in a `<title>`, and a legend under the figure all repeat it. Grey rather than a hue for the reason the phase bands were grey: a categorical hue in the background impersonates a series, and all four categorical slots are already spent on the case data.
+
+**Band labels are config text now**, so the old fixed 54-pixel threshold for drawing one would have let a longer label spill into the regime beside it. Replaced by a width estimate the script and the renderer share, so a zoomed redraw makes the same decision the server did. Measured on the rendered page: all nine labels that fit sit inside their own band.
+
+Two checks added, and both confirmed to fail on deliberately broken input rather than merely passing on the real thing: the shading is one ordered ramp per mode, monotonically away from the surface, so no edit can silently say a lockdown was looser than the tiers; and every level drawn appears in the legend. 35 checks, all passing. `TIMELINE.md` is byte-identical — the phases still section the chronology, which is the one place a named phase can carry its own prose.
 
 ## Stage 7 — review — **done**. Placement decision — **open, and not mine to take**
 
@@ -348,7 +366,7 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 
 ```bash
 python3 build/validate.py          # should report 348 rows, 0 errors
-python3 build/test_render_md.py    # 31 checks, all passing
+python3 build/test_render_md.py    # 35 checks, all passing
 python3 build/render_md.py         # rebuilds TIMELINE.md from the ledger
 python3 build/render_html.py       # rebuilds timeline.html from the ledger
 python3 build/review.py            # non-zero if any figure is untraceable

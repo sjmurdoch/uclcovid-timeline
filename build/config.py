@@ -71,6 +71,18 @@ class Config:
     def phases(self):
         return self._v.get('phases', [])
 
+    def restrictions(self):
+        """Restriction regimes in date order, for the chart's background
+        shading. Sorted here rather than trusted from the file, because a span
+        out of order would silently draw a band backwards."""
+        return sorted(self._v.get('restrictions', []),
+                      key=lambda r: str(r['start']))
+
+    def restriction_levels(self):
+        """Level number -> name, for the shading legend."""
+        return {int(r['level']): r['name']
+                for r in self._v.get('restriction_levels', [])}
+
 
 def load(argv=None, extra_args=None):
     """Read settings. `extra_args` is a callable taking the ArgumentParser, for
@@ -124,7 +136,11 @@ def _coerce(text, like):
 if __name__ == '__main__':
     cfg, _ = load()
     for k in sorted(cfg._v):
-        if k != 'phases':
+        if not isinstance(cfg._v[k], list):
             print(f'{k} = {cfg._v[k]!r}')
     for p in cfg.phases():
         print(f'phase {p["start"]} {p["name"]}')
+    levels = cfg.restriction_levels()
+    for r in cfg.restrictions():
+        print(f'restriction {r["start"]} level {r["level"]} '
+              f'({levels.get(int(r["level"]), "?")}) {r["name"]}')

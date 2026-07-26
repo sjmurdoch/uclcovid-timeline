@@ -381,5 +381,40 @@ def check_html_output():
           len(set(re.findall(r'--series-\d:\s*(#[0-9a-f]{6})', text))) == 8,
           'four light steps and four dark ones, no others')
 
+    # The background shading is ordinal, so its only job is to be read in
+    # order. A step out of sequence would say a lockdown was looser than the
+    # tiers, which no legend or label could correct, and swapping two hexes is
+    # exactly the edit that would do it silently.
+    def lum(h):
+        def ch(v):
+            v = int(h[v:v + 2], 16) / 255
+            return v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+        return 0.2126 * ch(1) + 0.7152 * ch(3) + 0.0722 * ch(5)
+
+    ramps = [[m[i] for i in range(3)] for m in
+             [re.findall(r'--band-\d:\s*(#[0-9a-f]{6})', block)
+              for block in text.split('--surface-1')[1:4]]]
+    surfaces = re.findall(r'--surface-1:\s*(#[0-9a-f]{6})', text)
+    steps_ok = len(ramps) == 3 and all(len(r) == 3 for r in ramps)
+    if steps_ok:
+        for ramp, surface in zip(ramps, surfaces):
+            # Away from the surface, one direction, no repeats. Which direction
+            # is the mode's business; that it never doubles back is not.
+            d = [lum(c) - lum(surface) for c in ramp]
+            steps_ok = steps_ok and (all(v < 0 for v in d)
+                                     or all(v > 0 for v in d))
+            steps_ok = steps_ok and abs(d[0]) < abs(d[1]) < abs(d[2])
+    check('the restriction shading is one ordered ramp per mode', steps_ok,
+          'three steps, monotonically away from the surface')
+
+    # Shading that the reader has no way to name is decoration. Every level
+    # drawn has to appear in the legend under the figure.
+    drawn = {int(n) for n in re.findall(r'class="band band-(\d)"', text)}
+    named = {i for i in range(4)
+             if f'class="swatch lvl-{i}"' in text}
+    check('every shading step drawn is named in the legend',
+          drawn and drawn <= named,
+          f'drawn {sorted(drawn)}, named {sorted(named)}')
+
 if __name__ == '__main__':
     sys.exit(main())
