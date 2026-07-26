@@ -23,6 +23,20 @@ progress = "PROGRESS.md"
 markdown_out = "TIMELINE.md"
 html_out = "timeline.html"
 
+[build]
+# The commit the page reports at its foot. Empty means detect with `git
+# rev-parse` from timeline/, which is what a normal build wants; set it for a
+# build somewhere without git or without this checkout, e.g.
+#
+#   UCLTL_BUILD_COMMIT=v1.2.0 python3 build/render_html.py
+#   python3 build/render_html.py --set build.commit=v1.2.0
+#
+# A page cannot carry its own hash — it is written before it is committed — so
+# this names the state it was built from, which is the ledger and the scripts
+# that produced what the reader sees. A failed detection prints nothing at all
+# rather than a guess, because a reader would try to resolve a wrong hash.
+commit = ""
+
 [range]
 # The ledger's admissible date window. Rows outside it fail validation.
 start = "2020-01-01"

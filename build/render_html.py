@@ -39,11 +39,49 @@ Standard library only. Usage:
 import csv
 import html
 import json
+import subprocess
 import sys
 from datetime import date, timedelta
 
 import config
 from validate import load_rows
+
+
+def build_commit(cfg):
+    """The commit the page was rendered from, for the footer.
+
+    A page can never carry its own commit hash — it is written before it is
+    committed — so this names the state it was built *from*. That is the useful
+    thing anyway: it says which ledger and which scripts produced what the
+    reader is looking at.
+
+    `build.commit` in the TOML overrides the lookup, for a build somewhere
+    without git or without this checkout. An empty setting means detect, and a
+    detection that fails prints nothing rather than guessing: a wrong hash is
+    worse than no hash, because a reader would try to resolve it.
+
+    The generated outputs are excluded from the dirty check. Rendering writes
+    them, so the tree is modified by the act of building and would report dirty
+    on every run, which would make the marker mean nothing.
+    """
+    override = str(cfg.get('build.commit', '') or '').strip()
+    if override:
+        return override, False
+    def git(*args):
+        return subprocess.run(('git', '-C', str(config.ROOT)) + args,
+                              capture_output=True, text=True, timeout=10)
+    try:
+        rev = git('rev-parse', '--short', 'HEAD')
+        if rev.returncode != 0:
+            return '', False
+        status = git('status', '--porcelain')
+        generated = {str(cfg.get(k, '')) for k in
+                     ('paths.html_out', 'paths.markdown_out')}
+        dirty = any(line[3:].strip() not in generated
+                    for line in status.stdout.splitlines() if line.strip())
+        return rev.stdout.strip(), dirty
+    except (OSError, subprocess.SubprocessError):
+        return '', False
 
 # ---------------------------------------------------------------- palette
 #
@@ -363,8 +401,13 @@ def build(rows, cfg):
         # needs no script and so survives the no-JavaScript path.
         label = str(p.get('label') or '')
         if label:
-            c.add(f'<g class="band-tag"><title>{esc(p["name"])} '
-                  f'({esc(levels[level])})</title>')
+            # The regime's name, then the level it sits at — unless they are
+            # the same sentence, as they are for the unshaded stretches, where
+            # "No legal restrictions (No legal restrictions)" is just a stutter.
+            title = esc(p['name'])
+            if p['name'] != levels[level]:
+                title += f' ({esc(levels[level])})'
+            c.add(f'<g class="band-tag"><title>{title}</title>')
             c.rect(x0, band_top - 20, x1 - x0, 18, 'band-hit')
             if x1 - x0 > label_width(label) + LABEL_PAD:
                 c.text(x0 + 5, band_top - 8, label, 'band-label')
@@ -761,8 +804,16 @@ svg.dragging { cursor:ew-resize; }
   .touch-only { display:inline; }
 }
 
+/* Pinned to the left edge of the figure's scroll, not carried along by it.
+   The svg holds a 56rem minimum width, so on a narrow screen the figure
+   scrolls — and the legend, sitting inside that scroll, used to travel off to
+   the left with it. Reaching late 2021 on a phone means scrolling most of the
+   chart's width, which put the colour key out of view at exactly the point a
+   reader needs it. Sticky keeps it where the reader is, and costs nothing on a
+   wide screen where there is no scroll to stick against. */
 .legend { display:flex; flex-wrap:wrap; gap:.4rem 1.25rem; margin:.6rem 0 0;
   padding:0 1rem .75rem;
+  position:sticky; left:0; width:100%;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   font-size:.82rem; color:var(--text-secondary); }
 .legend span { display:inline-flex; align-items:center; gap:.4rem; }
@@ -791,6 +842,14 @@ svg.dragging { cursor:ew-resize; }
 #tip .ev b { font-weight:600; }
 #tip .meta { color:var(--muted); font-size:.75rem; }
 #tip q { font-style:italic; }
+
+/* The build marker: present for anyone who goes looking, addressed to nobody
+   who is not. Smaller and lighter than the body, hard against the foot. */
+.build { margin:3rem 0 0; padding-top:.75rem; border-top:1px solid var(--rule);
+  color:var(--muted); font-size:.78rem;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+.build code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.95em; }
 
 noscript .note { display:block; background:var(--panel);
   border:1px solid var(--rule); border-radius:6px; padding:.75rem 1rem;
@@ -945,7 +1004,8 @@ JS = r"""
         if (bd.label) {
           var g = svgEl('g', {'class': 'band-tag'});
           var ti = document.createElementNS(SVGNS, 'title');
-          ti.textContent = bd.name + ' (' + D.levels[bd.level] + ')';
+          ti.textContent = bd.name === D.levels[bd.level] ? bd.name
+            : bd.name + ' (' + D.levels[bd.level] + ')';
           g.appendChild(ti);
           g.appendChild(svgEl('rect', {x: x0.toFixed(1), y: D.bandTop - 20,
             width: (x1 - x0).toFixed(1), height: 18, 'class': 'band-hit'}));
@@ -1617,6 +1677,16 @@ def page(svg, height, payload, rows, cfg, first, last):
       'wherever a UCL action responds to a national one, is in '
       '<a href="TIMELINE.md">TIMELINE.md</a>. The ledger behind both is '
       '<a href="timeline.csv">timeline.csv</a>.</p>')
+
+    # Which build this is, quietly, at the foot. Plain text rather than a link
+    # to the commit: the page is checked to reference no external host, and
+    # that check reads any external href as a breach. It is not worth loosening
+    # a rule about what the page reaches for in order to save a reader one
+    # paste.
+    commit, dirty = build_commit(cfg)
+    if commit:
+        a(f'<p class="build">Built from <code>{esc(commit)}</code>'
+          + (' with uncommitted changes' if dirty else '') + '</p>')
     a('</main>')
     a(f'<script type="application/json" id="payload">'
       f'{json.dumps(payload, separators=(",", ":"))}</script>')
