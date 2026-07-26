@@ -10,6 +10,7 @@ Standard library only. Python 3.11+ for tomllib.
 """
 import argparse
 import os
+import sys
 import tomllib
 from pathlib import Path
 
@@ -107,10 +108,24 @@ def load(argv=None, extra_args=None):
         if phases is not None:
             values['phases'] = phases
 
+    known = {}
     for key in list(values):
         env = PREFIX + key.upper().replace('.', '_')
+        known[env] = key
         if env in os.environ:
             values[key] = _coerce(os.environ[env], values.get(key))
+
+    # A UCLTL_* variable naming no known setting did nothing at all, silently,
+    # which is the opposite of the precedence this file documents: the loop
+    # above can only visit settings that already exist, and an unknown name
+    # cannot be turned back into a dotted path anyway — UCLTL_PATHS_ARCHIVE
+    # could be paths.archive or paths_archive and nothing here can tell. So it
+    # cannot be honoured, but it can be reported, which is what a typo in a
+    # variable name actually needs.
+    for env in sorted(os.environ):
+        if env.startswith(PREFIX) and env not in known:
+            print(f'warning: {env} matches no setting and was ignored '
+                  f'(known: {", ".join(sorted(known))})', file=sys.stderr)
 
     for item in args.set:
         if '=' not in item:

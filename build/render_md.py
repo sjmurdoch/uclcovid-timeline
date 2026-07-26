@@ -21,6 +21,7 @@ Standard library only. Usage:
     python3 render_md.py [--config timeline.toml] [--set KEY=VALUE]
                          [--draft] [--stdout]
 """
+import csv
 import re
 import sys
 from datetime import date
@@ -287,6 +288,15 @@ def render_lag_table(links, out):
 
 # -------------------------------------------------------------------- render
 
+def corpus_count(cfg):
+    """How many newsletters the extraction produced, from its own index."""
+    index = cfg.path('paths.text') / 'index.csv'
+    if index.exists():
+        with open(index, newline='', encoding='utf-8') as fh:
+            return sum(1 for _ in csv.DictReader(fh))
+    return len(list(cfg.path('paths.text').glob('*.txt')))
+
+
 def render(rows, cfg, draft=False):
     prefix = str(cfg.get('markdown.source_prefix',
                          '../home/uclcovid/data/updates/'))
@@ -316,7 +326,7 @@ def render(rows, cfg, draft=False):
                    'run with --draft to see the shape first.')
 
     out = []
-    render_front_matter(rows, phases, links, out)
+    render_front_matter(rows, phases, links, out, corpus_count(cfg))
 
     for p in phases:
         events = [r for r in p.rows if r['track'] != 'data']
@@ -355,10 +365,14 @@ def render(rows, cfg, draft=False):
 
     render_pending(links, out)
     render_provenance(rows, cfg, out)
-    return '\n'.join(out).rstrip() + '\n'
+    # The resolved links go back to the caller rather than being rebuilt
+    # there: main() used to call build_links() a second time after the
+    # file was written, re-running the resolution and its sys.exit path
+    # over rows that had already produced the document on disk.
+    return '\n'.join(out).rstrip() + '\n', links
 
 
-def render_front_matter(rows, phases, links, out):
+def render_front_matter(rows, phases, links, out, corpus_size):
     ucl = [r for r in rows if r['track'] == 'ucl']
     data = [r for r in rows if r['track'] == 'data']
     other = [r for r in rows if r['track'] in ('national', 'sector')]
@@ -373,8 +387,8 @@ def render_front_matter(rows, phases, links, out):
     docs = len({r['source_ref'] for r in other})
     out.append(f'{len(rows)} dated events between {fmt_date(first)} and '
                f'{fmt_date(last)}. {len(ucl)} of them are UCL\'s own '
-               f'decisions, taken from {sources} of the 168 COVID-19 update '
-               'newsletters it sent its staff and students; '
+               f'decisions, taken from {sources} of the {corpus_size} '
+               'COVID-19 update newsletters it sent its staff and students; '
                f'{len(other)} are the national and sector measures those '
                f'decisions respond to, taken from {docs} retrieved primary '
                f'documents; and {len(data)} are readings from the case series '
@@ -499,6 +513,7 @@ def render_pending(links, out):
 
 def render_provenance(rows, cfg, out):
     ucl = [r for r in rows if r['track'] == 'ucl']
+    corpus_size = corpus_count(cfg)
     out.append('## How this document was built')
     out.append('')
     out.append('This file is generated. Editing it by hand will not survive '
@@ -507,7 +522,7 @@ def render_provenance(rows, cfg, out):
                'table view of everything above and carries the same fields in '
                'the same order.')
     out.append('')
-    out.append(f'`build/extract_text.py` converts the 168 preserved '
+    out.append(f'`build/extract_text.py` converts the {corpus_size} preserved '
                'newsletters to text and takes each one\'s date from its own '
                'dateline rather than its filename, which three of them '
                'contradict. `build/validate.py` then checks every row in the '
@@ -553,7 +568,7 @@ def main():
     rows, _ = load_rows(ledger)
     rows.sort(key=lambda r: (r['date'], r['track'], r['headline']))
 
-    text = render(rows, cfg, draft=args.draft)
+    text, links = render(rows, cfg, draft=args.draft)
 
     if args.stdout:
         sys.stdout.write(text)
@@ -562,7 +577,6 @@ def main():
     out_path = cfg.path('paths.markdown_out')
     out_path.write_text(text, encoding='utf-8')
 
-    links = build_links(cfg, rows)
     print(f'wrote:    {out_path}')
     print(f'rows:     {len(rows)}')
     print(f'words:    {len(text.split()):,}')

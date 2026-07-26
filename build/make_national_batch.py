@@ -347,9 +347,18 @@ def lift(text, start, end, where, scope=None, scope_end=None):
     if problems:
         return None, f'{where}: ' + '; '.join(problems)
     i = text.index(start)
+    # `text.index(end, i)` searches forward from i, so it can only ever return
+    # j >= i — the guard that used to sit here could not run. The case it was
+    # written for is real, though: both anchors occur exactly once (checked
+    # above) and the end anchor lies before the start. That made index() raise,
+    # and the ValueError travelled out of main() as a traceback naming neither
+    # the row nor the anchor, against a docstring promising a loud failure and
+    # no half-built batch. Detected rather than raised, and returned as one more
+    # collected problem.
+    if end not in text[i:]:
+        return None, (f'{where}: end anchor {end!r} occurs before the start '
+                      f'anchor {start!r}, so they do not bound a span')
     j = text.index(end, i)
-    if j < i:
-        return None, f'{where}: end anchor precedes start anchor'
     k = j + len(end)
     # The anchors are ASCII, so a span that begins or ends at a quoted phrase
     # would be clipped at the curly quotation marks around it: "ordering people

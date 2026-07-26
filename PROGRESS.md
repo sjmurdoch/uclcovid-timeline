@@ -173,7 +173,7 @@ The three claims flagged in stage 1 as relayed by UCL remain unchecked and must 
 
 ## Stage 5 — the Markdown chronology — **done**
 
-`build/render_md.py` → `TIMELINE.md`: 190 KB, 2,601 lines, 28,000 words, sectioned by the eight phases in `timeline.toml`. Every one of the 283 non-data rows renders as an entry with its headline, date, category, date kind, a link to the preserved newsletter, the plain reading, the verbatim quotation as a blockquote, and the note. The 39 data rows are summarised under their phase rather than interleaved, per the plan.
+`build/render_md.py` → `TIMELINE.md`: 190 KB, 2,601 lines, 28,000 words, sectioned by the eight phases in `timeline.toml`. Every one of the 283 non-data rows renders as an entry with its headline, date, category, date kind, a link to the preserved newsletter, the plain reading, the verbatim quotation as a blockquote, and the note. The 38 data rows are summarised under their phase rather than interleaved, per the plan.
 
 `build/test_render_md.py` is new and runs 22 checks, all passing.
 
@@ -256,7 +256,7 @@ Interaction was driven and checked: lane hover snaps and lights exactly one mark
 
 The page renders whole without JavaScript: all four series paths, 183 event marks, the Camden line, 17 axis ticks and all thirteen restriction-regime names as native `<title>` elements are in the markup before the first `<script>`. Script adds the crosshair, the tooltips and the filters, and a `<noscript>` note says exactly that.
 
-`build/test_render_md.py` now covers the HTML too, at 35 checks: no external host, no `fetch`/`XHR`/`WebSocket`, no `innerHTML`/`outerHTML`/`insertAdjacentHTML`/`document.write` anywhere, solid rules only, legend and table-view links present, the chart present before any script, and the axis-crop regression.
+`build/test_render_md.py` now covers the HTML too, at 36 checks: no external host, no `fetch`/`XHR`/`WebSocket`, no `innerHTML`/`outerHTML`/`insertAdjacentHTML`/`document.write` anywhere, solid rules only, legend and table-view links present, the chart present before any script, and the axis-crop regression.
 
 ### The phase bands became restriction shading — **26 July 2026**
 
@@ -282,7 +282,35 @@ The proper fix is the one the project already has a mechanism for: the three reg
 
 **Band labels are config text now**, so the old fixed 54-pixel threshold for drawing one would have let a longer label spill into the regime beside it. Replaced by a width estimate the script and the renderer share, so a zoomed redraw makes the same decision the server did. Measured on the rendered page: all nine labels that fit sit inside their own band.
 
-Two checks added, and both confirmed to fail on deliberately broken input rather than merely passing on the real thing: the shading is one ordered ramp per mode, monotonically away from the surface, so no edit can silently say a lockdown was looser than the tiers; and every level drawn appears in the legend. 35 checks, all passing. `TIMELINE.md` is byte-identical — the phases still section the chronology, which is the one place a named phase can carry its own prose.
+Two checks added, and both confirmed to fail on deliberately broken input rather than merely passing on the real thing: the shading is one ordered ramp per mode, monotonically away from the surface, so no edit can silently say a lockdown was looser than the tiers; and every level drawn appears in the legend. 35 checks, all passing at the time. `TIMELINE.md` is byte-identical — the phases still section the chronology, which is the one place a named phase can carry its own prose.
+
+### Whole-project review, and the fourteen things it found — **26 July 2026**
+
+A review of the entire project rather than a diff. The pipeline passed throughout: none of this was caught by `validate.py`, `test_render_md.py` or `review.py`, because none of them was looking.
+
+**A published row was false.** `camden_events.py` emitted "Camden and UCL both peak in {month}" from a bare f-string — nothing computed or checked a peak — and the month it emitted was a peak for neither series. Camden's November 2020 total is **1,243**, below October's 1,313 and far below its 15,901 in December 2021; UCL's on-campus student gain was **43** against 696 in January 2022. The ledger contradicted itself two hundred rows later with the December 2021 weekly peak. The row shipped as `verified=computed`, which `README.md` defines as computed rather than transcribed, and it was live in `TIMELINE.md`, `timeline.html` and the published repository.
+
+**Withdrawn rather than repaired,** because the data cannot carry the claim it was written to make. `ucl_month_gain` returns None for October 2020 and is right to: the series opens on the 9th with a cumulative 371 already banked, so the month is unknowable and there is no autumn co-movement to compute from monthly gains. A version built on the published weekly columns would be a different measurement and would have to be checked before it shipped. The January comparison never depended on it. Ledger now **347 rows, 38 `data`**.
+
+**Why it survived: `review.py` never read `headline`.** `classify()` and `check_corpus_figures()` both built their prose from `detail` and `notes`, and every generated headline puts its superlative and its figure exactly there. Two fixes: the headline is commentary and is now read as such, and `peak` and its relatives joined the superlative vocabulary, which had `highest` and `largest` but not the word this project's own generators use. The withdrawn row now classifies as `[superlative] peak`. Re-run over the ledger, the four remaining extremum claims were checked against `covid_raw.csv` by hand and all four are true.
+
+**The corpus figure check was weaker than it looked.** `digits in corpus` over 1.1M characters called 154 traceable because 1154 appears somewhere, and 525 because 5250 does — in the one check here that adjudicates rather than flags. Now matched as whole numbers.
+
+**The 26 primary quotations rested on unhashed files.** `fetch_sources.py` recorded a sha256 of each original and nothing ever compared anything to it, while `sources/ref-NN.txt` — the file check 3b actually reads, and the one tracked in git — carried no hash at all. Appending a sentence to a `.txt` and citing it as `primary-retrieved` validated clean. `text_sha256` added to the manifest, both halves verified as check 3c, all eleven originals re-verified against their recorded hashes on backfill. Not re-derived at validate time: that would cost the validator a dependency on `pdftotext`. Tamper-tested — appending a sentence to `ref-07.txt` now exits 1 naming the file.
+
+**A gap in the case series was drawn as a straight line.** 4 January 2021 is blank in all four weekly columns, and `load_cases` dropped the row entirely, so the date reached neither renderer and both joined across it — the chart asserted a week the published series does not report. The row is kept now, values None, and the path breaks; only the ends are trimmed, where all-blank means the series has not started rather than that a week went unrecorded. **The review had this wrong in an instructive way**: it reported that the script broke the path and only the server did not, so the two renderings disagreed. They agreed — both were interpolating. Checking the payload rather than taking the report at face value is what found the real cause upstream.
+
+**`render_html.py` never read `date_precision`.** 33 month-precision rows were drawn as a tick on one day and captioned with that day, so a row the ledger dates to a month read "1 November 2020" in the tooltip — a precision invented by the renderer that discarded the field, in the direction that overstates. `fmt_date` now honours precision as `render_md.py` always did, and a mark shared by rows of different precision takes the coarsest. The mark itself is unchanged; widening month rows into bars was considered and rejected, as it would put two meanings on mark width in a lane already fixed once for overplotting.
+
+**Two more chart bugs.** The date inputs clamped each end of the domain independently, so an out-of-range pair inverted it and blanked the chart with no way back but Reset — the interval is clamped now, before the width check. And the tooltip ignored `fig.scrollLeft`, so on a scrolled narrow screen it landed most of a screen from the mark that was tapped: precisely the case the tap path was added for.
+
+**Two invariants the code relied on and nothing enforced.** `date` + `headline` is what `render_md.py` keys its row index on, and what `timeline.toml` claims this file establishes — it did not, since check 6 compares all thirteen fields, so a collision would have resolved to whichever row sorted last and attached the lag to the wrong one. And `date.fromisoformat` accepts `20200309` and `2020-W10-1` on 3.11 and later, both of which then break every string comparison downstream and land at NaN in the browser; the check is a round trip now. Both were confirmed against deliberately broken ledgers.
+
+**Zero was guarded as a missing value in one place and not at all in the other.** `data_events.py` dropped every month whose predecessor gained nothing — the largest relative move there is, and exactly what the data track exists to surface — because the same condition guarded the division and the row. The gate is on the absolute move now, with the percentage stated only where one exists. `camden_events.py` checked `a is None` and not `a == 0`, so a January with no on-campus cases would have divided by zero and taken the batch build down. Neither changes today's output.
+
+**Smaller.** An unreachable guard in `lift()` whose real case raised an uncaught `ValueError` instead of joining the collected errors; a shared notes template that made the November row assert October's completeness, gone with the row; dead `data-cats` and `data-mid` attributes on every mark and lane, read by nothing; `build_links` run a second time after the file was written; "168" written into generated prose twice, now counted from `text/index.csv`; `--out` cwd-relative in two generators and root-relative in a third; a double space in the published notes of both `.off` rows, from an empty interpolation `.strip()` cannot reach; and a `UCLTL_*` variable naming no known setting ignored in silence, which now warns — it cannot be honoured, since an unknown name cannot be turned back into a dotted path, but a typo is exactly what needs saying.
+
+One check added, and confirmed to fail on broken input: a gap in the series breaks the line rather than joining across it. **36 checks, all passing**, `validate.py` clean at 347 rows, `review.py` exit 0 with every commentary figure traceable.
 
 ## Stage 7 — review — **done**. Placement decision — **open, and not mine to take**
 
@@ -364,7 +392,7 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 
 **Built and working:** `timeline.toml` and `config.py` (TOML with `UCLTL_*` environment and `--set` CLI overrides, precedence verified); `extract_text.py`; `digest.py`; `validate.py`; `add_rows.py`; `data_events.py`; `fetch_camden.py`; `camden_events.py`; `render_md.py` and `test_render_md.py`; `seed_national.py`; `fetch_sources.py`; `make_national_batch.py`; `render_html.py`; `review.py`.
 
-**The ledger:** `timeline.csv`, **348 rows, 0 errors, 0 warnings** — 283 `ucl` rows with every quotation verified as an exact substring of its source newsletter, 26 `national` and `sector` rows with every quotation verified against a cached primary document, and 39 `data` rows all marked `computed`.
+**The ledger:** `timeline.csv`, **347 rows, 0 errors, 0 warnings** — 283 `ucl` rows with every quotation verified as an exact substring of its source newsletter, 26 `national` and `sector` rows with every quotation verified against a cached primary document, and 38 `data` rows all marked `computed`.
 
 **The chronology:** `TIMELINE.md`, generated, 200 KB, with 15 measured lag pairings.
 
@@ -373,8 +401,8 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 **To resume, from `timeline/`:**
 
 ```bash
-python3 build/validate.py          # should report 348 rows, 0 errors
-python3 build/test_render_md.py    # 35 checks, all passing
+python3 build/validate.py          # should report 347 rows, 0 errors
+python3 build/test_render_md.py    # 36 checks, all passing
 python3 build/render_md.py         # rebuilds TIMELINE.md from the ledger
 python3 build/render_html.py       # rebuilds timeline.html from the ledger
 python3 build/review.py            # non-zero if any figure is untraceable
