@@ -80,6 +80,10 @@ LIGATURES = {'ﬀ': 'ff', 'ﬁ': 'fi', 'ﬂ': 'fl', 'ﬃ': 'ffi',
              'ﬄ': 'ffl', 'ﬅ': 'st', 'ﬆ': 'st'}
 
 
+def sha256_file(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def to_text(path, out):
     """Cached document as plain text, which is what verification reads."""
     if path.suffix == '.pdf':
@@ -196,6 +200,11 @@ def main():
             'retrieved': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
             'bytes': len(body),
             'sha256': hashlib.sha256(body).hexdigest(),
+            # The derived text is what everything downstream actually reads,
+            # so it needs a hash of its own. Hashing only the original left
+            # sources/ref-NN.txt — tracked, and the file every national
+            # quotation is checked against — covered by nothing at all.
+            'text_sha256': sha256_file(text_path) if ok else '',
             'text_chars': chars,
         }
         print(f'    {len(body):,} bytes, {chars:,} characters of text')
@@ -203,7 +212,7 @@ def main():
             failures.append(ref)
 
     fields = ['ref', 'file', 'text', 'url', 'title', 'retrieved', 'bytes',
-              'sha256', 'text_chars']
+              'sha256', 'text_sha256', 'text_chars']
     with open(manifest_path, 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         w.writeheader()

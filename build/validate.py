@@ -11,6 +11,7 @@ Standard library only. Usage:
     python3 validate.py [--config timeline.toml] [--set KEY=VALUE] [--quiet]
 """
 import csv
+import hashlib
 import re
 import sys
 from datetime import date
@@ -81,10 +82,40 @@ def check(rows, cfg, rep):
     # against these, so a national row's quotation is checked exactly as a UCL
     # row's is: against the retrieved document, not against a recollection of
     # it. See build/fetch_sources.py.
+    #
+    # Check 3c hashes both halves of each cached document before any quotation
+    # is checked against it. Until it existed, fetch_sources.py recorded a
+    # sha256 of the original and nothing ever compared anything to it, while the
+    # derived `.txt` — the file check 3b actually reads, and the one tracked in
+    # git — carried no hash at all. Appending a sentence to a `.txt` and citing
+    # it as `primary-retrieved` therefore validated clean. The newsletter half
+    # never had this hole: `text/` is gitignored and regenerated from the
+    # archive, so it cannot be edited in place and kept.
+    #
+    # This does not re-derive the text from the original, which would be
+    # stronger and would cost the validator a dependency on `pdftotext`. What it
+    # does mean is that editing a cached document now also requires editing the
+    # manifest, which is a visible diff rather than a silent one.
     sources = {}
     sdir = config.ROOT / str(cfg.get('sources.cache', 'sources'))
     smanifest = sdir / 'manifest.csv'
     if smanifest.exists():
+        with open(smanifest, newline='', encoding='utf-8') as fh:
+            for r in csv.DictReader(fh):
+                loc = f'sources/{r.get("file", "?")}'
+                for name, recorded in (('file', r.get('sha256', '')),
+                                       ('text', r.get('text_sha256', ''))):
+                    fp = sdir / r[name] if r.get(name) else None
+                    if fp is None or not fp.exists():
+                        continue
+                    if not recorded:
+                        rep.error(loc, f'{fp.name} has no hash in manifest.csv')
+                        continue
+                    got = hashlib.sha256(fp.read_bytes()).hexdigest()
+                    if got != recorded:
+                        rep.error(loc, f'{fp.name} does not match manifest.csv '
+                                       f'({got[:12]}… vs {recorded[:12]}…) — '
+                                       f're-run build/fetch_sources.py')
         with open(smanifest, newline='', encoding='utf-8') as fh:
             for r in csv.DictReader(fh):
                 tp = sdir / r['text'] if r.get('text') else None
@@ -92,6 +123,7 @@ def check(rows, cfg, rep):
                     sources[r['url']] = normalise(tp.read_text(encoding='utf-8'))
 
     seen = {}
+    pairs = {}
     dated = []
 
     for n, row in enumerate(rows, start=2):        # 2 = first row after header
@@ -100,7 +132,16 @@ def check(rows, cfg, rep):
         # 1. dates
         try:
             d = date.fromisoformat(row['date'])
-            if not (start <= d <= end):
+            # fromisoformat accepts more than YYYY-MM-DD on 3.11 and later:
+            # '20200309' and '2020-W10-1' both parse. Everything downstream then
+            # compares the raw string — links pair on it, the ledger sorts on
+            # it, and the browser builds a Date from it — so a row that parses
+            # but is not written this way pairs with nothing, sorts to the wrong
+            # end, and lands at NaN on the chart. The round trip is the check.
+            if d.isoformat() != row['date']:
+                rep.error(loc, f'date {row["date"]!r} is not ISO YYYY-MM-DD '
+                               f'(parses as {d.isoformat()})')
+            elif not (start <= d <= end):
                 rep.error(loc, f'date {d} outside {start}..{end}')
             dated.append((d, row))
         except ValueError:
@@ -188,6 +229,21 @@ def check(rows, cfg, rep):
             rep.error(loc, f'exact duplicate of row {seen[key]}')
         else:
             seen[key] = n
+
+        # 6c. date and headline together, which the renderers rely on being
+        # unique and timeline.toml already states this file establishes. It did
+        # not: check 6 compares all thirteen fields, so two rows alike in date
+        # and headline but differing in `detail` passed. render_md.py keys its
+        # row index on exactly this pair, so the pair would have collapsed
+        # silently, the link resolving to whichever sorted last and the lag
+        # attaching to the wrong row. No collision exists today; the invariant
+        # was simply unguarded.
+        pair = (row.get('date', ''), row.get('headline', ''))
+        if pair in pairs:
+            rep.error(loc, f'date and headline repeat row {pairs[pair]}: '
+                           f'{pair[1][:60]!r} — the renderers key on this pair')
+        else:
+            pairs[pair] = n
 
     # 5. issue numbers match the newsletter they cite.
     #
