@@ -95,6 +95,17 @@ def main():
         ca, cb = month_total(camden, 2021, 1), month_total(camden, 2022, 1)
         if a is None or b is None:
             continue
+        # A zero baseline is guarded as carefully as a missing one. `a is None`
+        # was checked and `a == 0` was not, so a January with no on-campus cases
+        # — not far-fetched in a month the campus was shut — would have divided
+        # by zero and taken the whole batch build down with a traceback. There
+        # is no fold to state against a base of nothing, so the row is skipped
+        # rather than fabricated.
+        if not ca or not a:
+            print(f'    skipped: {label} January 2021 base is '
+                  f'{int(a)} UCL / {int(ca)} Camden, so no fold can be stated',
+                  file=sys.stderr)
+            continue
         cf, uf = cb / ca, b / a
         out.append(row(
             date(2022, 1, 1),
@@ -114,31 +125,38 @@ def main():
             'change and campus policy for the rest — closed to most students in '
             f'January 2021, open in January 2022. {CAVEAT}'))
 
-    # Autumn 2020: the student-return surge, where the two should agree.
-    for y, m in ((2020, 10), (2020, 11)):
-        c = month_total(camden, y, m)
-        u = ucl_month_gain(ucl, 'studenttotal.on', y, m)
-        if u is None:
-            continue
-        out.append(row(
-            date(y, m, 1),
-            f'Camden and UCL both peak in {date(y, m, 1).strftime("%B %Y")}',
-            f'Camden recorded {int(c):,} cases; UCL recorded {int(u)} on-campus '
-            f'student cases in the same month.',
-            ref,
-            'The student-return surge, where borough and campus move together. This '
-            'is the co-movement against which the January divergence is read. '
-            f'October 2020 is complete in the live API, all 31 days. {CAVEAT}'))
+    # There was a second block here, emitting an autumn 2020 row headlined
+    # "Camden and UCL both peak in {month}" as the co-movement against which the
+    # January divergence is read. It was withdrawn: the headline was a bare
+    # template, nothing computed or checked a peak, and the month it emitted was
+    # a peak for neither series. Camden's November 2020 total is 1,243, below
+    # October's 1,313 and far below its 15,901 in December 2021; UCL's on-campus
+    # student gain was 43 against 696 in January 2022. The ledger's own
+    # December 2021 row said as much two hundred rows later.
+    #
+    # It is not repaired here because the data cannot carry the claim it was
+    # written to make. ucl_month_gain returns None for October 2020, correctly:
+    # the series opens on the 9th with a cumulative 371 already banked, so the
+    # month is unknowable and there is no autumn co-movement to compute from
+    # monthly gains. A version built on the published weekly columns would be a
+    # different measurement and would have to be checked before it shipped.
+    #
+    # The January comparison above never depended on it.
 
     out.sort(key=lambda r: r['date'])
-    with open(args.out, 'w', encoding='utf-8') as fh:
+    # Resolved against timeline/, not the caller's cwd, so this writes to
+    # the same place whichever directory it is run from -- as
+    # make_national_batch.py already did, and as cfg.path() does for every
+    # path that comes from the config.
+    out_path = config.ROOT / args.out
+    with open(out_path, 'w', encoding='utf-8') as fh:
         json.dump(out, fh, ensure_ascii=False, indent=1)
     print(f'{len(camden):,} Camden daily records, '
           f'{min(camden):%Y-%m-%d} to {max(camden):%Y-%m-%d}')
     for r in out:
         print(f'  {r["date"]}  {r["headline"]}')
         print(f'      {r["detail"]}')
-    print(f'{len(out)} rows written to {args.out}')
+    print(f'{len(out)} rows written to {out_path}')
     return 0
 
 

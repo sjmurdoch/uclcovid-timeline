@@ -8,7 +8,7 @@
 
 # UCL and the pandemic: a chronology
 
-348 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 26 are the national and sector measures those decisions respond to, taken from 8 retrieved primary documents; and 39 are readings from the case series UCL published between October 2020 and May 2022.
+347 dated events between 9 March 2020 and 11 May 2022. 283 of them are UCL's own decisions, taken from 133 of the 168 COVID-19 update newsletters it sent its staff and students; 26 are the national and sector measures those decisions respond to, taken from 8 retrieved primary documents; and 38 are readings from the case series UCL published between October 2020 and May 2022.
 
 Every event on the first two tracks carries a verbatim quotation from the document that announced it, and every one of those quotations is checked mechanically against the preserved source before this document is built. Nothing here rests on a recollection of what a source said.
 
@@ -31,7 +31,7 @@ Where a UCL action responds to a national or sector one, the two are shown side 
 7. [Omicron](#7-omicron) · 30 November 2021 to 18 February 2022 · 18 events
 8. [Living with COVID](#8-living-with-covid) · 21 February 2022 to 11 May 2022 · 7 events
 
-Tracks in this build: 283 UCL, 24 national, 2 sector, 39 data.
+Tracks in this build: 283 UCL, 24 national, 2 sector, 38 data.
 
 ## 1. First wave and the first lockdown
 
@@ -1616,7 +1616,7 @@ Names three compounding causes: distancing, growth in postgraduate applications,
 
 ## 3. Autumn resurgence and tiering
 
-*Phase window 1 September 2020 to 18 December 2020. 55 events and 4 case-data readings, running 1 September 2020 to 14 December 2020.*
+*Phase window 1 September 2020 to 18 December 2020. 55 events and 3 case-data readings, running 1 September 2020 to 14 December 2020.*
 
 Term 1 began on 28 September with students back in London and UCL still holding no measurements of its own. That changes on 12 October, when UCL published a webpage of confirmed cases among staff and students, fixed the case definition that governs every figure in the dataset, and moved the newsletter to a weekly Monday cadence; testing is the largest single category of decision in this phase. The second national lockdown did not close the university, and the Provost's observation that universities were meant to stay open this time is the single sentence that explains why the case series behaves so differently in the two lockdowns.
 
@@ -1626,10 +1626,9 @@ Term 1 began on 28 September with students back in London and UCL still holding 
 
 A negative lag is UCL acting before the national measure, a positive lag is UCL acting after it.
 
-**Case data.** 4 readings enter the record in this phase.
+**Case data.** 3 readings enter the record in this phase.
 
 - **9 October 2020** · UCL begins publishing daily confirmed case counts. First row of the published series. 336 readings follow, to 2022-05-11.
-- **November 2020** · Camden and UCL both peak in November 2020. Camden recorded 1,243 cases; UCL recorded 43 on-campus student cases in the same month.
 - **December 2020** · Monthly cases falls to 11 for students, on campus. 43 in November 2020, 11 in December 2020, a change of -74%.
 - **December 2020** · Monthly cases falls to 28 for students, off campus. 76 in November 2020, 28 in December 2020, a change of -63%.
 

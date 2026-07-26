@@ -131,7 +131,12 @@ def main():
             r['_d'], f'Weekly cases peak at {int(v)} for {label}',
             f'The highest seven-day total for this series anywhere in the record.',
             f'{name} {weekly} maximum',
-            f'{REPORTED} {PRESENCE if ".on" in weekly else ""} {TUESDAY}'.strip(),
+            # Joined rather than interpolated: an empty PRESENCE left a double
+            # space mid-string, which .strip() cannot reach, and it shipped in
+            # the published notes of both .off rows.
+            ' '.join(x for x in (REPORTED,
+                                 PRESENCE if '.on' in weekly else '',
+                                 TUESDAY) if x),
         ))
 
     # monthly totals and month-on-month moves
@@ -152,20 +157,39 @@ def main():
                 if i > 0:
                     _, before = months[keys[i - 1]]
                     prev_gained = prev_total - before
-            if prev_gained is not None and prev_gained > 0:
-                change = (gained - prev_gained) / prev_gained
-                if abs(change) >= frac and abs(gained - prev_gained) >= absolute:
-                    direction = 'rises' if change > 0 else 'falls'
+            # A month following one that gained nothing is the largest relative
+            # move there is, and it was the one case this loop threw away:
+            # `prev_gained > 0` guarded the division and silently took the row
+            # with it, so a series going from 0 to 200 produced no entry at all
+            # — exactly the surge the data track exists to surface. The gate is
+            # now on the absolute move alone, which needs no denominator, and
+            # the percentage is stated only where one exists.
+            if prev_gained is not None:
+                moved = gained - prev_gained
+                change = moved / prev_gained if prev_gained > 0 else None
+                big = abs(moved) >= absolute and (change is None
+                                                  or abs(change) >= frac)
+                if big:
+                    direction = 'rises' if moved > 0 else 'falls'
+                    if change is None:
+                        how = (f'{int(prev_gained)} in {month_name(*prev_key)}, '
+                               f'{int(gained)} in {month_name(*k)}; the month '
+                               f'before recorded no new cases, so there is no '
+                               f'percentage to state.')
+                    else:
+                        how = (f'{int(prev_gained)} in {month_name(*prev_key)}, '
+                               f'{int(gained)} in {month_name(*k)}, a change of '
+                               f'{change * 100:+.0f}%.')
                     out.append(row(
                         date(k[0], k[1], 1),
                         f'Monthly cases {direction} to {int(gained)} for {label}',
-                        f'{int(prev_gained)} in {month_name(*prev_key)}, '
-                        f'{int(gained)} in {month_name(*k)}, a change of '
-                        f'{change * 100:+.0f}%.',
+                        how,
                         f'{name} {cum} monthly difference',
-                        f'Threshold: at least {frac:.0%} and at least {int(absolute)} '
-                        f'cases, both from timeline.toml. {REPORTED} '
-                        f'{PRESENCE if ".on" in cum else ""}'.strip(),
+                        ' '.join(x for x in (
+                            f'Threshold: at least {frac:.0%} and at least '
+                            f'{int(absolute)} cases, both from timeline.toml.',
+                            REPORTED,
+                            PRESENCE if '.on' in cum else '') if x),
                         precision='month'))
             prev_total, prev_key = total, k
 
@@ -201,10 +225,15 @@ def main():
                    'daily readings within the window do not.'))
 
     out.sort(key=lambda r: (r['date'], r['headline']))
-    with open(args.out, 'w', encoding='utf-8') as fh:
+    # Resolved against timeline/, not the caller's cwd, so this writes to
+    # the same place whichever directory it is run from -- as
+    # make_national_batch.py already did, and as cfg.path() does for every
+    # path that comes from the config.
+    out_path = config.ROOT / args.out
+    with open(out_path, 'w', encoding='utf-8') as fh:
         json.dump(out, fh, ensure_ascii=False, indent=1)
     print(f'{len(rows)} readings, {first["date"]} to {last["date"]}')
-    print(f'{len(out)} data rows written to {args.out}')
+    print(f'{len(out)} data rows written to {out_path}')
     return 0
 
 

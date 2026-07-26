@@ -37,7 +37,13 @@ from extract_text import normalise
 SUPERLATIVE = re.compile(
     r'\b(clearest|sharpest|plainest|starkest|only|sole|first|last|largest|'
     r'smallest|highest|lowest|most|least|best|worst|never|always|every|'
-    r'unique|unprecedented|densest|thinnest|earliest|latest)\b', re.I)
+    r'unique|unprecedented|densest|thinnest|earliest|latest|'
+    # An extremum asserted about a series is the same kind of claim as a
+    # superlative and needs the same check: the withdrawn "Camden and UCL both
+    # peak in November 2020" row said peak, which nothing above matches, and
+    # its figures were correct so the number checks passed it through.
+    r'peaks?|peaked|peaking|troughs?|maximum|minimum|record high|record low|'
+    r'all-time)\b', re.I)
 
 ANYWHERE = re.compile(
     r'\b(anywhere in the record|in the whole record|in the entire|'
@@ -91,11 +97,33 @@ def numbers_in(text):
     return out
 
 
+TOKEN = re.compile(r'\d+(?:\.\d+)?')
+
+
+def number_tokens(text):
+    """Whole numbers appearing in text, as a set.
+
+    Membership in this set is the word-boundary test the checks below want. A
+    bare `digits in text` reports 154 as present because 1154 is, and 525
+    because 5250 is, which quietly weakens the only check in this file that
+    adjudicates rather than flags.
+    """
+    return set(TOKEN.findall(text))
+
+
 def classify(row):
-    """Every kind of claim this row's commentary makes. A row can be several."""
+    """Every kind of claim this row's commentary makes. A row can be several.
+
+    The headline counts as commentary. It was left out until a generated data
+    row headlined "Camden and UCL both peak in November 2020" reached the
+    published ledger, where November was a peak for neither series: the claim
+    was in the one field this file did not read. Every generated headline puts
+    its superlative and its figure exactly there.
+    """
+    headline = (row.get('headline') or '').strip()
     detail = (row.get('detail') or '').strip()
     notes = (row.get('notes') or '').strip()
-    prose = f'{detail} {notes}'.strip()
+    prose = ' '.join(x for x in (headline, detail, notes) if x)
     if not prose:
         return []
 
@@ -112,10 +140,13 @@ def classify(row):
         found.append(('causal', ', '.join(sorted(cau))))
 
     # A figure in the commentary that is not in the quotation it sits under.
+    # Matched as whole numbers: a substring test called 154 supported because
+    # the quote happened to contain 1154.
+    quoted = number_tokens(normalise(quote).replace(',', ''))
     loose = []
     for shown, val in numbers_in(prose):
         digits = shown.replace(',', '').rstrip('%').rstrip()
-        if digits and digits in normalise(quote).replace(',', ''):
+        if digits and digits in quoted:
             continue
         loose.append(shown)
     if loose:
@@ -161,11 +192,14 @@ def check_corpus_figures(rows, cfg):
                         (sdir / m['text']).read_text(encoding='utf-8')
                     ).replace(',', '')
 
+    corpus_numbers = number_tokens(corpus)
+
     out = []
     for r in rows:
         if r['track'] == 'data':          # computed; the detail shows the sum
             continue
-        prose = ' '.join(x for x in ((r.get('detail') or '').strip(),
+        prose = ' '.join(x for x in ((r.get('headline') or '').strip(),
+                                     (r.get('detail') or '').strip(),
                                      (r.get('notes') or '').strip()) if x)
         if not prose or 'Threshold:' in prose:
             continue
@@ -174,7 +208,7 @@ def check_corpus_figures(rows, cfg):
             digits = shown.replace(',', '').rstrip('%').strip()
             if not digits or val < 10:
                 continue
-            if digits in corpus:
+            if digits in corpus_numbers:
                 continue
             missing.append(shown)
         if missing:
