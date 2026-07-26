@@ -17,6 +17,7 @@ Standard library only. Usage:
     python3 test_render_md.py
 """
 import csv
+import json
 import re
 import subprocess
 import sys
@@ -380,6 +381,20 @@ def check_html_output():
     check('every categorical hue is a validated slot',
           len(set(re.findall(r'--series-\d:\s*(#[0-9a-f]{6})', text))) == 8,
           'four light steps and four dark ones, no others')
+
+    # A missing reading must break the line, not be joined across. The server
+    # drew one continuous path per series while the script broke on null, so
+    # the no-script rendering — which is also every reader's first paint —
+    # asserted a week the published series does not report.
+    cases = json.loads(
+        re.search(r'id="payload">(.*?)</script>', text, re.S).group(1))['cases']
+    gaps = sum(1 for r in cases if any(v is None for v in r[1:]))
+    starts = [d.count('M') for d in
+              re.findall(r'class="series"[^>]*d="(M[^"]+)"', text)
+              or re.findall(r'd="(M[^"]+)"[^>]*class="series"', text)]
+    check('a gap in the series breaks the line rather than joining across it',
+          bool(starts) and all(n >= gaps + 1 for n in starts),
+          f'{gaps} gap(s), subpaths per series: {starts}')
 
     # The background shading is ordinal, so its only job is to be read in
     # order. A step out of sequence would say a lockdown was looser than the

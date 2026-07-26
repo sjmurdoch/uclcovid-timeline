@@ -99,8 +99,29 @@ def num(v):
         return None
 
 
-def fmt_date(d):
+def fmt_date(d, precision='day'):
+    """A ledger date as a reader expects to see it, honouring its precision.
+
+    render_md.py has always done this; this file did not, so 33 month-precision
+    and 1 week-precision rows were drawn as a tick on one day and captioned with
+    that day. "Camden and UCL both peak in November 2020" is stored as
+    2020-11-01 and read "1 November 2020" in the tooltip -- a precision the
+    ledger does not claim, invented by the renderer that discarded the field.
+    The mark stays where it is; only the caption stops overstating."""
+    if precision == 'month':
+        return f'{MONTHS[d.month - 1]} {d.year}'
+    if precision == 'week':
+        return f'week of {d.day} {MONTHS[d.month - 1]} {d.year}'
     return f'{d.day} {MONTHS[d.month - 1]} {d.year}'
+
+
+def day_precision(group):
+    """The coarsest precision among the events sharing a mark, so a day that
+    mixes an exact row with a month-precision one does not promise the exact
+    one's precision for both."""
+    order = {'day': 0, 'week': 1, 'month': 2}
+    worst = max(group, key=lambda g: order.get(g.get('date_precision'), 0))
+    return worst.get('date_precision') or 'day'
 
 
 # Band labels come from the config, so their width is not knowable in advance
@@ -112,6 +133,11 @@ def fmt_date(d):
 # makes the same decision as the server did.
 LABEL_WIDE, LABEL_NARROW, LABEL_THIN = 6.3, 5.2, 3.0
 LABEL_PAD = 8.0
+
+# Shading steps the stylesheet defines, .band-1 through .band-3, each a
+# validated step of the neutral ramp in both modes. Level 0 is drawn as no fill
+# at all, so it needs none. Raising this means adding steps to CSS first.
+MAX_BAND_LEVEL = 3
 
 
 WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
@@ -135,15 +161,28 @@ def label_width(s):
 def load_cases(cfg):
     """The UCL series as published: the seven-day columns, not a re-derivation.
     Using UCL's own weekly figures is what stops the chart and the ledger's
-    weekly-maximum rows from disagreeing."""
-    rows = []
+    weekly-maximum rows from disagreeing.
+
+    A date inside the series that carries no reading at all is kept, with its
+    values None, so that the gap is representable. Dropping it instead — which
+    is what `if any(v is not None ...)` did — deleted 4 January 2021, the one
+    interior date where all four weekly columns are blank, from the row list and
+    from the payload alike. Neither renderer could then know a week was missing,
+    and both drew a straight line across it: the chart asserted a reading that
+    the published series does not make. Only the ends are trimmed, where an
+    all-blank row means the series has not started or has stopped rather than
+    that a week went unrecorded.
+    """
+    raw = []
     with open(cfg.path('paths.cases'), newline='', encoding='utf-8') as fh:
         for r in csv.DictReader(fh):
             d = date.fromisoformat(r['date'])
             vals = {s['key']: num(r.get(s['key'])) for s in SERIES}
-            if any(v is not None for v in vals.values()):
-                rows.append((d, vals))
-    return rows
+            raw.append((d, vals, any(v is not None for v in vals.values())))
+    live = [i for i, (_, _, has) in enumerate(raw) if has]
+    if not live:
+        return []
+    return [(d, vals) for d, vals, _ in raw[live[0]:live[-1] + 1]]
 
 
 def load_camden(cfg, on_dates):
@@ -284,6 +323,23 @@ def build(rows, cfg):
     # alone: a boundary rule at every change, a label along the top, and the
     # legend under the figure all repeat it.
     restrictions = cfg.restrictions()
+    # A level the CSS has no step for draws with no fill, which is what level 0
+    # means, so an ordinal scale would lose its top step and look like its
+    # bottom one; a level the legend does not name cannot be read at all, and
+    # reached the tooltip as a bare KeyError. Both are config errors and both
+    # are caught here, named, before anything is written.
+    used = sorted({int(p['level']) for p in restrictions})
+    unnamed = [n for n in used if n not in levels]
+    if unnamed:
+        sys.exit(f'restriction level(s) {unnamed} have no [[restriction_levels]] '
+                 f'entry in {cfg.source}: the legend and the tooltip cannot '
+                 f'name them')
+    unstyled = [n for n in used if n > MAX_BAND_LEVEL]
+    if unstyled:
+        sys.exit(f'restriction level(s) {unstyled} exceed the {MAX_BAND_LEVEL} '
+                 f'shading steps the stylesheet defines: add .band-N and '
+                 f'.legend.bands .swatch.lvl-N, and a validated step for each '
+                 f'mode, before using them')
     band_top, band_bot = lanes_top - 6, cam_top + CAM_H + 6
     band_spans = []
     c.add('<g id="bands">')
@@ -350,7 +406,7 @@ def build(rows, cfg):
         top = lanes_top + li * LANE_H
         mid = top + LANE_H / 2
         c.rect(PAD_L, top + 1, inner, LANE_H - 2, 'lane',
-               f'data-lane="{track}" data-mid="{mid:.1f}"')
+               f'data-lane="{track}"')
         c.line(PAD_L, mid, W - PAD_R, mid, 'lane-rule')
         c.text(PAD_L - 10, mid + 4, label, 'lane-label', 'text-anchor="end"')
         days = by_track_day.get(track, {})
@@ -358,9 +414,10 @@ def build(rows, cfg):
             d = date.fromisoformat(iso)
             cx = x_of(d)
             idx = len(marks)
+            precision = day_precision(group)
             marks.append({
                 'i': idx, 'track': track, 'date': iso,
-                'when': fmt_date(d),
+                'when': fmt_date(d, precision),
                 'events': [{
                     'headline': g['headline'],
                     'category': g['category'],
@@ -381,10 +438,12 @@ def build(rows, cfg):
             # the whole lane rather than per-mark hit rectangles, which at 7px
             # spacing would overlap each other anyway. Every mark stays in the
             # DOM and stays focusable, so the keyboard path is unaffected.
-            cats = ','.join(sorted({g['category'] for g in group}))
+            # data-cats and data-mid were written on every mark and lane and
+            # read by nothing: the filters work off the payload. Dropped rather
+            # than left to imply the DOM is the source of truth for either.
             extra = (f'data-i="{idx}" data-track="{track}" data-x="{cx:.1f}" '
-                     f'data-cats="{esc(cats)}" tabindex="0" role="button" '
-                     f'aria-label="{esc(fmt_date(d))}, {len(group)} '
+                     f'tabindex="0" role="button" '
+                     f'aria-label="{esc(fmt_date(d, precision))}, {len(group)} '
                      f'event{"s" if len(group) != 1 else ""} on the '
                      f'{esc(label)} track"')
             c.add(f'<g class="mark" {extra}>')
@@ -410,11 +469,28 @@ def build(rows, cfg):
            'panel-title', 'text-anchor="start"')
 
     for s in SERIES:
-        pts = [(x_of(d), y_ucl(row[s['key']]))
-               for d, row in ucl_rows if row[s['key']] is not None]
-        if not pts:
+        # A missing reading breaks the line; it does not join the readings
+        # either side of it. Filtering the Nones out instead drew a straight
+        # segment across the week of 4 January 2021, where all four series are
+        # blank, and only on the path that renders without JavaScript: the
+        # script's layout() already broke there, so the two renderings of the
+        # same data disagreed, and the one every reader sees first was the one
+        # inventing a week of data.
+        runs, run = [], []
+        for d_, row in ucl_rows:
+            v = row[s['key']]
+            if v is None:
+                if run:
+                    runs.append(run)
+                run = []
+            else:
+                run.append((x_of(d_), y_ucl(v)))
+        if run:
+            runs.append(run)
+        if not runs:
             continue
-        d = 'M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts)
+        d = ' '.join('M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in r)
+                     for r in runs)
         c.path(d, 'series', f'data-series="{s["key"]}" '
                             f'style="stroke:var(--series-{s["slot"]})"'
                             + ('' if s['on'] else ' hidden="hidden"'))
@@ -962,10 +1038,20 @@ JS = r"""
     var box = fig.getBoundingClientRect();
     tip.hidden = false;
     var w = tip.offsetWidth, h = tip.offsetHeight;
-    var left = x - box.left + 14, top = y - box.top - h - 10;
-    if (left + w > box.width - 6) left = x - box.left - w - 14;
-    if (left < 6) left = 6;
-    if (top < 6) top = y - box.top + 18;
+    // #tip is absolutely positioned inside .figure, which scrolls on its own
+    // axis, so its offsets are measured from the unscrolled content origin
+    // while x and y arrive from the viewport. Without adding scrollLeft the
+    // tooltip lands short by however far the figure is scrolled -- on a phone,
+    // where the chart holds a 56rem minimum width and the reader has scrolled
+    // to late 2021 to reach a mark, that is most of a screen to the left of
+    // the tick that was tapped. Exactly the case the tap path was added for.
+    var sx = fig.scrollLeft, sy = fig.scrollTop;
+    var left = x - box.left + sx + 14, top = y - box.top + sy - h - 10;
+    // The right edge to stay inside is the visible one, which is also
+    // scrolled: box.width is the viewport of the figure, not its content.
+    if (left + w > sx + box.width - 6) left = x - box.left + sx - w - 14;
+    if (left < sx + 6) left = sx + 6;
+    if (top < sy + 6) top = y - box.top + sy + 18;
     tip.style.left = left + 'px';
     tip.style.top = top + 'px';
   }
@@ -1286,10 +1372,19 @@ JS = r"""
   function onRange() {
     var a = f.value ? dayOf(f.value) : 0;
     var b = t.value ? dayOf(t.value) : D.span;
+    // Clamp the interval into the domain first, then check its width. Clamping
+    // each end independently let a pair outside the range invert dom: the
+    // min/max attributes on a date input only mark it invalid, the browser
+    // still sets .value and fires change, so 2019-01-01 to 2019-06-01 gave
+    // a = -433, b = -282, passed the width check on their difference, and came
+    // out of the two clamps as {a: 0, b: -282}. Every mark then hid, every path
+    // collapsed to M0,0, and the chart went blank with no way back but Reset.
+    a = Math.min(Math.max(a, 0), D.span);
+    b = Math.min(Math.max(b, 0), D.span);
     // A domain needs width. Refuse to inflame the axis rather than dividing
     // by zero, and put the inputs back to what is actually being shown.
     if (b - a < 7) { f.value = isoOf(dom.a); t.value = isoOf(dom.b); return; }
-    dom.a = Math.max(0, a); dom.b = Math.min(D.span, b);
+    dom.a = a; dom.b = b;
     hide();
     layout();
   }
