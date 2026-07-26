@@ -260,6 +260,26 @@ because the counting stopped rather than because the pandemic did.
 # row of the ledger and are marked `checked = false`: they come from the general
 # England chronology rather than from a cited archive source, and want checking
 # against the regulations before this is published.
+#
+# `wikipedia` records a check of every span against
+# https://en.wikipedia.org/wiki/COVID-19_lockdown_in_the_United_Kingdom,
+# read 26 July 2026. It corroborates six spans, is silent on six, and differs
+# from the ledger on none of the shading boundaries. `checked` deliberately does
+# not move on the strength of it: that flag means a source this archive holds
+# and can re-verify, and a tertiary article at a live URL is the thing this
+# project exists to distrust. Two things the check turned up are worth carrying:
+#
+#   * 13 May 2020 is corroborated in the article's own words, which is the
+#     first external support this date has had. It stays `checked = false` until the
+#     regulation itself is in `sources/`, but it is no longer unsupported.
+#   * The article puts the third national lockdown's legal effect at 00:01 on
+#     5 January 2021, where the ledger's cited row says 6 January. Nothing in
+#     the shading turns on it — level 3 runs unbroken from 20 December — but the
+#     ledger row is worth re-reading against its source.
+#
+# The article's scope ends in May 2021, so it can say nothing about step 4,
+# Plan B, or the end of the requirement in 2022. Those three rest on the
+# ledger, which cites primary documents for all of them.
 
 [[restrictions]]
 start = "2020-01-01"
@@ -268,6 +288,7 @@ label = "No restrictions"
 name = "No legal restrictions"
 source = "Start of the ledger's date window."
 checked = true
+wikipedia = "Out of scope: the article opens with the March 2020 lockdown."
 
 [[restrictions]]
 start = "2020-03-26"
@@ -276,6 +297,7 @@ label = "Lockdown 1"
 name = "First national lockdown"
 source = "Ledger, national/restrictions, 2020-03-26 effective: the first lockdown measures come into force."
 checked = true
+wikipedia = "Confirms: legally effective from 1:00 p.m. on 26 March 2020."
 
 [[restrictions]]
 start = "2020-05-13"
@@ -284,6 +306,7 @@ name = "First easing: the stay-at-home order replaced"
 label = "Easing"
 source = "England chronology: the stay-at-home regulation was replaced on 13 May 2020. The ledger has only the announcement of the conditional plan, 2020-05-10, and the resources synthesis dates the easing loosely to June."
 checked = false
+wikipedia = "Confirms: on 13 May 2020, those in England were allowed to meet one other person not from their household outside whilst maintaining a 2-metre social distance. Corroborates a date the ledger does not carry."
 
 [[restrictions]]
 start = "2020-07-04"
@@ -292,6 +315,7 @@ label = "Summer"
 name = "Summer easing, then the rule of six and face coverings"
 source = "Ledger, national/restrictions, 2020-07-04 effective, whose quotation reads: more restrictions are eased in England, including reopening of pubs, restaurants, hairdressers."
 checked = true
+wikipedia = "Confirms: by 4 July most other businesses were allowed to reopen, with the two-metre rule relaxed to one metre."
 
 [[restrictions]]
 start = "2020-10-14"
@@ -300,6 +324,7 @@ label = "Tiers"
 name = "Three-tier system, London in Tier 2 from 17 October"
 source = "Ledger, national/restrictions, 2020-10-14 effective: a three-tier system of restrictions starts in England."
 checked = true
+wikipedia = "Partly: gives London moving to Tier 2 from 17 October 2020, which is the detail this span already names. Silent on 14 October as the start of the tier system, which the ledger carries."
 
 [[restrictions]]
 start = "2020-11-05"
@@ -308,6 +333,7 @@ label = "Lockdown 2"
 name = "Second national lockdown, with universities open"
 source = "Ledger, national/restrictions, 2020-11-05 effective: the second national lockdown comes into force in England."
 checked = true
+wikipedia = "Confirms: a partial lockdown would commence in England from 5 November 2020, to last for 4 weeks up to and including 2 December."
 
 [[restrictions]]
 start = "2020-12-02"
@@ -316,6 +342,7 @@ label = "Tiers"
 name = "Tiers return, London in Tier 2"
 source = "Ledger, national/restrictions, 2020-12-02 effective: the second lockdown ends and England returns to the tier system."
 checked = true
+wikipedia = "Confirms, in the same sentence: the second lockdown ran up to and including 2 December."
 
 [[restrictions]]
 start = "2020-12-20"
@@ -324,6 +351,7 @@ label = "Lockdown 3"
 name = "Tier 4 in London, then the third national lockdown"
 source = "Announcement is in the ledger at 2020-12-19; Tier 4 came into force in London the following day. The third national lockdown of 2021-01-06 continues the same level and so does not open a span of its own."
 checked = false
+wikipedia = "Silent: mentions that a stricter Tier 4 was introduced for London and around it, with no date. This date is still unsupported. Note also that the article dates the third national lockdown to 00:01 on 5 January 2021 against the ledger's 6 January; the shading does not turn on it, since level 3 runs unbroken from here."
 
 [[restrictions]]
 start = "2021-03-29"
@@ -332,6 +360,7 @@ label = "Steps 1-2"
 name = "Roadmap steps 1 and 2, after the stay-at-home rule ended"
 source = "England chronology: the stay-at-home rule ended on 29 March 2021. Not in the ledger, which has the roadmap's publication on 2021-02-22 and step 1 on 2021-03-08."
 checked = false
+wikipedia = "Silent: the article gives step 1 as 8 March, step 2 as 12 April and step 3 as 17 May, and states no date for the end of the stay-at-home rule. It neither supports nor contradicts this boundary, which remains the weakest date here."
 
 [[restrictions]]
 start = "2021-05-17"
@@ -340,6 +369,7 @@ label = "Step 3"
 name = "Roadmap step 3: indoor mixing resumes"
 source = "Resources synthesis: Step 3, commencing on 17 May, saw the resumption of indoor mixing under the rule of six."
 checked = true
+wikipedia = "Confirms: the third step, which allowed for limited indoor mixing and the reopening of indoor hospitality venues, took effect on Monday 17 May."
 
 [[restrictions]]
 start = "2021-07-19"
@@ -348,6 +378,7 @@ label = "Step 4"
 name = "Step 4: most legal limits removed"
 source = "Ledger, national/restrictions, 2021-07-19 effective: step 4 removes most legal limits on social contact in England."
 checked = true
+wikipedia = "Out of scope: the article ends at step 3, May 2021."
 
 [[restrictions]]
 start = "2021-12-10"
@@ -356,6 +387,7 @@ label = "Plan B"
 name = "Plan B: face coverings compulsory indoors"
 source = "Ledger, national/restrictions, 2021-12-10 effective: face masks become compulsory in most indoor venues under Plan B."
 checked = true
+wikipedia = "Out of scope: the article does not cover Plan B."
 
 [[restrictions]]
 start = "2022-01-27"
@@ -364,6 +396,7 @@ label = "No restrictions"
 name = "No legal restrictions"
 source = "Ledger, national/restrictions, 2022-01-26 effective, whose detail records that the requirement lapses at the end of 26 January 2022."
 checked = true
+wikipedia = "Out of scope: the article does not cover the end of the requirement in 2022."
 
 # The legend for the shading. Ordinal, so the wording has to read as a scale
 # and not as four unrelated states.

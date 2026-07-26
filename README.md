@@ -11,7 +11,7 @@ Some of it is checked mechanically and some of it is not, and the difference mat
 - whether the right events were selected from 1.09 million characters of newsletters, and whether anything important was passed over;
 - whether each event has been *read* correctly, as opposed to quoted correctly;
 - whether the dates, categories and phase boundaries are right;
-- whether the chart's background shading is right. It encodes how strict the legal restrictions were, and ten of its thirteen start dates come from a cited row or the research synthesis. **Three do not** — 13 May 2020, 20 December 2020 and 29 March 2021 — and are marked `checked = false` in `timeline.toml`;
+- whether the chart's background shading is right. It encodes how strict the legal restrictions were, and ten of its thirteen start dates come from a cited row or the research synthesis. **Three do not** — 13 May 2020, 20 December 2020 and 29 March 2021 — and are marked `checked = false` in `timeline.toml`. All thirteen were checked against Wikipedia's `COVID-19 lockdown in the United Kingdom` on 26 July 2026, which contradicted none of them, corroborated 13 May 2020, and is silent on the other two; that check is recorded per span but does not move the flag, which means a source this archive holds and can re-verify;
 - whether the commentary in the `detail` and `notes` fields is sound — it is interpretation, written by an AI system, sitting directly beneath a verified quotation where it inherits authority it has not earned;
 - whether the **lag figures** mean anything. Each rests on a pairing between a UCL action and a national measure that an AI system judged to be a response. Those judgements have not been reviewed by anyone.
 
