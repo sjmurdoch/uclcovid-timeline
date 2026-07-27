@@ -1,0 +1,91 @@
+# Render the page at deploy time and publish it to GitHub Pages.
+#
+# Pages used to serve this branch directly, which meant the build marker at the
+# foot of the page was stamped when the page was rendered locally and therefore
+# named the commit *before* the one that carried it. Rendering here fixes that:
+# the marker is the SHA actually being deployed, and the deployed page is always
+# rendered from the committed ledger rather than from whatever snapshot of
+# timeline.html happened to be committed alongside it.
+#
+# What this does NOT do is validate. `validate.py` checks every quotation
+# against the extracted newsletters in `text/`, which are gitignored and
+# regenerated from the archive checkout, and against the newsletter files
+# themselves — none of which exist here. **Validation stays a local gate before
+# pushing.** The one out-of-repo input this build does read, the case series, is
+# pinned by hash in `timeline.toml`; see build/fetch_cases.py for why that check
+# is the load-bearing part rather than a nicety.
+name: Publish the timeline to Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and never cancel one halfway: a cancelled deploy can
+# leave the site serving a partial upload.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Outside the working tree on purpose. A fetched file inside it would show
+      # as untracked and mark the rendered page "with uncommitted changes".
+      - name: Fetch the case series, and refuse it if it moved
+        run: python3 build/fetch_cases.py --out "$RUNNER_TEMP/covid_raw.csv"
+
+      - name: Render the page from the ledger
+        run: |
+          python3 build/render_html.py \
+            --set paths.cases="$RUNNER_TEMP/covid_raw.csv" \
+            --set build.commit="${GITHUB_SHA:0:7}" \
+            --set build.repo="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+
+      # The deployed page no longer depends on the committed one, so a stale
+      # snapshot cannot mislead a reader of the site — but it can mislead a
+      # reader of the repository, where the diffs are supposed to be the record.
+      # Reported, not fatal. The marker line is excluded because it differs by
+      # construction: the committed page names the previous commit.
+      - name: Say whether the committed snapshot is stale
+        run: |
+          git show HEAD:timeline.html | grep -v 'class="build"' > /tmp/committed.html
+          grep -v 'class="build"' timeline.html > /tmp/rendered.html
+          if cmp -s /tmp/committed.html /tmp/rendered.html; then
+            echo "The committed timeline.html matches what was just rendered."
+          else
+            echo "::warning::timeline.html in the repository differs from what the ledger renders. The deployed page is current; the committed snapshot is not. Run build/render_html.py and commit."
+            diff /tmp/committed.html /tmp/rendered.html | head -40 || true
+          fi
+
+      # Everything but git metadata and this workflow, which is what serving the
+      # branch root used to do. Narrowing it here would silently break any
+      # external link into sources/ or batches/.
+      - name: Assemble the site
+        run: rsync -a --exclude='.git/' --exclude='.github/' ./ _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -56,6 +56,8 @@ A local build can point the citations back at a checkout of the archive without 
 UCLTL_MARKDOWN_SOURCE_PREFIX=../home/uclcovid/data/updates/ python3 build/render_md.py
 ```
 
+The published page is not the committed copy of `timeline.html`. `.github/workflows/pages.yml` re-renders it from `timeline.csv` at deploy time, so the marker at its foot names the commit actually being served rather than the one before it, and so the chart cannot fall behind the ledger. The case series it plots is fetched from the archive and checked against the SHA-256 recorded in `timeline.toml`: if that series moves while this ledger does not, the deploy fails rather than publish a chart that disagrees with the commentary beneath it. What the workflow cannot do is verify the quotations, because the newsletters are not in this repository — the commands above are the only place that happens.
+
 ## Sources and rights
 
 `sources/` holds copies of eleven third-party documents, retrieved so that the figures citing them could be checked against what they actually say rather than against a link that might rot. They are reproduced as evidence, not relicensed.
