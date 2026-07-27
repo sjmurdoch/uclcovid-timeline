@@ -10,7 +10,9 @@
 archive = "../home/uclcovid"
 # Preserved newsletters and their source-URL manifest.
 updates = "../home/uclcovid/data/updates"
-# The published case series, unsmoothed.
+# The published case series, unsmoothed. A local build reads it from the
+# sibling checkout; the Pages workflow has no checkout and fetches it instead,
+# overriding this with --set. See [cases] below.
 cases = "../home/uclcovid/data/covid_raw.csv"
 # The research synthesis, with citation markers restored.
 resources = "../UK COVID-19 Timeline Resources.md"
@@ -45,6 +47,23 @@ commit = ""
 # than a fetch: the page still loads nothing from any host but the one serving
 # it, which is the property the archive claims and the one the checks enforce.
 repo = ""
+
+[cases]
+# Where build/fetch_cases.py gets the series when there is no sibling checkout
+# to read it from, which is the situation the Pages workflow builds in.
+#
+# This fetches from a branch tip, so what arrives is whatever the archive's main
+# says today rather than what this ledger was built against. `sha256` is what
+# makes that safe: the `data` rows were computed from this exact series by
+# build/data_events.py, and if the series moves while the ledger does not, the
+# chart and the commentary beneath it stop describing the same numbers. A
+# mismatch therefore fails the build rather than publishing the disagreement.
+#
+# Moving this hash on its own is the wrong fix and would defeat the check. The
+# right one is to re-run data_events.py against the new series, validate, and
+# commit the ledger the chart will now agree with — the hash moves with it.
+url = "https://raw.githubusercontent.com/sjmurdoch/uclcovid/refs/heads/main/data/covid_raw.csv"
+sha256 = "6b05e1c0aa62292d6991bb452f8042f5f34dd33ce072f3e90f5951c4c58b47bd"
 
 [range]
 # The ledger's admissible date window. Rows outside it fail validation.

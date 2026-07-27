@@ -32,6 +32,12 @@ DEFAULTS = {
     'paths.html_out': 'timeline.html',
     'markdown.source_prefix':
         'https://github.com/sjmurdoch/uclcovid/blob/main/data/updates/',
+    # Where fetch_cases.py gets the series when there is no sibling checkout.
+    # The expected hash has no default on purpose: an absent one warns and
+    # checks nothing, and inventing a value here would fail every build.
+    'cases.url': 'https://raw.githubusercontent.com/sjmurdoch/uclcovid/'
+                 'refs/heads/main/data/covid_raw.csv',
+    'cases.sha256': '',
     'range.start': '2020-01-01',
     'range.end': '2022-12-31',
     'extract.date_window': 1200,
