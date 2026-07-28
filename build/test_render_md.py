@@ -435,6 +435,49 @@ def check_html_output():
     check('the restriction shading is one ordered ramp per mode', steps_ok,
           'three steps, monotonically away from the surface')
 
+    # --- the touch paths.
+    #
+    # What these interactions actually do is checked in test_browser.py, which
+    # needs a browser to see it: both faults it exists for were in the
+    # arbitration between the browser and the script, and the page reads
+    # correctly with either of them in place. Held here are the declarations
+    # that whole file rests on, so dropping one fails the suite that always
+    # runs rather than the one that needs installing.
+    js = re.search(r'<script>(.*?)</script>', text, re.S).group(1)
+
+    # The lane rule is painted over the lane's hit rect, along the exact line
+    # the marks sit on. While it took pointers, a fingertip aimed at a mark hit
+    # the rule and the lane's handlers never ran: no tooltip, on any mark, on
+    # any phone.
+    check('nothing drawn inside a lane can take a pointer from it',
+          bool(re.search(r'\.lane-rule\s*\{[^}]*pointer-events:\s*none', text)))
+    # Without this the browser keeps the two-finger gesture for its own zoom
+    # and the script is never given the pinch.
+    check("the chart declines the browser's pinch and keeps one-finger pan",
+          bool(re.search(r'\bsvg\s*\{[^}]*touch-action:\s*pan-x pan-y', text)))
+    # A pointer that cannot hover is destroyed when it is lifted, and the
+    # browser fires pointerout and pointerleave straight after the pointerup
+    # that ended it. A pointerleave handler that does not say "mouse" therefore
+    # runs on every tap, one event after the tap opened the tooltip, and takes
+    # it back down before a frame has been painted with it.
+    leaves = [js[m.end():m.end() + 240]
+              for m in re.finditer(r"addEventListener\('pointerleave'", js)]
+    check('no pointerleave undoes the tap that came immediately before it',
+          bool(leaves) and all("pointerType !== 'mouse'" in tail
+                               for tail in leaves),
+          f'{len(leaves)} pointerleave handler(s)')
+    # Drag, pinch and the date boxes all set the same range, and a floor that
+    # moves with the control used is three different charts.
+    check('one floor for the shortest range every control can set',
+          js.count('MIN_SPAN') >= 4, f'{js.count("MIN_SPAN")} uses')
+    # The page prints different instructions by input, which is only worth
+    # doing while both describe something that is actually there.
+    touch_text = ' '.join(re.findall(r'<span class="touch-only">(.*?)</span>',
+                                     text, re.S)).lower()
+    check('the instructions for touch name gestures the script implements',
+          'tap any mark' in touch_text and 'pinch' in touch_text
+          and 'applyPinch' in js and 'setPointerCapture' in js)
+
     # Shading that the reader has no way to name is decoration. Every level
     # drawn has to appear in the legend under the figure.
     drawn = {int(n) for n in re.findall(r'class="band band-(\d)"', text)}
