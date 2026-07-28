@@ -769,7 +769,13 @@ button.reset { font:inherit; font-size:.85rem; padding:.2rem .6rem;
 .figure { position:relative; margin:0; background:var(--surface-1);
   border:1px solid var(--rule); border-radius:6px; padding:.5rem 0 0;
   overflow-x:auto; }
+/* pan-x pan-y keeps one finger doing what it already did — scrolling the
+   figure sideways and the page down — while taking two-finger zoom away from
+   the browser, which is the only way the script can be given the pinch. It is
+   scoped to the chart: the prose around it still zooms with the system
+   gesture, and nothing here touches the viewport meta. */
 svg { display:block; width:100%; height:auto; min-width:56rem;
+  touch-action:pan-x pan-y;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
 
 .band-1 { fill:var(--band-1); }
@@ -790,7 +796,13 @@ svg { display:block; width:100%; height:auto; min-width:56rem;
 .legend.bands .swatch.lvl-1 { background:var(--band-1); }
 .legend.bands .swatch.lvl-2 { background:var(--band-2); }
 .legend.bands .swatch.lvl-3 { background:var(--band-3); }
-.lane-rule { stroke:var(--grid); stroke-width:1; }
+/* The rule is drawn after the lane's hit rect and along the exact line the
+   marks sit on, so it painted over the one target the lane handlers need: a
+   fingertip aimed at a mark landed on the rule, the lane never saw the
+   pointer, and the tap did nothing at all. A mouse got away with it because
+   it arrives moving and the next pixel either side is lane again. Nothing
+   drawn inside a lane is ever a pointer target. */
+.lane-rule { stroke:var(--grid); stroke-width:1; pointer-events:none; }
 .lane-label { fill:var(--text-secondary); font-size:12px; }
 .axis { stroke:var(--text-secondary); stroke-width:1; }
 .grid { stroke:var(--grid); stroke-width:1; }
@@ -1191,7 +1203,11 @@ JS = r"""
   }
   // The closest visible mark on a lane to an x in SVG space, or null if the
   // pointer is not near one. A fingertip is a blunter instrument than a mouse,
-  // so touch gets a wider reach than the 14px a pointer is held to.
+  // so touch gets a wider reach than the 14 units a pointer is held to. The
+  // units are the viewBox's: 1,180 across a chart that is never drawn narrower
+  // than 56rem, so 30 of them is about 23 CSS pixels on a phone -- half a
+  // fingertip, and still far short of a lane.
+  var TOUCH_REACH = 30;
   function nearestMark(track, x, reach) {
     var best = null, bestD = Infinity;
     Array.prototype.forEach.call(
@@ -1219,13 +1235,22 @@ JS = r"""
     });
     // Touch has no hover, and the tooltip is the only place the page says what
     // an event actually was, so without a tap path every mark on a phone is a
-    // tick that cannot be read. A tap is also unambiguous here: touch does not
-    // start a zoom drag, so nothing else wants this gesture.
+    // tick that cannot be read. A tap is also unambiguous here: one finger
+    // scrolls and two zoom, so nothing else wants a stationary press.
     lane.addEventListener('pointerup', function (ev) {
-      if (ev.pointerType === 'mouse') return;
-      revealMark(nearestMark(track, toSvg(ev).x, 22));
+      if (ev.pointerType === 'mouse' || afterPinch) return;
+      revealMark(nearestMark(track, toSvg(ev).x, TOUCH_REACH));
     });
-    lane.addEventListener('pointerleave', function () { light(null); hide(); });
+    // Mouse only. A pointer that cannot hover is destroyed when it is lifted,
+    // and the spec has the browser fire pointerout and pointerleave straight
+    // after the pointerup that ended it -- so this ran on every tap, one event
+    // after the handler above, and took the tooltip back down before a frame
+    // had been painted with it. Touch puts it away by tapping off the chart,
+    // which the document handler below does.
+    lane.addEventListener('pointerleave', function (ev) {
+      if (ev.pointerType !== 'mouse') return;
+      light(null); hide();
+    });
   });
 
   // Tapping away from the chart puts the tooltip back down again, since touch
@@ -1272,6 +1297,10 @@ JS = r"""
   var brush = document.getElementById('brush');
   var dragFrom = null, dragging = false;
   var DRAG_MIN = 8;             // px, below this it was a click not a drag
+  // Days. A window narrower than a week has nothing in it and divides badly,
+  // and every way of setting the range -- drag, pinch, the date boxes -- has
+  // to refuse the same one, or the floor moves with the input used.
+  var MIN_SPAN = 7;
 
   function clampX(x) { return Math.max(D.padL, Math.min(D.padL + D.inner, x)); }
   function dayAtX(x) {
@@ -1306,7 +1335,7 @@ JS = r"""
     // A selection endDrag will refuse is drawn faintly, so the highlight says
     // what will actually happen rather than promising a zoom that never comes.
     var d1 = dayAtX(Math.min(dragFrom, x)), d2 = dayAtX(Math.max(dragFrom, x));
-    brush.classList.toggle('too-narrow', d2 - d1 < 7);
+    brush.classList.toggle('too-narrow', d2 - d1 < MIN_SPAN);
     setHidden(brush, false);
   });
 
@@ -1328,8 +1357,7 @@ JS = r"""
     var a0 = clearDrag(ev);
     if (a0 === null) return;
     var d1 = dayAtX(Math.min(a0, x)), d2 = dayAtX(Math.max(a0, x));
-    // A window narrower than a week has nothing in it and divides badly.
-    if (d2 - d1 < 7) return;
+    if (d2 - d1 < MIN_SPAN) return;
     dom.a = Math.max(0, Math.round(d1));
     dom.b = Math.min(D.span, Math.round(d2));
     syncDateInputs();
@@ -1356,6 +1384,115 @@ JS = r"""
     hide();
     layout();
   });
+
+  // --- pinch to zoom the time axis, touch only -----------------------------
+  //
+  // Sideways drag is spoken for on a phone: the chart holds a 56rem minimum
+  // width, so it is more than two screens across and one finger is how a
+  // reader reaches October 2021 at all. That left touch with no way to narrow
+  // the axis, only the date boxes, and a reader who wanted a closer look at a
+  // fortnight had to type it. Two fingers is the gesture they already have,
+  // and the touch-action declared on the svg is what makes it available: the
+  // browser's own pinch is declined over the chart and nowhere else.
+  //
+  // The domain scales about the point between the fingers, so the day being
+  // held stays under them and the zoom happens around it rather than around
+  // the middle of a chart that is mostly off-screen. Scale is measured from
+  // the domain as it stood when the second finger landed, not from the last
+  // frame, so a slow pinch and a quick one across the same distance finish on
+  // the same range and rounding cannot accumulate through the gesture.
+  var touchX = {};        // live touch pointers on the chart, id -> clientX
+  var pinch = null;       // the gesture, captured when the second finger lands
+  var afterPinch = false; // the releases two fingers leave behind are not taps
+  var pinchFrame = 0;
+
+  function touchCount() { return Object.keys(touchX).length; }
+  function pinchGap() {
+    var ids = Object.keys(touchX);
+    return Math.abs(touchX[ids[0]] - touchX[ids[1]]);
+  }
+  function pinchMid() {
+    var ids = Object.keys(touchX);
+    return (touchX[ids[0]] + touchX[ids[1]]) / 2;
+  }
+  // A client x in the SVG user space the domain is laid out in. toSvg wants a
+  // whole event; a pinch has two, and what it needs is the point between them.
+  function svgXOf(clientX) {
+    var pt = svg.createSVGPoint();
+    pt.x = clientX; pt.y = 0;
+    return pt.matrixTransform(svg.getScreenCTM().inverse()).x;
+  }
+
+  function startPinch() {
+    var gap = pinchGap();
+    if (gap < 1) return;    // two fingers on one spot scale by nothing
+    var frac = (clampX(svgXOf(pinchMid())) - D.padL) / D.inner;
+    pinch = {gap: gap, frac: frac, a: dom.a, b: dom.b,
+             day: dom.a + frac * (dom.b - dom.a)};
+    afterPinch = true;
+    hide();
+  }
+
+  function applyPinch() {
+    if (!pinch || touchCount() < 2) return;
+    var gap = pinchGap();
+    if (gap < 1) return;
+    // Fingers spread is zoom in, which is a shorter domain. The floor is the
+    // week the drag refuses below; the ceiling is the whole record, so a pinch
+    // the other way always gets back to where the page opened.
+    var width = (pinch.b - pinch.a) * pinch.gap / gap;
+    width = Math.max(MIN_SPAN, Math.min(D.span, width));
+    var a = pinch.day - pinch.frac * width;
+    if (a < 0) a = 0;
+    if (a + width > D.span) a = D.span - width;
+    var a2 = Math.round(a), b2 = Math.round(a + width);
+    if (a2 === dom.a && b2 === dom.b) return;
+    dom.a = a2; dom.b = b2;
+    syncDateInputs();
+    layout();
+  }
+
+  // One relayout per frame at most. A pinch delivers moves faster than the
+  // chart can be drawn, and each one moves every mark and rebuilds every path.
+  function schedulePinch() {
+    if (pinchFrame) return;
+    pinchFrame = requestAnimationFrame(function () {
+      pinchFrame = 0;
+      applyPinch();
+    });
+  }
+
+  svg.addEventListener('pointerdown', function (ev) {
+    if (ev.pointerType === 'mouse') return;
+    // A gesture starting from no fingers down is allowed to be a tap again.
+    if (!touchCount()) afterPinch = false;
+    touchX[ev.pointerId] = ev.clientX;
+    if (touchCount() === 2) {
+      startPinch();
+      // Capture both: the gesture stays ours if a finger wanders off the
+      // chart, and neither release can arrive at a lane looking like a tap.
+      Object.keys(touchX).forEach(function (id) {
+        try { svg.setPointerCapture(+id); } catch (e) {}
+      });
+    }
+  });
+
+  svg.addEventListener('pointermove', function (ev) {
+    if (!(ev.pointerId in touchX)) return;
+    touchX[ev.pointerId] = ev.clientX;
+    if (pinch) schedulePinch();
+  });
+
+  // A lifted or cancelled finger leaves the gesture. One finger cannot pinch,
+  // so the next pair starts a new one from the range this one finished at.
+  function endTouch(ev) {
+    if (!(ev.pointerId in touchX)) return;
+    delete touchX[ev.pointerId];
+    try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
+    if (touchCount() < 2) pinch = null;
+  }
+  svg.addEventListener('pointerup', endTouch);
+  svg.addEventListener('pointercancel', endTouch);
 
   // Crosshair on the case panels: snaps to the nearest reading, so the pointer
   // never has to land on a line.
@@ -1416,10 +1553,16 @@ JS = r"""
     showReading(ev);
   });
   plot.addEventListener('pointerup', function (ev) {
-    if (ev.pointerType === 'mouse') return;
+    if (ev.pointerType === 'mouse' || afterPinch) return;
     showReading(ev);
   });
-  plot.addEventListener('pointerleave', hide);
+  // Mouse only, for the reason given on the lanes: a touch pointerup is
+  // followed immediately by the pointerleave that destroys the pointer, and
+  // hiding on that is hiding what the tap just asked for.
+  plot.addEventListener('pointerleave', function (ev) {
+    if (ev.pointerType !== 'mouse') return;
+    hide();
+  });
 
   document.querySelectorAll('input[data-series]').forEach(function (box) {
     box.addEventListener('change', function () {
@@ -1475,7 +1618,9 @@ JS = r"""
     b = Math.min(Math.max(b, 0), D.span);
     // A domain needs width. Refuse to inflame the axis rather than dividing
     // by zero, and put the inputs back to what is actually being shown.
-    if (b - a < 7) { f.value = isoOf(dom.a); t.value = isoOf(dom.b); return; }
+    if (b - a < MIN_SPAN) {
+      f.value = isoOf(dom.a); t.value = isoOf(dom.b); return;
+    }
     dom.a = a; dom.b = b;
     hide();
     layout();
@@ -1668,9 +1813,12 @@ def page(svg, height, payload, rows, cfg, first, last):
       'it is. Double-click to zoom back out, or use the date boxes, which take '
       'the range you drag and can be typed into directly.</span>'
       '<span class="touch-only"><strong>The chart is wider than this screen: '
-      'drag sideways to move through the period.</strong> To narrow it, use '
-      'the date boxes above. Zooming moves only the time axis; the case scales '
-      'stay put, so a zoomed view cannot make a rise look steeper than it '
+      'drag sideways to move through the period, and pinch with two fingers '
+      'to zoom the time axis.</strong> Pinching apart narrows the range around '
+      'the point between your fingers, pinching together widens it back to the '
+      'whole record; the date boxes above take the same range and can be typed '
+      'into directly. Zooming moves only the time axis; the case scales stay '
+      'put, so a zoomed view cannot make a rise look steeper than it '
       'is.</span></p>')
     a('<p>The background shading is how strict the legal restrictions were, '
       'on one scale from no shading at all when nothing was in force to the '
