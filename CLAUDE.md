@@ -10,14 +10,21 @@ A **finished, published deliverable**: an AI-generated chronology of UCL's pande
 
 ## The checks
 
-Run from `timeline/`. All five pass on a clean tree as of 27 July 2026:
+Run from `timeline/`. All five pass on a clean tree as of 28 July 2026:
 
 ```bash
 python3 build/validate.py          # 347 rows, 0 errors, 0 warnings
-python3 build/test_render_md.py    # 37 checks over both renderers
+python3 build/test_render_md.py    # 42 checks over both renderers
 python3 build/review.py            # exit 1 if any figure is untraceable; prints 370 claims to read
 python3 build/render_md.py         # 18 lags resolved, 2 pending
 python3 build/render_html.py       # 187 day-marks, 336 case readings
+```
+
+A sixth, `build/test_browser.py`, drives the page in a real browser: 28 checks over the tap, pinch, drag, hover, keyboard and scroll paths on a phone and a desktop. **It is the only thing that can see an interaction fault** — both faults it was written for left a page that reads correctly and could not be used on a phone, and neither reproduces with events dispatched by hand. It needs Playwright, which is not a dependency of this repository and is not installed by anything here; without it, or without a rendered page, it prints a skip line and exits 0. Run it after any change to the CSS or the script in `render_html.py`:
+
+```bash
+uv venv .venv && .venv/bin/python -m pip install playwright
+.venv/bin/python build/test_browser.py
 ```
 
 **`validate.py` is the single command that says whether the state is intact — run it after every change to the ledger.** Its load-bearing check is that every quotation is an exact substring of the text re-derived from the document it cites: 283 against the newsletters in `text/`, 26 against the cached documents in `sources/`. Paraphrase, drift, misattribution and invention all fail it mechanically. Cached sources are hashed against `sources/manifest.csv` before any quote is checked against them, so a `.txt` cannot be edited to make a check pass.
@@ -26,7 +33,7 @@ python3 build/render_html.py       # 187 day-marks, 336 case readings
 
 ### Environment
 
-Standard library only, Python 3.11+ for `tomllib`. No test framework, no CI, no dependencies to install. The one exception is `pdftotext` (poppler), needed only to *refresh* the source cache with `fetch_sources.py`; everything downstream reads `sources/ref-NN.txt`, so validation and rendering work without it.
+Standard library only, Python 3.11+ for `tomllib`. No test framework, no CI, nothing that has to be installed to build, validate or render. Two things sit outside that and both are optional: `pdftotext` (poppler), needed only to *refresh* the source cache with `fetch_sources.py` — everything downstream reads `sources/ref-NN.txt` — and Playwright, needed only by `test_browser.py`, which skips without it. Keep both optional; nothing on the build path may acquire a dependency.
 
 `fetch_camden.py` needs `dangerouslyDisableSandbox` — the empty host allowlist truncates the response mid-body. It refuses to refetch without `--force`, and nothing else in the project touches the network.
 
@@ -102,6 +109,8 @@ New settings belong in the TOML, not as constants in a script. Judgement calls i
 - **UCL cases are not a subset of Camden cases.** Presence is not residence. Shape and timing may be compared; shares and proportions may not, and no script computes any.
 - **`[N]` citation markers collide with Markdown link syntax.** The validator fails `[7]` followed by `(` or `[`.
 - **Do not spend categorical hues on the four tracks** — position separates them; colour belongs to the case series. Never flip the light palette for dark mode: the light hexes fail the dark lightness band outright, so dark is its own set of steps from the same ramps. The `scripts/validate_palette.js` invocations recorded in `render_html.py`'s comments come from the **dataviz skill**, not from this repository — load that skill to re-run them. In-repo, the four palette checks in `test_render_md.py` are what guard the slots.
+- **Touch is not a mouse with one button, and neither rule it needs is visible in the rendered page.** Nothing drawn inside a lane may take pointer events: whatever is painted over the lane's hit rect is what a fingertip lands on, and `.lane-rule` runs along the exact line the marks sit on. And no `pointerleave` handler may act on a pointer that is not a mouse: a pointer that cannot hover is destroyed when it is lifted, and the browser fires `pointerout` and `pointerleave` straight after its `pointerup`, so hiding on leave hides what the tap has just opened. Each of these made every mark on every phone unopenable while all five checks passed.
+- **The pinch exists only because the chart declines the browser's.** `touch-action:pan-x pan-y` on the svg is what hands the two-finger gesture to the script. Do not drop it — the browser keeps the gesture and the axis stops zooming on touch — and do not widen it to `none`, which takes one-finger scrolling with it on a chart that is two and a half screens wide. Double-tap-to-zoom-out rides on the same declaration.
 - **Three restriction start dates are `checked = false`** — 13 May 2020, 20 December 2020, 29 March 2021. They came from the general England chronology, and a Wikipedia read on 26 July 2026 contradicted none of them but does not move the flag, which means a source this archive holds. Do not mark them checked without putting the regulation in `sources/`.
 
 ## Publishing

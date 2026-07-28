@@ -330,6 +330,18 @@ Checked rather than asserted, before the workflow was pushed. The fetched series
 
 **What the workflow cannot do is validate**, and this is the real cost of the change. `validate.py` checks quotations against `text/`, regenerated from the newsletters, and neither is in this repository. So the deploy renders without verifying, and verification stays a local gate that has to be run before pushing. The hash pin covers the one out-of-repo input the build reads; it covers nothing else.
 
+### The chart answered no gesture a phone has — **28 July 2026**
+
+Reported: on a mobile device the timeline neither zooms its axis nor opens an event. Both were true. The tap fault had two independent causes, either of which was enough on its own, and the zoom was a design decision that had only ever been half argued.
+
+**A tap aimed at a mark landed on the lane rule.** `.lane-rule` is drawn after the lane's hit rect and along the exact line the marks sit on, and an SVG `<line>` with a stroke is a hit target. The element under a fingertip aiming at a mark was therefore the rule, the lane's handlers never ran, and no mark on the page could be opened at all. A mouse mostly survived it, because it arrives moving and the next pixel either side is lane again — but only mostly: hovering the exact centre of a mark missed it on the desktop too, which is the same fault and had never been noticed. The rule is now `pointer-events:none`, and nothing drawn inside a lane is a pointer target.
+
+**The taps that did reach a lane were undone one event later.** A pointer that cannot hover is destroyed when it is lifted, and the specification has the browser fire `pointerout` and then `pointerleave` immediately after the `pointerup` that ended it. The lane's `pointerleave` handler was written for a mouse leaving the lane and called `hide()`, so every tap opened the tooltip and closed it again before a frame had been painted with it. The case panels had the same handler and the same fault. Both are now mouse-only; touch puts the tooltip away by tapping off the chart, which the document handler already did.
+
+**Zoom on touch was declined by design, and the design was wrong.** The comment in `render_html.py` argued that sideways drag belongs to the browser on a phone — the chart holds a 56rem minimum width, so it is more than two screens across and one finger is how a reader reaches October 2021 — and left the date boxes as the only way to narrow the axis. That reasoning holds for one finger and says nothing about two. `touch-action:pan-x pan-y` on the svg declines the browser's pinch over the chart and nowhere else, and a pinch now scales the domain about the point between the fingers, so the day being held stays under them: measured at 0.2 of a day's drift across a five-fold zoom. One finger still scrolls the figure, the case scales still do not move, and the floor is the same week a drag refuses — `MIN_SPAN`, now shared by the drag, the pinch and the date boxes rather than written as a bare `7` in each of the three. Double tap zooms back out, which is the `dblclick` handler the mouse already had, reached because the browser's own double-tap zoom goes with the pinch.
+
+**Neither fault reproduces with synthesised events**, which is why a suite that reads the rendered page could not have caught them. Dispatching a `pointerup` by hand asserts the model of the browser that was wrong in the first place: it opens the tooltip, and no `pointerleave` follows to take it away. `build/test_browser.py` therefore drives real touch input through CDP and lets the browser generate the pointer sequence itself — 28 checks across a phone and a desktop, covering the tap, the pinch, one-finger scrolling, and every interaction that already worked. Against the page as it stood before this entry it fails 11 of them, two of those on the desktop; against the page now it passes all 28. **Playwright is not a dependency of this repository and CI does not run this file**: without it installed, or without a rendered page to open, it prints a skip line and exits 0. Five structural checks went into `test_render_md.py` as well — the declarations the browser file rests on — so the standard-library suite fails if any of them is dropped. Those five also fail against the old page.
+
 ## Stage 7 — review — **done**. Placement decision — **open, and not mine to take**
 
 ### The review was made mechanical
@@ -420,10 +432,11 @@ This is the decision the plan deferred to the end, and it is the user's: it move
 
 ```bash
 python3 build/validate.py          # should report 347 rows, 0 errors
-python3 build/test_render_md.py    # 37 checks, all passing
+python3 build/test_render_md.py    # 42 checks, all passing
 python3 build/render_md.py         # rebuilds TIMELINE.md from the ledger
 python3 build/render_html.py       # rebuilds timeline.html from the ledger
 python3 build/review.py            # non-zero if any figure is untraceable
+python3 build/test_browser.py      # 28 checks, needs playwright; skips without it
 ```
 
 The first is the single command that says whether the state is intact. Everything else regenerates: `extract_text.py` and `digest.py` are deterministic and can be re-run at any time, `data_events.py` and `camden_events.py` rewrite their JSON from source, and `TIMELINE.md` is disposable output. Only `batches/batch-01.json` through `batch-12.json` and `batch-08b.json` are irreplaceable — they are the hand-written work of stage 1, and the ledger can be rebuilt from them with `add_rows.py`. To that list two more files must now be added. `timeline.toml` holds the eight framing paragraphs and the twenty declared pairings, hand-written and existing nowhere else. `build/make_national_batch.py` holds the anchors and the notes for the national track, which is the same kind of irreplaceable hand work as the stage 1 batches even though the quotations in it are lifted mechanically. `sources/` is re-fetchable in principle, but only while those URLs still resolve, which is exactly the assumption this project exists to distrust.

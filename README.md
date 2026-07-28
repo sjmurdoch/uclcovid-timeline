@@ -43,12 +43,15 @@ The interactive page is served at **<https://sjmurdoch.github.io/uclcovid-timeli
 
 ```bash
 python3 build/validate.py          # 347 rows, 0 errors
-python3 build/test_render_md.py    # 37 checks over both renderers
+python3 build/test_render_md.py    # 42 checks over both renderers
 python3 build/review.py            # non-zero if any figure is untraceable
 python3 build/review.py --coverage # newsletter sections no row covers
 python3 build/render_md.py         # rebuild TIMELINE.md
 python3 build/render_html.py       # rebuild timeline.html
+python3 build/test_browser.py      # 28 checks on the page's interactions
 ```
+
+Everything above runs on the standard library alone. The last is the exception and is optional: it drives the rendered page in a real browser, because what the chart does under a finger or a mouse cannot be read off the HTML. It needs [Playwright](https://playwright.dev/python/), which nothing else here uses, and skips with exit 0 when it is not installed.
 
 A local build can point the citations back at a checkout of the archive without editing anything tracked:
 
